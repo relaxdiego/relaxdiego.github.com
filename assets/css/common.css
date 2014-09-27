@@ -1,0 +1,36 @@
+code {
+  padding: 0px 4px; /* Override the default padding from Bootstrap */
+}
+
+#post p,
+#post h3,
+#post li {
+  font-family: "Georgia", "Times New Roman", serif;
+}
+
+#post p,
+#post ul,
+#post ol {
+  font-size: 13pt;
+  line-height: 22pt;
+  margin-bottom: 16pt;
+}
+
+#post ul li,
+#post ol li {
+  font-size: 13pt;
+  line-height: 25pt;
+}
+
+#post h3 {
+  margin-top: 24pt;
+  margin-bottom: 6pt;
+}
+
+#post img {
+	display: block;
+	margin-bottom: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 592px;
+}

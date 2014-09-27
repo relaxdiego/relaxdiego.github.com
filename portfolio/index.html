@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Mark S. Maglana">
+
+    <link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="/assets/css/common.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="/assets/css/pygments/default.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div id="post" class="span8 offset2">
+          <h1>
+            <a href="/">relaxdiego</a>
+          </h1>
+          <div class="page-header">
+            <h2>
+              Portfolio
+              <small>20 Dec 2013</small>
+            </h2>
+          </div>
+<p>This is my portfolio of open-source projects. Some of these are side projects while some I wrote because of work (and later open-sourced with permission from my employer). With all of them, I enjoyed building and learning new things along the way.</p>
+
+
+<h3 id="aviatorhttpaviatorgithubiowww"><a href="http://aviator.github.io/www/">Aviator</a></h3>
+
+<p>This is my most recent open-source project. It is a Ruby library that allows Ruby-based applications to talk to the OpenStack REST API. It is a convergence of a few itches that I needed to scratch. Most important of those is my need to use an OpenStack SDK that was easy to understand and did not obscure the underlying OpenStack REST API too much. Second, because the OpenStack API is still very dynamic, I wanted an SDK that helped me know if there are any gotchas to the API or its docs. The result is a beautiful DSL that also happens to be self-documenting and can even point you to potential OpenStack API or documentation bugs.</p>
+
+
+<h3 id="manamanahttpsgithubcommanamanaframeworkmanamana"><a href="https://github.com/ManaManaFramework/manamana">ManaMana</a></h3>
+
+<p>I have always been fascinated with how <a href="http://cukes.info/">Cucumber</a> does its magic behind the scenes. In addition, I’ve always wanted to get my hands dirty with compilers. When I came across <a href="http://createyourproglang.com/">this freaking awesome book</a>, I decided that it was time I tackled both curiosities at once. The result is ManaMana: A Markdown-like external DSL for expressing executable requirements.</p>
+
+<p>Like all my other open-source projects, this one also went through several prototypes. <a href="https://github.com/norm-framework">Four, to be exact</a>. Each prototype, building on the lessons learned from the previous while avoiding the baggage of maintaining shitty legacy code.</p>
+
+<p>In case you're wondering: I chose the name “ManaMana” because <a href="http://www.youtube.com/watch?v=9ytei6bu7kQ">this classic</a> was what my kids were watching while I was thinking of a new name for this project. Also, “Mana? Mana?” and “Mana! Mana!” in my native tongue translate to “Is it done? Is it done?” and “It’s done! It’s done!”</p>
+
+
+<h3 id="redmine-backlogshttpwwwredminebacklogsnet"><a href="http://www.redminebacklogs.net/">Redmine Backlogs</a></h3>
+
+<p>Back in late 2008, my employer decided to shift from Trac to Redmine. We had also just started adopting scrum and found it challenging given Redmine’s default features and, after some research, didn’t find any plugins that suited our needs. That was when I decided to build a plugin that provided basic drag-and-drop capabilities. Fast forward about half a year and 3 prototypes later, Redmine Backlogs was open sourced.</p>
+
+<p><img src="/assets/images/sprint_taskboard.png" /></p>
+
+<p>This was initially a one-man development effort until a guy named Emiliano Heyns contacted me for some help with the plugin. Because of our common needs and his past experience with building a similar app in Python, our correspondence quickly developed into close teamwork where he put a lot of good effort and contribution on the Rails side and I got to focus on the JavaScript side.</p>
+
+<p>One of the decisions that I’m glad I made was the decision to drop the training wheels of Prototype.js and just embrace JavaScript’s prototypal object model. <a href="https://gist.github.com/relaxdiego/7426320">This snippet</a> shows the core piece of code that I used to implement the rest of Redmine Backlogs.</p>
+
+<p>The downside of this move was that I had to build my own JavaScript framework from scratch. I would have preferred to use Backbone.js or Ember.js except that they were not yet around when I wrote the code. One of the upsides, however, is that I got to know JavaScript more intimately and also was able to gain a fine-grained control over the code. You can still see much of what I wrote on <a href="https://github.com/backlogs/redmine_backlogs/tree/master/assets/javascripts">GitHub</a>.</p>
+
+<p>Redmine Backlogs is still in active development and currently being used by <a href="http://www.optimusinfo.com/blog/2013/01/29/diving-deeper-into-the-redmine-backlogs-plugin.html">consulting companies</a>, <a href="http://theforeman.org/">open-source projects</a>, and at least one Fortune 500 company.</p>
+
+          <div id="disqus_thread"></div>
+          <script type="text/javascript">
+              /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+              var disqus_shortname = 'relaxdiego'; // required: replace example with your forum shortname
+              var disqus_developer = 1;
+              var disqus_url = 'http://www.relaxdiego.com/2014/09/ovs-lab.html';
+
+              /* * * DON'T EDIT BELOW THIS LINE * * */
+              (function() {
+                  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+              })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+      </div>
+    </div> <!-- /container -->
+    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+    
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-27191143-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+  </body>
+</html>

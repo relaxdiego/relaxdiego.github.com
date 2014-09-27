@@ -1,0 +1,43 @@
+---
+layout: post
+title: Using GCC when Xcode 4.2 or 4.3 is installed
+date: 2012-02-22 10:35:00 UTC
+comments: false
+categories: programming
+---
+
+<p>I was having problems compiling gems from the terminal in my Mac last week. After further investigation and some Googling, I found out that it was because Xcode 4.3 now uses the LLVM-based gcc and not all native gems support it. I then installed the <a href="https://developer.apple.com/downloads/index.action" target="_blank">Command Line Tools for Xcode</a>&nbsp;hoping that would solve the problem. Unfortunately, it didn't. At least not completely.</p>
+
+<p>After some more digging around, I came to realize that <code>/usr/bin/gcc</code>, which is what gets used by default, is actually symlinked to <code>/usr/bin/llvm-gcc-4.2</code>. I tried setting <code>CC=/usr/bin/gcc-4.2</code> whenever I installed gems, but somehow that gets lost along the way. Some suggested that I downgrade to Xcode 4.1 or even uninstall Xcode altogether. However, in my case, I use Xcode every now and then so that was not an option.</p>
+
+<p>Thankfully, I came across <a href="http://stackoverflow.com/questions/1165361/setting-gcc-4-2-as-the-default-compiler-on-mac-os-x-leopard" target="_blank">a suggestion in StackOverflow</a>&nbsp;which said that I create symlinks to the classic gcc and make sure it's accessed first when I'm in the terminal. Here's how I did it:<br /><br />First, I created a hidden folder in my home directory:</p>
+
+{% highlight bash %}
+~ $ mkdir .bin
+{% endhighlight %}
+
+<p>Next, I created symlinks in <code>~/.bin</code>:</p>
+
+{% highlight bash %}
+~ $ cd .bin
+~/.bin $ ln -s /usr/bin/gcc-4.2 cc
+~/.bin $ ln -s /usr/bin/gcc-4.2 gcc
+~/.bin $ ln -s /usr/bin/c++-4.2 c++
+~/.bin $ ln -s /usr/bin/g++-4.2 g++
+{% endhighlight %}
+
+<p>Note that in order for those to work, the <a href="https://developer.apple.com/downloads/index.action" target="_blank">Command Line Tools for Xcode</a> should be installed. You can do that via direct download or through Xcode's Downloads preference pane.</p>
+
+<p>Next, I edited <code>~/.bash_profile</code> and appended the following:</p>
+
+{% highlight bash %}
+export PATH=~/.bin:$PATH
+{% endhighlight %}
+
+<p>The above ensures that my symlinks are used and not <code>/usr/bin/gcc</code>. I then reloaded <code>.bash_profile</code>:</p>
+
+{% highlight bash %}
+~ $ source .bash_profile
+{% endhighlight %}
+
+<p>After this, all native gems compiled successfully.</p>

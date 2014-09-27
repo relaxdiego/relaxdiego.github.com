@@ -1,0 +1,6 @@
+name: relaxdiego
+description: Software Development and other stuff.
+url: http://www.relaxdiego.com
+permalink: /:year/:month/:title.html
+highlighter: pygments
+markdown: kramdown
