@@ -17,9 +17,9 @@ To create a logger, use the class method (aka module-level function)
 `logging.gettLogger()`. For example:
 
 {% highlight python linenos %}
-    import logging
+import logging
 
-    logger = logging.getLogger("myapp")
+logger = logging.getLogger("myapp")
 {% endhighlight %}
 
 This creates a logging object named "myapp". Calling this same line from
@@ -27,9 +27,9 @@ anywhere in your application will return the same logging object. You can
 also create hierarchies by separating names using dot notation. For example:
 
 {% highlight python linenos %}
-    import logging
+import logging
 
-    logger = logging.getLogger("myapp.my_object")
+logger = logging.getLogger("myapp.my_object")
 {% endhighlight %}
 
 Creates a logger that is a descendant of the "myapp" logger we created above.
@@ -40,11 +40,11 @@ After you've created your logger, creating log entries is similar to other
 logging frameworks:
 
 {% highlight python linenos %}
-    logger.debug("OHAI, I CAN HAZ DEBUG MSG?")
-    logger.info("I'M IN UR LOGGER. INFOING LOGS")
-    logger.warning("YOU HAZ RIGHT TO REMAIN SILENT")
-    logger.error("ERROR MSGZ")
-    logger.critical("OH NOEZ!")
+logger.debug("OHAI, I CAN HAZ DEBUG MSG?")
+logger.info("I'M IN UR LOGGER. INFOING LOGS")
+logger.warning("YOU HAZ RIGHT TO REMAIN SILENT")
+logger.error("ERROR MSGZ")
+logger.critical("OH NOEZ!")
 {% endhighlight %}
 
 More [where that came from](https://docs.python.org/2/library/logging.html).
