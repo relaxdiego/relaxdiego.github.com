@@ -133,4 +133,4 @@ University of San Carlos
 
 == Misc.
 
-This resume is available online at http://www.relaxdiego.com/resume. Its source code may be found at https://github.com/relaxdiego/relaxdiego.github.com/blob/master/resume.
+This resume is available online at http://www.relaxdiego.com/resume. Its source code may be found at https://github.com/relaxdiego/relaxdiego.github.com/blob/master/resume/resume.adoc.
