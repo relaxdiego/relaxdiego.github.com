@@ -1,6 +1,4 @@
-:doctype: book
-
-= Mark Maglana, Software Engineer
+== Mark Maglana, Software Engineer
 
 [%hardbreaks]
 (925) 558-5456
@@ -10,26 +8,13 @@ Pleasanton, CA
 
 == Accomplishments
 
-- *Designed, Built, and Maintained Test Harnesses* - I have been building test harnesses and test harness frameworks for the past seven years. Some of them were built with Ruby while others were built with Python. The types of applications I've built test harnesses for include web applications, CLI utilities, and network device software.
-
-- *Built a Proof-of-Concept Automated Testing Language* - I combined the things I liked about Cucumber and the Robot Framework into my own automated testing language. This language reads like English (or any human language) and can be used to test itself. I consider this a hobby project that I use to learn about language design. The project is on https://github.com/ManaManaFramework/manamana[Github].
+- *Developed Test Harnesses Frameworks* - I have built test harness frameworks in Ruby and Python. The type of test subjects I've built test frameworks for include web applications, CLI utilities, and network device software.
 
 - *Built and Open Sourced API Libraries* - I have extensive experience writing client libraries for REST and other HTTP-related APIs. One of them is http://aviator.github.io/www/[Aviator], a Ruby library originally built for the OpenStack API but can be expanded to support other cloud providers.
 
 - *Created an Agile Plugin for Redmine* - Redmine is an open software configuration management application. I built an agile plugin for it called Redmine Backlogs. These days, it is being maintained by a self-managing community at http://www.redminebacklogs.net and has also be forked by other projects such as https://www.openproject.org/features/agile-scrum/[OpenProject].
 
-
-
-== Skills
-
-
-- *Python* - I've used Python to write properietary application and test harness frameworks in the cloud computing and software defined networking space. I also have extensive experience writing CLI utilities with Python.
-
-- *Ruby* - I am experienced with Rails, Sinatra, and many other Ruby libraries relating to web development and automated testing. I have written http://aviator.github.io/www/[a Ruby client library for OpenStack]. I'm also very proficient with Ruby metaprogramming and use it extensively to write easy-to-use and expressive internal domain-specific languages.
-
-- *Agile Application Development* - I practice fast prototyping and take advantage of the fast feedback provided by automated testing to get to the most appropriate solution faster. I also temper this with object-oriented design principles and a focus on testability and maintainability.
-
-- *Automated Testing* - I've written external test harnesses in Ruby and Python. I've also created my own proof-of-concept BDD framework inspired by Cucumber and the Robot Framework. link:https://github.com/ManaManaFramework/manamana[Source in Github].
+- *Built a Proof-of-Concept Domain Language* - I combined the things I liked about Cucumber and the Robot Framework into my own external domain specific language. This language reads like English (or any human language) and can be used to test itself. I consider this a hobby project that I use to learn about language design. The project is on https://github.com/ManaManaFramework/manamana[Github].
 
 
 == Recent Projects
@@ -45,17 +30,17 @@ Pleasanton, CA
 == Experience
 
 *Software Engineer* (2014 - Present) +
-Nexus IS, Pleasanton, CA
+Nexus IS (A Dimension Data Company), Pleasanton, CA
 
-Nexus is a leading provider of professional, cloud, consulting and managed services for advanced IT solutions. Our team actively contributes to the OpenStack, Open vSwitch, and Open DayLight communities.
+Nexus is a leading provider of professional, cloud, consulting and managed services for advanced IT solutions. Our team actively contributes to the OpenStack, Open vSwitch, and Open DayLight projects.
 
 .*Achievements*
 
-- Designed and implemented a framework for managing an application across cloud providers.
+- Designed and implemented a framework for managing application lifecycle across cloud providers.
 
 - Designed and implemented a test harness framework used by our testers for our various software products.
 
-- Mentored and brought QA Engineers up to speed on testing our software products using their corresponding test harnesses.
+- Mentored and brought QA Engineers up to speed on testing our software products using the test harness framework.
 
 - Designed and implemented various client libraries for various cloud APIs.
 
@@ -81,9 +66,11 @@ Morph produced IaaS appliances that its customers can install inside of their da
 *Software Product Manager* (2008 - 2012) +
 Exist Global, Manila, Philippines
 
-Exist provides tailored solutions, consulting and full cycle IT services to customers around the globe.At the time, I was assigned to Morph to help produce its cloud computing product.
+Exist provides tailored solutions, consulting and full cycle IT services to customers around the globe. At the time, I was assigned to Morph to help produce its cloud computing product.
 
 .*Responsibilities*
+
+- Oversaw the design and implementation of Morph AppSpace, one of the earliest Platform-as-a-Service providers in the market.
 
 - Managed the product roadmap to ensure that requirements are prioritized properly and that they contain the right information.
 
@@ -94,7 +81,7 @@ Exist provides tailored solutions, consulting and full cycle IT services to cust
 - Spearheaded the development of Redmine Backlogs (www.redminebacklogs.net). This allowed us to incorporate agile practices into our bug tracker while allowing us to retain control of our data.
 
 
-*Systems Analyst* (2003 - 2006) +
+*Systems Analyst/Programmer* (2003 - 2006) +
 Deco Machine Shop, Davao City, Philippines
 
 Deco Machine Shop, Inc. provides industrial machine fabrication services nationwide. Its major clients include Dole Philippines and San Miguel Corporation. As a systems analyst, my job was to understand the processes of the company and build software tools to automate parts of it. Software tools developed include a gear combination application which reduced a machinist’s work from one day to just under 10 minutes while increasing work precision.
@@ -103,7 +90,7 @@ Deco Machine Shop, Inc. provides industrial machine fabrication services nationw
 *Systems Analyst/Programmer* (2002 - 2003) +
 iThink Technologies, Davao City, Philippines
 
-iThink provides business software and training solutions for major companies nationwide. Major clients include the Bangko Sentral ng Pilipinas, Meralco, and Davao Light and Power Company. I was involved as a systems analyst for the development of purchasing systems, HR systems, and other enterprise applications for iThink’s major customers. I also spearheaded the use of the Unified Modeling Language within the company and also provided some in-house training for a number of then upcoming technologies and development platforms.
+iThink provides business software and training solutions for major companies nationwide. Major clients include the Bangko Sentral ng Pilipinas, Meralco, and Davao Light and Power Company. I was involved as a systems analyst/programmer for the development of purchasing systems, HR systems, and other enterprise applications for iThink’s major customers. I also spearheaded the use of the Unified Modeling Language within the company and also provided some in-house training for a number of then upcoming technologies and development platforms.
 
 
 *Web Developer* (2001 - 2002) +
