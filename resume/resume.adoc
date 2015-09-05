@@ -10,7 +10,7 @@ Pleasanton, CA
 
 - *Developed Test Harnesses Frameworks* - I have built test harness frameworks in Ruby and Python. The type of test subjects I've built test frameworks for include web applications, CLI utilities, and network device software.
 
-- *Built and Open Sourced API Libraries* - I have extensive experience writing client libraries for REST and other HTTP-related APIs. One of them is http://aviator.github.io/www/[Aviator], a Ruby library originally built for the OpenStack API but can be expanded to support other cloud providers.
+- *Built and Open Sourced API Libraries* - I have extensive experience writing client libraries for REST and other HTTP-related APIs. One of them is http://aviator.github.io/www/[Aviator], a Ruby library originally built for the OpenStack API but can be expanded to support other cloud providers. I also created https://pypi.python.org/pypi/aeronaut[Aeronaut] (http://pythonhosted.org//aeronaut/aeronaut.cloud.html[docs], https://github.com/NexusIS/aeronaut[src]), a Python client library for the Dimension Data Cloud API. Another client library that I created is one for my tennis club to automate my court reservations. This is a personal project that is currently proprietary because I'd like to keep the advantage for now. ;-)
 
 - *Created an Agile Plugin for Redmine* - Redmine is an open software configuration management application. I built an agile plugin for it called Redmine Backlogs. These days, it is being maintained by a self-managing community at http://www.redminebacklogs.net and has also be forked by other projects such as https://www.openproject.org/features/agile-scrum/[OpenProject].
 

@@ -9,4 +9,4 @@ comments: false
 // from jekyll-specific conent in case I want to render it to other formats
 // in the future.
 
-include::resume/resume.adoc[]
+include::resume.adoc[]
