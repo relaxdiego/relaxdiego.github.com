@@ -27,6 +27,11 @@ Pleasanton, CA
 
 - *Proprietary OpenStack Dashboard* - A multi-tenant dashboard for OpenStack built on Ruby/Rails that had its own billing module which was built on top of OpenStack Ceilometer.
 
+
+== One More Thing
+
+Coding without tests is like driving a car without seatbelts so I always make sure to cover my code with a reasonable amount of tests. Here's http://www.relaxdiego.com/2013/06/my-dev-setup.html[how I usually set up my Ruby projects] and here's http://www.relaxdiego.com/2014/03/my-dev-setup-python-edition.html[how I used to set up my Python projects] (Modified to use py.test and Tox since).
+
 == Experience
 
 *Software Engineer* (2014 - Present) +
