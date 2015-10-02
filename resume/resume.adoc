@@ -5,47 +5,98 @@
 mmaglana@gmail.com
 Pleasanton, CA
 
+The entire body of human knowledge is a graph, and I generally apply https://en.wikipedia.org/wiki/Breadth-first_search[BFS] to visit its nodes.
+Occasionally, when an interest and my capacity to dive deep into said interest
+intersect, I use a https://en.wikipedia.org/wiki/Depth-first_search[DFS] approach
+for as long as I can sustain it or until I reach a leaf node. This is how I
+ended up writing my own simple compiler, developing my own agile plugin, as
+well as receiving an academic excellence award for best strategic plan from
+the University of the Philippines School of Management. As I traverse this
+amazing data structure, my guiding principle has and will always be about
+making myself better at creating and delivering quality software.
 
 == Accomplishments
 
-- *Developed Test Harnesses Frameworks* - I have built test harness frameworks in Ruby and Python. The type of test subjects I've built test frameworks for include web applications, CLI utilities, and network device software.
+- *Increased Module Accuracy and Speed by at Least 10x* - I offered  to
+re-design and re-implement a cloud computing application's billing module
+which was producing incomplete results and regularly timing out before it
+could even display half of an account's report. After I redesigned it, the
+reports were displayed immediately, and the amounts were 100% accurate.
 
-- *Built and Open Sourced API Libraries* - I have extensive experience writing client libraries for REST and other HTTP-related APIs. One of them is http://aviator.github.io/www/[Aviator], a Ruby library originally built for the OpenStack API but can be expanded to support other cloud providers. I also created https://pypi.python.org/pypi/aeronaut[Aeronaut] (http://pythonhosted.org//aeronaut/aeronaut.cloud.html[docs], https://github.com/NexusIS/aeronaut[src]), a Python client library for the Dimension Data Cloud API. Another client library that I created is one for my tennis club to automate my court reservations. This is a personal project that is currently proprietary because I'd like to keep the advantage for now. ;-)
+- *Facilitated Timely Delivery of Software By Automating Requirements* - My
+employer needed to deliver an autonomous software agent for a customer. I
+offered to study the associated open standards and proprietary protocols to
+learn about the complete requirements. I then codified these requirements in
+an application that developers can execute against their code to give them
+instant feedback. The application later also served as a regression test
+harness allowing the team to deliver the software on time and within budget.
 
-- *Created an Agile Plugin for Redmine* - Redmine is an open software configuration management application. I built an agile plugin for it called Redmine Backlogs. These days, it is being maintained by a self-managing community at http://www.redminebacklogs.net and has also be forked by other projects such as https://www.openproject.org/features/agile-scrum/[OpenProject].
+- *Reduced a 2-day Manual Process to 5-seconds* - While building the MIS for
+a metal fabrication shop, I learned about a manual computation process that
+took shop floor engineers 2 days to complete. After some research and a few
+questions on a compsci newsgroup, I was able to build a desktop app that reduced
+the computation time to 5 seconds.
 
-- *Built a Proof-of-Concept Domain Language* - I combined the things I liked about Cucumber and the Robot Framework into my own external domain specific language. This language reads like English (or any human language) and can be used to test itself. I consider this a hobby project that I use to learn about language design. The project is on https://github.com/ManaManaFramework/manamana[Github].
+- *Improved Requirements Gathering Through Prototyping* - Upon joining a new
+software consulting firm, I noticed the long feedback loop from requirements
+gathering to user testing. I encouraged and guided my teammates to adopt
+prototyping as one of the ways to improve requirements gathering and reduce
+waste. The results were positive and the engineers along with the users were
+very happy with the results.
 
+- *Recipient of Academic Excellence Award for Best Strategic Plan* - I wanted
+to understand the business of software and decided that focusing on the basics of
+business management was key. I then applied for our state university's graduate
+program for management where I was accepted. During the program, I was top of
+class for Operations Management, Financial Management, and Business Strategy. I
+then used everything that I learned to create a strategic plan for our family
+business which resulted in me getting the strategic plan award.
 
-== Recent Projects
+== A Few Open Source Projects
 
-- *Open vSwitch Lab* - A Vagrant project that provisions two machines that talk over a simulated Internet. The lab is a companion project for the series of articles I wrote about http://www.relaxdiego.com/2014/09/ovs-lab.html[VXLAN], http://www.relaxdiego.com/2014/09/ovsdb.html[OVSDB], and http://www.relaxdiego.com/2014/09/hardware_vtep.html[the hardware VTEP schema]. link:https://github.com/relaxdiego/ovs-lab[Source in Github].
+- *Open vSwitch Lab* - A Vagrant project that provisions two machines that talk
+over a simulated Internet. The lab is a companion project for the series of
+articles I wrote about http://www.relaxdiego.com/2014/09/ovs-lab.html[VXLAN], http://www.relaxdiego.com/2014/09/ovsdb.html[OVSDB], and http://www.relaxdiego.com/2014/09/hardware_vtep.html[the hardware VTEP schema]. link:https://github.com/relaxdiego/ovs-lab[Source in Github].
 
-- *Aviator* - A lightweight Ruby client library for cloud REST APIs. I initially built this for the OpenStack API. My focus was to build a library that reflected, rather than obscured the underlying API. link:http://aviator.github.io/www/[Homepage].
+- *Aviator* - A lightweight Ruby client library for cloud REST APIs. I initially
+built this for the OpenStack API. My focus was to build a library that reflected,
+rather than obscured the underlying API. link:http://aviator.github.io/www/[Homepage].
 
-- *Mana Mana* - A proof-of-concept business natural language testing framework that was inspired by Cucumber and the Robot framework. This was borne of my never-ending search for better ways to write maintainable automated tests. link:https://github.com/ManaManaFramework/manamana[Source in Github].
+- *Redmine Backlogs* - Redmine is an open software configuration management
+application. I built an agile plugin for it called Redmine Backlogs. These days,
+it is being maintained by a self-managing community at http://www.redminebacklogs.net
+and has also be forked by other projects such as https://www.openproject.org/features/agile-scrum/[OpenProject].
 
-- *Proprietary OpenStack Dashboard* - A multi-tenant dashboard for OpenStack built on Ruby/Rails that had its own billing module which was built on top of OpenStack Ceilometer.
+- *Mana Mana* - A proof-of-concept business natural language testing framework
+that was inspired by Cucumber and the Robot framework. This was borne of my
+never-ending search for better ways to write maintainable automated tests. link:https://github.com/ManaManaFramework/manamana[Source in Github].
 
 
 == One More Thing
 
-Coding without tests is like driving a car without seatbelts so I always make sure to cover my code with a reasonable amount of tests. Here's http://www.relaxdiego.com/2013/06/my-dev-setup.html[how I usually set up my Ruby projects] and here's http://www.relaxdiego.com/2014/03/my-dev-setup-python-edition.html[how I used to set up my Python projects] (Modified to use py.test and Tox since).
+Coding without tests is like driving a car without seatbelts so I always make
+sure to cover my code with a reasonable amount of tests. Here's http://www.relaxdiego.com/2013/06/my-dev-setup.html[how I usually set up my Ruby projects]
+and here's http://www.relaxdiego.com/2014/03/my-dev-setup-python-edition.html[how I used to set up my Python projects] (Modified to use py.test and Tox since).
 
 == Experience
 
 *Software Engineer* (2014 - Present) +
 Nexus IS (A Dimension Data Company), Pleasanton, CA
 
-Nexus is a leading provider of professional, cloud, consulting and managed services for advanced IT solutions. Our team actively contributes to the OpenStack, Open vSwitch, and Open DayLight projects.
+Nexus is a leading provider of professional, cloud, consulting and managed
+services for advanced IT solutions. Our team actively contributes to the
+OpenStack, Open vSwitch, and Open DayLight projects.
 
 .*Achievements*
 
-- Designed and implemented a framework for managing application lifecycle across cloud providers.
+- Designed and implemented a framework for managing application lifecycle
+across cloud providers.
 
-- Designed and implemented a test harness framework used by our testers for our various software products.
+- Designed and implemented a test harness framework used by our testers for
+our various software products.
 
-- Mentored and brought QA Engineers up to speed on testing our software products using the test harness framework.
+- Mentored and brought QA Engineers up to speed on testing our software
+products using the test harness framework.
 
 - Designed and implemented various client libraries for various cloud APIs.
 
@@ -65,49 +116,78 @@ Morph produced IaaS appliances that its customers can install inside of their da
 
 - Mentored developers on proper software development practices.
 
-- Helped set up the CI tools and process to ensure the main branch always has deployable, stable code.
+- Helped set up the CI tools and process to ensure the main branch always
+has deployable, stable code.
 
 
 *Software Product Manager* (2008 - 2012) +
 Exist Global, Manila, Philippines
 
-Exist provides tailored solutions, consulting and full cycle IT services to customers around the globe. At the time, I was assigned to Morph to help produce its cloud computing product.
+Exist provides tailored solutions, consulting and full cycle IT services to
+customers around the globe. At the time, I was assigned to Morph to help
+produce its cloud computing product.
 
 .*Responsibilities*
 
-- Oversaw the design and implementation of Morph AppSpace, one of the earliest Platform-as-a-Service providers in the market.
+- Oversaw the design and implementation of Morph AppSpace, one of the earliest
+Platform-as-a-Service providers in the market.
 
-- Managed the product roadmap to ensure that requirements are prioritized properly and that they contain the right information.
+- Managed the product roadmap to ensure that requirements are prioritized
+properly and that they contain the right information.
 
-- I helped Marketing Communications in their effort to generate product information for various marketing collateral.
+- I helped Marketing Communications in their effort to generate product
+information for various marketing collateral.
 
-- Implemented agile practices in Engineering to ensure timely delivery of stories and an overall coordinated effort of releases.
+- Implemented agile practices in Engineering to ensure timely delivery of
+stories and an overall coordinated effort of releases.
 
-- Spearheaded the development of Redmine Backlogs (www.redminebacklogs.net). This allowed us to incorporate agile practices into our bug tracker while allowing us to retain control of our data.
+- Spearheaded the development of Redmine Backlogs (www.redminebacklogs.net).
+This allowed us to incorporate agile practices into our bug tracker while
+allowing us to retain control of our data.
 
 
 *Systems Analyst/Programmer* (2003 - 2006) +
 Deco Machine Shop, Davao City, Philippines
 
-Deco Machine Shop, Inc. provides industrial machine fabrication services nationwide. Its major clients include Dole Philippines and San Miguel Corporation. As a systems analyst, my job was to understand the processes of the company and build software tools to automate parts of it. Software tools developed include a gear combination application which reduced a machinist’s work from one day to just under 10 minutes while increasing work precision.
+Deco Machine Shop, Inc. provides industrial machine fabrication services
+nationwide. Its major clients include Dole Philippines and San Miguel
+Corporation. As a systems analyst, my job was to understand the processes
+of the company and build software tools to automate parts of it. Software
+tools developed include a gear combination application which reduced a
+machinist’s work from one day to just under 5 seconds while increasing
+work precision.
 
 
 *Systems Analyst/Programmer* (2002 - 2003) +
 iThink Technologies, Davao City, Philippines
 
-iThink provides business software and training solutions for major companies nationwide. Major clients include the Bangko Sentral ng Pilipinas, Meralco, and Davao Light and Power Company. I was involved as a systems analyst/programmer for the development of purchasing systems, HR systems, and other enterprise applications for iThink’s major customers. I also spearheaded the use of the Unified Modeling Language within the company and also provided some in-house training for a number of then upcoming technologies and development platforms.
+iThink provides business software and training solutions for major companies
+nationwide. Major clients include the Bangko Sentral ng Pilipinas, Meralco,
+and Davao Light and Power Company. I was involved as a systems analyst/programmer
+for the development of purchasing systems, HR systems, and other enterprise
+applications for iThink’s major customers. I also spearheaded the use of the
+Unified Modeling Language within the company and also provided some in-house
+training for a number of then upcoming technologies and development platforms.
 
 
 *Web Developer* (2001 - 2002) +
 Smartweb Philippines, Cebu City, Philippines
 
-Smartweb was a US-based company with its production facility based in Cebu. It was involved in developing websites for small to medium sized businesses in the USA. I was a team leader in this organization. Apart from this, I also developed Smartweb’s employee time tracking and billing system, which later helped speed up the invoicing and employee time tracking for the company.
+Smartweb was a US-based company with its production facility based in Cebu.
+It was involved in developing websites for small to medium sized businesses
+in the USA. I was a team leader in this organization. Apart from this, I also
+developed Smartweb’s employee time tracking and billing system, which later
+helped speed up the invoicing and employee time tracking for the company.
 
 
-*Student Volunteer - Web Developer* (1997 - 2000)
+*Student Volunteer - Web Developer* (1997 - 2000) +
 University of San Carlos, Cebu City, Philippines
 
-While attending college I was also a volunteer of the University of San Carlos Web Development Team which was tasked to build and maintain the university’s website. I was involved in the implementation in both the client side and the server side of the website and was later promoted to team leader. The team was, by then, composed of 10 student volunteers.
+While attending college I was also a volunteer of the University of San Carlos
+Web Development Team which was tasked to build and maintain the university’s
+website. I was involved in the implementation in both the client side and the
+server side of the website and was later promoted to team leader. The team was,
+by then, composed of 10 student volunteers.
 
 
 
