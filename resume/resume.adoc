@@ -5,15 +5,16 @@
 mmaglana@gmail.com
 Pleasanton, CA
 
-The entire body of human knowledge is a graph, and I generally apply https://en.wikipedia.org/wiki/Breadth-first_search[BFS] to visit its nodes.
-Occasionally, when an interest and my capacity to dive deep into said interest
-intersect, I use a https://en.wikipedia.org/wiki/Depth-first_search[DFS] approach
-for as long as I can sustain it or until I reach a leaf node. This is how I
-ended up writing my own simple compiler, developing my own agile plugin, as
-well as receiving an academic excellence award for best strategic plan from
-the University of the Philippines School of Management. As I traverse this
-amazing data structure, my guiding principle has and will always be about
-making myself better at creating and delivering quality software.
+The entire body of human knowledge is a graph and I generally apply https://en.wikipedia.org/wiki/Breadth-first_search[BFS]
+to visit its nodes. Occasionally, when an interest and my capacity to do
+a deep dive intersect, I use a https://en.wikipedia.org/wiki/Depth-first_search[DFS]
+approach for as long as I can sustain it or until I reach a leaf node.
+This is how I ended up writing my own simple compiler, developing an agile
+plugin, automating my tennis court reservations, as well as receiving
+an academic excellence award for best strategic plan from the University
+of the Philippines School of Management. As I traverse this amazing data
+structure, my guiding principle has and will always be about making myself
+better at creating and delivering quality software.
 
 == Accomplishments
 
@@ -205,4 +206,6 @@ University of San Carlos
 
 == Misc.
 
-This resume is available online at http://www.relaxdiego.com/resume. Its source code may be found at https://github.com/relaxdiego/relaxdiego.github.com/blob/master/resume/resume.adoc.
+This resume is available online at http://www.relaxdiego.com/resume. Its
+source code may be found at https://github.com/relaxdiego/relaxdiego.github.com/blob/master/resume/resume.adoc.
+The latest PDF is always at http://www.relaxdiego.com/resume.pdf

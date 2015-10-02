@@ -1,0 +1,7 @@
+set +x
+jekyll build
+rm resume.pdf
+cd resume
+asciidoctor index.adoc
+asciidoctor-pdf resume.adoc
+mv resume.pdf ../
