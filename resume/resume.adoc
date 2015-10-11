@@ -5,16 +5,12 @@
 mmaglana@gmail.com
 Pleasanton, CA
 
-The entire body of human knowledge is a graph and I generally apply https://en.wikipedia.org/wiki/Breadth-first_search[BFS]
-to visit its nodes. Occasionally, when an interest and my capacity to do
-a deep dive intersect, I use a https://en.wikipedia.org/wiki/Depth-first_search[DFS]
-approach for as long as I can sustain it or until I reach a leaf node.
-This is how I ended up writing my own simple compiler, developing an agile
-plugin, automating my tennis court reservations, as well as receiving
-an academic excellence award for best strategic plan from the University
-of the Philippines School of Management. As I traverse this amazing data
-structure, my guiding principle has and will always be about making myself
-better at creating and delivering quality software.
+I'm a Ruby/Python developer. I wrote my own simple compiler, developed
+an agile plugin, automated my tennis court reservations, as well as
+won the academic excellence award for best strategic plan from the
+University of the Philippines School of Management. My professional life
+is guided by my desire to continually make myself better at creating and
+delivering quality software.
 
 == Accomplishments
 
