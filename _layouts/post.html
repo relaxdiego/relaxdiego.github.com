@@ -28,7 +28,8 @@
           <div class="page-header">
             <h2>
               {{ page.title }}
-              <small>{{ page.date | date_to_string }}</small>
+              <small><br/>{{ page.date | date_to_string }} :
+              {% include read_time.html %} read</small>
             </h2>
           </div>
           {{content}}
