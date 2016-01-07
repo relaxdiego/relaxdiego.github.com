@@ -1,0 +1,113 @@
+---
+layout: post
+title: Calculator Design Study
+comments: true
+categories: UI
+---
+<!--
+  Yeah, I know, this is not proper HTML. I don't care. That's not
+  the point of this post
+-->
+<p>We have two simple calculators below that perform simple arithmetic
+operations. Specifically +, -, *, and /. Other than these four 
+operators and numeric characters, they do not work with 
+anything else and that's good enough for this very simply exercise.</p>
+
+<p>Perform the following on each calculator:
+
+<ol>
+  <li>Calculate 1 + 1 (Pressing &lt;Enter&gt; performs the calculation)
+  <li>Add a 3 to the sum
+  <li>You should end up with 5
+</ol>
+</p>
+
+<p>
+Note that step 2 is performed differently on each calculator. 
+
+<ul>
+  <li>For Calc 1, position the cursor to the right of 2 before adding the 3.</li>
+  <li>For Calc 2, you may type +3&lt;Enter&gt; directly (no need to 
+    position the  cursor first)</li>
+</p>
+
+<table style="width:100%">
+  <tr>
+    <td>
+      <p>
+      Calculator 1:<br/>
+      <input type="text" id="calc1"/>
+      </p>
+    </td>
+    <td>
+      <p>
+      Calculator 2:<br/>
+      <input type="text" id="calc2"/>
+      </p>
+    </td>
+  </tr>
+</table>
+
+<p>
+Now kindly answer the following poll:<br/>
+<iframe src="http://files.quizsnack.com/iframe/embed.html?hash=q7p3qhxb&width=250&height=370&wmode=transparent&t=1452128756&width=250&height=370" width="250" height="450" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
+</p>
+
+<script>
+
+function select(input){
+  input.focus();
+  input.setSelectionRange(0, 9999);
+}
+
+calc1 = document.getElementById('calc1');
+
+calc1.onfocus=function(){
+  select(this);
+}
+
+calc1.onkeyup=function(event){
+  if(event.keyCode == 13){
+    this.value = eval(this.value);
+    select(this);
+  }
+}
+
+calc2 = document.getElementById('calc2');
+calc2FirstKey = true;
+
+calc2.onfocus=function(){
+  console.log('focus')
+  select(this);
+  calc2FirstKey = true;
+}
+
+calc2.onkeyup=function(event){
+  console.log('keyup')
+  var key = event.keyCode
+
+  console.log(key)
+
+  if(key == 9){
+    // do nothing
+  } else if(key == 13){
+    this.value = this.defaultValue = eval(this.value);
+    calc2FirstKey = true;
+    select(this);
+
+  } else if (calc2FirstKey) {
+
+    ops = {
+      187: '+',
+      189: '-',
+      56:  '*',
+      191: '/'
+    }
+
+    if(Object.keys(ops).indexOf(key.toString()) > -1){
+      this.value = this.defaultValue = this.defaultValue + ops[key];
+    }
+    calc2FirstKey = false;
+  }
+}
+</script>
