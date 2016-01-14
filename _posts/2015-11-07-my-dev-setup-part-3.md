@@ -10,11 +10,18 @@ The most drastic change is that I've dropped TextMate, Sublime, and Atom and
 finally took the plunge into the world of Vim and Tmux and, so far, I have
 been very impressed with the results.
 
+# Swap Ctrl and Caps Lock!
+
+This is very important. Seriously. A lot of the commands and actions
+that I mention below use Ctrl-A and Ctrl-(Vim movement keys).
+Swapping my Ctrl and Caps Lock keys allows my fingers to stay in the
+home row most of the time.
+
 # Vim + Tmux
 
 This is my typical Vim + Tmux window setup when coding:
 
-![](/assets/images/devsetup3/001.png)
+[![](/assets/images/devsetup3/001.png)](/assets/images/devsetup3/001.png)
 
 * I use Tmux panes to organize my tools for each project
 * The top pane is Vim, split vertically. The left window is for tests,
