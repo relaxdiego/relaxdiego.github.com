@@ -8,9 +8,9 @@ Article Version: 1.0.0+beta1
 
 I'm writing an Ansible module that I hope to contribute to the core modules.
 In the process of doing so, I noticed that there wasn't any resource that completely
-described how to get started on your dev environment. This series of articles
-documents the steps that I took to get up and running. Hopefully it will be a
-helpful resource for you too.
+described how to get started on your dev environment. This article documents
+the steps that I took to get up and running. Hopefully it will be a helpful
+resource for you too.
 
 I should mention though that the following links helped me get started quickly
 in certain aspects. So a big thanks to the authors!
