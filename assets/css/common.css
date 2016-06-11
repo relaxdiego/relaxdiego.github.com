@@ -27,6 +27,12 @@ code {
   margin-bottom: 6pt;
 }
 
+#post h2 a,
+#post h3 a,
+#post h4 a {
+    color: black;
+}
+
 #post img {
 	display: block;
 	margin-bottom: 20px;
