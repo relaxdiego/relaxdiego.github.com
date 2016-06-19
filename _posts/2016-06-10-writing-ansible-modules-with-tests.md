@@ -4,7 +4,7 @@ title: Writing Ansible Modules Complete With Tests
 comments: true
 categories: software development, automated testing, code coverage, agile, tdd, bdd
 ---
-Article Version: 1.0.0+beta1
+Article Version: 1.0.0+beta2
 
 I'm writing an Ansible module that I hope to contribute to the core modules.
 In the process of doing so, I noticed that there wasn't any resource that completely
@@ -13,7 +13,8 @@ the steps that I took to get up and running. Hopefully it will be a helpful
 resource for you too.
 
 I should mention though that the following links helped me get started quickly
-in certain aspects. So a big thanks to the authors!
+in certain aspects. So a big thanks to the authors! This article builds on these
+foundations.
 
 - [Unit Testing Ansible Modules](http://linuxsimba.com/unit_testing_ansible_modules_part_1)
 - [Module Development Page](http://docs.ansible.com/ansible/developing_modules.html#testing-modules)
@@ -40,6 +41,7 @@ your kind of thing, the source for this website is on
     - Jinja2
     - httplib2
     - six
+    - nose
 - Basic testing knowledge including mocking. If you're not too familiar with
   mocking, you can still follow along but I would encourage your to read up
   on it after you're done here as it will help make your tests more robust.
@@ -210,7 +212,6 @@ click the Sync account button.
 
 [![](/assets/images/travis-ci-enable.png)](/assets/images/travis-ci-enable.png)
 
-
 From now on, anytime you push to your repos, you'll get feedback from Travis.
 No need to create pull requests just to know you messed up! I should note,
 however, that Travis won't automatically run the tests you will write below
@@ -357,7 +358,15 @@ It's a quick 5~6-minute read.
 We want our module to instantiate AnsibleModule and specify two arguments,
 namely url and dest. So let's write our test to validate that.
 
-Create
+First, since we're going to be using nose as our test framework, we have to
+ensure that every subdirectory in the following path as an `__init__.py`
+otherwise nose will not load our tests. Go ahead and make sure there's
+that file in every directory in this path:
+
+    test/unit/cloud/somebodysocomputer/
+
+
+Next create
 `<core modules repo>/test/unit/cloud/somebodyscomputer/test_firstmod.py`
 with the following contents:
 
@@ -392,26 +401,32 @@ class TestFirstMod:
 
 Let's execute this test. From the **core modules repo**, run:
 
-
-    $ py.test --random test/unit/cloud/somebodyscomputer/test_firstmod.py
+    $ nosetests --doctest-tests -v test/unit/cloud/somebodyscomputer/test_firstmod.py
 
 
 This should get you an error because we haven't written our module yet:
 
+    Failure: ImportError (cannot import name firstmod) ... ERROR
 
-    ================================ test session starts ================================
-    platform darwin -- Python 2.7.10, pytest-2.9.2, py-1.4.30, pluggy-0.3.1
-    Tests are shuffled using seed number 375169382552.
-    rootdir: /Users/mmaglana/src/github.com/relaxdiego/ansible, inifile:
-    plugins: random-0.2
-    collected 0 items / 1 errors
+    ======================================================================
+    ERROR: Failure: ImportError (cannot import name firstmod)
+    ----------------------------------------------------------------------
+    Traceback (most recent call last):
+      File "/usr/local/var/pyenv/versions/2.7.10/lib/python2.7/site-packages/nose/loader.py", line 418, in loadTestsFromName
+        addr.filename, addr.module)
+      File "/usr/local/var/pyenv/versions/2.7.10/lib/python2.7/site-packages/nose/importer.py", line 47, in importFromPath
+        return self.importFromDir(dir_path, fqname)
+      File "/usr/local/var/pyenv/versions/2.7.10/lib/python2.7/site-packages/nose/importer.py", line 94, in importFromDir
+        mod = load_module(part_fqname, fh, filename, desc)
+      File "/Users/mmaglana/src/github.com/relaxdiego/ansible/lib/ansible/modules/core/test/unit/cloud/somebodyscomputer/test_firstmod.py",
+     line 3, in <module>
+        from cloud.somebodyscomputer import firstmod
+    ImportError: cannot import name firstmod
 
-    ====================================== ERRORS =======================================
-     ERROR collecting lib/ansible/modules/core/test/unit/cloud/somebodyscomputer/test_firstmod.py
-    test/unit/cloud/somebodyscomputer/test_firstmod.py:3: in <module>
-        from ansible.modules.core.cloud.somebodyscomputer import firstmod
-    E   ImportError: cannot import name firstmod
-    ============================== 1 error in 0.01 seconds ==============================
+    ----------------------------------------------------------------------
+    Ran 1 test in 0.001s
+
+    FAILED (errors=1)
 
 
 ## SIDEBAR: That's a Lot of Typing Just to Run One Test!
@@ -445,17 +460,12 @@ if __name__ == '__main__':
 
 Run the test again to see it pass:
 
+    ansible.modules.core.test.unit.cloud.somebodyscomputer.test_firstmod.TestFirstMod.test__main__success ... ok
 
-    ============================= test session starts ==============================
-    platform darwin -- Python 2.7.10, pytest-2.9.2, py-1.4.30, pluggy-0.3.1 -- /usr/local/var/pyenv/versions/2.7.10/bin/python2.7
-    cachedir: ../../../../.cache
-    rootdir: /Users/mmaglana/src/github.com/relaxdiego/ansible, inifile:
-    plugins: random-0.2
-    collected 1 items
+    ----------------------------------------------------------------------
+    Ran 1 test in 0.024s
 
-    test/unit/cloud/somebodyscomputer/test_firstmod.py::TestFirstMod::test__main__success <- /Users/mmaglana/src/github.com/relaxdiego/ansible/lib/ansible/modules/core/test/unit/cloud/somebodyscomputer/test_firstmod.py PASSED
-    =========================== 1 passed in 0.07 seconds ===========================
-
+    OK
 
 
 ## Now Let's Actually Write Useful Code!
