@@ -31,7 +31,7 @@ your kind of thing, the source for this website is on
 - Git branching basics. [Learn Git Branching](http://learngitbranching.js.org)
   is a great resource!
 
-- Python 2.7
+- Python >= 2.7.8 && < 3.0.0
 
 - Pip
 
@@ -498,7 +498,7 @@ class TestFirstMod:
         # Exercise code
         firstmod.main()
 
-        # Assert call to AsnibleModule
+        # Assert call to AnsibleModule
         expected_arguments_spec = dict(
             url=dict(required=True),
             dest=dict(required=False, default="/tmp/firstmod")
@@ -558,7 +558,7 @@ def fetch_data(mod, url):
     raise NotImplementedError
 
 
-def write_data(mod, data, dest):
+def write_data(data, dest):
     raise NotImplementedError
 
 if __name__ == '__main__':
