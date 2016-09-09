@@ -4,11 +4,10 @@ title: Writing Ansible Modules Complete With Tests
 comments: true
 categories: software development, automated testing, code coverage, agile, tdd, bdd
 ---
-Article Version: 1.1.0
+Article Version: 1.1.1
 
-I'm writing an Ansible module that I hope to contribute to the core modules.
-In the process of doing so, I noticed that there wasn't any resource that completely
-described how to get started on your dev environment. This article documents
+While writing an ansible module, I noticed that there wasn't any resource that completely
+described how to get started on my local dev environment. This article documents
 the steps that I took to get up and running. Hopefully it will be a helpful
 resource for you too.
 
@@ -22,7 +21,7 @@ foundations.
 
 ## Sidebar: If You See Any Errors in This Doc
 
-Please don't hesitate to let me know via the comments below. Or if pull requests are
+Please don't hesitate to let me know via the comments below or, if pull requests are
 your kind of thing, the source for this website is on
 [GitHub](https://github.com/relaxdiego/relaxdiego.github.com).
 
@@ -46,14 +45,14 @@ your kind of thing, the source for this website is on
 
 - Basic testing knowledge including mocking. If you're not too familiar with
   mocking, you can still follow along but I would encourage your to read up
-  on it after you're done here as it will help make your tests more robust.
+  on it after you're done here as it will help make your unit tests more robust.
 
 
 ## Prep Your Ansible Repo
 
 If you haven't already done so, fork the [Ansible](https://github.com/ansible/ansible)
 repo to a GitHub account or organization you have access to. Afterwards, clone your
-fork recursively (includes its submodules):
+fork recursively (includes any git submodules):
 
     $ git clone git@github.com:<your-github-account>/ansible.git --recursive
 
@@ -62,7 +61,7 @@ Then, add the upstream Ansible repo as 'upstream'
     $ cd ansible
     $ git remote add upstream https://github.com/ansible/ansible
 
-After this, you now should have two remotes with 'origin' pointing to your
+After this, you now should have two remotes with 'origin' pointing to your Github
 fork of the repo, and 'upstream' pointing to the upstream repo. You won't be
 able to push upstream but you can fetch from it and then create pull requests
 which is how it should be.
@@ -73,7 +72,7 @@ which is how it should be.
     upstream        https://github.com/ansible/ansible (fetch)
     upstream        https://github.com/ansible/ansible (push)
 
-I'm going to refer to your local clone the **ansible repo** from now on.
+I'm going to refer to your local clone as your  **ansible repo** from now on.
 
 
 ## Sidebar: Add a Few Git Aliases to Your Toolkit!
@@ -84,18 +83,17 @@ your `~/.gitconfig` under the aliases section:
 
     [alias]
     fa = fetch --all
-    far = fetch --all --recurse-submodules
     t = log --graph --pretty=oneline --abbrev-commit --decorate --color
     ta = log --graph --pretty=oneline --abbrev-commit --decorate --color --all
 
 With these, you'll gain the following `git` commands:
 
-- `git ta` - See the history of your repo laid out in a tree
-- `git t` - See just the tree of the current branch
 - `git fa` - Fetch (but don't merge) the latest from all remotes
+- `git t` - See the history of the current branch laid out in a tree
+- `git ta` - See the history of the entire repo laid out in a tree
 
 
-## Prep Your Core (or Extras) Modules Repo
+## Prep Your Extras Modules Repo
 
 Go to the extras modules subdir
 
@@ -116,13 +114,14 @@ If you view this repo's remotes, you will see:
 
 
 We want the naming of this repo's remotes to be consistent with that of
-the parent repo. So let's rename origin to upstream:
+your **ansible repo**. So let's rename origin to upstream:
 
     $ git remote rename origin upstream
 
-Then, if you haven't already done so, create a fork of the
+Then, if you haven't already done so, create a fork in Github of the
 [ansible-modules-extras](https://github.com/ansible/ansible-modules-extras)
-repo in the same account where you placed your fork of the Ansible repo.
+repo. Make sure to put the fork in the same account where you placed your 
+fork of the Ansible repo.
 
 Now, add that fork as a remote to your local repo and name it 'origin':
 
@@ -136,11 +135,10 @@ Your remotes list should now be:
     upstream        https://github.com/ansible/ansible-modules-extras (fetch)
     upstream        https://github.com/ansible/ansible-modules-extras (push)
 
-I'm going to refer to this local clone the **extras repo** from
-now on.
+I'm going to refer to this local clone as your **extras repo** from now on.
 
-If you plan on contributing to the core modules repo too, just repeat the same steps
-above but replace extras with core.
+NOTE: If you plan on contributing to the core modules repo too, just repeat 
+the same steps above but replace extras with core.
 
 
 ## Prepare Your Environment For Local Development
@@ -195,7 +193,7 @@ It's like Flake8 for Ansible. Install it with:
 
     $ pip install git+https://github.com/sivel/ansible-testing.git#egg=ansible_testing
 
-Try running it with:
+From your **ansible repo**, run it with:
 
     $ ansible-validate-modules lib/ansible/modules/core/cloud/amazon
 
@@ -211,13 +209,13 @@ First, in the **extras repo**, let's create our module's subdir:
     $ mkdir cloud/somebodyscomputer
     $ touch cloud/somebodyscomputer/__init__.py
 
-From now on, I'll refer to this as the **module dir**.
+From now on, I'll refer to this as your **module dir**.
 
 
 ## Let's kick the tires for a bit...
 
 First, let's create a topic branch from the HEAD of devel and work there. 
-Working on a topic branch has it's advantage in that, should new changes be 
+Working on a topic branch has its advantages in that, should new changes be 
 added to upstream/devel, all you have to do is fetch those and then rebase 
 your topic branch on top of it.
 
@@ -227,7 +225,7 @@ Let's create our topic branch:
 
 Let's use the simple example from the [Module Development Page](http://docs.ansible.com/ansible/developing_modules.html#testing-modules)
 just to get familiar with the terrain a bit. In your **module dir**,
-create a file called `timetest.py` with the following contents:
+create a file called `timetest.py` with the following content:
 
 {%highlight python linenos%}
 #!/usr/bin/python
@@ -265,7 +263,7 @@ This should give you an output similar to the following:
 What just happened is that the test-module script executed your
 module without loading all of ansible. This is a nice way to quickly
 do a sort-of-end-to-end test of your module after you've written your
-unit tests. I **would not** recommend using it exclusively for your testing
+unit tests. I **would not** recommend using it exclusively as your testing
 strategy. It's best used alongside unit tests and `ansible-validate-modules`
 which we'll use next.
 
@@ -289,8 +287,7 @@ Ignore those errors for now while we're still kicking the tires.
 
 ## Let's Write A Real(-ish) Module!
 
-Let's clear the work directory of our **extras repo**. From the **extras repo**
-run:
+Let's start with a clean slate. From your **extras repo** run:
 
     $ git reset --hard
 
@@ -299,13 +296,15 @@ Next, let's install some Python packages needed by our tests. From your
 
     $ pip install -r test/utils/tox/requirements.txt
 
+NOTE: If you're developing on Python 3.0+, use requirements-py3.txt instead
+
 
 ## SIDEBAR: Here Be (Testing) Dragons!
 
 I expect that you already know how to write good tests and mocks because I
-don't have time to teach you that. If you don't, read up on some articles and
-books about it and then come back here. You can still follow along and you might
-make out a few things. But testing know-how will go a long way in these parts.
+don't have time to teach you that. If you don't, you might still be able to 
+follow along and make out a few things but testing know-how will go a long 
+way in these parts.
 
 If you're confident with your mad testing skillz but your mocking-fu is a bit
 rusty, I will have to ask you to read
@@ -332,25 +331,30 @@ in the **extras repo**, its respective tests will be written in the **ansible
 repo**. That means that, later on, you'll be submitting a pull request to
 the upstream extras repo (which will contain your module code) and another PR
 to the upstream ansible repo (which will contain your unit tests). Unfortunately,
-that will have to be the way it's done for now until the both repos are combined. For more
-information, see [https://github.com/ansible/proposals/blob/master/modules-management.md](https://github.com/ansible/proposals/blob/master/modules-management.md)
-
+that will have to be the way it's done for now until both repos are combined. For more
+information, see [https://github.com/ansible/proposals/blob/master/modules-management.md](https://github.com/ansible/proposals/blob/master/modules-management.md).
 I'll walk you through the process of submission later in this article.
+
 
 ## On With the Tests
 
-We want our module to instantiate AnsibleModule and specify two arguments,
+We want our module to instantiate AnsibleModule and accept two arguments,
 namely url and dest. So let's write our test to validate that.
 
 First, since we're going to be using nose as our test framework, we have to
-ensure that every subdirectory in the following path as an `__init__.py`
+ensure that every subdirectory in the following path has an `__init__.py`,
 otherwise nose will not load our tests. Go ahead and make sure there's
 that file in every directory in this path in your **ansible repo**:
 
-    test/units/modules/extras/cloud/somebodyscomputer
+    touch test/__init__.py
+    touch test/units/__init__.py
+    touch test/units/modules/__init__.py
+    touch test/units/modules/extras/__init__.py
+    touch test/units/modules/extras/cloud/__init__.py
+    touch test/units/modules/extras/cloud/somebodyscomputer/__init__.py
 
 
-Next create `<ansible repo>/test/units/modules/extras/cloud/somebodyscomputer/test_firstmod.py`
+Next create `test/units/modules/extras/cloud/somebodyscomputer/test_firstmod.py`
 with the following contents:
 
 
@@ -363,7 +367,8 @@ from ansible.modules.extras.cloud.somebodyscomputer import firstmod
 
 class TestFirstMod(unittest.TestCase):
 
-    @mock.patch("ansible.modules.extras.cloud.somebodyscomputer.firstmod.AnsibleModule", autospec=True)
+    @mock.patch("ansible.modules.extras.cloud.somebodyscomputer.firstmod"
+                ".AnsibleModule", autospec=True)
     def test__main__success(self, ansible_mod_cls):
         firstmod.main()
 
@@ -375,15 +380,15 @@ class TestFirstMod(unittest.TestCase):
                          ansible_mod_cls.call_args)
 {%endhighlight%}
 
-- **Line 9** - We're mocking AnsibleModule making sure autospec is True so that we
-  don't create a false positive via fat-fingering arguments and methods. We also
-  don't do anything else with the mock until we do our assertions because
-  this test is only about checking if the module provided the correct values
-  to argument_spec.
-- **Line 17** - This is where we assert the call to our mock class to check
-  if it called it properly.
+- **Line 9 to 10** - We're mocking AnsibleModule making sure autospec is True so 
+  that we don't create a false positive when we accidentally fat-finger 
+  arguments and methods. We also don't do anything else with the mock until 
+  we do our assertions because this test is only about checking if the module 
+  provided the correct values to argument_spec.
+- **Line 18** - This is where we assert the call to our mock class to check
+  if it was called properly.
 
-Let's execute this test. From the **core modules repo**, run:
+Let's execute this test. From the **extras repo**, run:
 
     $ nosetests --doctest-tests -v test/unit/cloud/somebodyscomputer/test_firstmod.py
 
@@ -559,11 +564,12 @@ mocked these methods in our test. Run the tests and see it pass.
 
 ## SIDEBAR: But If They're Mocked, Why Write The Methods At All?
 
-That's because I patched them with the `autospec` argument set to `True` in the
-test. When we do that, the test will throw an error saying that the method signatures
-could not be found. This is a great way to protect ourselves from creating a mock
-of a class or method signature that doesn't actually exist. Without this protection,
-we'll create false positives everywhere in our test, rendering it useless.
+That's because, if you look back at the test, I patched them with the `autospec` 
+argument set to `True`. When we do that, the test will throw an error saying 
+that the method signatures could not be found. This is a great way to protect 
+ourselves from creating a mock of a class or method signature that doesn't 
+actually exist. If this protection was not in place, we'll create false positives 
+everywhere in our test, rendering it useless.
 
 
 ## Let's Implement fetch_data()
@@ -739,6 +745,7 @@ For an explanation of these strings, see Ansible's [Developing Modules Page](htt
 
 Run the linter again. BOOM!
 
+
 ## Test The Module Manually With Arguments This Time
 
 We can write a playbook that uses our module now if we want to
@@ -752,6 +759,7 @@ Next, run the following to see what it downloaded:
 
     $ cat /tmp/ansibletest.txt
 
+
 ## Run the Sanity Tests
 
 It's a good idea to run the sanity tests every now and then so that you'll
@@ -762,14 +770,14 @@ source. From your **ansible repo** run:
 
 If the test fails, you may have introduced some erroneous code. Check the
 error messages and fix as needed. If you're sure it's not your fault, check
-if you're working on top of an old upstream commit. In that case, rebase
+if you're working on top of an old upstream commit. If that's that case, rebase
 your changes to the latest from upstream and try again.
 
 
 ## Time To Push to Origin!
 
 Remember that we're working on two git repos here. First is the **ansible repo**
-and second is the **extras repo**. Let's work on submitting the former first.
+and second is the **extras repo**. Let's work on latter the former first.
 
 Run the following from the **extras repo**:
 
@@ -803,9 +811,9 @@ a single PR setup once the two repos have been combined.
 
 Always make sure that your topic branch is based off of the HEAD
 of the parent branch. In our case above, we created `test_branch` off
-of `upstream/devel`. As we're working on `test_branch`, new commits are
+of `upstream/devel`. While working on `test_branch`, new commits are
 merged to `upstream/devel`. It is, therefore, a good idea to do this
-regularly (while in a topic branch of **extras repo**):
+regularly:
 
     $ git add .
     $ git commit
@@ -823,5 +831,4 @@ than later.
 
 Yup, that's the end of it for now. Post in the comments or
 [file a bug](https://github.com/relaxdiego/relaxdiego.github.com/issues/new)
-if you find any errors or have any questions. If you read this
-in one sitting, you deserve another bottle of beer!
+if you find any errors or have any questions.
