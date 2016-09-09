@@ -17,7 +17,8 @@ foundations.
 
 - [Unit Testing Ansible Modules](http://linuxsimba.com/unit_testing_ansible_modules_part_1)
 - [Module Development Page](http://docs.ansible.com/ansible/developing_modules.html#testing-modules)
-
+- Matt Clay on the [ansible-devel mailing list](https://groups.google.com/forum/#!forum/ansible-devel)
+  and IRC for guiding me on the nuances of submitting tests with the modules.
 
 ## Sidebar: If You See Any Errors in This Doc
 
