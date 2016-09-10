@@ -1,6 +1,7 @@
 name: relaxdiego
 description: Software Development and other stuff.
-url: http://www.relaxdiego.com
+url: https://www.relaxdiego.com
+enforce_ssl: www.relaxdiego.com
 permalink: /:year/:month/:title.html
 highlighter: rouge
 markdown: kramdown
