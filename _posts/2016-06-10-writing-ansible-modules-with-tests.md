@@ -4,7 +4,7 @@ title: Writing Ansible Modules Complete With Tests
 comments: true
 categories: software development, automated testing, code coverage, agile, tdd, bdd
 ---
-Article Version: 1.1.1
+Article Version: 1.1.2
 
 While writing an ansible module, I noticed that there wasn't any resource that completely
 described how to get started on my local dev environment. This article documents
@@ -239,6 +239,12 @@ print json.dumps({
     "time" : date
 })
 {%endhighlight%}
+
+IMPORTANT: Notice the shebang reads `#!/usr/bin/env python` and not
+`#!/usr/bin/python`. This is important especially for the next step since
+the former will use the first python interpreter found via your $PATH
+environment variable whereas the latter will always use `/usr/bin/python`
+no matter what.
 
 You just created your first module! At this point, we can create a
 playbook that uses your timetest module and then execute it with
