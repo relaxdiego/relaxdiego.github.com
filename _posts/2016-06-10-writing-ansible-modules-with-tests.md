@@ -229,7 +229,7 @@ just to get familiar with the terrain a bit. In your **module dir**,
 create a file called `timetest.py` with the following content:
 
 {%highlight python linenos%}
-#!/usr/bin/python
+#!/usr/bin/env python
 
 import datetime
 import json
@@ -432,7 +432,7 @@ Create `<extras repo>/cloud/somebodyscomputer/firstmod.py` with the following co
 
 
 {%highlight python linenos%}
-#!/usr/bin/python
+#!/usr/bin/env python
 from ansible.module_utils.basic import AnsibleModule
 
 
@@ -529,7 +529,7 @@ code to pass it. Your `firstmodule.py` should now look like this:
 
 
 {%highlight python linenos%}
-#!/usr/bin/python
+#!/usr/bin/env python
 from ansible.module_utils.basic import AnsibleModule
 
 
