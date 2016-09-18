@@ -2,6 +2,10 @@ code {
   padding: 0px 4px; /* Override the default padding from Bootstrap */
 }
 
+.highlight td.gutter {
+  width: 30px;
+}
+
 #post p,
 #post h3,
 #post li {

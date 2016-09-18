@@ -1,6 +1,6 @@
-.highlight  { background: #ffffff; }
-.highlight pre { padding: 0; margin: 0; border-color: transparent; font-size: 13px }
-.highlight pre .lineno { margin-right: 13px; }
+.highlight  { background: #ffffff; margin-left: 0; margin-right: 0; }
+.highlight pre { padding: 0; margin: 0; border-color: transparent; font-size: 11px }
+.highlight pre .lineno { margin-right: 10px; }
 .highlight table { border-color: transparent }
 .highlight .c { color: #999988; font-style: italic } /* Comment */
 .highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
