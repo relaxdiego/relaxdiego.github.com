@@ -4,7 +4,7 @@ title: Writing Ansible Modules Complete With Tests
 comments: true
 categories: software development, automated testing, code coverage, agile, tdd, bdd
 ---
-Article Version: 1.1.2
+Article Version: 1.1.3
 
 While writing an ansible module, I noticed that there wasn't any resource that completely
 described how to get started on my local dev environment. This article documents
@@ -229,7 +229,7 @@ just to get familiar with the terrain a bit. In your **module dir**,
 create a file called `timetest.py` with the following content:
 
 {%highlight python linenos%}
-#!/usr/bin/env python
+#!/usr/bin/python
 
 import datetime
 import json
@@ -239,12 +239,6 @@ print json.dumps({
     "time" : date
 })
 {%endhighlight%}
-
-IMPORTANT: Notice the shebang reads `#!/usr/bin/env python` and not
-`#!/usr/bin/python`. This is important especially for the next step since
-the former will use the first python interpreter found via your $PATH
-environment variable whereas the latter will always use `/usr/bin/python`
-no matter what.
 
 You just created your first module! At this point, we can create a
 playbook that uses your timetest module and then execute it with
@@ -438,7 +432,7 @@ Create `<extras repo>/cloud/somebodyscomputer/firstmod.py` with the following co
 
 
 {%highlight python linenos%}
-#!/usr/bin/env python
+#!/usr/bin/python
 from ansible.module_utils.basic import AnsibleModule
 
 
@@ -535,7 +529,7 @@ code to pass it. Your `firstmodule.py` should now look like this:
 
 
 {%highlight python linenos%}
-#!/usr/bin/env python
+#!/usr/bin/python
 from ansible.module_utils.basic import AnsibleModule
 
 
