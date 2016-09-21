@@ -4,7 +4,7 @@ title: Writing Ansible Modules Complete With Tests
 comments: true
 categories: software development, automated testing, code coverage, agile, tdd, bdd
 ---
-Article Version: 1.1.3
+Article Version: 1.1.4
 
 While writing an ansible module, I noticed that there wasn't any resource that completely
 described how to get started on my local dev environment. This article documents
@@ -827,6 +827,34 @@ and avoid any merge conflicts down the line. If you do this regularly
 and do encounter a merge conflict, it will be easier to fix now
 than later.
 
+
+## BONUS: Get some code coverage!
+
+Writing unit tests is great but blindly writing tests is not enough. So let's
+see how much of your module's code is covered. For this, we'll use Ned
+Batchelder's awesome coverage library. To get started, let's install it:
+
+    $ pip install coverage
+
+Next, we'll use it with nose as follows:
+
+    $ nosetests -v --with-coverage --cover-html \
+      --cover-package='ansible.modules.extras.cloud.somebodyscomputer' \
+      --cover-html-dir=/tmp/coverage -w test/unit/cloud/somebodyscomputer
+
+By running this single command, you'll get two things. First is a quick
+test coverage summary via the terminal. Second is an HTML format of the
+same coverage report with information on which lines of your code has
+been executed by tests or not. A green line means it's been executed
+(and therefore tested) while red means it was not. Go ahead and open
+`/tmp/coverage/index.html` in your browser and be enlightened!
+
+[![](/assets/images/coverage-detail-python.png)](/assets/images/coverage-detail-python.png)
+
+
+IMPORTANT: A fully covered module doesn't automatically mean it's bug free.
+But the coverage report is a great way to find out which parts of your
+code needs some testing TLC.
 
 ## What, You're Still Here??!
 
