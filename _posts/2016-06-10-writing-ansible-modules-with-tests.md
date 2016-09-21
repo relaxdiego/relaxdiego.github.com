@@ -4,7 +4,7 @@ title: Writing Ansible Modules Complete With Tests
 comments: true
 categories: software development, automated testing, code coverage, agile, tdd, bdd
 ---
-Article Version: 1.1.4
+Article Version: 1.1.5
 
 While writing an ansible module, I noticed that there wasn't any resource that completely
 described how to get started on my local dev environment. This article documents
@@ -32,7 +32,8 @@ your kind of thing, the source for this website is on
 - Git branching basics. [Learn Git Branching](http://learngitbranching.js.org)
   is a great resource!
 
-- Python >= 2.7.8 && < 3.0.0
+- Python >= 2.7.8 && < 3.0.0. NOTE: You might be able to get the code 
+  samples in this article to work on Python 3.x but I haven't tried it yet.
 
 - Pip
 
