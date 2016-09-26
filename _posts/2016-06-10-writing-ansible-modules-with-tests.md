@@ -4,7 +4,7 @@ title: Writing Ansible Modules Complete With Tests
 comments: true
 categories: software development, automated testing, code coverage, agile, tdd, bdd
 ---
-Article Version: 1.1.5
+Article Version: 2.0.0
 
 While writing an ansible module, I noticed that there wasn't any resource that completely
 described how to get started on my local dev environment. This article documents
@@ -17,8 +17,10 @@ foundations.
 
 - [Unit Testing Ansible Modules](http://linuxsimba.com/unit_testing_ansible_modules_part_1)
 - [Module Development Page](http://docs.ansible.com/ansible/developing_modules.html#testing-modules)
-- Matt Clay on the [ansible-devel mailing list](https://groups.google.com/forum/#!forum/ansible-devel)
-  and IRC for guiding me on the nuances of submitting tests with the modules.
+- [Matt Clay](https://github.com/mattclay), [John Barker](https://github.com/gundalow),
+  [Toshio Kuratomi](https://github.com/abadger), [Brian Coca](https://github.com/bcoca), 
+  [Tim Rupp](https://github.com/caphrim007), [Allen Sanabria](https://github.com/linuxdynasty), 
+  and the rest of the folks at #ansible-devel for giving me valuable feedback!
 
 ## Sidebar: If You See Any Errors in This Doc
 
@@ -32,8 +34,9 @@ your kind of thing, the source for this website is on
 - Git branching basics. [Learn Git Branching](http://learngitbranching.js.org)
   is a great resource!
 
-- Python >= 2.7.8 && < 3.0.0. NOTE: You might be able to get the code 
-  samples in this article to work on Python 3.x but I haven't tried it yet.
+- Python >= 2.7.8 && < 3.0.0. NOTE: Ansible works with Python 3.0+ and you 
+  might be able to get the code samples in this article to work on it but I 
+  haven't tried it yet.
 
 - Pip
 
@@ -46,8 +49,8 @@ your kind of thing, the source for this website is on
     - nose
 
 - Basic testing knowledge including mocking. If you're not too familiar with
-  mocking, you can still follow along but I would encourage your to read up
-  on it after you're done here as it will help make your unit tests more robust.
+  mocking, you can still follow along but I encourage you to read up on it 
+  after you're done here as it will help make your unit tests more robust.
 
 
 ## Prep Your Ansible Repo
@@ -80,7 +83,7 @@ I'm going to refer to your local clone as your  **ansible repo** from now on.
 ## Sidebar: Add a Few Git Aliases to Your Toolkit!
 
 You don't have to do this but if you want to follow along with my
-git commands, I'll be using these below so feel free to add these to
+git commands, I'll be using these below so feel free to add them to
 your `~/.gitconfig` under the aliases section:
 
     [alias]
@@ -102,11 +105,11 @@ Go to the extras modules subdir
     $ cd lib/ansible/modules/extras
 
 You are now in a git submodule. If you run `git ta` here, you will
-notice that the output is different from when you run the command one
+notice that the output is different from when you run the same command one
 level up. If you're not familiar with git submodules, it's really just
 a separate git repo that's being referenced by a parent repo. when we
 ran our `git clone` command earlier with the `--recursive` option, git
-also automatically cloned this repo and put it in lib/ansible/modules/extras.
+also automatically cloned this repo and put it in `lib/ansible/modules/extras`.
 
 If you view this repo's remotes, you will see:
 
@@ -115,8 +118,9 @@ If you view this repo's remotes, you will see:
     origin        https://github.com/ansible/ansible-modules-extras (push)
 
 
-We want the naming of this repo's remotes to be consistent with that of
-your **ansible repo**. So let's rename origin to upstream:
+To avoid confusing yourself as you work on your first module, you'll want the naming 
+of this repo's remotes to be consistent with that of your **ansible repo**. 
+So let's rename origin to upstream:
 
     $ git remote rename origin upstream
 
@@ -125,7 +129,8 @@ Then, if you haven't already done so, create a fork in Github of the
 repo. Make sure to put the fork in the same account where you placed your 
 fork of the Ansible repo.
 
-Now, add that fork as a remote to your local repo and name it 'origin':
+After you've created the fork, add it as a remote to your local repo and 
+name it 'origin':
 
     $ git remote add origin git@github.com:<your-github-account>/ansible-modules-extras.git
 
@@ -300,8 +305,59 @@ Next, let's install some Python packages needed by our tests. From your
 
 NOTE: If you're developing on Python 3.0+, use requirements-py3.txt instead
 
+Next, let's write a module that fetches a resource pointed to by
+a URL and then writes it to disk. So in our **extras repo**, create a file at 
+`cloud/somebodyscomputer/firstmod.py` with the following content:
 
-## SIDEBAR: Here Be (Testing) Dragons!
+{% highlight python linenos %}
+#!/usr/bin/python
+# Make coding more python3-ish
+from __future__ import (absolute_import, division)
+__metaclass__ = type
+
+from ansible.module_utils.basic import AnsibleModule
+
+
+def save_data(mod):
+    raise NotImplementedError
+
+
+def main():
+    mod = AnsibleModule(
+        argument_spec=dict(
+            url=dict(required=True),
+            dest=dict(required=False, default="/tmp/firstmod")
+        )
+    )
+
+    save_data(mod)
+
+
+if __name__ == '__main__':
+    main()
+{% endhighlight %}
+
+Let's discuss line by line:
+
+- **Lines 1 to 4** sets up some things to make our code more or less behave
+  well in Python 3
+- **Lines 24 to 25** executes the `main` function
+- **Lines 13 to 19** instantiates `AnsibleModule`, defining the arguments
+  accepted by the module.
+- **Line 21** calls the function that actually does the work. Passing the AnsibleModule
+  instance to it.
+- **Lines 9 to 10** defines our worker function which just raises an exception
+  for now.
+
+This is the generally accepted structure of a module. Specifically, the
+`main()` function should just instantiate `AnsibleModule` and then pass that
+to another function that will do the actual work. Now because `main()` is very
+thin, unit testing it is pointless since the test, should we write it, will
+only end up looking almost like `main()` and that's not very useful. What
+we really want to test is `save_data()`.
+
+
+## WARNING: Here Be (Testing) Dragons!
 
 I expect that you already know how to write good tests and mocks because I
 don't have time to teach you that. If you don't, you might still be able to 
@@ -317,8 +373,7 @@ It's a quick 5~6-minute read.
 
 ## Let's Write the Test First
 
-Next, while still in your **ansible repo**, create a unit test directory 
-for your module:
+From your **ansible repo**, create a unit test directory for your module:
 
     $ mkdir -p test/units/modules/extras/cloud/somebodyscomputer
 
@@ -333,20 +388,18 @@ in the **extras repo**, its respective tests will be written in the **ansible
 repo**. That means that, later on, you'll be submitting a pull request to
 the upstream extras repo (which will contain your module code) and another PR
 to the upstream ansible repo (which will contain your unit tests). Unfortunately,
-that will have to be the way it's done for now until both repos are combined. For more
-information, see [https://github.com/ansible/proposals/blob/master/modules-management.md](https://github.com/ansible/proposals/blob/master/modules-management.md).
+that will have to be the way it's done for now [until both repos are combined](https://github.com/ansible/proposals/blob/master/modules-management.md).
 I'll walk you through the process of submission later in this article.
 
 
 ## On With the Tests
 
-We want our module to instantiate AnsibleModule and accept two arguments,
-namely url and dest. So let's write our test to validate that.
-
-First, since we're going to be using nose as our test framework, we have to
-ensure that every subdirectory in the following path has an `__init__.py`,
-otherwise nose will not load our tests. Go ahead and make sure there's
-that file in every directory in this path in your **ansible repo**:
+Let's make `save_data()` actually do some work. We'll design it to fetch
+the resource and then write it to disk. First, since we're going to be using 
+nose as our test framework, we have to ensure that every subdirectory in the 
+following path has an `__init__.py`, otherwise nose will not load our tests. 
+Go ahead and make sure there's that file in every directory in this path in 
+your **ansible repo**:
 
     touch test/__init__.py
     touch test/units/__init__.py
@@ -357,67 +410,67 @@ that file in every directory in this path in your **ansible repo**:
 
 
 Next create `test/units/modules/extras/cloud/somebodyscomputer/test_firstmod.py`
-with the following contents:
-
+as follows:
 
 {%highlight python linenos%}
-import unittest
-import mock
+# Make coding more python3-ish
+from __future__ import (absolute_import, division)
+__metaclass__ = type
+
+from ansible.compat.tests import unittest
+from ansible.compat.tests.mock import call, create_autospec, patch
+from ansible.module_utils.basic import AnsibleModule
 
 from ansible.modules.extras.cloud.somebodyscomputer import firstmod
 
 
 class TestFirstMod(unittest.TestCase):
 
-    @mock.patch("ansible.modules.extras.cloud.somebodyscomputer.firstmod"
-                ".AnsibleModule", autospec=True)
-    def test__main__success(self, ansible_mod_cls):
-        firstmod.main()
-
-        expected_arguments_spec = dict(
-            url=dict(required=True),
-            dest=dict(required=False, default="/tmp/firstmod")
+    @patch('ansible.modules.extras.cloud.somebodyscomputer.firstmod.write')
+    @patch('ansible.modules.extras.cloud.somebodyscomputer.firstmod.fetch')
+    def test__save_data__happy_path(self, fetch, write):
+        # Setup
+        mod_cls = create_autospec(AnsibleModule)
+        mod = mod_cls.return_value
+        mod.params = dict(
+            url="https://www.google.com",
+            dest="/tmp/firstmod.txt"
         )
-        self.assertEqual(mock.call(argument_spec=expected_arguments_spec),
-                         ansible_mod_cls.call_args)
+
+        # Exercise
+        firstmod.save_data(mod)
+
+        # Verify
+        self.assertEqual(1, fetch.call_count)
+        expected = call(mod.params["url"])
+        self.assertEqual(expected, fetch.call_args)
+
+        self.assertEqual(1, write.call_count)
+        expected = call(fetch.return_value, mod.params["dest"])
+        self.assertEqual(expected, write.call_args)
+
+        self.assertEqual(1, mod.exit_json.call_count)
+        expected = call(msg="Data saved", changed=True)
+        self.assertEqual(expected, mod.exit_json.call_args)
 {%endhighlight%}
 
-- **Line 9 to 10** - We're mocking AnsibleModule making sure autospec is True so 
-  that we don't create a false positive when we accidentally fat-finger 
-  arguments and methods. We also don't do anything else with the mock until 
-  we do our assertions because this test is only about checking if the module 
-  provided the correct values to argument_spec.
-- **Line 18** - This is where we assert the call to our mock class to check
-  if it was called properly.
+- **Lines 5 to 9** - Import Python modules that we're going to need for our test
+- **Lines 14 and 15** - Patch two new methods in our module, `write` and `fetch`
+- **Lines 18 to 23** - Set up a mock of AnsibleModule that we will pass
+  on to `save_data()`. We expect the function to get the arguments from the 
+  AnsibleModule's `param` attribute, so we stubbed that in line 20.
+- **Line 26** - Exercise the code
+- **Lines 29 to 31** - Verify that it called `fetch` properly
+- **Lines 33 to 35** - Verify that it called `write` properly
+- **Lines 37 to 39** - Verify that it called `AnsibleModule.exit_json` properly
+
 
 Let's execute this test. From the **extras repo**, run:
 
     $ nosetests --doctest-tests -v test/unit/cloud/somebodyscomputer/test_firstmod.py
 
-
-This should get you an error because we haven't written our module yet:
-
-    Failure: ImportError (cannot import name firstmod) ... ERROR
-
-    ======================================================================
-    ERROR: Failure: ImportError (cannot import name firstmod)
-    ----------------------------------------------------------------------
-    Traceback (most recent call last):
-      File "/usr/local/var/pyenv/versions/2.7.10/lib/python2.7/site-packages/nose/loader.py", line 418, in loadTestsFromName
-        addr.filename, addr.module)
-      File "/usr/local/var/pyenv/versions/2.7.10/lib/python2.7/site-packages/nose/importer.py", line 47, in importFromPath
-        return self.importFromDir(dir_path, fqname)
-      File "/usr/local/var/pyenv/versions/2.7.10/lib/python2.7/site-packages/nose/importer.py", line 94, in importFromDir
-        mod = load_module(part_fqname, fh, filename, desc)
-      File "/src/ansible/lib/ansible/modules/core/test/unit/cloud/somebodyscomputer/test_firstmod.py",
-     line 4, in <module>
-        from cloud.somebodyscomputer import firstmod
-    ImportError: cannot import name firstmod
-
-    ----------------------------------------------------------------------
-    Ran 1 test in 0.001s
-
-    FAILED (errors=1)
+This should get you an error because we haven't written any code that satisfies 
+the test yet!
 
 
 ## SIDEBAR: That's a Lot of Typing Just to Run One Test!
@@ -427,111 +480,29 @@ two keystrokes! Don't know how to do it, check out
 [what I did](http://www.relaxdiego.com/2015/11/my-dev-setup-part-3.html).
 
 
-## Let's Write Our First Code to Pass the Test
-
-Create `<extras repo>/cloud/somebodyscomputer/firstmod.py` with the following contents:
-
+## Let's Write Code to Pass the Test
 
 {%highlight python linenos%}
 #!/usr/bin/python
+# Make coding more python3-ish
+from __future__ import (absolute_import, division)
+__metaclass__ = type
+
 from ansible.module_utils.basic import AnsibleModule
 
 
-def main():
-    AnsibleModule(
-        argument_spec=dict(
-            url=dict(required=True),
-            dest=dict(required=False, default="/tmp/firstmod")
-        )
-    )
-
-if __name__ == '__main__':
-    main()
-{%endhighlight%}
-
-Run the test again to see it pass:
-
-    ansible.modules.core.test.unit.cloud.somebodyscomputer.test_firstmod.TestFirstMod.test__main__success ... ok
-
-    ----------------------------------------------------------------------
-    Ran 1 test in 0.024s
-
-    OK
+def fetch(url):
+    raise NotImplementedError
 
 
-## Now Let's Actually Write Useful Code!
-
-Our module doesn't do much other than accept arguments, initialize a class,
-then exit. Let's make it more useful. First, we update the test with additional
-mocks and expectations. So let's replace the contents of our test with this:
+def write(data, dest):
+    raise NotImplementedError
 
 
-{%highlight python linenos%}
-import unittest
-import mock
-
-from ansible.modules.extras.cloud.somebodyscomputer import firstmod
-
-
-class TestFirstMod(unittest.TestCase):
-
-    @mock.patch("ansible.modules.extras.cloud.somebodyscomputer.firstmod"
-                ".write_data", autospec=True)
-    @mock.patch("ansible.modules.extras.cloud.somebodyscomputer.firstmod"
-                ".fetch_data", autospec=True)
-    @mock.patch("ansible.modules.extras.cloud.somebodyscomputer.firstmod"
-                ".AnsibleModule", autospec=True)
-    def test__main__success(self, ansible_mod_cls, fetch_data, write_data):
-        # Prepare mocks
-        mod_obj = ansible_mod_cls.return_value
-        args = {
-            "url": "https://www.google.com",
-            "dest": "/tmp/somelocation.txt"
-        }
-        mod_obj.params = args
-
-        # Exercise code
-        firstmod.main()
-
-        # Assert call to AnsibleModule
-        expected_arguments_spec = dict(
-            url=dict(required=True),
-            dest=dict(required=False, default="/tmp/firstmod")
-        )
-        self.assertEqual(mock.call(argument_spec=expected_arguments_spec),
-                         ansible_mod_cls.call_args)
-
-        # Assert call to fetch_data
-        self.assertEqual(mock.call(mod_obj, args["url"]), fetch_data.call_args)
-
-        # Assert call to write_data
-        self.assertEqual(mock.call(fetch_data.return_value, args["dest"]),
-                         write_data.call_args)
-
-        # Assert call to mod_obj.exit_json
-        expected_args = dict(
-            msg="Retrieved the resource successfully",
-            changed=True
-        )
-        self.assertEqual(mock.call(**expected_args), mod_obj.exit_json.call_args)
-{%endhighlight%}
-
-- **Line 9 and 12** - We're mocking two internal methods that we want
-  our main method to call. I know some purists will be shocked at this saying
-  that internal methods should not be mocked. My response is that sometimes
-  you have to do this to avoid making your tests too complicated.
-- **Line 18 to 22** - We're mocking the params attribute of the AnsibleModule
-  instance since it's needed by our test subject.
-- **Line 28 to 47** - We then check wether the method calls that we care about
-  were called correctly by our test subject.
-  
-Running the above test should result in a failure, naturally. So let's write the
-code to pass it. Your `firstmodule.py` should now look like this:
-
-
-{%highlight python linenos%}
-#!/usr/bin/python
-from ansible.module_utils.basic import AnsibleModule
+def save_data(mod):
+    data = fetch(mod.params["url"])
+    write(data, mod.params["dest"])
+    mod.exit_json(msg="Data saved", changed=True)
 
 
 def main():
@@ -542,135 +513,156 @@ def main():
         )
     )
 
-    data = fetch_data(mod, mod.params["url"])
-    write_data(data, mod.params["dest"])
+    save_data(mod)
 
-    mod.exit_json(msg="Retrieved the resource successfully", changed=True)
-
-
-def fetch_data(mod, url):
-    raise NotImplementedError
-
-
-def write_data(data, dest):
-    raise NotImplementedError
 
 if __name__ == '__main__':
     main()
 {%endhighlight%}
 
-You'll notice that our `fetch_data` and `write_data` methods only raise an exception.
-That's intended because we don't care about it yet at this point. Remember that we
-mocked these methods in our test. Run the tests and see it pass.
+Run the test again to see it pass:
+
+    ansible.modules.core.test.unit.cloud.somebodyscomputer.test_firstmod.TestFirstMod.test__save_data__happy_path ... ok
+
+    ----------------------------------------------------------------------
+    Ran 1 test in 0.024s
+
+    OK
 
 
-## SIDEBAR: But If They're Mocked, Why Write The Methods At All?
+## Testing for Failures
 
-That's because, if you look back at the test, I patched them with the `autospec` 
-argument set to `True`. When we do that, the test will throw an error saying 
-that the method signatures could not be found. This is a great way to protect 
-ourselves from creating a mock of a class or method signature that doesn't 
-actually exist. If this protection was not in place, we'll create false positives 
-everywhere in our test, rendering it useless.
+The happy path is always the first path that I test but I don't stop there. In
+this context, I also test for when `fetch()` or `write()` fail. The steps are
+fairly similar to the happy path so I'll leave it to you to see how I did it
+by looking at the final [test](https://github.com/evil-org/ansible/blob/firstmod/test/units/modules/extras/cloud/somebodyscomputer/test_firstmod.py) and 
+[source code](https://github.com/evil-org/ansible-modules-extras/blob/firstmod/cloud/somebodyscomputer/firstmod.py).
 
 
-## Let's Implement fetch_data()
+## Let's Implement fetch()
 
-We're going to make use of `StringIO` here to simulate the return value of
-an ansible `mod_util` package which we'll have `fetch_data()` use. At the top of
-your `test_firstmod.py`, add this line:
-
-{%highlight python linenos%}
-from StringIO import StringIO
-{%endhighlight%}
-
-Then let's add this to the bottom of the same file:
+First, let's write the test:
 
 {%highlight python linenos%}
-     # fetch_data test
-     @mock.patch("ansible.modules.extras.cloud.somebodyscomputer.firstmod"
-                 ".fetch_url", autospec=True)
-     @mock.patch("ansible.modules.extras.cloud.somebodyscomputer.firstmod"
-                 ".AnsibleModule", autospec=True)
-     def test__fetch_data__success(self, ansible_mod_cls, fetch_url):
-         # Mock objects
-         mod_obj = ansible_mod_cls.return_value
-         url = "https://www.google.com"
+    @patch('ansible.modules.extras.cloud.somebodyscomputer.firstmod.open_url')
+    def test__fetch__happy_path(self, open_url):
+        # Setup
+        url = "https://www.google.com"
 
-         html = "<html><head></head><body></body></html>"
-         data = StringIO(html)
-         info = {'status': 200}
-         fetch_url.return_value = (data, info)
+        # mock the return value of open_url
+        stream = open_url.return_value
+        stream.read.return_value = "<html><head></head><body>Hello</body></html>"
+        stream.getcode.return_value = 200
+        open_url.return_value = stream
 
-         # Exercise the code
-         returned_value = firstmod.fetch_data(mod_obj, url)
+        # Exercise
+        data = firstmod.fetch(url)
 
-         # Assert the results
-         expected_args = dict(module=mod_obj, url=url)
-         self.assertEqual(mock.call(**expected_args), fetch_url.call_args)
+        # Verify
+        self.assertEqual(stream.read.return_value, data)
 
-         self.assertEqual(html, returned_value)
+        self.assertEqual(1, open_url.call_count)
+
+        expected = call(url)
+        self.assertEqual(expected, open_url.call_args)
 {%endhighlight%}
 
-- **Line 2 to 3** - We patch ansible's fetch_url utility method making sure to set
-  `autospec` to `True`
-- **Lines 8 and 9** - We prepare the arguments to pass to our test subject
-- **Lines 11 to 14** - We mock out `fetch_url`.
-- **Lines 21 to 24** - We then check wether our test subject made the correct
-  call to `fetch_url` and then also check that it returned the correct value.
+- **Line 1** - We patch an Ansible function which we expect `fetch()` to call
+- **Line 4** - The url that we will pass on to `fetch()`. We're assigning it to
+  a variable here because we want to verify if it gets passed on to `open_url()`
+- **Lines 7 to 10** - We mock the IO object that `open_url` returns to `fetch()`
+- **Lines 16 to 21** - We verify if `fetch()` returned the correct data and that
+  it called the underlying `open_url()` correctly.
   
 Run the test and see it fail. Let's now write the code that makes it pass.
 First, add this near the top of your `firstmod.py` right after the first
 import line:
 
-    from ansible.module_utils.urls import fetch_url
-
-Then, modify your `fetch_data` method to look like this:
-
 {%highlight python linenos%}
-def fetch_data(mod, url):
-    data, _ = fetch_url(module=mod, url=url)
-    return data.read()
+from ansible.module_utils.urls import open_url
 {%endhighlight%}
 
-Run the test again. BOOM!
-
-
-## Let's Implement write_data()
-
-Add the following test to the bottom of `test_firstmod.py`:
+Then, modify your `fetch()` method to look like this:
 
 {%highlight python linenos%}
-    # write_data test
-    def test__write_data__success(self):
-        html = "<html><head></head><body></body></html>"
-        dest = "/tmp/somelocation.txt"
+def fetch(url):
+    try:
+        stream = open_url(url)
+        return stream.read()
+    except URLError:
+        raise FetchError("Data could not be fetched")
+{%endhighlight%}
 
+Notice that we're catching a `URLError` here. Import that class as follows:
+
+{%highlight python linenos%}
+from urllib2 import URLError
+{%endhighlight%}
+
+Notice also that we're raising a custom error class here called `FetchError`. This is
+so that we don't have to write an `except Exception` catchall in `save_data()`
+which is poor error handling. So let's add the following class to the file. I typically 
+write this near the top, just after the imports.
+
+{%highlight python linenos%}
+class FetchError(Exception):
+    pass
+{%endhighlight%}
+
+Run the test again and see it pass.
+
+
+## Let's Implement write()
+
+Add the following test to `test_firstmod.py`:
+
+{%highlight python linenos%}
+    def test__write__happy_path(self):
+        # Setup
+        data = "Somedata here"
+        dest = "/path/to/file.txt"
+
+        # Exercise
         o_open = "ansible.modules.extras.cloud.somebodyscomputer.firstmod.open"
-        m_open = mock.mock_open()
-        with mock.patch(o_open, m_open, create=True):
-            firstmod.write_data(html, dest)
+        m_open = mock_open()
+        with patch(o_open, m_open, create=True):
+            firstmod.write(data, dest)
 
-        self.assertEqual(mock.call(dest, "w"), m_open.mock_calls[0])
-        self.assertEqual(mock.call().write(html), m_open.mock_calls[2])
+        # Verify
+        expected = call(dest, "w")
+        self.assertEqual(expected, m_open.mock_calls[0])
+
+        expected = call().write(data)
+        self.assertEqual(expected, m_open.mock_calls[2])
 {%endhighlight%}
 
-- **Lines 6 to 8** - We expect the test subject to use the builtin
+- **Lines 7 to 9** - We expect the test subject to use the builtin
   `open` method when it writes the file. This is the de facto way of mocking it.
-- **Line 11** - We check that the test subject opened the destination
+- **Line 13 to 14** - We check that the test subject opened the destination
   file for writing.
-- **Line 12** - We check that the test subject actually wrote to the
+- **Line 16 to 17** - We check that the test subject actually wrote to the
   destination file.
 
 You know the drill. Run to fail. Now write the code to pass it:
 
 {%highlight python linenos%}
-def write_data(data, dest):
-    with open(dest, 'w') as dest:
-        dest.write(data)
+def write(data, dest):
+    try:
+        with open(dest, "w") as dest:
+            dest.write(data)
+    except IOError:
+        raise WriteError("Data could not be written")
 {%endhighlight%}
 
-Run the test again. BOOM!
+Like `fetch()`, this method also throws a custom exception. Add this to your
+code:
+
+{%highlight python linenos%}
+class WriteError(Exception):
+    pass
+{%endhighlight%}
+
+Run the test again to see it pass.
 
 ## Almost There!
 
@@ -679,10 +671,11 @@ Let's run the linter against our module:
     $ ansible-validate-modules <path to module dir>
 
 That should list a few errors about documentation, examples,
-and the GPLv3 license header. Let's fix that by adding the following
-between the import declarations and the `main()` method:
+and the GPLv3 license header. Let's fix that by modifying the top part
+to look like this:
 
 {%highlight python linenos%}
+#!/usr/bin/python
 # This file is part of Ansible
 #
 # Ansible is free software: you can redistribute it and/or modify
@@ -697,6 +690,15 @@ between the import declarations and the `main()` method:
 #
 # You should have received a copy of the GNU General Public License
 # along with Ansible.  If not, see <http://www.gnu.org/licenses/>.
+# Make coding more python3-ish
+from __future__ import (absolute_import, division)
+__metaclass__ = type
+
+from urllib2 import URLError
+
+from ansible.module_utils.basic import AnsibleModule
+from ansible.module_utils.urls import open_url
+
 
 DOCUMENTATION = '''
 ---
@@ -717,7 +719,6 @@ options:
       - Where to save the stuff
     required: false
     default: /tmp/firstmod
-
 author:
     - "Your Name Here (@yourgithubusernamehere)"
 '''
@@ -731,10 +732,6 @@ msg:
 '''
 
 EXAMPLES = '''
-# Just download it
-- firstmod:
-    url: https://www.google.com
-
 # Download then save to your home dir
 - firstmod:
     url: https://www.relaxdiego.com
@@ -783,7 +780,7 @@ and second is the **extras repo**. Let's work on latter the former first.
 
 Run the following from the **extras repo**:
 
-    $ git add .
+    $ git add cloud
     $ git commit -m "First module"
     $ git push origin
 
@@ -794,7 +791,7 @@ will create next.
 
 Run the following from the **ansible repo**:
 
-    $ git add .
+    $ git add test
     $ git commit -m "Tests for first module"
     $ git push origin
 
@@ -841,7 +838,7 @@ Next, we'll use it with nose as follows:
 
     $ nosetests -v --with-coverage --cover-html \
       --cover-package='ansible.modules.extras.cloud.somebodyscomputer' \
-      --cover-html-dir=/tmp/coverage -w test/unit/cloud/somebodyscomputer
+      --cover-html-dir=/tmp/coverage -w test/units/modules/extras/cloud/somebodyscomputer/
 
 By running this single command, you'll get two things. First is a quick
 test coverage summary via the terminal. Second is an HTML format of the
@@ -857,8 +854,24 @@ IMPORTANT: A fully covered module doesn't automatically mean it's bug free.
 But the coverage report is a great way to find out which parts of your
 code needs some testing TLC.
 
+
+## One More Thing...
+
+Make sure to go through the [official module checklist](http://docs.ansible.com/ansible/developing_modules.html#module-checklist)
+at least once before you submit your pull request!
+
+
 ## What, You're Still Here??!
 
 Yup, that's the end of it for now. Post in the comments or
 [file a bug](https://github.com/relaxdiego/relaxdiego.github.com/issues/new)
 if you find any errors or have any questions.
+
+
+## Resources
+
+- [Tests](https://github.com/evil-org/ansible/blob/firstmod/test/units/modules/extras/cloud/somebodyscomputer/test_firstmod.py)
+- [Code](https://github.com/evil-org/ansible-modules-extras/blob/firstmod/cloud/somebodyscomputer/firstmod.py)
+- [Boundaries talk by Gary Bernhardt](http://pyvideo.org/pycon-us-2013/boundaries.html)
+- [Integrated Tests are a Scam by J.B. Rainsberger](https://vimeo.com/80533536)
+- [Domain-Driven Design](http://a.co/fQExOv5)
