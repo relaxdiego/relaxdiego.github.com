@@ -836,7 +836,7 @@ Batchelder's awesome coverage library. To get started, let's install it:
 
 Next, we'll use it with nose as follows:
 
-    $ nosetests -v --with-coverage --cover-html \
+    $ nosetests -v --with-coverage --cover-erase --cover-html \
       --cover-package='ansible.modules.extras.cloud.somebodyscomputer' \
       --cover-html-dir=/tmp/coverage -w test/units/modules/extras/cloud/somebodyscomputer/
 
