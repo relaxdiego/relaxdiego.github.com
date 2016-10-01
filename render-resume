@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 asciidoctor-pdf resume/index.adoc
-mv resume/resume.pdf resume.pdf
+mv resume/index.pdf resume.pdf
 asciidoctor resume/index.adoc
