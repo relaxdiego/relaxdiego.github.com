@@ -3,25 +3,27 @@
 [%hardbreaks]
 (925) 558-5456
 mark@maglana.com
+https://relaxdiego.com
+SF Bay Area, CA
 
 I have a strong software development background with specialization
-in backend design and implementation. I like to get down and dirty with
+in backend and API design/implementation. I like to get down and dirty with
 the technical aspects of a project, learn something new everyday, and
-to apply that knowledge at work. More than that, I enjoy getting stuff done!
+apply that knowledge at work. More than that, I enjoy getting stuff done!
 
 
 == Accomplishments
 
-- *Increased Module Accuracy and Speed by at Least 10x* - I offered  to
-re-design and re-implement a cloud computing application's billing module
+- *Increased Project Module Accuracy and Speed by at Least 10x* - I offered
+to re-design and re-implement a cloud computing application's billing module
 which was producing incomplete results and regularly timing out before it
-could even display half of an account's report. After I redesigned it, the
+could even display half of an account's report. After the redesign, the
 reports were displayed immediately, and the amounts were 100% accurate.
 
-- *Was Into Containerization Before It was famous!* - I have been following
-  containerization since the initial Docker days even though it was outside
-  my assignment. Through my ongoing curiousity, I was able to build an
-  HA OpenShift environment as a means to replace our internal CI/CD pipeline.
+- *Was Into Containerization Before It Was Cool!* - I have been following
+containerization since the initial Docker days even though it was outside
+my assignment. Because of my skunkworks preparation, I was able to build an
+HA OpenShift environment as a means to replace our internal CI/CD pipeline.
 
 - *Facilitated Timely Delivery of Software By Automating Requirements* - My
 employer needed to deliver an autonomous software agent for a customer. I
@@ -69,8 +71,8 @@ never-ending search for better ways to write maintainable automated tests. link:
 
 == One More Thing
 
-Coding without tests is like driving a car without seatbelts so I always make
-sure to cover my code with a reasonable amount of tests. Here's 
+Coding without tests is like driving a Tesla in ludicrous mode *without seatbelts* 
+so I always make sure to cover my code with a reasonable amount of tests. Here's 
 https://www.relaxdiego.com/2015/11/my-dev-setup-part-3.html[how I work].
 
 == Experience
@@ -80,7 +82,7 @@ Dimension Data, Pleasanton, CA
 
 Dimension Data is a leading provider of professional, cloud, consulting 
 and managed services for advanced IT solutions. Our team actively 
-contributes to Ansible, OpenStack, Open vSwitch, and Open DayLight.
+contributed to Ansible, OpenStack, Open vSwitch, and Open DayLight.
 
 .*Achievements*
 
@@ -91,16 +93,11 @@ contributes to Ansible, OpenStack, Open vSwitch, and Open DayLight.
   designed to transform data from one format to another.
 
 - Designed and implemented an automated test harness framework used by 
-our testers for our various software products.
+  our testers for our various software products.
 
-- Designed and implemented various client libraries for various cloud APIs.
-
-- Designed and implemented a framework for managing application lifecycle
-across cloud providers.
-
-- Studied new technologies and standards for an internal project thereby
-  helping the project team hit the ground running and deliver within
-  their specified deadline.
+- Mentored development teams in new technologies, standards, and even
+  3rd-party protocols that they needed to incorporate or interface to. This
+  allowed them to hit the ground running and deliver within budget.
 
 
 *Senior Director of Engineering* (Jul 2012 - Jan 2014) +
@@ -144,10 +141,6 @@ information for various marketing collateral.
 
 - Implemented agile practices in Engineering to ensure timely delivery of
 stories and an overall coordinated effort of releases.
-
-- Spearheaded the development of Redmine Backlogs (www.redminebacklogs.net).
-This allowed us to incorporate agile practices into our bug tracker while
-allowing us to retain control of our data.
 
 
 *Systems Analyst/Programmer* (Mar 2003 - Dec 2006) +
@@ -216,6 +209,6 @@ P. del Rosario Street, Cebu City 6000, Philippines
 
 == Misc.
 
-This resume is available online at https://www.relaxdiego.com/resume. Its
-source code may be found at https://raw.githubusercontent.com/relaxdiego/relaxdiego.github.com/master/resume/resume.adoc.
-The latest PDF is always at https://www.relaxdiego.com/resume.pdf
+This resume is available at https://www.relaxdiego.com/resume. Its
+source code is at https://raw.githubusercontent.com/relaxdiego/relaxdiego.github.com/master/resume/resume.adoc
+while the PDF format is at https://www.relaxdiego.com/resume.pdf
