@@ -14,16 +14,17 @@ apply that knowledge at work. More than that, I enjoy getting stuff done!
 
 == Accomplishments
 
-- *Increased Project Module Accuracy and Speed by at Least 10x* - I offered
+- *Was Into Containerization Before It Was Cool!* - I have been following
+containerization since the initial Docker days even though it was outside
+my assignment. Because of my skunkworks preparation, I was able to build an
+Ansible-based project that provisioned an HA OpenShift environment as a 
+means to replace our internal CI/CD pipeline.
+
+- *Increased Billing Component Accuracy and Speed by at Least 10x* - I offered
 to re-design and re-implement a cloud computing application's billing module
 which was producing incomplete results and regularly timing out before it
 could even display half of an account's report. After the redesign, the
 reports were displayed immediately, and the amounts were 100% accurate.
-
-- *Was Into Containerization Before It Was Cool!* - I have been following
-containerization since the initial Docker days even though it was outside
-my assignment. Because of my skunkworks preparation, I was able to build an
-HA OpenShift environment as a means to replace our internal CI/CD pipeline.
 
 - *Facilitated Timely Delivery of Software By Automating Requirements* - My
 employer needed to deliver an autonomous software agent for a customer. I
@@ -82,9 +83,14 @@ Dimension Data, Pleasanton, CA
 
 Dimension Data is a leading provider of professional, cloud, consulting 
 and managed services for advanced IT solutions. Our team actively 
-contributed to Ansible, OpenStack, Open vSwitch, and Open DayLight.
+contributed to Ansible, OpenStack, Open vSwitch, and Open DayLight. My
+official title was QA/Release Engineer but my responsibilities spanned way
+beyond that and I happily took on every assignment sent my way!
 
 .*Achievements*
+
+- Wrote Ansible modules to be used for provisioning resources on Dimension
+  Data's cloud service.
 
 - Developed an Ansible-based project that deployed an HA OpenShift
   platform for use by our team as a replacement for our CI/CD pipeline.
