@@ -1,4 +1,5 @@
-== Mark Maglana, DevOps Engineer
+== Mark Maglana
+=== DevOps Engineer / Software Architect
 
 [%hardbreaks]
 (925) 558-5456
@@ -78,7 +79,7 @@ https://www.relaxdiego.com/2015/11/my-dev-setup-part-3.html[how I work].
 
 == Experience
 
-*DevOps Engineer* (Jan 2014 - Sep 2016) +
+*DevOps Engineer / Software Architect* (Jan 2014 - Sep 2016) +
 Dimension Data, Pleasanton, CA
 
 Dimension Data is a leading provider of professional, cloud, consulting 
@@ -106,7 +107,7 @@ beyond that and I happily took on every assignment sent my way!
   allowed them to hit the ground running and deliver within budget.
 
 
-*Senior Director of Engineering* (Jul 2012 - Jan 2014) +
+*DevOps Engineer / Software Architect* (Jul 2012 - Jan 2014) +
 Morph, Manhattan Beach, CA
 
 Morph produced IaaS appliances that its customers can install inside of 
