@@ -221,7 +221,22 @@ P. del Rosario Street, Cebu City 6000, Philippines
 > with his peers, development skills and passion for quality. Mark 
 > has a wide breadth of exposure to different programming languages, 
 > configuration management and software design and architecture.
-> -- Mike Outland, DevOps Manager at Dimension Data
+> -- Mike Outland, DevOps Manager
+
+> Mark is an exceptionally capable software architect and developer. 
+> When a new technology or language needed to be implemented, Mark 
+> was able to obtain a deep level of understanding in a very short 
+> amount of time. I have seen him architect and implement everything 
+> from full APIs to cloud middleware to full front-ends. Over the 
+> years he has gained a wide breadth of knowledge in everything 
+> cloud & container. Working with him has been regularly humbling 
+> and wonderfully educational. Beyond his technical prowess, Mark 
+> is also very fun to work with and mentors people exceptionally well. 
+> He uses his great sense of humor to take the stress out of tough 
+> challenges and motivate teams to push on. I give Mark my highest 
+> recommendation to anything he wants to take on. He will be a rare 
+> gift to the next company he works with.
+> -- Aimon Bustardo, DevOps Engineer
 
 > Possibly the best reason i looked forward to go to work everyday 
 > at Dimension Data is because of the opportunity to work closely 
@@ -230,7 +245,7 @@ P. del Rosario Street, Cebu City 6000, Philippines
 > readability and testability. He can lead teams, mentor teammates, 
 > commit production code within time and budget while giving a 
 > helping hand with whatever is the issue of the day.
-> -- Bert Diwa, Sr. QA Engineer at Dimension Data
+> -- Bert Diwa, Sr. QA Engineer
 
 > [Mark] produced solid designs. He was an expert at Python (and 
 > apparently Ruby too). He seemed to know about every Open Source 
@@ -240,14 +255,14 @@ P. del Rosario Street, Cebu City 6000, Philippines
 > to the team. He seemed to get his dozen projects done in time 
 > while simultaneously providing whatever technical support was 
 > being asked of him by the team.
-> -- Jay Riddell, Sr. Software Engineer at Dimension Data
+> -- Jay Riddell, Sr. Software Engineer
 
 > Mark was a particularly able and focused student, capable of 
 > working independently and evaluating ideas and approaches 
 > critically. His particular interest at the time was the role, 
 > design and development of business incubators as a tool for 
 > regional development.
-> -- Don Scott-Kemmis, Former Professor at The Australian National University
+> -- Don Scott-Kemmis, Professor
 
 
 
