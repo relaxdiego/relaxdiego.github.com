@@ -1,5 +1,5 @@
 == Mark Maglana
-=== DevOps Engineer / Software Architect
+=== Software Engineer with Twist of DevOps
 
 [%hardbreaks]
 (925) 558-5456
@@ -7,19 +7,15 @@ mark@maglana.com
 https://relaxdiego.com
 SF Bay Area, CA
 
-I have a strong software development background with specialization
-in backend and API design/implementation. I like to get down and dirty with
-the technical aspects of a project, learn something new everyday, and
-apply that knowledge at work. More than that, I enjoy getting stuff done!
+I am a software engineer who has been in the DevOps world since 2008 
+contributing my knowledge on sound software development practices to
+my Ops colleagues. Likewise, I have been contributing what I learn
+from Ops to my Dev colleagues. I enjoy what I do not only because I
+get to learn new things and practice them everyday but also because I
+get to impart them to my colleagues on both sides. 
 
 
 == Accomplishments
-
-- *Was Into Containerization Before It Was Cool!* - I have been following
-containerization since the initial Docker days even though it was outside
-my assignment. Because of my skunkworks preparation, I was able to build an
-Ansible-based project that provisioned an HA OpenShift environment as a 
-means to replace our internal CI/CD pipeline.
 
 - *Increased Billing Component Accuracy and Speed by at Least 10x* - I offered
 to re-design and re-implement a cloud computing application's billing module
@@ -34,6 +30,12 @@ learn about the complete requirements. I then codified these requirements in
 an application that developers can execute against their code to give them
 instant feedback. The application later also served as a regression test
 harness allowing the team to deliver the software on time and within budget.
+
+- *Was Into Containerization Before It Was Cool!* - I have been following
+containerization since the initial Docker days even though it was outside
+my assignment. Because of my skunkworks preparation, I was able to build an
+Ansible-based project that provisioned an HA OpenShift environment as a 
+means to replace our internal CI/CD pipeline.
 
 - *Reduced a 2-day Manual Process to 5-seconds* - While building the MIS for
 a metal fabrication shop, I learned about a manual computation process that
@@ -79,7 +81,7 @@ https://www.relaxdiego.com/2015/11/my-dev-setup-part-3.html[how I work].
 
 == Experience
 
-*DevOps Engineer / Software Architect* (Jan 2014 - Sep 2016) +
+*Software/DevOps Engineer* (Jan 2014 - Sep 2016) +
 Dimension Data, Pleasanton, CA
 
 Dimension Data is a leading provider of professional, cloud, consulting 
@@ -107,12 +109,13 @@ beyond that and I happily took on every assignment sent my way!
   allowed them to hit the ground running and deliver within budget.
 
 
-*DevOps Engineer / Software Architect* (Jul 2012 - Jan 2014) +
+*Software/DevOps Engineer* (Jul 2012 - Jan 2014) +
 Morph, Manhattan Beach, CA
 
 Morph produced IaaS appliances that its customers can install inside of 
 their data center to use as a springboard for quickly building their own 
-cloud computing environment.
+cloud computing environment. My official title was Senior Director of
+Engineering but my actual roles spanned that of a software engineer.
 
 .*Achievements*
 
@@ -138,7 +141,7 @@ produce its cloud computing product.
 .*Responsibilities*
 
 - Oversaw the design and implementation of Morph AppSpace, one of the earliest
-Platform-as-a-Service providers in the market.
+Platform-as-a-Service providers built on top of AWS in the market.
 
 - Managed the product roadmap to ensure that requirements are prioritized
 properly and that they contain the right information.
