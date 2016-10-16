@@ -1,5 +1,5 @@
 // I'm including the main resume instead of in-lining it here to separate it
 // from jekyll-specific conent in case I want to render it to other formats
 // in the future.
-
+:last-update-label!:
 include::resume.adoc[]
