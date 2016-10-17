@@ -7,70 +7,87 @@ mark@maglana.com
 https://relaxdiego.com
 SF Bay Area, CA
 
-I am a software engineer who has been in the DevOps world since 2008 
-contributing my knowledge on sound software development practices to
-my Ops colleagues. Likewise, I have been contributing what I learn
-from Ops to my Dev colleagues. I enjoy what I do not only because I
-get to learn new things and practice them everyday but also because I
-get to impart them to my colleagues on both sides. 
+I am a software engineer who has been working in a DevOps environment 
+since 2008 contributing my knowledge on sound software engineering 
+practices to my Ops colleagues while sharing what I know about the big 
+picture of software delivery to my Dev colleagues. I enjoy what I do 
+because I get to contribute by a significant portion to the delivery of 
+awesome software solutions.
 
 
 == Accomplishments
 
-- *Increased Billing Component Accuracy and Speed by at Least 10x* - I offered
-to re-design and re-implement a cloud computing application's billing module
-which was producing incomplete results and regularly timing out before it
-could even display half of an account's report. After the redesign, the
-reports were displayed immediately, and the amounts were 100% accurate.
+- *Increased billing module accuracy and speed by at least 10x* - When a
+product's billing module was producing inaccurate results and regularly
+timing out, I offered to inspect the code and find out where the problem
+lay. After much debugging, I found the problem and provided a fix which
+resulted in the reports displaying correctly. To improve the speed, however,
+required re-architecting the module which I led from conception to delivery.
 
-- *Facilitated Timely Delivery of Software By Automating Requirements* - My
-employer needed to deliver an autonomous software agent for a customer. I
-offered to study the associated open standards and proprietary protocols to
-learn about the complete requirements. I then codified these requirements in
-an application that developers can execute against their code to give them
-instant feedback. The application later also served as a regression test
-harness allowing the team to deliver the software on time and within budget.
+- *Facilitated the timely delivery of software by automating requirements* -
+We needed to deliver a software agent for a customer that needed their 
+product to work with a 3rd-party vendor's product. I volunteered to study 
+the associated open standards and proprietary protocol to learn about the 
+requirements. I then codified these requirements in a test harness that 
+also doubled as the executable requirements document for the development 
+team. After integrating this into our CI/CD pipeline, the dev team was able 
+to receive timely feedback on requirements compliance and regressions allowing 
+them to deliver on time and within budget!
 
-- *Was Into Containerization Before It Was Cool!* - I have been following
-containerization since the initial Docker days even though it was outside
-my assignment. Because of my skunkworks preparation, I was able to build an
-Ansible-based project that provisioned an HA OpenShift environment as a 
-means to replace our internal CI/CD pipeline.
+- *Deployed an HA container orchestration platform to replace CI/CD* - 
+I have been following containerization since the initial Docker days even 
+though it was outside my job description. Because of my skunkworks preparation, 
+I was later able to build an Ansible-based project that provisioned an HA 
+OpenShift/Kubernetes environment as a means to replace our internal 
+CI/CD pipeline as well as an environment to deploy our internal apps.
 
-- *Reduced a 2-day Manual Process to 5-seconds* - While building the MIS for
+- *Talked at various meetups and conferences* - I've presented on various topics
+such as How I Built My Own BDD Framework (Ruby on Rails Meetup, Los Angeles), 
+Using Vagrant to Install OpenStack Tempest (OpenStack Summit Atlanta 2015), and 
+How to Write Fully-Tested Ansible Modules (AnsibleFest NY 2016).
+
+- *Reduced a 2-day manual process to 5 seconds* - While building the MIS for
 a metal fabrication shop, I learned about a manual computation process that
 took shop floor engineers 2 days to complete. After some research and a few
-questions on a compsci newsgroup, I was able to build a desktop app that reduced
+questions on a CompSci newsgroup, I was able to build a desktop app that reduced
 the computation time to 5 seconds.
 
-- *Improved Requirements Gathering Through Prototyping* - Upon joining a new
+- *Improved requirements gathering through prototyping* - Upon joining a new
 software consulting firm, I noticed the long feedback loop from requirements
 gathering to user testing. I encouraged and guided my teammates to adopt
 prototyping as one of the ways to improve requirements gathering and reduce
 waste. The results were positive and the engineers along with the users were
 very happy with the results.
 
-- *Recipient of Academic Excellence Award for Best Strategic Plan* - I wanted
+- *Recipient of academic excellence award for best strategic plan* - I wanted
 to understand the business of software and decided that focusing on the basics of
 business management was key. I then applied for our state university's graduate
 program for management where I was accepted. During the program, I was top of
 class for Operations Management, Financial Management, and Business Strategy. I
 then used everything that I learned to create a strategic plan for our family
-business which resulted in me getting the strategic plan award.
+business which resulted in me getting the academic excellence award for best
+strategic plan.
 
 == A Few Open Source Projects
 
-- *Open vSwitch Lab* - A Vagrant project that provisions two machines that talk
+- *Open vSwitch Lab* - A Vagrant project which provisions two machines that talk
 over a simulated Internet. The lab is a companion project for the series of
-articles I wrote about http://www.relaxdiego.com/2014/09/ovs-lab.html[VXLAN], http://www.relaxdiego.com/2014/09/ovsdb.html[OVSDB], and http://www.relaxdiego.com/2014/09/hardware_vtep.html[the hardware VTEP schema]. link:https://github.com/relaxdiego/ovs-lab[Source in Github].
+articles I wrote about http://www.relaxdiego.com/2014/09/ovs-lab.html[VXLAN], 
+http://www.relaxdiego.com/2014/09/ovsdb.html[OVSDB], and 
+http://www.relaxdiego.com/2014/09/hardware_vtep.html[the hardware VTEP schema]. 
+https://github.com/relaxdiego/ovs-lab[Source in Github].
 
 - *Aviator* - A lightweight Ruby client library for cloud REST APIs. I initially
 built this for the OpenStack API. My focus was to build a library that reflected,
-rather than obscured the underlying API. link:http://aviator.github.io/www/[Homepage].
+rather than obscured the underlying API. http://aviator.github.io/www/[Homepage].
 
 - *Mana Mana* - A proof-of-concept business natural language testing framework
-that was inspired by Cucumber and the Robot framework. This was borne of my
-never-ending search for better ways to write maintainable automated tests. link:https://github.com/ManaManaFramework/manamana[Source in Github].
+that was inspired by Cucumber and the Robot framework. This was borne out of my
+never-ending search for better ways to write maintainable automated tests. 
+https://github.com/ManaManaFramework/manamana[Source in Github].
+
+- *Others* - I also contribute to other open source projects and you will usually
+find it in my https://github.com/relaxdiego[activity feed on Github]
 
 
 == One More Thing
@@ -87,10 +104,14 @@ Dimension Data, Pleasanton, CA
 Dimension Data is a leading provider of professional, cloud, consulting 
 and managed services for advanced IT solutions. Our team actively 
 contributed to Ansible, OpenStack, Open vSwitch, and Open DayLight. My
-official title was QA/Release Engineer but my responsibilities spanned way
-beyond that and I happily took on every assignment sent my way!
+official title was QA/Release Engineer but my responsibilities spanned
+those of a software engineer/architect.
 
 .*Achievements*
+
+- Designed and implemented a non-interactive agent that automatically 
+  launched time-bound AWS spot instances as needed for use as auxiliary 
+  Jenkins workers that handled non-time-critical builds.
 
 - Wrote Ansible modules to be used for provisioning resources on Dimension
   Data's cloud service.
@@ -98,8 +119,10 @@ beyond that and I happily took on every assignment sent my way!
 - Developed an Ansible-based project that deployed an HA OpenShift
   platform for use by our team as a replacement for our CI/CD pipeline.
 
-- Designed and implemented the full stack for a web application that was
-  designed to transform data from one format to another.
+- Designed and implemented the full stack of a web application that was
+  designed to transform data from one format to another. The system used
+  Rails, Postgres, Redis (for job queueing), Resque, and Ceph both for
+  persistent block and object storage.
 
 - Designed and implemented an automated test harness framework used by 
   our testers for our various software products.
@@ -112,10 +135,11 @@ beyond that and I happily took on every assignment sent my way!
 *Software/DevOps Engineer* (Jul 2012 - Jan 2014) +
 Morph, Manhattan Beach, CA
 
-Morph produced IaaS appliances that its customers can install inside of 
+Morph was the first PaaS built on top of AWS and later on pivoted to
+providing IaaS appliances that its customers can install inside of 
 their data center to use as a springboard for quickly building their own 
 cloud computing environment. My official title was Senior Director of
-Engineering but my actual roles spanned that of a software engineer.
+Engineering but my actual roles spanned that of a software engineer/architect.
 
 .*Achievements*
 
@@ -221,7 +245,7 @@ P. del Rosario Street, Cebu City 6000, Philippines
 == LinkedIn Recommendations
 
 > Mark is an exceptional employee from his personal interactions 
-> with his peers, development skills and passion for quality. Mark 
+> with his peers, development skills and passion for quality. He 
 > has a wide breadth of exposure to different programming languages, 
 > configuration management and software design and architecture.
 > -- Mike Outland, DevOps Manager
@@ -241,7 +265,7 @@ P. del Rosario Street, Cebu City 6000, Philippines
 > gift to the next company he works with.
 > -- Aimon Bustardo, Sr. DevOps Engineer
 
-> Possibly the best reason i looked forward to go to work everyday 
+> Possibly the best reason I looked forward to go to work everyday 
 > at Dimension Data is because of the opportunity to work closely 
 > and be mentored by Mark. I see him as a true software craftsman 
 > who is passionate about code and cares a lot about code quality, 
