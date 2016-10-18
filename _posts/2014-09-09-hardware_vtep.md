@@ -9,7 +9,7 @@ In [my previous post](/2014/09/ovs-lab.html), I announced that I open sourced
 my Open vSwitch lab as well as the scripts and files that I produced as I
 followed David Mahler's [introduction to VXLAN overlay networks with Open
 vSwitch](https://www.youtube.com/watch?v=tnSkHhsLqpM). In this post, I'm going
-to re-purpose my Open vSwitch lab to explore hardware virtual tunnel endpoints
+to re-purpose my Open vSwitch lab to explore hardware VXLAN tunnel endpoints
 (HW VTEP).
 
 ## A Quick Review of Hardware VTEPs
