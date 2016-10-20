@@ -70,12 +70,12 @@ What just happened is that the test-module script executed your
 module without loading all of ansible. This is a nice way to quickly
 do a sort-of-end-to-end test of your module after you've written your
 unit tests. I **would not** recommend using it exclusively as your testing
-strategy. It's best used alongside unit tests and `ansible-validate-modules`
+strategy. It's best used alongside unit tests and `validate-modules`
 which we'll use next.
 
 Run:
 
-    $ ansible-validate-modules <path to your first module dir>
+    $ test/sanity/validate-modules/validate-modules <path to your first module dir>
 
 This should get you the following errors:
 

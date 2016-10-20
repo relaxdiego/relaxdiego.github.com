@@ -175,18 +175,15 @@ I have my dotfiles project [here](https://github.com/relaxdiego/dotfiles). Yes
 I still need to convert it to an Ansible playbook!
 
 
-## Install The Ansible Module Validator (Linter)
+## Try The Ansible Module Validator (Linter)
 
-It's like Flake8 for Ansible. Install it with:
+It's like Flake8 for Ansible. From your **ansible repo**, run it with:
 
-    $ pip install git+https://github.com/sivel/ansible-testing.git#egg=ansible_testing
-
-From your **ansible repo**, run it with:
-
-    $ ansible-validate-modules lib/ansible/modules/core/cloud/amazon
+    $ test/sanity/validate-modules/validate-modules lib/ansible/modules/core/cloud/amazon
 
 It shouldn't output anything since the amazon core modules are compliant.
-We will see it in a fouler mood later when we write a sample module.
+We will see it in a fouler mood later when we write a sample module. If you
+wan't to know more about it, here's its [README](https://github.com/ansible/ansible/tree/devel/test/sanity/validate-modules).
 
 
 ## You're Ready to Start Developing!

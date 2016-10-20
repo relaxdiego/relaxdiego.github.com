@@ -137,7 +137,7 @@ Run the test again to see it pass.
 
 Let's run the linter against our module:
 
-    $ ansible-validate-modules <path to module dir>
+    $ test/sanity/validate-modules/validate-modules <path to module dir>
 
 That should list a few errors about documentation, examples,
 and the GPLv3 license header. Let's fix that by modifying the top part
