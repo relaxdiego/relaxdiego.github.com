@@ -42,9 +42,12 @@ OpenShift/Kubernetes environment as a means to replace our internal
 CI/CD pipeline as well as an environment to deploy our internal apps.
 
 - *Talked at various meetups and conferences* - I've presented on various topics
-such as How I Built My Own BDD Framework (Ruby on Rails Meetup, Los Angeles), 
-Using Vagrant to Install OpenStack Tempest (OpenStack Summit Atlanta 2015), and 
-How to Write Fully-Tested Ansible Modules (AnsibleFest NY 2016).
+such as https://www.ansible.com/writing-fully-tested-ansible-modules-for-fun-and-profit[How 
+to Write Fully-Tested Ansible Modules] (AnsibleFest NY 2016),
+https://www.openstack.org/summit/openstack-summit-atlanta-2014/session-videos/presentation/multi-node-devstack-with-puppet[Multi-node 
+DevStack with Puppet] (OpenStack Summit Atlanta 2014), and
+https://docs.google.com/presentation/d/18O8BVqNSCM5Q2x492AP9njom_l_CKJ_ak9SzNtQACV0/edit?usp=sharing[How 
+I Built My Own BDD Framework] (Ruby on Rails Meetup, Los Angeles 2013)
 
 - *Reduced a 2-day manual process to 5 seconds* - While building the MIS for
 a metal fabrication shop, I learned about a manual computation process that
