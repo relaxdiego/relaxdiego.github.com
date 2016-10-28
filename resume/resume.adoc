@@ -71,6 +71,10 @@ then used everything that I learned to create a strategic plan for our family
 business which resulted in me getting the academic excellence award for best
 strategic plan.
 
+- *Can solve Rubik's Cube in 1 minute 25 seconds* - Not a record shattering feat
+but it's one of my best times. I decided to learned to solve the cube because it
+was interesting. https://youtu.be/3zh-ORAndw8[Video on YouTube].
+
 == A Few Open Source Projects
 
 - *Open vSwitch Lab* - A Vagrant project which provisions two machines that talk
