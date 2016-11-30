@@ -105,6 +105,21 @@ https://www.relaxdiego.com/2015/11/my-dev-setup-part-3.html[how I work].
 
 == Experience
 
+*Software/DevOps Engineer* (Nov 2016 - present) +
+Teradata, Santa Clara, CA
+
+Teradata Corporation is a Fortune 1000 provider of data warehouse
+platforms, software and services. Our team is at the center of the company's
+thrust to convert Teradata from a hardware to a software company.
+
+.*Achievements*
+
+- Jumped straight into helping out design and implement our Kubernetes clusters. 
+  There's not much to report yet since I just joined. However, I should mention 
+  that I joined on day one of a 2-week sprint and was able to submit PRs and demo 
+  more than a couple stories by the end of the sprint.
+
+
 *Software/DevOps Engineer* (Jan 2014 - Sep 2016) +
 Dimension Data, Pleasanton, CA
 
