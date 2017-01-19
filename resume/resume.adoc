@@ -50,10 +50,9 @@ https://docs.google.com/presentation/d/18O8BVqNSCM5Q2x492AP9njom_l_CKJ_ak9SzNtQA
 I Built My Own BDD Framework] (Ruby on Rails Meetup, Los Angeles 2013)
 
 - *Reduced a 2-day manual process to 5 seconds* - While building the MIS for
-a metal fabrication shop, I learned about a manual computation process that
-took shop floor engineers 2 days to complete. After some research and a few
-questions on a CompSci newsgroup, I was able to build a desktop app that reduced
-the computation time to 5 seconds.
+a metal fabrication shop, I learned about a manual process that took shop
+engineers 2 days to complete. After some research, I was able to build a
+desktop app that reduced the computation time to 5 seconds.
 
 - *Improved requirements gathering through prototyping* - Upon joining a new
 software consulting firm, I noticed the long feedback loop from requirements
@@ -114,10 +113,14 @@ thrust to convert Teradata from a hardware to a software company.
 
 .*Achievements*
 
-- Jumped straight into helping out design and implement our Kubernetes clusters. 
-  There's not much to report yet since I just joined. However, I should mention 
-  that I joined on day one of a 2-week sprint and was able to submit PRs and demo 
-  more than a couple stories by the end of the sprint.
+- Co-maintained internal Kubernetes distribution
+
+- Diagnosed and fixed an issue with flanneld configuration in CoreOS that
+  would render an entire Kubernetes cluster unavailable in case of an update.
+
+- Provided research findings on kops, a Kubernetes distribution.
+
+- Initiated design of CI/CD pipeline
 
 
 *Software/DevOps Engineer* (Jan 2014 - Sep 2016) +
