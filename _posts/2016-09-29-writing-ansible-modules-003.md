@@ -164,6 +164,10 @@ to look like this:
 from __future__ import (absolute_import, division)
 __metaclass__ = type
 
+ANSIBLE_METADATA = {'metadata_version': '1.0',
+                    'status': ['preview'],
+                    'supported_by': 'community'}
+
 DOCUMENTATION = '''
 ---
 module: firstmod
