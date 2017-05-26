@@ -161,6 +161,9 @@ to look like this:
 # along with Ansible.  If not, see <http://www.gnu.org/licenses/>.
 # Make coding more python3-ish
 
+from __future__ import (absolute_import, division)
+__metaclass__ = type
+
 DOCUMENTATION = '''
 ---
 module: firstmod
@@ -197,9 +200,6 @@ EXAMPLES = '''
 - firstmod:
     url: https://www.relaxdiego.com
     dest: ~/relaxdiego.com.txt
-    
-from __future__ import (absolute_import, division)
-__metaclass__ = type
 
 from urllib2 import URLError
 
