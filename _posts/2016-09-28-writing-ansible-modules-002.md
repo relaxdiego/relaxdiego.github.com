@@ -211,7 +211,7 @@ from __future__ import (absolute_import, division)
 __metaclass__ = type
 
 from ansible.compat.tests import unittest
-from ansible.compat.tests.mock import call, create_autospec, patch
+from ansible.compat.tests.mock import call, create_autospec, patch, mock_open
 from ansible.module_utils.basic import AnsibleModule
 
 from ansible.modules.extras.cloud.somebodyscomputer import firstmod
