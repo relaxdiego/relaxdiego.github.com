@@ -289,3 +289,6 @@ When you're ready, head over to [part 4](/2016/09/writing-ansible-modules-004.ht
 where we'll learn how to submit our code upstream. Alternatively, you 
 can go back to the [the introduction](/2016/06/writing-ansible-modules-with-tests.html)
 if you want to jump ahead to other parts.
+
+
+<sup>Co-Written by [Andreas Hubert](https://www.linkedin.com/in/peshay/)</sup>
