@@ -160,18 +160,10 @@ to look like this:
 # You should have received a copy of the GNU General Public License
 # along with Ansible.  If not, see <http://www.gnu.org/licenses/>.
 # Make coding more python3-ish
-from __future__ import (absolute_import, division)
-__metaclass__ = type
-
-from urllib2 import URLError
-
-from ansible.module_utils.basic import AnsibleModule
-from ansible.module_utils.urls import open_url
-
 
 DOCUMENTATION = '''
 ---
-module: firsmod
+module: firstmod
 short_description: Downloads stuff from the interwebs
 description:
     - Downloads stuff
@@ -205,6 +197,16 @@ EXAMPLES = '''
 - firstmod:
     url: https://www.relaxdiego.com
     dest: ~/relaxdiego.com.txt
+    
+from __future__ import (absolute_import, division)
+__metaclass__ = type
+
+from urllib2 import URLError
+
+from ansible.module_utils.basic import AnsibleModule
+from ansible.module_utils.urls import open_url
+
+
 '''
 {%endhighlight%}
 
