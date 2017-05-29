@@ -76,7 +76,7 @@ With these, you'll gain the following `git` commands:
 
 - `git fa` - Fetch (but don't merge) the latest from all remotes
 - `git t` - See the history of the current branch laid out in a tree
-- `git ta` - See the history of the entire repo laid out in a tree
+- `git ta` - See the history of the entire repo laid out in a treeadd
 
 
 ## Prepare Your Environment For Local Development
@@ -89,11 +89,12 @@ This will prepare your current terminal session and prepend the current
 ansible repo to your $PATH. Running `ansible --version` should get you
 something similar to this:
 
-    ansible 2.2.0 (devel e81f14ab48) last updated 2016/06/09 09:45:16 (GMT -700)
-      lib/ansible/modules/core: (detached HEAD b37429f6ed) last updated 2016/06/10 09:08:18 (GMT -700)
-      lib/ansible/modules/extras: (detached HEAD 93b59ba852) last updated 2016/06/09 09:45:29 (GMT -700)
+    ansible 2.4.0 (devel 2af5556901) last updated 2017/05/26 10:03:41 (GMT +200)
       config file =
-      configured module search path = Default w/o overrides
+      configured module search path = [u'/Users/youruser/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
+      ansible python module location = <path to your local ansible repo>/lib/ansible
+      executable location = <path to your local ansible repo>/bin/ansible
+      python version = 2.7.13 (default, Apr  4 2017, 08:47:57)
 
 Provided you didn't have any shims messing up your path, running
 `which ansible` should now show the `<path to your local ansible repo>/bin/ansible`.
