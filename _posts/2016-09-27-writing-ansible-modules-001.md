@@ -4,7 +4,7 @@ title: Writing Ansible Modules Part 1 - Preparing Your Environment
 comments: true
 categories: ansible, modules, configuration management, software development, automated testing, code coverage, agile, tdd, bdd
 ---
-This is part 1 of a series of articles. For other parts, see 
+This is part 1 of a series of articles. For other parts, see
 [the introductory article](/2016/06/writing-ansible-modules-with-tests.html).
 
 
@@ -15,8 +15,8 @@ You'll need a few things handy before you can continue:
 - Git branching basics. [Learn Git Branching](http://learngitbranching.js.org)
   is a great resource!
 
-- Python >= 2.7.8 && < 3.0.0. NOTE: Ansible works with Python 3.0+ and you 
-  might be able to get the code samples in this article to work on it but I 
+- Python >= 2.7.8 && < 3.0.0. NOTE: Ansible works with Python 3.0+ and you
+  might be able to get the code samples in this article to work on it but I
   haven't tried it yet.
 
 - Pip
@@ -30,7 +30,7 @@ You'll need a few things handy before you can continue:
     - nose
 
 - Basic testing knowledge including mocking. If you're not too familiar with
-  mocking, you can still follow along but I encourage you to read up on it 
+  mocking, you can still follow along but I encourage you to read up on it
   after you're done here as it will help make your unit tests more robust.
 
 
@@ -79,56 +79,6 @@ With these, you'll gain the following `git` commands:
 - `git ta` - See the history of the entire repo laid out in a tree
 
 
-## Prep Your Extras Modules Repo
-
-Go to the extras modules subdir
-
-    $ cd lib/ansible/modules/extras
-
-You are now in a git submodule. If you run `git ta` here, you will
-notice that the output is different from when you run the same command one
-level up. If you're not familiar with git submodules, it's really just
-a separate git repo that's being referenced by a parent repo. when we
-ran our `git clone` command earlier with the `--recursive` option, git
-also automatically cloned this repo and put it in `lib/ansible/modules/extras`.
-
-If you view this repo's remotes, you will see:
-
-    $ git remote -v
-    origin        https://github.com/ansible/ansible-modules-extras (fetch)
-    origin        https://github.com/ansible/ansible-modules-extras (push)
-
-
-To avoid confusing yourself as you work on your first module, you'll want the naming 
-of this repo's remotes to be consistent with that of your **ansible repo**. 
-So let's rename origin to upstream:
-
-    $ git remote rename origin upstream
-
-Then, if you haven't already done so, create a fork in Github of the
-[ansible-modules-extras](https://github.com/ansible/ansible-modules-extras)
-repo. Make sure to put the fork in the same account where you placed your 
-fork of the Ansible repo.
-
-After you've created the fork, add it as a remote to your local repo and 
-name it 'origin':
-
-    $ git remote add origin git@github.com:<your-github-account>/ansible-modules-extras.git
-
-Your remotes list should now be:
-
-    $ git remote -v
-    origin  git@github.com:<your-github-account>/ansible-modules-extras.git (fetch)
-    origin  git@github.com:<your-github-account>/ansible-modules-extras.git (push)
-    upstream        https://github.com/ansible/ansible-modules-extras (fetch)
-    upstream        https://github.com/ansible/ansible-modules-extras (push)
-
-I'm going to refer to this local clone as your **extras repo** from now on.
-
-NOTE: If you plan on contributing to the core modules repo too, just repeat 
-the same steps above but replace extras with core.
-
-
 ## Prepare Your Environment For Local Development
 
 While at the root dir of your **ansible repo**, run the following:
@@ -142,7 +92,7 @@ something similar to this:
     ansible 2.2.0 (devel e81f14ab48) last updated 2016/06/09 09:45:16 (GMT -700)
       lib/ansible/modules/core: (detached HEAD b37429f6ed) last updated 2016/06/10 09:08:18 (GMT -700)
       lib/ansible/modules/extras: (detached HEAD 93b59ba852) last updated 2016/06/09 09:45:29 (GMT -700)
-      config file = 
+      config file =
       configured module search path = Default w/o overrides
 
 Provided you didn't have any shims messing up your path, running
