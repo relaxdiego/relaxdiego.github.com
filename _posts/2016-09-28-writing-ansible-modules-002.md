@@ -4,13 +4,13 @@ title: Writing Ansible Modules Part 2 - Write Your First Module
 comments: true
 categories: ansible, modules, configuration management, software development, automated testing, code coverage, agile, tdd, bdd
 ---
-This is part 2 of a series of articles. For other parts, see 
+This is part 2 of a series of articles. For other parts, see
 [the introductory article](/2016/06/writing-ansible-modules-with-tests.html).
 
 ## It's Just Somebody's Computer
 
 Let's write a module for a fictitious cloud provider named Somebody's Computer.
-First, in the **extras repo**, let's create our module's subdir:
+First, let's create our module's subdir:
 
     $ mkdir cloud/somebodyscomputer
     $ touch cloud/somebodyscomputer/__init__.py
@@ -20,9 +20,9 @@ From now on, I'll refer to this as your **module dir**.
 
 ## Let's Kick The Tires for a Bit
 
-First, let's create a topic branch from the HEAD of devel and work there. 
-Working on a topic branch has its advantages in that, should new changes be 
-added to upstream/devel, all you have to do is fetch those and then rebase 
+First, let's create a topic branch from the HEAD of devel and work there.
+Working on a topic branch has its advantages in that, should new changes be
+added to upstream/devel, all you have to do is fetch those and then rebase
 your topic branch on top of it.
 
 Let's create our topic branch:
@@ -47,8 +47,8 @@ print json.dumps({
 
 You just created your first module! At this point, we can create a
 playbook that uses your timetest module and then execute it with
-ansible-playbook. But why when the Ansible repo provides a convenient 
-script that allows you to bypass all that! So from your **ansible repo**, run: 
+ansible-playbook. But why when the Ansible repo provides a convenient
+script that allows you to bypass all that! So from your **ansible repo**, run:
 
     $ hacking/test-module -m <path to module dir>/timetest.py
 
@@ -93,7 +93,7 @@ Ignore those errors for now while we're still kicking the tires.
 
 ## Let's Write A Real(-ish) Module!
 
-Let's start with a clean slate. From your **extras repo** run:
+Let's start with a clean slate, run:
 
     $ git reset --hard
 
@@ -105,7 +105,7 @@ Next, let's install some Python packages needed by our tests. From your
 NOTE: If you're developing on Python 3.0+, use requirements-py3.txt instead
 
 Next, let's write a module that fetches a resource pointed to by
-a URL and then writes it to disk. So in our **extras repo**, create a file at 
+a URL and then writes it to disk. So in our **ansible repo**, create a file at
 `cloud/somebodyscomputer/firstmod.py` with the following content:
 
 {% highlight python linenos %}
@@ -159,8 +159,8 @@ we really want to test is `save_data()`.
 ## WARNING: Here Be (Testing) Dragons!
 
 I expect that you already know how to write good tests and mocks because I
-don't have time to teach you that. If you don't, you might still be able to 
-follow along and make out a few things but testing know-how will go a long 
+don't have time to teach you that. If you don't, you might still be able to
+follow along and make out a few things but testing know-how will go a long
 way in these parts.
 
 If you're confident with your mad testing skillz but your mocking-fu is a bit
@@ -174,35 +174,24 @@ It's a quick 5~6-minute read.
 
 From your **ansible repo**, create a unit test directory for your module:
 
-    $ mkdir -p test/units/modules/extras/cloud/somebodyscomputer
+    $ mkdir -p test/units/modules/cloud/somebodyscomputer
 
-IMPORTANT: Make sure you run the above command from the root of your 
-**ansible repo** and not from the root of your **extras repo**.
-
-
-## Did you notice something?
-
-Astute readers might have noticed that while we will be writing our module
-in the **extras repo**, its respective tests will be written in the **ansible
-repo**. That means that, later on, you'll be submitting a pull request to
-the upstream extras repo (which will contain your module code) and another PR
-to the upstream ansible repo (which will contain your unit tests). Unfortunately,
-that will have to be the way it's done for now [until both repos are combined](https://github.com/ansible/proposals/blob/master/modules-management.md).
-I'll walk you through the process of submission in a later article.
+IMPORTANT: Make sure you run the above command from the root of your
+**ansible repo**.
 
 
 ## On With the Tests
 
 Let's make `save_data()` actually do some work. We'll design it to fetch
-the resource and then write it to disk. First, since we're going to be using 
-nose as our test framework, we have to ensure that every subdirectory in the 
-following path has an `__init__.py`, otherwise nose will not load our tests. 
-Go ahead and make sure there's that file in every directory in this path in 
+the resource and then write it to disk. First, since we're going to be using
+nose as our test framework, we have to ensure that every subdirectory in the
+following path has an `__init__.py`, otherwise nose will not load our tests.
+Go ahead and make sure there's that file in every directory in this path in
 your **ansible repo**:
 
     find test/units/modules/ -type d -exec touch {}/__init__.py  \;
 
-Next create `test/units/modules/extras/cloud/somebodyscomputer/test_firstmod.py`
+Next create `test/units/modules/cloud/somebodyscomputer/test_firstmod.py`
 as follows:
 
 {%highlight python linenos%}
@@ -214,13 +203,13 @@ from ansible.compat.tests import unittest
 from ansible.compat.tests.mock import call, create_autospec, patch, mock_open
 from ansible.module_utils.basic import AnsibleModule
 
-from ansible.modules.extras.cloud.somebodyscomputer import firstmod
+from ansible.modules.cloud.somebodyscomputer import firstmod
 
 
 class TestFirstMod(unittest.TestCase):
 
-    @patch('ansible.modules.extras.cloud.somebodyscomputer.firstmod.write')
-    @patch('ansible.modules.extras.cloud.somebodyscomputer.firstmod.fetch')
+    @patch('ansible.modules.cloud.somebodyscomputer.firstmod.write')
+    @patch('ansible.modules.cloud.somebodyscomputer.firstmod.fetch')
     def test__save_data__happy_path(self, fetch, write):
         # Setup
         mod_cls = create_autospec(AnsibleModule)
@@ -250,7 +239,7 @@ class TestFirstMod(unittest.TestCase):
 - **Lines 5 to 9** - Import Python modules that we're going to need for our test
 - **Lines 14 and 15** - Patch two new methods in our module, `write` and `fetch`
 - **Lines 18 to 23** - Set up a mock of AnsibleModule that we will pass
-  on to `save_data()`. We expect the function to get the arguments from the 
+  on to `save_data()`. We expect the function to get the arguments from the
   AnsibleModule's `param` attribute, so we stubbed that in line 20.
 - **Line 26** - Exercise the code
 - **Lines 29 to 31** - Verify that it called `fetch` properly
@@ -258,11 +247,11 @@ class TestFirstMod(unittest.TestCase):
 - **Lines 37 to 39** - Verify that it called `AnsibleModule.exit_json` properly
 
 
-Let's execute this test. From the **extras repo**, run:
+Let's execute this test. From the **ansible repo**, run:
 
     $ nosetests --doctest-tests -v test/unit/cloud/somebodyscomputer/test_firstmod.py
 
-This should get you an error because we haven't written any code that satisfies 
+This should get you an error because we haven't written any code that satisfies
 the test yet!
 
 
@@ -328,15 +317,15 @@ Run the test again to see it pass:
 The happy path is always the first path that I test but I don't stop there. In
 this context, I also test for when `fetch()` or `write()` fail. The steps are
 fairly similar to the happy path so I'll leave it to you to see how I did it
-by looking at the final [test](https://github.com/evil-org/ansible/blob/firstmod/test/units/modules/extras/cloud/somebodyscomputer/test_firstmod.py) and 
+by looking at the final [test](https://github.com/evil-org/ansible/blob/firstmod/test/units/modules/extras/cloud/somebodyscomputer/test_firstmod.py) and
 [source code](https://github.com/evil-org/ansible-modules-extras/blob/firstmod/cloud/somebodyscomputer/firstmod.py).
 
 
 ## You Rock!
 
-You made it this far and that deserves a pat on the back. Good job again! 
-Take another breather, then head on over to [part 3](writing-ansible-modules-003.html) 
-where we'll continue implementing our first module. Alternatively, you 
+You made it this far and that deserves a pat on the back. Good job again!
+Take another breather, then head on over to [part 3](writing-ansible-modules-003.html)
+where we'll continue implementing our first module. Alternatively, you
 can go back to the [the introduction](/2016/06/writing-ansible-modules-with-tests.html)
 if you want to jump ahead to other parts.
 
