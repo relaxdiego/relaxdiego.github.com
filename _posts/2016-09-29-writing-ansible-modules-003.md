@@ -4,7 +4,7 @@ title: Writing Ansible Modules Part 3 - Complete the Module
 comments: true
 categories: ansible, modules, configuration management, software development, automated testing, code coverage, agile, tdd, bdd
 ---
-This is part 3 of a series of articles. For other parts, see 
+This is part 3 of a series of articles. For other parts, see
 [the introductory article](/2016/06/writing-ansible-modules-with-tests.html).
 
 
@@ -13,7 +13,7 @@ This is part 3 of a series of articles. For other parts, see
 First, let's write the test:
 
 {%highlight python linenos%}
-    @patch('ansible.modules.extras.cloud.somebodyscomputer.firstmod.open_url')
+    @patch('ansible.modules.cloud.somebodyscomputer.firstmod.open_url')
     def test__fetch__happy_path(self, open_url):
         # Setup
         url = "https://www.google.com"
@@ -42,7 +42,7 @@ First, let's write the test:
 - **Lines 7 to 10** - We mock the IO object that `open_url` returns to `fetch()`
 - **Lines 16 to 21** - We verify if `fetch()` returned the correct data and that
   it called the underlying `open_url()` correctly.
-  
+
 Run the test and see it fail. Let's now write the code that makes it pass.
 First, add this near the top of your `firstmod.py` right after the first
 import line:
@@ -70,7 +70,7 @@ from urllib2 import URLError
 
 Notice also that we're raising a custom error class here called `FetchError`. This is
 so that we don't have to write an `except Exception` catchall in `save_data()`
-which is poor error handling. So let's add the following class to the file. I typically 
+which is poor error handling. So let's add the following class to the file. I typically
 write this near the top, just after the imports.
 
 {%highlight python linenos%}
@@ -92,7 +92,7 @@ Add the following test to `test_firstmod.py`:
         dest = "/path/to/file.txt"
 
         # Exercise
-        o_open = "ansible.modules.extras.cloud.somebodyscomputer.firstmod.open"
+        o_open = "ansible.modules.cloud.somebodyscomputer.firstmod.open"
         m_open = mock_open()
         with patch(o_open, m_open, create=True):
             firstmod.write(data, dest)
@@ -259,8 +259,8 @@ Batchelder's awesome coverage library. To get started, let's install it:
 Next, we'll use it with nose as follows:
 
     $ nosetests -v --with-coverage --cover-erase --cover-html \
-      --cover-package='ansible.modules.extras.cloud.somebodyscomputer' \
-      --cover-html-dir=/tmp/coverage -w test/units/modules/extras/cloud/somebodyscomputer/
+      --cover-package='ansible.modules.cloud.somebodyscomputer' \
+      --cover-html-dir=/tmp/coverage -w test/units/modules/cloud/somebodyscomputer/
 
 By running this single command, you'll get two things. First is a quick
 test coverage summary via the terminal. Second is an HTML format of the
@@ -286,7 +286,7 @@ module. That's quite an achivement so grab a beer (or whatever is your
 cup of...ummm...tea) and celebrate your awesomeness!
 
 When you're ready, head over to [part 4](/2016/09/writing-ansible-modules-004.html)
-where we'll learn how to submit our code upstream. Alternatively, you 
+where we'll learn how to submit our code upstream. Alternatively, you
 can go back to the [the introduction](/2016/06/writing-ansible-modules-with-tests.html)
 if you want to jump ahead to other parts.
 

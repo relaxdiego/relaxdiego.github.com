@@ -4,31 +4,23 @@ title: Writing Ansible Modules Part 4 - Submitting Code Upstream
 comments: true
 categories: ansible, modules, configuration management, software development, automated testing, code coverage, agile, tdd, bdd
 ---
-This is part 4 of a series of articles. For other parts, see 
+This is part 4 of a series of articles. For other parts, see
 [the introductory article](/2016/06/writing-ansible-modules-with-tests.html).
 
 
 ## Time To Push to Origin!
 
-Remember that we're working on two git repos here. First is the **ansible repo**
-and second is the **extras repo**. Let's work on the latter first.
-
-Run the following from the **extras repo**:
+Run the following from the **ansible repo**:
 
     $ git add cloud/
-    $ git commit -m "First module"
+    $ git add test    
+    $ git commit -m "First module including tests"
     $ git push origin
 
 Head on over to your Github fork of the extras repo and create a pull request
 out of the commit you just pushed. Once the PR has been created, copy the PR's
 URL to your clipboard since you will need to reference it from the next PR we
 will create next.
-
-Run the following from the **ansible repo**:
-
-    $ git add test
-    $ git commit -m "Tests for first module"
-    $ git push origin
 
 Now head on over to your Github fork of the ansible repo and create a pull
 request out of the commit you just pushed. In the PR's description, make sure
@@ -67,6 +59,6 @@ Yup, I'm talking to you. You're totally rocking that open source thing!
 
 Before we go our separate ways, I'll share with you some more resources that
 you might find helpful as you continue your journey of awesomeness. For that,
-head over to [part 5](/2016/10/writing-ansible-modules-005.html). Alternatively, 
+head over to [part 5](/2016/10/writing-ansible-modules-005.html). Alternatively,
 you can go back to the [the introduction](/2016/06/writing-ansible-modules-with-tests.html)
 if you want to jump to other parts.
