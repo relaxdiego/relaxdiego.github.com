@@ -131,9 +131,9 @@ I still need to convert it to an Ansible playbook!
 
 It's like Flake8 for Ansible. From your **ansible repo**, run it with:
 
-    $ test/sanity/validate-modules/validate-modules lib/ansible/modules/core/cloud/amazon
+    $ test/sanity/validate-modules/validate-modules lib/ansible/modules/cloud/amazon
 
-It shouldn't output anything since the amazon core modules are compliant.
+It shouldn't output anything since the amazon modules are compliant.
 We will see it in a fouler mood later when we write a sample module. If you
 wan't to know more about it, here's its [README](https://github.com/ansible/ansible/tree/devel/test/sanity/validate-modules).
 
