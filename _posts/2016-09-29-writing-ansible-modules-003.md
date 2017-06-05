@@ -4,6 +4,8 @@ title: Writing Ansible Modules Part 3 - Complete the Module
 comments: true
 categories: ansible, modules, configuration management, software development, automated testing, code coverage, agile, tdd, bdd
 ---
+<sup>Co-Written by [Andreas Hubert](https://www.linkedin.com/in/peshay/)</sup>
+
 This is part 3 of a series of articles. For other parts, see
 [the introductory article](/2016/06/writing-ansible-modules-with-tests.html).
 
@@ -289,6 +291,3 @@ When you're ready, head over to [part 4](/2016/09/writing-ansible-modules-004.ht
 where we'll learn how to submit our code upstream. Alternatively, you
 can go back to the [the introduction](/2016/06/writing-ansible-modules-with-tests.html)
 if you want to jump ahead to other parts.
-
-
-<sup>Co-Written by [Andreas Hubert](https://www.linkedin.com/in/peshay/)</sup>

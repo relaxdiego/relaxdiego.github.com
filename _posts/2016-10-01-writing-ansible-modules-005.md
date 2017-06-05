@@ -4,7 +4,9 @@ title: Writing Ansible Modules Part 5 - Helpful Resources
 comments: true
 categories: ansible, modules, configuration management, software development, automated testing, code coverage, agile, tdd, bdd
 ---
-This is part 5 of a series of articles. For other parts, see 
+<sup>Co-Written by [Andreas Hubert](https://www.linkedin.com/in/peshay/)</sup>
+
+This is part 5 of a series of articles. For other parts, see
 [the introductory article](/2016/06/writing-ansible-modules-with-tests.html).
 
 
@@ -15,13 +17,13 @@ your journey on your own but not necessarily alone. Here are some resources that
 will help you become an effective module developer.
 
 * **[The official module checklist](http://docs.ansible.com/ansible/developing_modules.html#module-checklist)** -
-  This is a very useful set of items to review especially just before you 
+  This is a very useful set of items to review especially just before you
   submit code upstream. Keep it in your bookmarks!
 
 * **[Running Integration Tests](https://github.com/ansible/ansible/blob/devel/test/integration/README.md)** -
   Here's very useful information on how to run integration tests locally.
 
-* **The [Tests](https://github.com/evil-org/ansible/blob/firstmod/test/units/modules/extras/cloud/somebodyscomputer/test_firstmod.py) 
+* **The [Tests](https://github.com/evil-org/ansible/blob/firstmod/test/units/modules/extras/cloud/somebodyscomputer/test_firstmod.py)
   and [Code](https://github.com/evil-org/ansible-modules-extras/blob/firstmod/cloud/somebodyscomputer/firstmod.py)** -
   Here's the complete sample code that we built in this series. Use it as you wish!
 
@@ -40,7 +42,7 @@ will help you become an effective module developer.
 - **\#ansible-devel on Freenode** - There's a lot of friendly folks in there who will be
   more than happy to help you if you have any module development questions.
 
-- **[ansible-devel mailing list](https://groups.google.com/forum/#!forum/ansible-devel)** - 
+- **[ansible-devel mailing list](https://groups.google.com/forum/#!forum/ansible-devel)** -
   If IRC is not your thing, you can contact the same folks from this Google Group.
 
 Well, that's it for now. Best of luck and see you on the Interwebz!
