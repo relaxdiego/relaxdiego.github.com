@@ -91,7 +91,7 @@ This will prepare your current terminal session and prepend the current
 ansible repo to your $PATH. Running `ansible --version` should get you
 something similar to this:
 
-    ansible 2.4.0 (devel 2af5556901) last updated 2017/05/26 10:03:41 (GMT +200)
+    ansible 2.4.0 (devel f43cab9395) last updated 2017/05/29 13:25:52 (GMT +200)
       config file =
       configured module search path = [u'/Users/youruser/.ansible/plugins/modules', u'/usr/share/ansible/plugins/modules']
       ansible python module location = <path to your local ansible repo>/lib/ansible
