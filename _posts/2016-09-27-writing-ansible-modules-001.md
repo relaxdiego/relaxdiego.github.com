@@ -119,8 +119,7 @@ with vim and split my tmux windows into the following panes:
 
 1. The top pane is dedicated to Vim
 2. Lower left pane is my local **ansible repo**
-3. Lower middle pane is my local **extras repo**
-4. Lower right pane is for running my tests which I can quickly initiate
+3. Lower right pane is for running my tests which I can quickly initiate
    from Vim thanks to test.vim by pressing `,s` (run nearest test),
    `,t` (run all tests in current file), and `,a` (run all tests)
 
