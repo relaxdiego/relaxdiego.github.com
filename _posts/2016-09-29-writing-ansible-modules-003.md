@@ -160,18 +160,17 @@ to look like this:
 # You should have received a copy of the GNU General Public License
 # along with Ansible.  If not, see <http://www.gnu.org/licenses/>.
 # Make coding more python3-ish
+
 from __future__ import (absolute_import, division)
 __metaclass__ = type
 
-from urllib2 import URLError
-
-from ansible.module_utils.basic import AnsibleModule
-from ansible.module_utils.urls import open_url
-
+ANSIBLE_METADATA = {'metadata_version': '1.0',
+                    'status': ['preview'],
+                    'supported_by': 'community'}
 
 DOCUMENTATION = '''
 ---
-module: firsmod
+module: firstmod
 short_description: Downloads stuff from the interwebs
 description:
     - Downloads stuff
@@ -205,6 +204,13 @@ EXAMPLES = '''
 - firstmod:
     url: https://www.relaxdiego.com
     dest: ~/relaxdiego.com.txt
+
+from urllib2 import URLError
+
+from ansible.module_utils.basic import AnsibleModule
+from ansible.module_utils.urls import open_url
+
+
 '''
 {%endhighlight%}
 
@@ -283,3 +289,6 @@ When you're ready, head over to [part 4](/2016/09/writing-ansible-modules-004.ht
 where we'll learn how to submit our code upstream. Alternatively, you
 can go back to the [the introduction](/2016/06/writing-ansible-modules-with-tests.html)
 if you want to jump ahead to other parts.
+
+
+<sup>Co-Written by [Andreas Hubert](https://www.linkedin.com/in/peshay/)</sup>
