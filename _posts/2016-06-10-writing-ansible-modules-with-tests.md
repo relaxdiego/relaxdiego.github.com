@@ -4,7 +4,7 @@ title: Writing Ansible Modules Complete With Tests
 comments: true
 categories: ansible, modules, configuration management, software development, automated testing, code coverage, agile, tdd, bdd
 ---
-<sup>Co-Written by [Andreas Hubert](https://www.linkedin.com/in/peshay/)</sup>
+<sup>Co-Written by [Andreas Hubert](https://github.com/peshay)</sup>
 
 While writing my first ansible module, I noticed that there wasn't any resource
 that completely described how to get started on my local dev environment.
