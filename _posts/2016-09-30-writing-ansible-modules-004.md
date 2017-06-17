@@ -4,7 +4,7 @@ title: Writing Ansible Modules Part 4 - Submitting Code Upstream
 comments: true
 categories: ansible, modules, configuration management, software development, automated testing, code coverage, agile, tdd, bdd
 ---
-<sup>Co-Written by [Andreas Hubert](https://www.linkedin.com/in/peshay/)</sup>
+<sup>Co-Written by [Andreas Hubert](https://github.com/peshay)</sup>
 
 This is part 4 of a series of articles. For other parts, see
 [the introductory article](/2016/06/writing-ansible-modules-with-tests.html).
