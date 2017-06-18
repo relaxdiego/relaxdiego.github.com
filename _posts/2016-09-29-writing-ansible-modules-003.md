@@ -242,7 +242,7 @@ It's a good idea to run the sanity tests every now and then so that you'll
 know ahead of time if you've introduced some non-compliant code into the
 source. From your **ansible repo** run:
 
-    $ INSTALL_DEPS=1 TOXENV=py27 test/utils/shippable/sanity.sh
+    $ INSTALL_DEPS=1 TOXENV=py27 ansible-test sanity
 
 If the test fails, you may have introduced some erroneous code. Check the
 error messages and fix as needed. If you're sure it's not your fault, check
