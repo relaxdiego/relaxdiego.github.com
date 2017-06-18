@@ -31,7 +31,7 @@ Let's create our topic branch:
 
     $ git checkout -b test_branch devel
 
-Let's use the simple example from the [Module Development Page](http://docs.ansible.com/ansible/developing_modules.html#testing-modules)
+Let's use the simple example from the [Module Development Page](http://docs.ansible.com/ansible/developing_modules.html#testing-modules), which we just slightly modify in order to work with the current Ansible develop branch,
 just to get familiar with the terrain a bit. In your **module dir**,
 create a file called `timetest.py` with the following content:
 
@@ -41,10 +41,11 @@ create a file called `timetest.py` with the following content:
 import datetime
 import json
 
-date = str(datetime.datetime.now())
-print json.dumps({
-    "time" : date
-})
+def main():
+    date = str(datetime.datetime.now())
+    print json.dumps({
+        "time" : date
+    })
 {%endhighlight%}
 
 You just created your first module! At this point, we can create a
@@ -84,11 +85,12 @@ This should get you the following errors:
     ============================================================================
     <path to first module dir>/timetest.py
     ============================================================================
-    ERROR: No DOCUMENTATION provided
-    ERROR: No EXAMPLES provided
-    ERROR: Did not find a call to main
-    ERROR: Did not find a module_utils import
-    ERROR: GPLv3 license header not found
+    <path to first module dir>/timestamp.py:0:0: E301 No DOCUMENTATION provided
+    <path to first module dir>/timestamp.py:0:0: E310 No EXAMPLES provided
+    <path to first module dir>/timestamp.py:0:0: E314 No ANSIBLE_METADATA provided
+    <path to first module dir>/timestamp.py:0:0: E103 Did not find a call to main
+    <path to first module dir>/timestamp.py:0:0: E201 Did not find a module_utils import
+    <path to first module dir>/timestamp.py:0:0: E105 GPLv3 license header not found
 
 Ignore those errors for now while we're still kicking the tires.
 
