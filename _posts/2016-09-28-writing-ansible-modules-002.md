@@ -255,7 +255,7 @@ class TestFirstMod(unittest.TestCase):
 
 Let's execute this test. From the **ansible repo**, run:
 
-    $ nosetests --doctest-tests -v test/unit/cloud/somebodyscomputer/test_firstmod.py
+    $ nosetests --doctest-tests -v test/units/modules/cloud/somebodyscomputer/test_firstmod.py
 
 This should get you an error because we haven't written any code that satisfies
 the test yet!
