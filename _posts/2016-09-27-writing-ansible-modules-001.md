@@ -60,7 +60,7 @@ which is how it should be.
     upstream        https://github.com/ansible/ansible (fetch)
     upstream        https://github.com/ansible/ansible (push)
 
-I'm going to refer to your local clone as your  **ansible repo** from now on.
+I'm going to refer to your local clone as your **ansible repo** from now on.
 
 
 ## Sidebar: Add a Few Git Aliases to Your Toolkit!
