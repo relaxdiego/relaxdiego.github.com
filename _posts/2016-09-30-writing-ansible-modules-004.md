@@ -19,7 +19,7 @@ Run the following from the **ansible repo**:
     $ git commit -m "First module including tests"
     $ git push origin
 
-Head on over to your Github fork of the extras repo and create a pull request
+Head on over to your Github fork and create a pull request
 out of the commit you just pushed. Once the PR has been created, copy the PR's
 URL to your clipboard since you will need to reference it from the next PR we
 will create next.
