@@ -141,7 +141,7 @@ Let's run the linter against our module:
 
     $ test/sanity/validate-modules/validate-modules <path to module dir>
 
-That should list a few errors about documentation, examples,
+That should list a few errors about documentation, examples, metadata,
 and the GPLv3 license header. Let's fix that by modifying the top part
 to look like this:
 
