@@ -20,7 +20,7 @@ will help you become an effective module developer.
   This is a very useful set of items to review especially just before you
   submit code upstream. Keep it in your bookmarks!
 
-* **[Running Integration Tests](https://github.com/ansible/ansible/blob/devel/test/integration/README.md)** -
+* **[Running Integration Tests](https://docs.ansible.com/ansible/dev_guide/testing_integration.html)** -
   Here's very useful information on how to run integration tests locally.
 
 * **The [Tests](https://github.com/evil-org/ansible/blob/firstmod/test/units/modules/extras/cloud/somebodyscomputer/test_firstmod.py)
