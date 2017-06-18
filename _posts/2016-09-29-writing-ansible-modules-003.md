@@ -206,14 +206,14 @@ EXAMPLES = '''
 - firstmod:
     url: https://www.relaxdiego.com
     dest: ~/relaxdiego.com.txt
+'''
 
 from urllib2 import URLError
 
 from ansible.module_utils.basic import AnsibleModule
-from ansible.module_utils.urls import open_url
+from ansible.module_utils.urls import open_ur
 
 
-'''
 {%endhighlight%}
 
 
