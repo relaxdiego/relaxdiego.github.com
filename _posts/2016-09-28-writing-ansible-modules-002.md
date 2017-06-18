@@ -41,11 +41,13 @@ create a file called `timetest.py` with the following content:
 import datetime
 import json
 
-def main():
+def show_time():
     date = str(datetime.datetime.now())
     print json.dumps({
         "time" : date
     })
+
+show_time()
 {%endhighlight%}
 
 You just created your first module! At this point, we can create a
