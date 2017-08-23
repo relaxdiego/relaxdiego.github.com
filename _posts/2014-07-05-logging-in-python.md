@@ -4,12 +4,17 @@ title: Hiding Sensitive Data from Logs with Python
 comments: true
 categories: Python, Logging, Filtering, Custom
 ---
+<sup>Co-Written by [Hari Dara](https://github.com/haridsv)</sup>
 
 Last week I've had to wrangle with Python's documentation because I needed one
 of the apps I'm writing to centrally remove sensitive information from the logs. After
 several attempts at understanding the documentation, I've come to appreciate
 the built-in logging framework. I also have to admit that it's more powerful
 than Ruby's built in logger.
+
+There are definitely more than one approach to solve this problem, but I will discuss a couple of approaches below:
+- [Using a filter](#redacting-logs-using-a-filter)
+- [Using a custom formatter](#redacting-logs-using-a-custom-formatter)
 
 ## Creating a logger
 
@@ -104,7 +109,7 @@ logging.config.dictConfig(config_dict)
 After that, calling `logging.getLogger()` from anywhere in your app will give you
 a logger configured as the above.
 
-## Filtering logs
+## Redacting logs using a Filter
 
 Here's a [detailed flowchart](https://docs.python.org/2/howto/logging.html#logging-flow) 
 of how the logging framework handles log messages. The handler flow on the right side
@@ -117,40 +122,48 @@ Declaring a filter requires that we create a new section in our config file call
 {% highlight yaml linenos %}
 filters:
     myfilter:
-        (): filters.MyFilter
+        (): filters.RedactingFilter
         patterns:
             - "filterthisstring"
             - "thistoo"
             - "metoo!"
 {% endhighlight %}
 
-I declared only one filter there and the class name is `MyFilter` as indicated 
-by the `()` key. All other keys will be supplied to the `MyFilter` constructor. In
+I declared only one filter there and the class name is `RedactingFilter` as indicated 
+by the `()` key. All other keys will be supplied to the `RedactingFilter` constructor. In
 the above example, an array of strings called `patterns` will be passed. Let's
-see how the `MyFilter` class might be defined. Let's assume we have a `filters.py`
+see how the `RedactingFilter` class might be defined. Let's assume we have a `filters.py`
 file with the following contents:
 
 {% highlight python linenos %}
+
 import logging
 
 
-class MyFilter(logging.Filter):
+class RedactingFilter(logging.Filter):
 
     def __init__(self, patterns):
+        super(RedactingFilter, self).__init__()
         self._patterns = patterns
 
     def filter(self, record):
-        msg = record.msg
-
-        for pattern in self._patterns:
-            msg = msg.replace(pattern, "<<TOP SECRET!>>")
-
-        record.msg = msg
-
+        msg = self.redact(record.msg)
+        if isinstance(record.args, dict):
+            for k in record.args.keys():
+                record.args[k] = self.redact(record.args[k])
+        else:
+            record.args = tuple(self.redact(arg) for arg in record.args)
         return True
+
+    def redact(self, msg):
+        msg = isinstance(msg, basestring) and msg or str(msg)
+        for pattern in self._patterns:
+               msg = msg.replace(pattern, "<<TOP SECRET!>>")
+        return msg
+
 {% endhighlight %}
 
-1. Notice how the `MyFilter` class inherits from `logging.Filter`
+1. Notice how the `RedactingFilter` class inherits from `logging.Filter`
 1. As you can see, our initializer expects a `patterns` argument
 1. Our second method `filter` is called automatically by the framework. This corresponds with the last diamond in this [flowchart](https://docs.python.org/2/howto/logging.html#logging-flow). If this method returns True, the log is written. Otherwise it is rejected. In our case, it always approves all log entries.
 1. Notice how our `filter` method expects a `record` argument. This is always a `LogRecord` instance which we can manipulate according to our needs. In our case, we take the log's `msg` and replace all occurances of the patterns we declared in the config file with "<<TOP SECRET!>>". You'll notice that it's just a small step from here to regular expressions. I'll let you experiment with that on your own. :-)
@@ -168,6 +181,38 @@ handlers:
 {% endhighlight %}
 
 Notice how `filters` is an array. Therefore we can add as many filters as we need here.
+
+## Redacting logs using a Custom Formatter
+
+In this approach, we will use a custom formatter objects that simply wrap the real formatter objects such that, messages can be intercepted right after they have been formatted but before the `handler` gets a chance to write them. This has the advantage that it is very simple, but unlike the previous approach, it can only be configured programmatically (which is actually good in a way, as it will always get applied irrespective of what the user configures).
+
+First we will create a formatter class which is just a wrapper that simply *proxies* all the original formatter attributes, except for the `format()` method.
+
+{% highlight python linenos %}
+
+class RedactingFormatter(object):
+    def __init__(self, orig_filter, patterns):
+        self.orig_filter = orig_filter
+        self._patterns = patterns
+
+    def format(self, record):
+        msg = self.orig_filter.format(record)
+        for pattern in self._patterns:
+            msg = msg.replace(pattern, "***")
+        return msg
+
+    def __getattr__(self, attr):
+        return getattr(self.orig_filter, attr)
+        
+{% endhighlight %}
+
+In the code right after `logging` is configured ([see](#configuring-your-loggers)), we need to add the below code to wrap all formatters (*a word of caution*: the below code assumes that all the handlers are on the root logger, but this may not always be the case):
+
+{% highlight python linenos %}
+for h in logging.root.handlers:
+    h.setFormatter(FilterFormatter(h.formatter))
+{% endhighlight %}
+
 
 ## Additional Reading
 
