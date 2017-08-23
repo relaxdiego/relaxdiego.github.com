@@ -32,7 +32,7 @@ to us other than the number of cookies in the stack and their size. Let's say
 there are 100 uncannilly-equally-sized (accurate to 0.01mm!) cookies in that stack.
 
 How can we estimate how long it will take to finish the stack? Do we spend an
-inordiate amount of time guessing, conjecturing, padding, and re-guessing? Or
+inordinate amount of time guessing, conjecturing, padding, and re-guessing? Or
 do we just take out a stopwatch and measure how long it takes to eat 2~3 cookies?
 
 To me, the second option seems more practical (and enjoyable!) and likely to
@@ -192,4 +192,4 @@ question against this post.
 a (now defunct) open source project that I started back in the day when I was 
 still using [Redmine](http://www.redmine.org/), and realized it's been that 
 long! Adding the work that I did for earlier unreleased versions of this 
-project, It's safe to say I mid-to-late 2008 with Scrum/Kanban/Agile.
+project, It's safe to say I started mid-to-late 2008 with Scrum/Kanban/Agile.
