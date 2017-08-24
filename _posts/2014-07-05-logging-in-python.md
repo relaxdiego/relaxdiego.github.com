@@ -191,18 +191,18 @@ First we will create a formatter class which is just a wrapper that simply *prox
 {% highlight python linenos %}
 
 class RedactingFormatter(object):
-    def __init__(self, orig_filter, patterns):
-        self.orig_filter = orig_filter
+    def __init__(self, orig_formatter, patterns):
+        self.orig_formatter = orig_formatter
         self._patterns = patterns
 
     def format(self, record):
-        msg = self.orig_filter.format(record)
+        msg = self.orig_formatter.format(record)
         for pattern in self._patterns:
             msg = msg.replace(pattern, "***")
         return msg
 
     def __getattr__(self, attr):
-        return getattr(self.orig_filter, attr)
+        return getattr(self.orig_formatter, attr)
         
 {% endhighlight %}
 
