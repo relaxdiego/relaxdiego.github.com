@@ -186,7 +186,7 @@ Notice how `filters` is an array. Therefore we can add as many filters as we nee
 
 In this approach, we will use a custom formatter objects that simply wrap the real formatter objects such that, messages can be intercepted right after they have been formatted but before the `handler` gets a chance to write them. This has the advantage that it is very simple, but unlike the previous approach, it can only be configured programmatically (which is actually good in a way, as it will always get applied irrespective of what the user configures).
 
-First we will create a formatter class which is just a wrapper that simply *proxies* all the original formatter attributes, except for the `format()` method.
+First we will create a formatter class which is just a wrapper that simply *proxies* all the original formatter attributes, except for the `format()` method.  Let’s assume we have a formatters.py file with the following contents:
 
 {% highlight python linenos %}
 
