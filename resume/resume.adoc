@@ -112,14 +112,9 @@ thrust to convert Teradata from a hardware to a software company.
 
 .*Achievements*
 
-- Co-maintained internal Kubernetes distribution
+- Team Lead for the internal Kubernetes standard configuration for Teradata UDA
 
-- Diagnosed and fixed an issue with flanneld configuration in CoreOS that
-  would render an entire Kubernetes cluster unavailable in case of an update.
-
-- Provided research findings on kops, a Kubernetes distribution.
-
-- Initiated design of CI/CD pipeline
+- Architect for the CI/CD environment of the UDA AppCenter team
 
 
 *Software/DevOps Engineer* (Jan 2014 - Sep 2016) +
