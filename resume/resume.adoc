@@ -6,13 +6,12 @@ mark@maglana.com
 https://relaxdiego.com
 SF Bay Area, CA
 
-I am a software engineer who has been working in a DevOps environment 
-since 2008 contributing my knowledge on sound software engineering 
-practices to my Ops colleagues while sharing what I know about the big 
-picture of software delivery to my Dev colleagues. I enjoy what I do 
-because I get to contribute by a significant portion to the delivery of 
-awesome software solutions.
-
+https://training.linuxfoundation.org/certification/verify-certifications[CNCF Certified Kubernetes Administrator]
+(Certificate ID: CKA-1700-0020-0100). A Software Engineer practicing DevOps.
+I contribute my knowledge on sound software development practices to my Ops
+colleagues and share what I learn from Ops to my Dev colleagues. I enjoy
+what I do not only because I get to learn new things and apply them everyday
+but also because I get to impart them to my colleagues on either side.
 
 == Accomplishments
 
@@ -41,7 +40,8 @@ OpenShift/Kubernetes environment as a means to replace our internal
 CI/CD pipeline as well as an environment to deploy our internal apps.
 
 - *Talked at various meetups and conferences* - I've presented on various topics
-such as https://www.ansible.com/writing-fully-tested-ansible-modules-for-fun-and-profit[How 
+such as link:/2017/05/swampup-2017-slides.html[Baking and Frying Machine Images]
+(jFrog Napa Valley 2017), https://www.ansible.com/writing-fully-tested-ansible-modules-for-fun-and-profit[How 
 to Write Fully-Tested Ansible Modules] (AnsibleFest NY 2016),
 https://www.openstack.org/summit/openstack-summit-atlanta-2014/session-videos/presentation/multi-node-devstack-with-puppet[Multi-node 
 DevStack with Puppet] (OpenStack Summit Atlanta 2014), and
