@@ -1,17 +1,21 @@
 == Mark Maglana
-=== Software Engineer with a Twist of DevOps
+=== DevOps Engineer trained in Software Engineering and Management
 
 [%hardbreaks]
 mark@maglana.com
 https://relaxdiego.com
 SF Bay Area, CA
 
+
 https://training.linuxfoundation.org/certification/verify-certifications[CNCF Certified Kubernetes Administrator]
-(Certificate ID: CKA-1700-0020-0100). A Software Engineer practicing DevOps.
-I contribute my knowledge on sound software development practices to my Ops
-colleagues and share what I learn from Ops to my Dev colleagues. I enjoy
-what I do not only because I get to learn new things and apply them everyday
-but also because I get to impart them to my colleagues on either side.
+(Certificate ID: CKA-1700-0020-0100). I'm a DevOps Engineer with a Software
+Engineering and Management background. I contribute my knowledge on sound
+software development practices to my ops colleagues and share what I learn
+about operations to my dev colleagues. I also employ my management education
+to give my work more context. I enjoy what I do, not only because I get to
+learn and apply new things everyday, but also because I get to impart them
+to my colleagues on all sides.
+
 
 == Accomplishments
 
