@@ -10,11 +10,11 @@ SF Bay Area, CA
 https://training.linuxfoundation.org/certification/verify-certifications[CNCF Certified Kubernetes Administrator]
 (Certificate ID: CKA-1700-0020-0100). I'm a DevOps Engineer with a Software
 Engineering and Management background. I contribute my knowledge on sound
-software development practices to my ops colleagues and share what I learn
-about operations to my dev colleagues. I also employ my management education
-to give my work more context. I enjoy what I do, not only because I get to
-learn and apply new things everyday, but also because I get to impart them
-to my colleagues on all sides.
+software development practices to my ops coworkers and share what I learn
+about operations to my dev coworkers. I also employ my management education
+to give my and my teammates' tasks more context. I enjoy what I do, not only
+because I get to learn and apply new things everyday, but also because I get
+to share them to my colleagues on all sides.
 
 
 == Accomplishments
@@ -107,7 +107,7 @@ https://www.relaxdiego.com/2015/11/my-dev-setup-part-3.html[how I work].
 
 == Experience
 
-*Software/DevOps Engineer* (Nov 2016 - present) +
+*DevOps Engineer* (Nov 2016 - present) +
 Teradata, Santa Clara, CA
 
 Teradata Corporation is a Fortune 1000 provider of data warehouse
@@ -121,7 +121,7 @@ thrust to convert Teradata from a hardware to a software company.
 - Architect for the CI/CD environment of the UDA AppCenter team
 
 
-*Software/DevOps Engineer* (Jan 2014 - Sep 2016) +
+*QA/Release Engineer* (Jan 2014 - Sep 2016) +
 Dimension Data, Pleasanton, CA
 
 Dimension Data is a leading provider of professional, cloud, consulting 
@@ -155,7 +155,7 @@ those of a software engineer/architect.
   allowed them to hit the ground running and deliver within budget.
 
 
-*Software/DevOps Engineer* (Jul 2012 - Jan 2014) +
+*Senior Director Of Engineering* (Jul 2012 - Jan 2014) +
 Morph, Manhattan Beach, CA
 
 Morph was the first PaaS built on top of AWS and later on pivoted to
@@ -178,7 +178,7 @@ Engineering but my actual roles spanned that of a software engineer/architect.
 has deployable, stable code.
 
 
-*Software Product Manager* (Jan 2008 - Jul 2012) +
+*Senior Director for Product Development* (Jan 2008 - Jul 2012) +
 Exist Global, Manila, Philippines
 
 Exist provides tailored solutions, consulting and full cycle IT services to
