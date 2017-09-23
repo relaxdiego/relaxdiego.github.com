@@ -289,7 +289,7 @@ P. del Rosario Street, Cebu City 6000, Philippines
 > with his peers, development skills and passion for quality. He 
 > has a wide breadth of exposure to different programming languages, 
 > configuration management and software design and architecture.
-> -- Mike Outland, DevOps Manager
+> -- Mike Outland, DevOps Manager, Tesla
 
 > Mark is an exceptionally capable software architect and developer. 
 > When a new technology or language needed to be implemented, Mark 
@@ -304,7 +304,14 @@ P. del Rosario Street, Cebu City 6000, Philippines
 > challenges and motivate teams to push on. I give Mark my highest 
 > recommendation to anything he wants to take on. He will be a rare 
 > gift to the next company he works with.
-> -- Aimon Bustardo, Sr. DevOps Engineer
+> -- Aimon Bustardo, Sr. DevOps Engineer, Desk.com
+
+> Mark is one of the few people I know who can truly perform well in
+> a 'player/coach' role. While his technical chops may be second to
+> none, he combines those chops with a natural ability to 'lead from
+> the front'. He would most certainly be a valuable asset to any team
+> lucky enough to have him.
+> -- Jason Reslock, Lead DevOps Engineer, Teradata
 
 > Possibly the best reason I looked forward to go to work everyday 
 > at Dimension Data is because of the opportunity to work closely 
@@ -313,7 +320,7 @@ P. del Rosario Street, Cebu City 6000, Philippines
 > readability and testability. He can lead teams, mentor teammates, 
 > commit production code within time and budget while giving a 
 > helping hand with whatever is the issue of the day.
-> -- Bert Diwa, Sr. QA Engineer
+> -- Bert Diwa, Sr. QA/Automation Engineer, Verizon
 
 > [Mark] produced solid designs. He was an expert at Python (and 
 > apparently Ruby too). He seemed to know about every Open Source 
@@ -327,10 +334,10 @@ P. del Rosario Street, Cebu City 6000, Philippines
 
 > Mark was a particularly able and focused student, capable of 
 > working independently and evaluating ideas and approaches 
-> critically. His particular interest at the time was the role, 
-> design and development of business incubators as a tool for 
-> regional development.
-> -- Don Scott-Kemmis, Professor
+> critically. His particular interest at the time [while studying at
+> the Australian National Univeristy] was the role, design and
+> development of business incubators as a tool for regional development.
+> -- Don Scott-Kemmis, Innovation Policy Consultant
 
 
 
