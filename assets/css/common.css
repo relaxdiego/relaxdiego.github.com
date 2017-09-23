@@ -6,6 +6,11 @@ code {
   width: 30px;
 }
 
+span.post-date {
+    font-family: 'Inconsolata', monospace;
+    color: #666;
+}
+
 #post p,
 #post h3,
 #post li {
@@ -23,7 +28,7 @@ code {
 #post ul li,
 #post ol li {
   font-size: 13pt;
-  line-height: 25pt;
+  line-height: 23pt;
 }
 
 #post h3 {
