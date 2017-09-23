@@ -5,5 +5,3 @@ enforce_ssl: www.relaxdiego.com
 permalink: /:year/:month/:title.html
 highlighter: rouge
 markdown: kramdown
-gems:
-  - jekyll-asciidoc

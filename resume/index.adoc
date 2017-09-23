@@ -2,4 +2,4 @@
 // from jekyll-specific conent in case I want to render it to other formats
 // in the future.
 :last-update-label!:
-include::resume.adoc[]
+include::./resume/resume.adoc[]
