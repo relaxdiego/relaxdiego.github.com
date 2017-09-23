@@ -44,3 +44,13 @@ code {
 	margin-right: auto;
 	width: 592px;
 }
+
+.footer {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+.resume-pointer {
+    background-color: #FFF3AA
+}
