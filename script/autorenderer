@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+# In case something changed before this script started
+make resume
+
+# Requires fswatch https://github.com/emcrisostomo/fswatch
+# `brew install fswatch`
+
+# This loop was inspired by https://superuser.com/a/181543/774060
+fswatch -x ./resume |
+while read -r path events; do
+  filename=$(basename "$path")
+  extension="${filename##*.}"
+
+  if [ "$extension" = "adoc" ]; then
+      echo "Source file changed: $filename"
+      make resume
+  fi
+done

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# Run this via `./start`
+
+if hash foreman 2>/dev/null; then
+    foreman start
+else
+    echo "==============================================="
+    echo "Please install Foreman before proceeding"
+    echo "More info at https://github.com/ddollar/foreman"
+    echo "==============================================="
+fi

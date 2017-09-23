@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+cd $(dirname "${BASH_SOURCE[0]}")/..
+asciidoctor-pdf --base-dir ./ --destination-dir ./ --out-file resume.pdf resume/index.adoc
+echo "   rendered ./resume.pdf"
