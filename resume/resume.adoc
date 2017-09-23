@@ -4,7 +4,7 @@
 [%hardbreaks]
 maglana@linux.com
 https://relaxdiego.com
-SF Bay Area, CA
+Silicon Valley, CA
 
 
 https://training.linuxfoundation.org/certification/verify-certifications[CNCF Certified Kubernetes Administrator]
