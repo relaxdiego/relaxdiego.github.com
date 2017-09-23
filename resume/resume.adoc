@@ -9,12 +9,12 @@ SF Bay Area, CA
 
 https://training.linuxfoundation.org/certification/verify-certifications[CNCF Certified Kubernetes Administrator]
 (Certificate ID: CKA-1700-0020-0100). I'm a DevOps Engineer with a Software
-Engineering and Management background. I contribute my knowledge on sound
-software development practices to my ops coworkers and share what I learn
-about operations to my dev coworkers. I also employ my management education
-to give my and my teammates' tasks more context. I enjoy what I do, not only
-because I get to learn and apply new things everyday, but also because I get
-to share them to my colleagues on all sides.
+Engineering and Management background. I share my knowledge on sound
+Software Engineering practices with my Ops coworkers and what I know about
+operations with my Dev coworkers. I also employ my management education
+to give my team's mission more context. I enjoy what I do, not only because
+I get to tackle the unknown and level up everyday, but also because I get
+to share the magic with my colleagues at all levels.
 
 
 == Accomplishments
