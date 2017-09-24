@@ -12,8 +12,8 @@ This is part 5 of a series of articles. For other parts, see
 
 ## I'm So Proud of You!
 
-You did an rockin' job finishing this series! Now it's time for you to continue
-your journey on your own but not necessarily alone. Here are some resources that
+You did a rockin' job finishing this series! Now it's time for you to continue
+the journey on your own but not necessarily alone. Here are some resources that
 will help you become an effective module developer.
 
 * **[The official module checklist](http://docs.ansible.com/ansible/developing_modules.html#module-checklist)** -
@@ -28,8 +28,8 @@ will help you become an effective module developer.
   Here's the complete sample code that we built in this series. Use it as you wish!
 
 - **[Boundaries Talk by Gary Bernhardt](http://pyvideo.org/pycon-us-2013/boundaries.html)** -
-  Here's one of my new favorite talks. Here, Gary talks about designing software that's
-  testable, maintainable, and all the good stuff that comes with properly designed apps.
+  One of my favorite talks. Here, Gary talks about designing software that's
+  testable, maintainable, and all the "-able" good stuff that comes with properly designed apps.
 
 - **[Integrated Tests are a Scam by J.B. Rainsberger](https://vimeo.com/80533536)** -
   While the title sounds controversial, it does open you up to a new way of thinking about
