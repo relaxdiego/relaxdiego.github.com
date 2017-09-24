@@ -341,8 +341,8 @@ P. del Rosario Street, Cebu City 6000, Philippines
 
 
 
-== Misc.
+== All Resume Formats
 
-This resume is available at https://www.relaxdiego.com/resume. Its
-source code is at https://raw.githubusercontent.com/relaxdiego/relaxdiego.github.com/master/resume/resume.adoc
-while the PDF format is at https://www.relaxdiego.com/resume.pdf
+* https://www.relaxdiego.com/resume[HTML]
+* https://www.relaxdiego.com/resume.pdf[PDF]
+* https://raw.githubusercontent.com/relaxdiego/relaxdiego.github.com/master/resume/resume.adoc[AsciiDoc]
