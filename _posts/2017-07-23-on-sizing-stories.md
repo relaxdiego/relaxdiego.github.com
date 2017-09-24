@@ -21,7 +21,7 @@ about 7 years ago and what I'm about to share below is largely based off of that
 
 No, not browser cookies. I'm talking about the delicious (yet just as evil) type:
 
-![Nom nom nom nom](/assets/images/cookie.jpg)
+![Nom nom nom nom](/assets/images/cookie.png)
 <center>Source: https://commons.wikimedia.org/wiki/File:Pepperidge-Farm-Nantucket-Cookie.jpg</center>
 
 ### Scenario 1: A Perfect Stack of Cookies!
