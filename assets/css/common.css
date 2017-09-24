@@ -7,8 +7,11 @@ code {
 }
 
 span.post-date {
-    font-family: 'Inconsolata', monospace;
     color: #666;
+}
+
+span.monospace {
+    font-family: 'Inconsolata', monospace;
 }
 
 #post p,
@@ -56,6 +59,7 @@ span.post-date {
     text-align: center;
 }
 
-.resume-pointer {
+.resume-pointer,
+.highlighted-footer {
     background-color: #FFF3AA
 }

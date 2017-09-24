@@ -55,45 +55,45 @@ layout: null
           </h1>
 
           <div class="page-header">
-            <h2>About Me</h2>
+            <h2>
+              DevOps + Software Engineering + Agile
+              <small><br/></small>
+            </h2>
+          </div>
 
-            <ul>
-              <li><a href="/resume">Résumé</a></li>
-              <li><a href="https://github.com/relaxdiego">GitHub profile</a>
-              <li><a href="https://www.linkedin.com/in/markmaglana">LinkedIn profile</a>
-              <li><a href="https://www.instagram.com/mmaglana/">Software Defined Painting</a>
-            </ul>
+          <h2>About Me</h2>
+          <ul>
+            <li><a href="/resume">Résumé</a></li>
+            <li><a href="https://github.com/relaxdiego">GitHub profile</a>
+            <li><a href="https://www.linkedin.com/in/markmaglana">LinkedIn profile</a>
+            <li><a href="https://www.instagram.com/mmaglana/">Software Defined Painting</a>
+          </ul>
 
-            <!-- <h2>Projects</h2> -->
-            <!-- <ul> -->
-            <!--   <li><a href="https://github.com/relaxdiego/ovs&#45;lab">Open vSwitch Lab</a> -->
-            <!--   <li><a href="https://aviator.github.io/www/">Aviator</a> -->
-            <!--   <li><a href="https://github.com/ManaManaFramework/manamana">ManaMana Framework</a> -->
-            <!--   <li><a href="https://github.com/backlogs/redmine_backlogs">Redmine Backlogs</a> -->
-            <!--   <li><a href="https://github.com/relaxdiego/NATS">NATS</a> -->
-            <!-- </ul> -->
-            <!--  -->
-            <!-- <p><a href="/portfolio" style="margin&#45;left:10px">The thinking behind each project</a></p> -->
+          <h2>Open Source Projects</h2>
+          <ul>
+            <li><a href="https://github.com/relaxdiego/ovs-lab">Open vSwitch Lab</a>
+            <li><a href="https://aviator.github.io/www/">Aviator</a>
+            <li><a href="https://github.com/ManaManaFramework/manamana">ManaMana Framework</a>
+            <li><a href="https://github.com/backlogs/redmine_backlogs">Redmine Backlogs</a>
+            <li><a href="https://github.com/relaxdiego/NATS">NATS</a>
+          </ul>
 
-            <h2>Posts</h2>
-            <ul>
-            {% for post in site.posts %}
-            <li><span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>&nbsp;&nbsp;<a href="{{ post.url }}">{{ post.title }}</a></li>
-            {% endfor %}
-            </ul>
+          <h2>Posts</h2>
+          <ul>
+          {% for post in site.posts %}
+          <li><span class="post-date monospace">{{ post.date | date: "%Y-%m-%d" }}</span>&nbsp;&nbsp;<a href="{{ post.url }}">{{ post.title }}</a></li>
+          {% endfor %}
+          </ul>
 
-            <!-- <h2>Other Blogs</h2> -->
-            <!-- <ul> -->
-            <!--   <li><a href="https://sinulatan.wordpress.com">Letters to my Sons</a> -->
-            <!-- </ul> -->
+          <h2>Old Skool</h2>
+          <ul>
+            <li><span class="monospace"><a href="/rss.xml">RSS feed</a></span></li>
+          </ul>
 
-
-            <!-- <h2>Other Stuff</h2> -->
-            <p><a href="/rss.xml">RSS feed</a></p>
-
-            <div class="well">
-              Copyright 2014 Mark S. Maglana. This site is powered by <a href="jekyllrb.com">Jekyll</a> and the awesome folks at <a href="www.github.com">Github</a>.
-            </div>
+          <div class="well footer resume-pointer">
+            Copyright 2017 Mark Maglana | This site is powered by <a href="jekyllrb.com">Jekyll</a>
+            and <a href="https://kubernetes.io/">Kubernetes</a> (via the fine
+            folks at <a href="www.github.com">GitHub</a>)
           </div>
         </div>
       </div>
