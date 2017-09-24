@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+resume_series=$1
 cd $(dirname "${BASH_SOURCE[0]}")/..
-asciidoctor --base-dir ./ resume/index.adoc
-echo "   rendered resume/index.html"
+asciidoctor --base-dir ./ $resume_series/index.adoc
+echo "   rendered $resume_series/index.html"

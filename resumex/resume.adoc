@@ -1,0 +1,351 @@
+== Mark Maglana
+=== Technical Product Manager With A Strong Background in DevOps and Software Engineering
+
+[%hardbreaks]
+maglana@linux.com
+https://relaxdiego.com
+Silicon Valley, CA
+
+I have been and continue to be given assignments that are effectively
+Technical Product Manager roles across multiple employers since 2008.
+I share my knowledge on sound Software Engineering practices with my 
+Ops coworkers and what I know about operations with my Dev coworkers.
+I also employ my management education from the Australian National
+University to give my team's mission more context. I enjoy what I do,
+not only because I get to tackle the unknown and level up everyday, but
+also because I get to share the magic with my colleagues at all levels.
+
+CNCF Certified Kubernetes Administrator +
+https://training.linuxfoundation.org/certification/verify-certifications +
+Certificate ID: CKA-1700-0020-0100 +
+Last Name: Maglana
+
+== Accomplishments
+
+- *Increased billing module accuracy and speed by at least 10x* - When a
+product's billing module was producing inaccurate results and regularly
+timing out, I offered to inspect the code and find out where the problem
+lay. After much debugging, I found the problem and provided a fix which
+resulted in the reports displaying correctly. To improve the speed, however,
+required re-architecting the module which I led from conception to delivery.
+
+- *Facilitated the timely delivery of software by automating requirements* -
+We needed to deliver a software agent for a customer that needed their 
+product to work with a 3rd-party vendor's product. I volunteered to study 
+the associated open standards and proprietary protocol to learn about the 
+requirements. I then codified these requirements in a test harness that 
+also doubled as the executable requirements document for the development 
+team. After integrating this into our CI/CD pipeline, the dev team was able 
+to receive timely feedback on requirements compliance and regressions allowing 
+them to deliver on time and within budget!
+
+- *Deployed an HA container orchestration platform to replace CI/CD* - 
+I have been following containerization since the initial Docker days even 
+though it was outside my job description. Because of my skunkworks preparation, 
+I was later able to build an Ansible-based project that provisioned an HA 
+OpenShift/Kubernetes environment as a means to replace our internal 
+CI/CD pipeline as well as an environment to deploy our internal apps.
+
+- *Talked at various meetups and conferences* - I've presented on various topics
+such as link:/2017/05/swampup-2017-slides.html[Baking and Frying Machine Images]
+(jFrog Napa Valley 2017), https://www.ansible.com/writing-fully-tested-ansible-modules-for-fun-and-profit[How 
+to Write Fully-Tested Ansible Modules] (AnsibleFest NY 2016),
+https://www.openstack.org/summit/openstack-summit-atlanta-2014/session-videos/presentation/multi-node-devstack-with-puppet[Multi-node 
+DevStack with Puppet] (OpenStack Summit Atlanta 2014), and
+https://docs.google.com/presentation/d/18O8BVqNSCM5Q2x492AP9njom_l_CKJ_ak9SzNtQACV0/edit?usp=sharing[How 
+I Built My Own BDD Framework] (Ruby on Rails Meetup, Los Angeles 2013)
+
+- *Reduced a 2-day manual process to 5 seconds* - While building the MIS for
+a metal fabrication shop, I learned about a manual process that took shop
+engineers 2 days to complete. After some research, I was able to build a
+desktop app that reduced the computation time to 5 seconds.
+
+- *Improved requirements gathering through prototyping* - Upon joining a new
+software consulting firm, I noticed the long feedback loop from requirements
+gathering to user testing. I encouraged and guided my teammates to adopt
+prototyping as one of the ways to improve requirements gathering and reduce
+waste. The results were positive and the engineers along with the users were
+very happy with the results.
+
+- *Recipient of academic excellence award for best strategic plan* - I wanted
+to understand the business of software and decided that focusing on the basics of
+business management was key. I then applied for our state university's graduate
+program for management where I was accepted. During the program, I was top of
+class for Operations Management, Financial Management, and Business Strategy. I
+then used everything that I learned to create a strategic plan for our family
+business which resulted in me getting the academic excellence award for best
+strategic plan.
+
+- *Can solve Rubik's Cube in 1 minute 25 seconds* - Not a record shattering feat
+but it's one of my best times. I decided to learn to solve the cube because it
+was interesting. https://youtu.be/3zh-ORAndw8[Video on YouTube].
+
+== A Few Open Source Projects
+
+- *Open vSwitch Lab* - A Vagrant project which provisions two machines that talk
+over a simulated Internet. The lab is a companion project for the series of
+articles I wrote about http://www.relaxdiego.com/2014/09/ovs-lab.html[VXLAN], 
+http://www.relaxdiego.com/2014/09/ovsdb.html[OVSDB], and 
+http://www.relaxdiego.com/2014/09/hardware_vtep.html[the hardware VTEP schema]. 
+https://github.com/relaxdiego/ovs-lab[Source in Github].
+
+- *Aviator* - A lightweight Ruby client library for cloud REST APIs. I initially
+built this for the OpenStack API. My focus was to build a library that reflected,
+rather than obscured the underlying API. http://aviator.github.io/www/[Homepage].
+
+- *Mana Mana* - A proof-of-concept business natural language testing framework
+that was inspired by Cucumber and the Robot framework. This was borne out of my
+never-ending search for better ways to write maintainable automated tests. 
+https://github.com/ManaManaFramework/manamana[Source in Github].
+
+- *Others* - I also contribute to other open source projects and you will usually
+find it in my https://github.com/relaxdiego[activity feed on Github]
+
+
+== One More Thing
+
+Coding without tests is like driving a Tesla in ludicrous mode *without seatbelts* 
+so I always make sure to cover my code with a reasonable amount of tests. Here's 
+https://www.relaxdiego.com/2015/11/my-dev-setup-part-3.html[how I work].
+
+== Experience
+
+*DevOps Engineer* (Nov 2016 - present) +
+Teradata, Santa Clara, CA
+
+Teradata Corporation is a Fortune 1000 provider of data warehouse
+platforms, software and services. Our team is at the center of the company's
+thrust to convert Teradata from a hardware to a software company.
+
+.*Achievements*
+
+- Team Lead for the internal Kubernetes standard configuration project. This
+  project is a core critical component of all the microservices-based products
+  that Teradata is building. I currently manage the team, provide architectural
+  guidance, write code, as well as oversee the internal community management
+  aspects that are necessary to onboard the various products and programs on
+  top of the project. I'm also working on growing the team such that it can
+  support all the Kubernetes requirements of the aforementioned Teradata products.
+ 
+- I function as the DevOps Engineer for the AppCenter project where I am
+  responsible for guiding the architecture of the team’s software manufacturing
+  pipeline. I designed the pipeline and also did the initial implementation. I
+  currently serve as an adviser/mentor to the team members that are implementing
+  the rest of the design. This software manufacturing pipeline is critical in
+  ensuring the timely delivery and quality of AppCenter which is a central
+  component of Teradata's UDA program.
+ 
+- I am a member of Teradata's internal DevOps Technology Council. This council
+  is tasked to collate, curate, and evangelize the DevOps best practices across
+  Teradata to improve its Engineering operational efficiency and effectiveness.
+  I am assigned to the “standardized processes” component of the framework that
+  the council is building.
+ 
+
+*QA/Release Engineer* (Jan 2014 - Sep 2016) +
+Dimension Data, Pleasanton, CA
+
+Dimension Data is a leading provider of professional, cloud, consulting 
+and managed services for advanced IT solutions. Our team actively 
+contributed to Ansible, OpenStack, Open vSwitch, and Open DayLight. My
+official title was QA/Release Engineer but my responsibilities spanned
+those of a software engineer/architect.
+
+.*Achievements*
+
+- Designed and implemented a non-interactive agent that automatically 
+  launched time-bound AWS spot instances as needed for use as auxiliary 
+  Jenkins workers that handled non-time-critical builds.
+
+- Wrote Ansible modules to be used for provisioning resources on Dimension
+  Data's cloud service.
+
+- Developed an Ansible-based project that deployed an HA OpenShift
+  platform for use by our team as a replacement for our CI/CD pipeline.
+
+- Designed and implemented the full stack of a web application that was
+  designed to transform data from one format to another. The system used
+  Rails, Postgres, Redis (for job queueing), Resque, and Ceph both for
+  persistent block and object storage.
+
+- Designed and implemented an automated test harness framework used by 
+  our testers for our various software products.
+
+- Mentored development teams in new technologies, standards, and even
+  3rd-party protocols that they needed to incorporate or interface to. This
+  allowed them to hit the ground running and deliver within budget.
+
+
+*Senior Director Of Engineering* (Jul 2012 - Jan 2014) +
+Morph, Manhattan Beach, CA
+
+Morph was the first PaaS built on top of AWS and later on pivoted to
+providing IaaS appliances that its customers can install inside of 
+their data center to use as a springboard for quickly building their own 
+cloud computing environment. My official title was Senior Director of
+Engineering but my actual roles spanned that of a software engineer/architect.
+
+.*Achievements*
+
+- Designed and developed a billing module for the product.
+
+- Wrote a Ruby client library for the OpenStack API.
+
+- Wrote a Cucumber-based integration test for the QA team.
+
+- Mentored developers on proper software development practices.
+
+- Helped set up the CI tools and process to ensure the main branch always
+has deployable, stable code.
+
+
+*Senior Director for Product Development* (Jan 2008 - Jul 2012) +
+Exist Global, Manila, Philippines
+
+Exist provides tailored solutions, consulting and full cycle IT services to
+customers around the globe. At the time, I was assigned to Morph to help
+produce its cloud computing product.
+
+.*Responsibilities*
+
+- Oversaw the design and implementation of Morph AppSpace, one of the earliest
+Platform-as-a-Service providers built on top of AWS in the market.
+
+- Managed the product roadmap to ensure that requirements are prioritized
+properly and that they contain the right information.
+
+- I helped Marketing Communications in their effort to generate product
+information for various marketing collateral.
+
+- Implemented agile practices in Engineering to ensure timely delivery of
+stories and an overall coordinated effort of releases.
+
+
+*Systems Analyst/Programmer* (Mar 2003 - Dec 2006) +
+Deco Machine Shop, Davao City, Philippines
+
+Deco Machine Shop, Inc. provides industrial machine fabrication services
+nationwide. Its major clients include Dole Philippines and San Miguel
+Corporation. As a systems analyst, my job was to understand the processes
+of the company and build software tools to automate parts of it. Software
+tools developed include a gear combination application which reduced a
+machinist’s work from one day to just under 5 seconds while increasing
+work precision.
+
+In 2007, I took a year off to obtain my second Master's degree.
+
+
+*Systems Analyst/Programmer* (Jan 2002 - Jan 2003) +
+iThink Technologies, Davao City, Philippines
+
+iThink provides business software and training solutions for major companies
+nationwide. Major clients include the Bangko Sentral ng Pilipinas, Meralco,
+and Davao Light and Power Company. I was involved as a systems analyst/programmer
+for the development of purchasing systems, HR systems, and other enterprise
+applications for iThink’s major customers. I also spearheaded the use of the
+Unified Modeling Language within the company and also provided some in-house
+training for a number of then upcoming technologies and development platforms.
+
+
+*Web Developer* (Jan 2001 - Jan 2002) +
+Smartweb Philippines, Cebu City, Philippines
+
+Smartweb was a US-based company with its production facility based in Cebu.
+It was involved in developing websites for small to medium sized businesses
+in the USA. I was a team leader in this organization. Apart from this, I also
+developed Smartweb’s employee time tracking and billing system, which later
+helped speed up the invoicing and employee time tracking for the company.
+
+
+*Student Volunteer - Web Developer* (Jun 1997 - Oct 2000) +
+University of San Carlos, Cebu City, Philippines
+
+While attending college I was also a volunteer of the University of San Carlos
+Web Development Team which was tasked to build and maintain the university’s
+website. I was involved in the implementation in both the client side and the
+server side of the website and was later promoted to team leader. The team was,
+by then, composed of 10 student volunteers.
+
+
+
+== Education
+
+*Master of Management, Technology, Innovation, and Commercialization* +
+Jan 2007 - Dec 2007 +
+The Australian National University +
+Acton, Canberra ACT 2601, Australia
+
+*Master of Management* +
+May 2004 - Apr 2006 +
+University of the Philippines - School of Management +
+Mintal, Davao City 8022, Philippines
+
+*BS Computer Engineering* Jun 1995 - Oct 2000 +
+University of San Carlos +
+P. del Rosario Street, Cebu City 6000, Philippines
+
+
+
+== LinkedIn Recommendations
+
+> Mark is an exceptional employee from his personal interactions 
+> with his peers, development skills and passion for quality. He 
+> has a wide breadth of exposure to different programming languages, 
+> configuration management and software design and architecture.
+> -- Mike Outland, DevOps Manager, Tesla
+
+> Mark is an exceptionally capable software architect and developer. 
+> When a new technology or language needed to be implemented, Mark 
+> was able to obtain a deep level of understanding in a very short 
+> amount of time. I have seen him architect and implement everything 
+> from full APIs to cloud middleware to full front-ends. Over the 
+> years he has gained a wide breadth of knowledge in everything 
+> cloud & container. Working with him has been regularly humbling 
+> and wonderfully educational. Beyond his technical prowess, Mark 
+> is also very fun to work with and mentors people exceptionally well. 
+> He uses his great sense of humor to take the stress out of tough 
+> challenges and motivate teams to push on. I give Mark my highest 
+> recommendation to anything he wants to take on. He will be a rare 
+> gift to the next company he works with.
+> -- Aimon Bustardo, Sr. DevOps Engineer, Desk.com
+
+> Mark is one of the few people I know who can truly perform well in
+> a 'player/coach' role. While his technical chops may be second to
+> none, he combines those chops with a natural ability to 'lead from
+> the front'. He would most certainly be a valuable asset to any team
+> lucky enough to have him.
+> -- Jason Reslock, Lead DevOps Engineer, Teradata
+
+> Possibly the best reason I looked forward to go to work everyday 
+> at Dimension Data is because of the opportunity to work closely 
+> and be mentored by Mark. I see him as a true software craftsman 
+> who is passionate about code and cares a lot about code quality, 
+> readability and testability. He can lead teams, mentor teammates, 
+> commit production code within time and budget while giving a 
+> helping hand with whatever is the issue of the day.
+> -- Bert Diwa, Sr. QA/Automation Engineer, Verizon
+
+> [Mark] produced solid designs. He was an expert at Python (and 
+> apparently Ruby too). He seemed to know about every Open Source 
+> project out there. His mastery of all things Git and GitHub were 
+> critical support to several of us who had never used Git before. 
+> All in all, Mark was an invaluable resource to the project and 
+> to the team. He seemed to get his dozen projects done in time 
+> while simultaneously providing whatever technical support was 
+> being asked of him by the team.
+> -- Jay Riddell, Sr. Software Engineer
+
+> Mark was a particularly able and focused student, capable of 
+> working independently and evaluating ideas and approaches 
+> critically. His particular interest at the time [while studying at
+> the Australian National University] was the role, design and
+> development of business incubators as a tool for regional development.
+> -- Don Scott-Kemmis, Innovation Policy Consultant
+
+
+
+== All Resume Formats
+
+* https://www.relaxdiego.com/resumex[HTML]
+* https://www.relaxdiego.com/resumex.pdf[PDF]
+* https://raw.githubusercontent.com/relaxdiego/relaxdiego.github.com/master/resumex/resume.adoc[AsciiDoc]

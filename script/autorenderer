@@ -7,13 +7,14 @@ make resume
 # `brew install fswatch`
 
 # This loop was inspired by https://superuser.com/a/181543/774060
-fswatch -x ./resume |
-while read -r path events; do
-  filename=$(basename "$path")
+fswatch -x ./resume ./resumex |
+while read -r abspath events; do
+  relpath=${abspath#$(pwd)/}
+  filename=$(basename "$abspath")
   extension="${filename##*.}"
 
   if [ "$extension" = "adoc" ]; then
-      echo "Source file changed: $filename"
+      echo "Source file changed: $relpath"
       make resume
   fi
 done
