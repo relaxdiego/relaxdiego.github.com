@@ -1,5 +1,5 @@
 name: relaxdiego
-description: Software Development and other stuff.
+description: DevOps + Software Engineering + Agile
 url: https://www.relaxdiego.com
 enforce_ssl: www.relaxdiego.com
 permalink: /:year/:month/:title.html
