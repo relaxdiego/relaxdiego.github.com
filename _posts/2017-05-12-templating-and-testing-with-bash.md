@@ -75,6 +75,8 @@ expected output as the 3rd arg in the form of a HEREDOC.
 And just as important, I want this TDD framework and test as a single file
 with no external dependencies.
 
+![Take the red pill](/assets/images/morpheus-tdd.jpg)
+<center>Generated via https://memegenerator.net</center>
 
 ## The TDD "Framework"
 
