@@ -14,6 +14,10 @@ span.monospace {
     font-family: 'Inconsolata', monospace;
 }
 
+strike {
+    text-decoration: line-through;
+}
+
 #post p,
 #post h3,
 #post li {
