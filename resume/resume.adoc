@@ -1,5 +1,5 @@
 == Mark Maglana
-=== DevOps Engineer trained in Software Engineering and Management
+=== DevOps Engineer; Educated in Software Engineering and Management
 
 [%hardbreaks]
 maglana@linux.com
@@ -7,29 +7,34 @@ https://relaxdiego.com
 Silicon Valley, CA
 
 
-https://training.linuxfoundation.org/certification/verify-certifications[CNCF Certified Kubernetes Administrator]
-(Certificate ID: CKA-1700-0020-0100). I'm a DevOps Engineer with a Software
-Engineering and Management background. I share my knowledge on sound
-Software Engineering practices with my Ops coworkers and what I know about
-operations with my Dev coworkers. I also employ my management education
-to give my team's mission more context. I enjoy what I do, not only because
-I get to tackle the unknown and level up everyday, but also because I get
-to share the magic with my colleagues at all levels.
+CNCF Certified Kubernetes Administrator +
+https://training.linuxfoundation.org/certification/verify-certifications +
+Certificate ID: CKA-1700-0020-0100 +
+Last Name: Maglana
+
+I'm a DevOps Engineer with a Software Engineering and Management background.
+I share my knowledge on sound Software Engineering practices with my Ops
+coworkers and what I know about operations with my Dev coworkers. I also
+employ my management education to give my team's mission more context. I
+enjoy what I do, not only because I get to tackle the unknown and level up
+everyday, but also because I get to share the magic with my colleagues at
+all levels.
 
 
-== Accomplishments
+== Highlights
 
 - *Increased billing module accuracy and speed by at least 10x* - When a
 product's billing module was producing inaccurate results and regularly
 timing out, I offered to inspect the code and find out where the problem
-lay. After much debugging, I found the problem and provided a fix which
-resulted in the reports displaying correctly. To improve the speed, however,
-required re-architecting the module which I led from conception to delivery.
+was. After much debugging, I found the problem and provided a fix which
+resulted in the reports displaying correctly. To improve the module's speed,
+however, required re-architecting the module which I led from conception
+to delivery.
 
 - *Facilitated the timely delivery of software by automating requirements* -
-We needed to deliver a software agent for a customer that needed their 
+We needed to deliver a software agent for a customer that wanted their 
 product to work with a 3rd-party vendor's product. I volunteered to study 
-the associated open standards and proprietary protocol to learn about the 
+the associated open standards and proprietary protocols to learn about the 
 requirements. I then codified these requirements in a test harness that 
 also doubled as the executable requirements document for the development 
 team. After integrating this into our CI/CD pipeline, the dev team was able 
@@ -53,7 +58,7 @@ https://docs.google.com/presentation/d/18O8BVqNSCM5Q2x492AP9njom_l_CKJ_ak9SzNtQA
 I Built My Own BDD Framework] (Ruby on Rails Meetup, Los Angeles 2013)
 
 - *Reduced a 2-day manual process to 5 seconds* - While building the MIS for
-a metal fabrication shop, I learned about a manual process that took shop
+a metal fabrication shop, I learned about a manual process that took shop floor
 engineers 2 days to complete. After some research, I was able to build a
 desktop app that reduced the computation time to 5 seconds.
 
@@ -77,42 +82,15 @@ strategic plan.
 but it's one of my best times. I decided to learn to solve the cube because it
 was interesting. https://youtu.be/3zh-ORAndw8[Video on YouTube].
 
-== A Few Open Source Projects
-
-- *Open vSwitch Lab* - A Vagrant project which provisions two machines that talk
-over a simulated Internet. The lab is a companion project for the series of
-articles I wrote about http://www.relaxdiego.com/2014/09/ovs-lab.html[VXLAN], 
-http://www.relaxdiego.com/2014/09/ovsdb.html[OVSDB], and 
-http://www.relaxdiego.com/2014/09/hardware_vtep.html[the hardware VTEP schema]. 
-https://github.com/relaxdiego/ovs-lab[Source in Github].
-
-- *Aviator* - A lightweight Ruby client library for cloud REST APIs. I initially
-built this for the OpenStack API. My focus was to build a library that reflected,
-rather than obscured the underlying API. http://aviator.github.io/www/[Homepage].
-
-- *Mana Mana* - A proof-of-concept business natural language testing framework
-that was inspired by Cucumber and the Robot framework. This was borne out of my
-never-ending search for better ways to write maintainable automated tests. 
-https://github.com/ManaManaFramework/manamana[Source in Github].
-
-- *Others* - I also contribute to other open source projects and you will usually
-find it in my https://github.com/relaxdiego[activity feed on Github]
-
-
-== One More Thing
-
-Coding without tests is like driving a Tesla in ludicrous mode *without seatbelts* 
-so I always make sure to cover my code with a reasonable amount of tests. Here's 
-https://www.relaxdiego.com/2015/11/my-dev-setup-part-3.html[how I work].
 
 == Experience
 
 *DevOps Engineer* (Nov 2016 - present) +
 Teradata, Santa Clara, CA
 
-Teradata Corporation is a Fortune 1000 provider of data warehouse
-platforms, software and services. Our team is at the center of the company's
-thrust to convert Teradata from a hardware to a software company.
+Teradata Corporation is a Fortune 1000 provider of data warehouse platforms,
+software and services. Our team is at the center of the company's thrust to
+build modern data analytics products around Teradata's traditional offerings.
 
 .*Achievements*
 
@@ -307,19 +285,19 @@ P. del Rosario Street, Cebu City 6000, Philippines
 > -- Aimon Bustardo, Sr. DevOps Engineer, Desk.com
 
 > Mark is one of the few people I know who can truly perform well in
-> a 'player/coach' role. While his technical chops may be second to
-> none, he combines those chops with a natural ability to 'lead from
-> the front'. He would most certainly be a valuable asset to any team
+> a player/coach role. While his technical chops may be second to
+> none, he combines those chops with a natural ability to lead from
+> the front. He would most certainly be a valuable asset to any team
 > lucky enough to have him.
 > -- Jason Reslock, Lead DevOps Engineer, Teradata
 
-> Possibly the best reason I looked forward to go to work everyday 
-> at Dimension Data is because of the opportunity to work closely 
-> and be mentored by Mark. I see him as a true software craftsman 
-> who is passionate about code and cares a lot about code quality, 
-> readability and testability. He can lead teams, mentor teammates, 
-> commit production code within time and budget while giving a 
-> helping hand with whatever is the issue of the day.
+> Possibly the best reason I looked forward to going to work everyday 
+> is because of the opportunity to work closely and be mentored by
+> Mark. I see him as a true software craftsman who is passionate about
+> code and cares a lot about code quality, readability and testability.
+> He can lead teams, mentor teammates, commit production code within
+> time and budget while giving a helping hand with whatever is the issue
+> of the day.
 > -- Bert Diwa, Sr. QA/Automation Engineer, Verizon
 
 > [Mark] produced solid designs. He was an expert at Python (and 
@@ -338,6 +316,35 @@ P. del Rosario Street, Cebu City 6000, Philippines
 > the Australian National University] was the role, design and
 > development of business incubators as a tool for regional development.
 > -- Don Scott-Kemmis, Innovation Policy Consultant
+
+
+== A Few Open Source Projects
+
+- *Open vSwitch Lab* - A Vagrant project which provisions two machines that talk
+over a simulated Internet. The lab is a companion project for the series of
+articles I wrote about http://www.relaxdiego.com/2014/09/ovs-lab.html[VXLAN], 
+http://www.relaxdiego.com/2014/09/ovsdb.html[OVSDB], and 
+http://www.relaxdiego.com/2014/09/hardware_vtep.html[the hardware VTEP schema]. 
+https://github.com/relaxdiego/ovs-lab[Source in Github].
+
+- *Aviator* - A lightweight Ruby client library for cloud REST APIs. I initially
+built this for the OpenStack API. My focus was to build a library that reflected,
+rather than obscured the underlying API. http://aviator.github.io/www/[Homepage].
+
+- *Mana Mana* - A proof-of-concept business natural language testing framework
+that was inspired by Cucumber and the Robot framework. This was borne out of my
+never-ending search for better ways to write maintainable automated tests. 
+https://github.com/ManaManaFramework/manamana[Source in Github].
+
+- *Others* - I also contribute to other open source projects and you will usually
+find it in my https://github.com/relaxdiego[activity feed on Github]
+
+
+== One More Thing
+
+Coding without tests is like driving a Tesla in ludicrous mode *without seatbelts* 
+so I always make sure to cover my code with a reasonable amount of tests. Here's 
+https://www.relaxdiego.com/2015/11/my-dev-setup-part-3.html[how I work].
 
 
 
