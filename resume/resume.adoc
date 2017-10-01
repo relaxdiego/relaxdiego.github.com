@@ -267,7 +267,7 @@ P. del Rosario Street, Cebu City 6000, Philippines
 > with his peers, development skills and passion for quality. He 
 > has a wide breadth of exposure to different programming languages, 
 > configuration management and software design and architecture.
-> -- Mike Outland, DevOps Manager, Tesla
+> -- Mike Outland, Senior DevOps Manager, Tesla
 
 > Mark is an exceptionally capable software architect and developer. 
 > When a new technology or language needed to be implemented, Mark 
@@ -282,7 +282,7 @@ P. del Rosario Street, Cebu City 6000, Philippines
 > challenges and motivate teams to push on. I give Mark my highest 
 > recommendation to anything he wants to take on. He will be a rare 
 > gift to the next company he works with.
-> -- Aimon Bustardo, Sr. DevOps Engineer, Desk.com
+> -- Aimon Bustardo, Lead DevOps Engineer, Desk.com
 
 > Mark is one of the few people I know who can truly perform well in
 > a player/coach role. While his technical chops may be second to
