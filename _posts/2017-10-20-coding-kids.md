@@ -74,7 +74,8 @@ Laser focused on coding!
 But the best part about this experience was when it was time for them to
 have their recess. Before going out, every single one of them approached
 me to say how much they enjoyed it ("Mr. Mark this is the bestest thing
-ever!!!") while some didn't say anything, they just went ahead gave me hugs.
+ever!!!") while some didn't say anything, they just gave me the sweetest
+of hugs.
 
 It's hard not to fall in love with these kids. They will forever have a
 special place in my heart.
