@@ -53,9 +53,10 @@ such as link:/2017/05/swampup-2017-slides.html[Baking and Frying Machine Images]
 (jFrog Napa Valley 2017), https://www.ansible.com/writing-fully-tested-ansible-modules-for-fun-and-profit[How 
 to Write Fully-Tested Ansible Modules] (AnsibleFest NY 2016),
 https://www.openstack.org/summit/openstack-summit-atlanta-2014/session-videos/presentation/multi-node-devstack-with-puppet[Multi-node 
-DevStack with Puppet] (OpenStack Summit Atlanta 2014), and
+DevStack with Puppet] (OpenStack Summit Atlanta 2014), 
 https://docs.google.com/presentation/d/18O8BVqNSCM5Q2x492AP9njom_l_CKJ_ak9SzNtQACV0/edit?usp=sharing[How 
-I Built My Own BDD Framework] (Ruby on Rails Meetup, Los Angeles 2013)
+I Built My Own BDD Framework] (Ruby on Rails Meetup, Los Angeles 2013), and
+link:/2017/10/coding-kids.html[Introducing Scratch Programming] (2nd-grade Classroom 2017).
 
 - *Reduced a 2-day manual process to 5 seconds* - While building the MIS for
 a metal fabrication shop, I learned about a manual process that took shop floor
