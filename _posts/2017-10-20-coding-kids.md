@@ -61,7 +61,7 @@ Boy did they try it out! It was amazing to see their eyes light up with
 every new thing they discovered with Scratch and programming in general.
 I bet though that, to them, they weren't programming. They were playfully
 creating and experimenting which is, I believe, how programming should be
-whether your 8 or 80 years old!
+whether you're 8 or 80 years old!
 
 
 <a href='https://photos.google.com/share/AF1QipMfMx5u7VlAnndffXFkZSqnT9bnfJdjybqv3JIAC3R-KrhL4DpJpCBoMFp4cBbmOw?key=T0pHaVp0UXBXb3ZzYXp3c2xrMFhTN2l0QVd0YUpn&source=ctrlq.org'><img src='https://lh3.googleusercontent.com/SzejOoj6hpXh0PIAJyAMmgeGKeHGq-RUZE87EOdxJ3XxZSCDbg4ZvUK0eW0gvOOgj93oHhrAqbtB_rma07j60hOdzZZSzBfSddbfH2X_JWM2qWKoh9sYkXE9VOBFohBLN0c4drNAPg' /></a>
