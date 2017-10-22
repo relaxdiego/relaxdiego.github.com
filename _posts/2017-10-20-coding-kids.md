@@ -37,7 +37,7 @@ Getting ready to play the Scratch intro video.
 <center>
 I later found out that she was one of the more shy kids
 <br/>in the class. Yet she voluntarily raised her hand to
-<br/>try out Scratch in front of the class!
+<br/>try out Scratch in front of everyone!
 </center>
 <br>
 
@@ -67,7 +67,7 @@ whether you're 8 or 80 years old!
 <a href='https://photos.google.com/share/AF1QipMfMx5u7VlAnndffXFkZSqnT9bnfJdjybqv3JIAC3R-KrhL4DpJpCBoMFp4cBbmOw?key=T0pHaVp0UXBXb3ZzYXp3c2xrMFhTN2l0QVd0YUpn&source=ctrlq.org'><img src='https://lh3.googleusercontent.com/SzejOoj6hpXh0PIAJyAMmgeGKeHGq-RUZE87EOdxJ3XxZSCDbg4ZvUK0eW0gvOOgj93oHhrAqbtB_rma07j60hOdzZZSzBfSddbfH2X_JWM2qWKoh9sYkXE9VOBFohBLN0c4drNAPg' /></a>
 
 <center>
-Laser focused on coding!
+I see pair programming and cross-team collaboration here!
 </center>
 <br>
 
@@ -111,7 +111,7 @@ decide to accept this mission, I have a few resources that you'll find handy:
   love to play. Contains review questions and extra coding challenges
   in every chapter.
 
-* [Learn to Program with Scratch](Learn to Program with Scratch) -
+* [Learn to Program with Scratch](http://a.co/jlhERQd) -
   The next step for your 10-year-old's adventure! From the publisher:
   Teaches fundamental computer science concepts using Scratch. Packed
   with detailed explanations, exercises, and illustrations.
