@@ -35,9 +35,8 @@ Getting ready to play the Scratch intro video.
 <a href='https://photos.google.com/share/AF1QipPUEXM87-IwAZ56aixKaYDiK6oLdsc8PTXOsJsWUKrEnUnAsiO46CDyZ14nzgBZag?key=UVFBQU5qc0lvbk1JTks2a1FhaXA4OWh5aDJUZHZ3&source=ctrlq.org'><img src='https://lh3.googleusercontent.com/AUHXBQ95O2BBg9B9JmBfczYbJZa8af8rd28uWnFBfvRmPKCID_GSy9bGuq8SXP_PCxm2_B7N216G_X-M8uB6i1oLyRYa3L7pbZPckwk0AwsQPFYbXqByezEW0nAjwxdxApwpjyg9FA' /></a>
 
 <center>
-I later found out that she was one of the more shy kids
-<br/>in the class. Yet she voluntarily raised her hand to
-<br/>try out Scratch in front of everyone!
+I later found out that she was one of the more shy kids in the class.
+What a brave girl!
 </center>
 <br>
 
