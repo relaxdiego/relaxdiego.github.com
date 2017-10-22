@@ -95,7 +95,7 @@ decide to accept this mission, I have a few resources that you'll find handy:
   well as a [free high-quality downloadable workbook](http://scratched.gse.harvard.edu/guide/files/CreativeComputing20140820_LearnerWorkbook.pdf)
   for kids!
 
-* [FedEx Online Printing Services](fedex.com/apps/printonline/#!) -
+* [FedEx Online Printing Services](https://fedex.com/apps/printonline/#!) -
   Starting at $14.00 you can have the [Creative Computing workbook](http://scratched.gse.harvard.edu/guide/files/CreativeComputing20140820_LearnerWorkbook.pdf)
   printed at your local FedEx shop!
 
