@@ -9,8 +9,9 @@ While drafting a series on CI/CD these past few weeks, I came across
 an old research paper that I wrote back in my Master of Management program
 at the [Australian National University](http://www.anu.edu.au/)\* in
 Canberra. My research was focused on creating a wholistic framework for
-evaluating the efficacy of a business incubator within a community. It's
-still in its very nacent form to this day since I haven't had the chance
+evaluating the efficacy of a business incubator within a community.
+
+It's still in its nascent form to this day since I haven't had the chance
 to continue working on it but I'm sharing it here, warts and all, in case
 anyone might find this useful. If you do end up basing your work on it
 or further improve it, please don't hesitate to contact me. I'd love to
