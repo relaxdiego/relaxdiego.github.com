@@ -6,8 +6,8 @@ categories: sfk8s, meetup, lightning talk, kubernetes, ha, baremetal
 ---
 
 Here's my lightning talk from last September's SF Kubernetes Meetup.
-Thanks to Stack Point Cloud, Bitnami, and Weave for making this even
-happen!
+Thanks to [Stack Point Cloud](https://stackpoint.io/), [Bitnami](https://bitnami.com/),
+and [Weave Works](https://www.weave.works/) for making this event happen!
 
 UPDATE: Since that lightning talk, we've moved away from the VM-based
 setup and started investigating other methods that still satisfy the
