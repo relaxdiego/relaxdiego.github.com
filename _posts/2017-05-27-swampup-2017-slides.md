@@ -1,6 +1,6 @@
 ---
 layout: post
-title: jFrog swampUP 2017
+title: (VIDEO) Baking and Frying Machine Images talk from jFrog swampUP 2017
 comments: true
 categories: jFrog, Artifactory, Jenkins, CI/CD, DevOps
 ---

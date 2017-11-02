@@ -1,6 +1,6 @@
 ---
 layout: post
-title: My First Attempt at Kubernetes
+title: (VIDEO) My First Attempt at Kubernetes
 comments: true
 categories: software development, containers, kubernetes, docker, vagrant
 ---
