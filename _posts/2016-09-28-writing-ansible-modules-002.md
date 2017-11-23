@@ -104,11 +104,18 @@ Let's start with a clean slate, run:
     $ git reset --hard
 
 Next, let's install some Python packages needed by our tests. From your
-**ansible repo**, run:
+**ansible repo**, run one of the following:
+
+If you're working on Ansible code before 2.4:
 
     $ pip install -r test/utils/tox/requirements.txt
 
-NOTE: If you're developing on Python 3.0+, use requirements-py3.txt instead
+    NOTE: If you're developing on Python 3.0+, use requirements-py3.txt instead
+
+If you're working on Ansible code version 2.4 or later
+
+    $ pip install -r test/runner/requirements/units.txt \
+        -r test/runner/requirements/coverage.txt
 
 Next, let's write a module that fetches a resource pointed to by
 a URL and then writes it to disk. So in our **ansible repo**, create a file at
