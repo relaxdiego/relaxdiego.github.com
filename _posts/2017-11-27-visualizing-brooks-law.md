@@ -12,7 +12,7 @@ categories: software engineering, project management, brooks law
 I hear this truism regularly and I can also feel its effects whenever
 new members join a team I'm in but I've never really given it much
 thought until now. In this blog post, I'll attempt to dissect and
-visualize Brooks' Law to find out what is it exactly about adding
+visualize Brooks' Law to find out what it is exactly about adding
 new team members that negatively affects short-term team progress.
 
 
