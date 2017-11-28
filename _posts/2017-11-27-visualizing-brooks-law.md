@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Visualizing Brooks' Law
-comments: false
+comments: true
 categories: software engineering, project management, brooks law
 ---
 
@@ -9,19 +9,22 @@ categories: software engineering, project management, brooks law
 <br>-- [Fred Brooks](https://en.wikipedia.org/wiki/Fred_Brooks),
 [The Mythical Man-Month](https://read.amazon.com/kp/embed?asin=B00B8USS14&preview=newtab&linkCode=kpe&ref_=cm_sw_r_kb_dp_yJ-gAb29R21FJ)
 
-If you're like me, you'll find it hard to understand and, therefore,
-manage the effects of Brooks' Law unless there's a model that visualizes
-it for you. In this blog post, I attempt to provide such a visual model.
+I hear this truism regularly and I can also feel its effects whenever
+new members join a team I'm in but I've never really given it much
+thought until now. In this blog post, I'll attempt to dissect and
+visualize Brooks' Law to find out what is it exactly about adding
+new team members that negatively affects short-term team progress.
 
-## The Components of Work
+
+## The Components of Team Progress
 
 We can compute the relative progress of a team as follows:
 
 > Percent Work Complete = (Completed Work) / (Total Work)
 
-That's easy enough to grasp but there are a few things to consider to
-obtain the dividend and divisor so let's break this equation down in
-the next couple of sections.
+That's easy enough to grasp but there are a few things to consider when
+obtaining the dividend and divisor so let's break this equation down.
+
 
 ## Completed Work
 
@@ -79,16 +82,15 @@ Remember that the formula to compute the edges of a complete graph is
 
 > Edges = Nodes * (Nodes - 1) / 2
 
-Using the formula on our above example, we get 10 which is exactly equal
-to the number of edges depicted in the diagram.
-
-If we were to add 1 node to the above graph, that would add an additional
-5 edges to the graph since the existing 5 nodes would have to connect to
-this new one. Indeed, if we apply the same formula, we would get:
+Using the formula on our above diagram, we get 10 which is exactly equal
+to the number of edges depicted. If we were to add 1 node to the above
+graph, that would add an additional 5 edges to the graph since the
+existing 5 nodes would have to connect to this new one. Indeed, if we
+apply the same formula, we would get:
 
 > 6 * (6 - 1) / 2 = 15
 
-Remember though that we're only interested in the *Additional* edges
+Remember though that we're only interested in the **Additional** edges
 created by adding a new node. To get that, all we have to do is:
 
 > Additional Edges = Total Edges - Original Edges
@@ -111,43 +113,43 @@ by Gerald M. Weinberg in his book [Quality Software Management: Systems Thinking
 
 ![Diagram of Effects: Percent Work Completed](/assets/images/diagram-of-effects-percent-work-completed.png)
 
-From this graphic, we can deduce a few things:
+From this graphic and our computations, we can deduce a few things:
 
-1. Adding new members increases the load on the team which reduces
+1. Adding new members increases the training load on the team which reduces
    the completed work
-1. Adding new members also increases additional coordination which
-   increases the total work
 1. A reduction in the completed work also results in a reduction of
    the % work completed
+1. Adding new members increases additional coordination which
+   increases the total work
 1. An increase in total work reduces the % work completed
-
-Based on the computation of each metric, we can tell right away that
-"Additional Coordination" will have the biggest impact on % Work Completed
-but it helps to present the effect graphically:
+1. "Additional Coordination," if unmanaged, can potentially have the
+   biggest effect on team progress because of its quadratic nature.
 
 
 ![Percent Work Completed](/assets/images/percent-work-completed.png)
 <center>Scale of Additional Coordination work item was multipled by 10
-to emphasize its non-linear relationship with % Work Completed</center>
+in this chart to emphasize its non-linear effect on team progress</center>
 
 <p>&nbsp;</p>
+
 
 ## Parting Thoughts
 
 The point of this article was to show how increasing the number of members
-can affect a team's progress. From what we've seen, the training load on
-the team is not as big of a factor as the additional coordination needed.
+can affect a team's progress. From what we've seen, Additional Coordination
+Needed has the biggest effect on progress due to its quadratic nature.
 
 I'll leave you now with a few questions as an exercise:
 
-1. How should you control Additional Coordination such that it minimizes its
-   effect on % Work Completed?
+1. How can you minimize the effects of Additional Coordination?
 1. Can you utilize CI/CD as a minimization tool?
 
-You may already have answers to these but if you want to get more insights,
-I recommend the following resources:
+Feel free to share your thoughts in the comments section below.
 
 
+# Further Reading
+
+* [Brooks' Law](https://en.wikipedia.org/wiki/Brooks%27s_law)
 * [The Mythical Man-Month](https://read.amazon.com/kp/embed?asin=B00B8USS14&preview=newtab&linkCode=kpe&ref_=cm_sw_r_kb_dp_yJ-gAb29R21FJ)
   by Fred Brooks
 * [Quality Software Management: Systems Thinking](http://a.co/1R0v4KB) by Gerald M. Weinberg
