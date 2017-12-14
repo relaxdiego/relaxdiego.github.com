@@ -23,6 +23,13 @@ all levels.
 
 == Highlights
 
+- *Delivered an enterprise-wide standardized Kubernetes configuration* -
+My former employer, Teradata, needed a standardized Kubernetes configuration
+that multiple projects can develop on top of. I led a team of DevOps
+engineers that made this happen and we utilized Scrum in full to iterate
+quickly, ship preview releases every 3 sprints, and deliver a 1.0 release within
+5 months.
+
 - *Increased billing module accuracy and speed by at least 10x* - When a
 product's billing module was producing inaccurate results and regularly
 timing out, I offered to inspect the code and find out where the problem
@@ -40,13 +47,6 @@ also doubled as the executable requirements document for the development
 team. After integrating this into our CI/CD pipeline, the dev team was able 
 to receive timely feedback on requirements compliance and regressions allowing 
 them to deliver on time and within budget!
-
-- *Deployed an HA container orchestration platform to replace CI/CD* - 
-I have been following containerization since the initial Docker days even 
-though it was outside my job description. Because of my skunkworks preparation, 
-I was later able to build an Ansible-based project that provisioned an HA 
-OpenShift/Kubernetes environment as a means to replace our internal 
-CI/CD pipeline as well as an environment to deploy our internal apps.
 
 - *Talked at various meetups and conferences* - I've presented on various topics
 such as link:/2017/05/swampup-2017-slides.html[Baking and Frying Machine Images]
@@ -86,12 +86,23 @@ was interesting. https://youtu.be/3zh-ORAndw8[Video on YouTube].
 
 == Experience
 
-*DevOps Engineer* (Nov 2016 - present) +
+*Senior Staff, DevOps* (Dec 2017 - present) +
+Tesla, Fremont, CA
+
+Tesla's mission is to accelerate the world's transition to sustainable energy.
+
+.*Achievements*
+
+- (Watch this space)
+
+
+*DevOps Engineer* (Nov 2016 - Dec 2017) +
 Teradata, Santa Clara, CA
 
 Teradata Corporation is a Fortune 1000 provider of data warehouse platforms,
 software and services. Our team is at the center of the company's thrust to
 build modern data analytics products around Teradata's traditional offerings.
+
 
 .*Achievements*
 
@@ -285,12 +296,19 @@ P. del Rosario Street, Cebu City 6000, Philippines
 > gift to the next company he works with.
 > -- Aimon Bustardo, Lead DevOps Engineer, Desk.com
 
+> Mark was one of my favorite people to work with at Teradata — the
+> energy he brings to the projects and teams he works with is infectious.
+> Mark's leadership style stems not only from his energy, but his
+> expertise as a DevOps Engineer. He is respected by colleagues at all
+> levels and is a huge asset for any modern engineering organization.
+> -- Tim McIntire, VP Shared Services, Teradata
+
 > Mark is one of the few people I know who can truly perform well in
 > a player/coach role. While his technical chops may be second to
 > none, he combines those chops with a natural ability to lead from
 > the front. He would most certainly be a valuable asset to any team
 > lucky enough to have him.
-> -- Jason Reslock, Lead DevOps Engineer, Teradata
+> -- Jason Reslock, Lead DevOps Engineer, OM1
 
 > Possibly the best reason I looked forward to going to work everyday 
 > is because of the opportunity to work closely and be mentored by
@@ -339,14 +357,6 @@ https://github.com/ManaManaFramework/manamana[Source in Github].
 
 - *Others* - I also contribute to other open source projects and you will usually
 find it in my https://github.com/relaxdiego[activity feed on Github]
-
-
-== One More Thing
-
-Coding without tests is like driving a Tesla in ludicrous mode *without seatbelts* 
-so I always make sure to cover my code with a reasonable amount of tests. Here's 
-https://www.relaxdiego.com/2015/11/my-dev-setup-part-3.html[how I work].
-
 
 
 == All Resume Formats
