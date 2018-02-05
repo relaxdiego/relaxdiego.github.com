@@ -332,3 +332,7 @@ helped me along the way:
 
 * [Jenkins' global shared pipeline libraries (real) unit testing](https://www.linkedin.com/pulse/jenkins-global-shared-pipeline-libraries-real-unit-delgado-garrido/)
 * [How to put your entire pipeline on your shared library](https://jenkins.io/blog/2017/10/02/pipeline-templates-with-shared-libraries/)
+
+## All the Code
+
+* Stuff I wrote up there [are down here](https://github.com/relaxdiego/jenkins-shared-library)
