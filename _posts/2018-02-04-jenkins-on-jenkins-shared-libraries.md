@@ -210,7 +210,7 @@ Let's break this down:
   file to get the version.
 * In line 39 we check to see if returned the release ID that we exected
 
-That's it. We now have our first unit test. Run `mvn clean test` should
+That's it. We now have our first unit test. Run `mvn clean install` should
 get you a report saying your test failed. Now it's time to write the code
 to pass the test!
 
@@ -239,7 +239,7 @@ class ReleaseIDGenerator implements Serializable {
 }
 {%endhighlight%}
 
-Running `mvn clean test` should now get us a passing test as well as a
+Running `mvn clean install` should now get us a passing test as well as a
 JaCoCo exec data file in the `target/` directory that we can use when
 we run these tests on Jenkins.
 
