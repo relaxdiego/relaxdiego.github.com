@@ -1,5 +1,5 @@
 == Mark Maglana
-=== DevOps Engineer; Educated in Software Engineering and Management
+=== Software Engineer with a Twist of DevOps
 
 [%hardbreaks]
 maglana@linux.com
@@ -12,7 +12,9 @@ https://training.linuxfoundation.org/certification/verify-certifications +
 Certificate ID: CKA-1700-0020-0100 +
 Last Name: Maglana
 
-I'm a DevOps Engineer with a Software Engineering and Management background.
+I'm a Software Engineer who found his way into the world of DevOps
+and enjoying every minute of it!
+
 I share my knowledge on sound Software Engineering practices with my Ops
 coworkers and what I know about operations with my Dev coworkers. I also
 employ my management education to give my team's mission more context. I
@@ -87,14 +89,21 @@ was interesting. https://youtu.be/3zh-ORAndw8[Video on YouTube].
 
 == Experience
 
-*Senior Staff, DevOps* (Dec 2017 - present) +
+*Senior Staff Engineer, DevOps* (Dec 2017 - present) +
 Tesla, Fremont, CA
 
 Tesla's mission is to accelerate the world's transition to sustainable energy.
 
 .*Achievements*
 
-- (Watch this space)
+- Automated deployments of customer-facing services.
+
+- Implemented a CI/CD pipeline for microservice-based applications.
+
+- Integrated the above-mentioned CI/CD pipeline with Kubernetes.
+
+- Created a reusable toolkit for automatically setting up the above-mentioned
+  CI/CD pipeline so that other departments can use it.
 
 
 *DevOps Engineer* (Nov 2016 - Dec 2017) +
