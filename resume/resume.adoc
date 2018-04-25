@@ -12,15 +12,15 @@ https://training.linuxfoundation.org/certification/verify-certifications +
 Certificate ID: CKA-1700-0020-0100 +
 Last Name: Maglana
 
-I'm a Software Engineer who found his way into the world of DevOps
-and enjoying every minute of it!
+I'm a Software Engineer who found myself pulled into the world of DevOps
+while having fun along the way. I enjoy sharing my knowledge on sound
+Software Engineering practices with my Ops coworkers and what I know
+about sound Ops practices with my Dev coworkers.
 
-I share my knowledge on sound Software Engineering practices with my Ops
-coworkers and what I know about operations with my Dev coworkers. I also
-employ my management education to give my team's mission more context. I
-enjoy what I do, not only because I get to tackle the unknown and level up
-everyday, but also because I get to share the magic with my colleagues at
-all levels.
+I also employ my management education to give my team's mission more
+context. I enjoy what I do, not only because I get to tackle the unknown
+and level up everyday but also because I get to share the magic with my
+colleagues at all levels.
 
 
 == Highlights
@@ -96,14 +96,15 @@ Tesla's mission is to accelerate the world's transition to sustainable energy.
 
 .*Achievements*
 
-- Automated deployments of customer-facing services.
+- Automated the deployment and configuration of Jenkins clusters. Automation
+  was parameterized allowing cluster owners to customize the configuration for
+  Active Directory authentication, Jenkins Shared Libraries, utility jobs,
+  projects, administrators, job approvers, and more.
 
-- Implemented a CI/CD pipeline for microservice-based applications.
+- Automated deployment of customer-facing services. The deployments spanned
+  development, staging, and production environments.
 
-- Integrated the above-mentioned CI/CD pipeline with Kubernetes.
-
-- Created a reusable toolkit for automatically setting up the above-mentioned
-  CI/CD pipeline so that other departments can use it.
+- Integrated the CI/CD pipeline of said services with Kubernetes.
 
 
 *DevOps Engineer* (Nov 2016 - Dec 2017) +
@@ -117,25 +118,25 @@ build modern data analytics products around Teradata's traditional offerings.
 .*Achievements*
 
 - Team Lead for the internal Kubernetes standard configuration project. This
-  project is a core critical component of all the microservices-based products
-  that Teradata is building. I currently manage the team, provide architectural
-  guidance, write code, as well as oversee the internal community management
-  aspects that are necessary to onboard the various products and programs on
-  top of the project. I'm also working on growing the team such that it can
+  project was a core critical component of all the microservices-based products
+  that Teradata is building. I led the team, provided architectural
+  guidance, wrote code, as well as oversaw the internal community management
+  aspects that were necessary to onboard the various products and programs on
+  top of the project. I also worked on growing the team such that it can
   support all the Kubernetes requirements of the aforementioned Teradata products.
  
-- I function as the DevOps Engineer for the AppCenter project where I am
+- I functioned as the DevOps Engineer for the AppCenter project where I was
   responsible for guiding the architecture of the team’s software manufacturing
   pipeline. I designed the pipeline and also did the initial implementation. I
-  currently serve as an adviser/mentor to the team members that are implementing
+  later served as an adviser/mentor to the team members that were implementing
   the rest of the design. This software manufacturing pipeline is critical in
   ensuring the timely delivery and quality of AppCenter which is a central
   component of Teradata's UDA program.
  
-- I am a member of Teradata's internal DevOps Technology Council. This council
+- I was a member of Teradata's internal DevOps Technology Council. This council
   is tasked to collate, curate, and evangelize the DevOps best practices across
   Teradata to improve its Engineering operational efficiency and effectiveness.
-  I am assigned to the “standardized processes” component of the framework that
+  I was assigned to the “standardized processes” component of the framework that
   the council is building.
  
 
