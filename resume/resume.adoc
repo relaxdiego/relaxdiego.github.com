@@ -6,21 +6,12 @@ maglana@linux.com
 https://relaxdiego.com
 Silicon Valley, CA
 
-
 CNCF Certified Kubernetes Administrator +
-https://training.linuxfoundation.org/certification/verify-certifications +
-Certificate ID: CKA-1700-0020-0100 +
-Last Name: Maglana
+Certificate ID: CKA-1700-0020-0100
 
-I'm a Software Engineer who found myself pulled into the world of DevOps
-while having fun along the way. I enjoy sharing my knowledge on sound
-Software Engineering practices with my Ops coworkers and what I know
-about sound Ops practices with my Dev coworkers.
-
-I also employ my management education to give my team's mission more
-context. I enjoy what I do, not only because I get to tackle the unknown
-and level up everyday but also because I get to share the magic with my
-colleagues at all levels.
+Developer productivity is my vocation. CI/CD plus DevOps is the way
+that I am approaching it and business management knowledge is the rudder
+that points my actions in the right direction.
 
 
 == Highlights
