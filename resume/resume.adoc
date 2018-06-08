@@ -87,15 +87,11 @@ Tesla's mission is to accelerate the world's transition to sustainable energy.
 
 .*Achievements*
 
-- Automated the deployment and configuration of Jenkins clusters. Automation
-  was parameterized allowing cluster owners to customize the configuration for
-  Active Directory authentication, Jenkins Shared Libraries, utility jobs,
-  projects, administrators, job approvers, and more.
-
-- Automated deployment of customer-facing services. The deployments spanned
-  development, staging, and production environments.
-
-- Integrated the CI/CD pipeline of said services with Kubernetes.
+Implemented a CI/CD platform that software engineers used for their applications.
+They onboarded their projects via a declarative YAML file and Dockerfiles.
+The platform provided services such as (1) container image build and publish,
+(2) static code analysis, (3) notifications, (4) build health dashboards, and
+(5) auto-deployment to Docker hosts or to Kubernetes.
 
 
 *DevOps Engineer* (Nov 2016 - Dec 2017) +
