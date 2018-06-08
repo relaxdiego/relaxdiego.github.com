@@ -1,5 +1,5 @@
 == Mark Maglana
-=== Software Engineer with a Twist of DevOps
+=== DevOps + Software Engineering + Agile + Product Management
 
 [%hardbreaks]
 maglana@linux.com
@@ -9,9 +9,8 @@ Silicon Valley, CA
 CNCF Certified Kubernetes Administrator +
 Certificate ID: CKA-1700-0020-0100
 
-Developer productivity is my vocation. CI/CD plus DevOps is the way
-that I am approaching it and business management knowledge is the rudder
-that points my actions in the right direction.
+Developer productivity is my vocation. CI/CD is my approach and management
+knowledge is the rudder that keeps my actions pointed in the right direction.
 
 
 == Highlights
@@ -80,18 +79,18 @@ was interesting. https://youtu.be/3zh-ORAndw8[Video on YouTube].
 
 == Experience
 
-*Senior Staff Engineer, DevOps* (Dec 2017 - present) +
+*Senior Staff DevOps Engineer* (Dec 2017 - present) +
 Tesla, Fremont, CA
 
 Tesla's mission is to accelerate the world's transition to sustainable energy.
 
 .*Achievements*
 
-Implemented a CI/CD platform that software engineers used for their applications.
-They onboarded their projects via a declarative YAML file and Dockerfiles.
-The platform provided services such as (1) container image build and publish,
-(2) static code analysis, (3) notifications, (4) build health dashboards, and
-(5) auto-deployment to Docker hosts or to Kubernetes.
+Designed and implemented a CI/CD platform that software engineers used for their
+applications. They onboarded their projects via a declarative YAML file that they
+commit with their code. The platform provided services such as (1) container image
+build and publish, (2) static code analysis, (3) notifications, (4) build health
+dashboards, and (5) auto-deployment to Docker hosts or to Kubernetes.
 
 
 *DevOps Engineer* (Nov 2016 - Dec 2017) +
