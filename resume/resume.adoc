@@ -358,6 +358,6 @@ find it in my https://github.com/relaxdiego[activity feed on Github]
 
 == All Resume Formats
 
-* https://www.relaxdiego.com/resume[HTML]
-* https://www.relaxdiego.com/resume.pdf[PDF]
+* https://relaxdiego.com/resume[HTML]
+* https://relaxdiego.com/resume.pdf[PDF]
 * https://raw.githubusercontent.com/relaxdiego/relaxdiego.github.com/master/resume/resume.adoc[AsciiDoc]
