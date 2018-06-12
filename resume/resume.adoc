@@ -89,8 +89,9 @@ Tesla's mission is to accelerate the world's transition to sustainable energy.
 Designed and implemented a CI/CD platform that software engineers used for their
 applications. They onboarded their projects via a declarative YAML file that they
 commit with their code. The platform provided services such as (1) container image
-build and publish, (2) static code analysis, (3) notifications, (4) build health
-dashboards, and (5) auto-deployment to Docker hosts or to Kubernetes.
+build and publish, (2) Unit, integration, and black box testing, (3) static code
+analysis, (4) notifications, (5) build health dashboards, (6) auto-DB migration,
+and (7) auto-deployment to Docker hosts or to Kubernetes.
 
 
 *DevOps Engineer* (Nov 2016 - Dec 2017) +
