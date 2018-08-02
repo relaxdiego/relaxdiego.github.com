@@ -9,10 +9,9 @@ Silicon Valley, CA
 CNCF Certified Kubernetes Administrator +
 Certificate ID: CKA-1700-0020-0100
 
-
-Developer productivity is my vocation. CI/CD is my approach and management
-knowledge is the rudder that keeps my actions pointed in the right direction.
-
+My breadth of experience and passion for developer productivity helps me
+design and implement systems and platforms that improve a software team's
+ability to respond to market changes.
 
 == Highlights
 
