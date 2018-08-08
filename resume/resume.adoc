@@ -1,5 +1,5 @@
 == Mark Maglana
-=== DevOps + Software Engineering + Agile + Product Management
+=== Software Engineer with a Twist of DevOps
 
 [%hardbreaks]
 maglana@linux.com
