@@ -22,8 +22,8 @@ my CI/CD bible: Continuos Delivery by Jez Humble and David Farley.
 <iframe type="text/html" width="250" height="418" frameborder="0" allowfullscreen style="max-width:100%" src="https://read.amazon.com/kp/card?asin=B003YMNVC0&preview=inline&linkCode=kpe&ref_=cm_sw_r_kb_dp_CaqDBbDHRCANG&tag=mmaglana-20" ></iframe>
 </center>
 
-In order to discuss the strategy discussed in that book effectively, a
-diagram is in order. Behold my mad diagramming skillz!!!111
+To understand the strategy discussed in that book, a diagram is in order.
+Behold my mad diagramming skillz!!!111
 
 ![CICD Sequence Diagram](/assets/images/cicd.jpg)
 
