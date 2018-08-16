@@ -60,13 +60,13 @@ below tolerable levels, then it would fail on the build stage and never get
 queued for the API tests stage at all. This then signals the team to fix the
 problem.
 
-Now there might be the case where builds W, X, Y, and Z are queued and when the
+Now there might be a case where builds W, X, Y, and Z are queued and when the
 API stage is ready, Z is popped and the other three cancelled. Let's pretend that
 in this scenario, build Z failed the API tests. In such a case, how do we determine
 if the breaking change was introduced in build W, X, Y, or Z? If we want to get
 fancy with it, we could introduce some binary search procedure to determine where
 the build started breaking. That may work for certain teams but it may be too
-much trouble than its worth for some. One solution is to just look at the damn
+much trouble than it's worth for some. One solution is to just look at the damn
 error and fix it in the next build!
 
 One thing that hasn't been discussed yet is the concern of introducing breaking
