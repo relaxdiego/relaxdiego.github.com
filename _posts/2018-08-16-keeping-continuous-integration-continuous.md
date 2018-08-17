@@ -31,7 +31,7 @@ Before we get to the meat of that diagram, I want to bring your attention
 to the 3rd entity there. The one named "Deploy to Test Env and Run API Tests."
 This kind of step in your CI/CD pipeline tends to be the one that sticks out
 like a sore thumb. It's slow and lags as the day progresses. You'll see its
-slowness represented by the relatively long activation of build 1.
+slowness represented in the diagram by the relatively long activation of build 1.
 
 So let's get to the details of the sequence diagram:
 
@@ -79,13 +79,14 @@ by any of the various stages of the pipeline.
 
 Here's a sample pipeline diagram that I employ in some of my projects. Notice
 how the number of builds in the various registries (green boxes) decreases as
-you moved right. That's because the stages serve as the filters.
+you move to the right. That's because the stages serve as the filters that work
+to keep broken builds from getting to production.
 
 ![CICD Pipeline](/assets/images/pipeline.png)
 
 ## Demo Time!
 
-Here's me implementing the above strategy in Jenkins.
+Here's a demo of the above strategy implemented in Jenkins.
 
 <center>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5AuzogJfrpU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -115,7 +116,7 @@ stage to look like the following:
 {%highlight groovy linenos%}
 stage ('Automated Acceptance Tests'){
     steps {
-        lock(resource: "ProjectX-AAT", inversePrecedence: true) {
+        lock(resource: "ProjectX-AAT") {
             // Steps here
         }
     }
@@ -130,10 +131,23 @@ global or cluster-wide, you have to add some "scope" in the lock name to
 avoid unnecessary contention with other projects that have nothing to do
 with yours.
 
-Creating a lock in itself doesn't produce a LIFO queue. It's still a FIFO
-queue. This is where the parameter `inversePrecedence: true` on line 3 comes
-in. By adding this option, we are telling Lockable Resource to grant the
-lock to the last build that requested it. Now we have our LIFO queue!
+Creating a lock in itself doesn't produce a LIFO queue. By default, the lock
+queue is implemented as a FIFO queue. To convert it to a LIFO queue, we add
+the `inversePrecedence` option:
+
+{%highlight groovy linenos%}
+stage ('Automated Acceptance Tests'){
+    steps {
+        lock(resource: "ProjectX-AAT", inversePrecedence: true) {
+            // Steps here
+        }
+    }
+}
+{%endhighlight%}
+
+By adding `inversePrecedence: true` to line 3, we are telling Lockable
+Resource to grant the lock to the last build that requested it. Now we
+have our LIFO queue!
 
 We're not quite done yet. While we've already implemented our LIFO queue
 for our Automated Acceptance Tests stage, we still aren't able to cancel
@@ -150,32 +164,29 @@ put it to use:
 {%highlight groovy linenos%}
 stage ('Automated Acceptance Tests'){
     steps {
-        milestone 100
         lock(resource: "ProjectX-AAT", inversePrecedence: true) {
-            milestone 200
+            milestone 100
             // Steps here
         }
     }
 }
 {%endhighlight%}
 
-In lines 3 and 5 we inserted the milestone keyword with an increasing
-number the further down you go. What those lines tell jenkins is that
+In lines 3 and 5 we inserted the milestone keyword with some arbitrary
+numeric value as an argument. What that line tell Jenkins is that
 if there are any older builds that haven't passed this milestone, cancel
 them. Let's do a walkthrough to clarify:
 
-1. Build 1 occuppies the AAT stage and runs for 10 minutes
-2. On minute 2, Build 2 enters the AAT stage. The milestone 100 line
-   has no effect since all older builds have already passed that milestone.
-   It waits to acquire the lock for "ProjectX-AAT"
-3. On minute 5, Build 3 enters the AAT stage. Likewise, milestone 100
-   has no effect since all older builds have passed that milestone. It also
-   waits to acquire the lock for "ProjectX-AAT"
-4. On minute 8, Build 4 enters the AAT stage. milestone 100 has no effect.
-   It waits to acquire the lock for "ProjectX-AAT"
+1. On minute 1, Build 1 occuppies the AAT stage. It will run for 10 minutes.
+2. On minute 2, Build 2 enters the AAT stage and waits to acquire the
+   lock for "ProjectX-AAT"
+3. On minute 5, Build 3 enters the AAT stage. It also waits to acquire
+   the lock for "ProjectX-AAT"
+4. On minute 8, Build 4 enters the AAT stage. It waits to acquire the
+   lock for "ProjectX-AAT"
 5. Build 1 is done with the AAT stage and moves one
 6. The lock for "ProjectX-AAT" is given to Build 4 since it was the last
-   to request it. The milestone 200 line cancels Builds 2 and 3 since they
+   to request it. The milestone 100 line cancels Builds 2 and 3 since they
    have not passed that milestone yet.
 
 ## Voila! Nothin' To It.
