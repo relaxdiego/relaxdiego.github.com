@@ -9,42 +9,43 @@ Silicon Valley, CA
 CNCF Certified Kubernetes Administrator +
 Certificate ID: CKA-1700-0020-0100
 
-My breadth of experience and passion for developer productivity helps me
-design and implement systems and platforms that improve a software team's
-ability to respond to market changes.
+I build software for software engineers. My breadth of experience and
+passion for developer productivity helps me design and implement systems
+and platforms that improve a software team's responsiveness to market changes.
 
 == Highlights
 
-- *Delivered an enterprise-wide standardized Kubernetes configuration* -
-My former employer, Teradata, needed a standardized Kubernetes configuration
-that multiple projects can develop on top of. I led a team of DevOps
-engineers that made this happen and we utilized Scrum in full to iterate
-quickly, ship preview releases every 3 sprints, and deliver a 1.0 release within
-5 months.
+- *Designed and implemented a CI/CD platform for Tesla* -
+I joined Tesla's Digital Products team to revolutionize their software
+delivery process. I achieved this by rationalizing the build and release
+process and automating most of it through a combination of open source
+software and in-house code.
 
-- *Increased billing module accuracy and speed by at least 10x* - When a
-product's billing module was producing inaccurate results and regularly
-timing out, I offered to inspect the code and find out where the problem
-was. After much debugging, I found the problem and provided a fix which
-resulted in the reports displaying correctly. To improve the module's speed,
-however, required re-architecting the module which I led from conception
-to delivery.
+- *Produced a Kubernetes distribution for Teradata* -
+Teradata needed a distribution of Kubernetes that catered to its very
+specific needs. I mentored a team of DevOps engineers to produce this
+internal distribution called KubeKit. I focused on equipping the team with
+Scrum/Agile practices as well as a CI/CD platform allowing them to iterate
+quickly and deliver a 1.0 release within 5 months.
 
-- *Facilitated the timely delivery of software by automating requirements* -
-We needed to deliver a software agent for a customer that wanted their 
-product to work with a 3rd-party vendor's product. I volunteered to study 
-the associated open standards and proprietary protocols to learn about the 
-requirements. I then codified these requirements in a test harness that 
-also doubled as the executable requirements document for the development 
-team. After integrating this into our CI/CD pipeline, the dev team was able 
-to receive timely feedback on requirements compliance and regressions allowing 
-them to deliver on time and within budget!
+- *Increased billing module accuracy and speed* -
+When a former employer's billing module was producing inaccurate results,
+I took on the task of debugging the problem. After finding the cause, I
+introduced a number of fixes that improved the speed and accuracy of the
+reports.
+
+- *Contributed to the fast delivery of the Cisco 9K OVSDB plugin* -
+Dimension Data needed to deliver an agent that allowed Cisco 9K switches to
+work with VMware NSX. I volunteered to study the associated open standards
+as well as the proprietary protocols for which we didn't have any documentation
+at the time. I codified everything that I learned into a fully automated test
+harness that became part of the team's CI/CD pipeline.
 
 - *Talked at various meetups and conferences* - I've presented on various topics
-such as link:/2017/05/swampup-2017-slides.html[Baking and Frying Machine Images]
-(jFrog Napa Valley 2017), https://www.ansible.com/writing-fully-tested-ansible-modules-for-fun-and-profit[How 
+such as https://www.ansible.com/writing-fully-tested-ansible-modules-for-fun-and-profit[How 
 to Write Fully-Tested Ansible Modules] (AnsibleFest NY 2016),
 link:https://youtu.be/X5plV9kShsE[Deploying OpenShift with Ansible] (Internal talk 2016),
+link:/2017/05/swampup-2017-slides.html[Baking and Frying Machine Images](jFrog Napa Valley 2017), 
 https://www.openstack.org/summit/openstack-summit-atlanta-2014/session-videos/presentation/multi-node-devstack-with-puppet[Multi-node 
 DevStack with Puppet] (OpenStack Summit Atlanta 2014), 
 https://docs.google.com/presentation/d/18O8BVqNSCM5Q2x492AP9njom_l_CKJ_ak9SzNtQACV0/edit?usp=sharing[How 
@@ -56,13 +57,6 @@ a metal fabrication shop, I learned about a manual process that took shop floor
 engineers 2 days to complete. After some research, I was able to build a
 desktop app that reduced the computation time to 5 seconds.
 
-- *Improved requirements gathering through prototyping* - Upon joining a new
-software consulting firm, I noticed the long feedback loop from requirements
-gathering to user testing. I encouraged and guided my teammates to adopt
-prototyping as one of the ways to improve requirements gathering and reduce
-waste. The results were positive and the engineers along with the users were
-very happy with the results.
-
 - *Recipient of academic excellence award for best strategic plan* - I wanted
 to understand the business of software and decided that focusing on the basics of
 business management was key. I then applied for our state university's graduate
@@ -71,10 +65,6 @@ class for Operations Management, Financial Management, and Business Strategy. I
 then used everything that I learned to create a strategic plan for our family
 business which resulted in me getting the academic excellence award for best
 strategic plan.
-
-- *Can solve Rubik's Cube in 1 minute 25 seconds* - Not a record shattering feat
-but it's one of my best times. I decided to learn to solve the cube because it
-was interesting. https://youtu.be/3zh-ORAndw8[Video on YouTube].
 
 
 == Experience
@@ -93,6 +83,10 @@ Tesla's mission is to accelerate the world's transition to sustainable energy.
   analysis, (4) notifications, (5) build health dashboards, (6) auto-DB migration,
   and (7) auto-deployment to Docker hosts or to Kubernetes.
 
+- Implemented the CI/CD platform with "everything as code" in mind. To that end,
+  the Jenkins cluster is managed by Ansible while the pipeline logic is through
+  Jenkins' Global Pipeline Libraries. Packer and Vagrant were also used for provisioning
+  and configuring a local "dev" copy of the cluster.
 
 *DevOps Engineer* (Nov 2016 - Dec 2017) +
 Teradata, Santa Clara, CA
@@ -104,9 +98,9 @@ build modern data analytics products around Teradata's traditional offerings.
 
 .*Achievements*
 
-- Team Lead for the internal Kubernetes standard configuration project. This
-  project was a core critical component of all the microservices-based products
-  that Teradata is building. I led the team, provided architectural
+- Team Lead for the internal Kubernetes distribution project called KubeKit. This
+  project is a core critical component of all the microservices-based products
+  that Teradata is building. I led the team, provided product requirements
   guidance, wrote code, as well as oversaw the internal community management
   aspects that were necessary to onboard the various products and programs on
   top of the project. I also worked on growing the team such that it can
@@ -146,15 +140,17 @@ those of a software engineer/architect.
   Data's cloud service.
 
 - Developed an Ansible-based project that deployed an HA OpenShift
-  platform for use by our team as a replacement for our CI/CD pipeline.
+  PoC for our CI/CD pipeline.
 
 - Designed and implemented the full stack of a web application that was
   designed to transform data from one format to another. The system used
   Rails, Postgres, Redis (for job queueing), Resque, and Ceph both for
   persistent block and object storage.
 
-- Designed and implemented an automated test harness framework used by 
-  our testers for our various software products.
+- Designed and implemented the automated test harness for the N9K OVSDB
+  plugin for NSX.
+
+- Designed and implemented the [Cisco N9K OVSDB plugin CLI utility](https://www.cisco.com/c/en/us/products/collateral/switches/nexus-9000-series-switches/white-paper-c11-740091.html#_Toc517769218).
 
 - Mentored development teams in new technologies, standards, and even
   3rd-party protocols that they needed to incorporate or interface to. This

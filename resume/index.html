@@ -449,9 +449,9 @@ Silicon Valley, CA</p>
 Certificate ID: CKA-1700-0020-0100</p>
 </div>
 <div class="paragraph">
-<p>My breadth of experience and passion for developer productivity helps me
-design and implement systems and platforms that improve a software team&#8217;s
-ability to respond to market changes.</p>
+<p>I build software for software engineers. My breadth of experience and
+passion for developer productivity helps me design and implement systems
+and platforms that improve a software team&#8217;s responsiveness to market changes.</p>
 </div>
 </div>
 </div>
@@ -462,39 +462,41 @@ ability to respond to market changes.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Delivered an enterprise-wide standardized Kubernetes configuration</strong> -
-My former employer, Teradata, needed a standardized Kubernetes configuration
-that multiple projects can develop on top of. I led a team of DevOps
-engineers that made this happen and we utilized Scrum in full to iterate
-quickly, ship preview releases every 3 sprints, and deliver a 1.0 release within
-5 months.</p>
+<p><strong>Designed and implemented a CI/CD platform for Tesla</strong> -
+I joined Tesla&#8217;s Digital Products team to revolutionize their software
+delivery process. I achieved this by rationalizing the build and release
+process and automating most of it through a combination of open source
+software and in-house code.</p>
 </li>
 <li>
-<p><strong>Increased billing module accuracy and speed by at least 10x</strong> - When a
-product&#8217;s billing module was producing inaccurate results and regularly
-timing out, I offered to inspect the code and find out where the problem
-was. After much debugging, I found the problem and provided a fix which
-resulted in the reports displaying correctly. To improve the module&#8217;s speed,
-however, required re-architecting the module which I led from conception
-to delivery.</p>
+<p><strong>Produced a Kubernetes distribution for Teradata</strong> -
+Teradata needed a distribution of Kubernetes that catered to its very
+specific needs. I mentored a team of DevOps engineers to produce this
+internal distribution called KubeKit. I focused on equipping the team with
+Scrum/Agile practices as well as a CI/CD platform allowing them to iterate
+quickly and deliver a 1.0 release within 5 months.</p>
 </li>
 <li>
-<p><strong>Facilitated the timely delivery of software by automating requirements</strong> -
-We needed to deliver a software agent for a customer that wanted their
-product to work with a 3rd-party vendor&#8217;s product. I volunteered to study
-the associated open standards and proprietary protocols to learn about the
-requirements. I then codified these requirements in a test harness that
-also doubled as the executable requirements document for the development
-team. After integrating this into our CI/CD pipeline, the dev team was able
-to receive timely feedback on requirements compliance and regressions allowing
-them to deliver on time and within budget!</p>
+<p><strong>Increased billing module accuracy and speed</strong> -
+When a former employer&#8217;s billing module was producing inaccurate results,
+I took on the task of debugging the problem. After finding the cause, I
+introduced a number of fixes that improved the speed and accuracy of the
+reports.</p>
+</li>
+<li>
+<p><strong>Contributed to the fast delivery of the Cisco 9K OVSDB plugin</strong> -
+Dimension Data needed to deliver an agent that allowed Cisco 9K switches to
+work with VMware NSX. I volunteered to study the associated open standards
+as well as the proprietary protocols for which we didn&#8217;t have any documentation
+at the time. I codified everything that I learned into a fully automated test
+harness that became part of the team&#8217;s CI/CD pipeline.</p>
 </li>
 <li>
 <p><strong>Talked at various meetups and conferences</strong> - I&#8217;ve presented on various topics
-such as <a href="/2017/05/swampup-2017-slides.html">Baking and Frying Machine Images</a>
-(jFrog Napa Valley 2017), <a href="https://www.ansible.com/writing-fully-tested-ansible-modules-for-fun-and-profit">How
+such as <a href="https://www.ansible.com/writing-fully-tested-ansible-modules-for-fun-and-profit">How
 to Write Fully-Tested Ansible Modules</a> (AnsibleFest NY 2016),
 <a href="https://youtu.be/X5plV9kShsE">Deploying OpenShift with Ansible</a> (Internal talk 2016),
+<a href="/2017/05/swampup-2017-slides.html">Baking and Frying Machine Images</a>(jFrog Napa Valley 2017),
 <a href="https://www.openstack.org/summit/openstack-summit-atlanta-2014/session-videos/presentation/multi-node-devstack-with-puppet">Multi-node
 DevStack with Puppet</a> (OpenStack Summit Atlanta 2014),
 <a href="https://docs.google.com/presentation/d/18O8BVqNSCM5Q2x492AP9njom_l_CKJ_ak9SzNtQACV0/edit?usp=sharing">How
@@ -508,14 +510,6 @@ engineers 2 days to complete. After some research, I was able to build a
 desktop app that reduced the computation time to 5 seconds.</p>
 </li>
 <li>
-<p><strong>Improved requirements gathering through prototyping</strong> - Upon joining a new
-software consulting firm, I noticed the long feedback loop from requirements
-gathering to user testing. I encouraged and guided my teammates to adopt
-prototyping as one of the ways to improve requirements gathering and reduce
-waste. The results were positive and the engineers along with the users were
-very happy with the results.</p>
-</li>
-<li>
 <p><strong>Recipient of academic excellence award for best strategic plan</strong> - I wanted
 to understand the business of software and decided that focusing on the basics of
 business management was key. I then applied for our state university&#8217;s graduate
@@ -524,11 +518,6 @@ class for Operations Management, Financial Management, and Business Strategy. I
 then used everything that I learned to create a strategic plan for our family
 business which resulted in me getting the academic excellence award for best
 strategic plan.</p>
-</li>
-<li>
-<p><strong>Can solve Rubik&#8217;s Cube in 1 minute 25 seconds</strong> - Not a record shattering feat
-but it&#8217;s one of my best times. I decided to learn to solve the cube because it
-was interesting. <a href="https://youtu.be/3zh-ORAndw8">Video on YouTube</a>.</p>
 </li>
 </ul>
 </div>
@@ -555,6 +544,12 @@ build and publish, (2) Unit, integration, and black box testing, (3) static code
 analysis, (4) notifications, (5) build health dashboards, (6) auto-DB migration,
 and (7) auto-deployment to Docker hosts or to Kubernetes.</p>
 </li>
+<li>
+<p>Implemented the CI/CD platform with "everything as code" in mind. To that end,
+the Jenkins cluster is managed by Ansible while the pipeline logic is through
+Jenkins' Global Pipeline Libraries. Packer and Vagrant were also used for provisioning
+and configuring a local "dev" copy of the cluster.</p>
+</li>
 </ul>
 </div>
 <div class="paragraph">
@@ -570,9 +565,9 @@ build modern data analytics products around Teradata&#8217;s traditional offerin
 <div class="title"><strong>Achievements</strong></div>
 <ul>
 <li>
-<p>Team Lead for the internal Kubernetes standard configuration project. This
-  project was a core critical component of all the microservices-based products
-  that Teradata is building. I led the team, provided architectural
+<p>Team Lead for the internal Kubernetes distribution project called KubeKit. This
+  project is a core critical component of all the microservices-based products
+  that Teradata is building. I led the team, provided product requirements
   guidance, wrote code, as well as oversaw the internal community management
   aspects that were necessary to onboard the various products and programs on
   top of the project. I also worked on growing the team such that it can
@@ -624,7 +619,7 @@ Data&#8217;s cloud service.</p>
 </li>
 <li>
 <p>Developed an Ansible-based project that deployed an HA OpenShift
-platform for use by our team as a replacement for our CI/CD pipeline.</p>
+PoC for our CI/CD pipeline.</p>
 </li>
 <li>
 <p>Designed and implemented the full stack of a web application that was
@@ -633,8 +628,11 @@ Rails, Postgres, Redis (for job queueing), Resque, and Ceph both for
 persistent block and object storage.</p>
 </li>
 <li>
-<p>Designed and implemented an automated test harness framework used by
-our testers for our various software products.</p>
+<p>Designed and implemented the automated test harness for the N9K OVSDB
+plugin for NSX.</p>
+</li>
+<li>
+<p>Designed and implemented the [Cisco N9K OVSDB plugin CLI utility](<a href="https://www.cisco.com/c/en/us/products/collateral/switches/nexus-9000-series-switches/white-paper-c11-740091.html#_Toc517769218" class="bare">https://www.cisco.com/c/en/us/products/collateral/switches/nexus-9000-series-switches/white-paper-c11-740091.html#_Toc517769218</a>).</p>
 </li>
 <li>
 <p>Mentored development teams in new technologies, standards, and even
