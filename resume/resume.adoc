@@ -44,7 +44,7 @@ harness that became part of the team's CI/CD pipeline.
 such as https://www.ansible.com/writing-fully-tested-ansible-modules-for-fun-and-profit[How 
 to Write Fully-Tested Ansible Modules] (AnsibleFest NY 2016),
 link:https://youtu.be/X5plV9kShsE[Deploying OpenShift with Ansible] (Internal talk 2016),
-link:/2017/05/swampup-2017-slides.html[Baking and Frying Machine Images](jFrog Napa Valley 2017), 
+link:/2017/05/swampup-2017-slides.html[Baking and Frying Machine Images] (jFrog SwampUP Napa Valley 2017), 
 https://www.openstack.org/summit/openstack-summit-atlanta-2014/session-videos/presentation/multi-node-devstack-with-puppet[Multi-node 
 DevStack with Puppet] (OpenStack Summit Atlanta 2014), 
 https://docs.google.com/presentation/d/18O8BVqNSCM5Q2x492AP9njom_l_CKJ_ak9SzNtQACV0/edit?usp=sharing[How 
@@ -149,7 +149,7 @@ those of a software engineer/architect.
 - Designed and implemented the automated test harness for the N9K OVSDB
   plugin for NSX.
 
-- Designed and implemented the [Cisco N9K OVSDB plugin CLI utility](https://www.cisco.com/c/en/us/products/collateral/switches/nexus-9000-series-switches/white-paper-c11-740091.html#_Toc517769218).
+- Designed and implemented the link:https://www.cisco.com/c/en/us/products/collateral/switches/nexus-9000-series-switches/white-paper-c11-740091.html#_Toc517769218[Cisco N9K OVSDB plugin CLI utility].
 
 - Mentored development teams in new technologies, standards, and even
   3rd-party protocols that they needed to incorporate or interface to. This
