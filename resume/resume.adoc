@@ -41,7 +41,8 @@ at the time. I codified everything that I learned into a fully automated test
 harness that became part of the team's CI/CD pipeline.
 
 - *Talked at various meetups and conferences* - I've presented on various topics
-such as https://www.ansible.com/writing-fully-tested-ansible-modules-for-fun-and-profit[How 
+such as https://relaxdiego.com/2017/11/sfk8s-lightning-talk.html[HA Kubernetes Outside the Cloud] (SF k8s Meetup 2017),
+https://www.ansible.com/writing-fully-tested-ansible-modules-for-fun-and-profit[How 
 to Write Fully-Tested Ansible Modules] (AnsibleFest NY 2016),
 link:https://youtu.be/X5plV9kShsE[Deploying OpenShift with Ansible] (Internal talk 2016),
 link:/2017/05/swampup-2017-slides.html[Baking and Frying Machine Images] (jFrog SwampUP Napa Valley 2017), 
