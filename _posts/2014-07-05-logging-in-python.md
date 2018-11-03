@@ -210,7 +210,7 @@ In the code right after `logging` is configured ([see](#configuring-your-loggers
 
 {% highlight python linenos %}
 for h in logging.root.handlers:
-    h.setFormatter(FilterFormatter(h.formatter))
+    h.setFormatter(RedactingFormatter(h.formatter, patterns=['hide me','me also']))
 {% endhighlight %}
 
 
