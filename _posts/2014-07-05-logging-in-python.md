@@ -5,7 +5,7 @@ comments: true
 categories: Python, Logging, Filtering, Custom
 ---
 <sup>Co-Written by [Hari Dara](https://github.com/haridsv)</sup>
-
+<sup>Small code fix by [uenz](https://github.com/uenz)</sup>
 Last week I've had to wrangle with Python's documentation because I needed one
 of the apps I'm writing to centrally remove sensitive information from the logs. After
 several attempts at understanding the documentation, I've come to appreciate
@@ -111,9 +111,9 @@ a logger configured as the above.
 
 ## Redacting logs using a Filter
 
-Here's a [detailed flowchart](https://docs.python.org/2/howto/logging.html#logging-flow) 
+Here's a [detailed flowchart](https://docs.python.org/2/howto/logging.html#logging-flow)
 of how the logging framework handles log messages. The handler flow on the right side
-gives us our first hint on how to centrally filter out sensitive information 
+gives us our first hint on how to centrally filter out sensitive information
 from our logs.
 
 Declaring a filter requires that we create a new section in our config file called
@@ -129,7 +129,7 @@ filters:
             - "metoo!"
 {% endhighlight %}
 
-I declared only one filter there and the class name is `RedactingFilter` as indicated 
+I declared only one filter there and the class name is `RedactingFilter` as indicated
 by the `()` key. All other keys will be supplied to the `RedactingFilter` constructor. In
 the above example, an array of strings called `patterns` will be passed. Let's
 see how the `RedactingFilter` class might be defined. Let's assume we have a `filters.py`
@@ -147,7 +147,7 @@ class RedactingFilter(logging.Filter):
         self._patterns = patterns
 
     def filter(self, record):
-        msg = self.redact(record.msg)
+        record.msg = self.redact(record.msg)
         if isinstance(record.args, dict):
             for k in record.args.keys():
                 record.args[k] = self.redact(record.args[k])
@@ -203,7 +203,7 @@ class RedactingFormatter(object):
 
     def __getattr__(self, attr):
         return getattr(self.orig_formatter, attr)
-        
+
 {% endhighlight %}
 
 In the code right after `logging` is configured ([see](#configuring-your-loggers)), we need to add the below code to wrap all formatters (*a word of caution*: the below code assumes that all the handlers are on the root logger, but this may not always be the case):
