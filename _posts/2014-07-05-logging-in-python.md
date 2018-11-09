@@ -4,8 +4,8 @@ title: Hiding Sensitive Data from Logs with Python
 comments: true
 categories: Python, Logging, Filtering, Custom
 ---
-<sup>Co-Written by [Hari Dara](https://github.com/haridsv)</sup>
-<sup>Small code fix by [uenz](https://github.com/uenz)</sup>
+<sup>Co-Written by [Hari Dara](https://github.com/haridsv) and [uenz](https://github.com/uenz)</sup>
+
 Last week I've had to wrangle with Python's documentation because I needed one
 of the apps I'm writing to centrally remove sensitive information from the logs. After
 several attempts at understanding the documentation, I've come to appreciate
