@@ -8,9 +8,14 @@ https://relaxdiego.com
 CNCF Certified Kubernetes Administrator +
 Certificate ID: CKA-1700-0020-0100
 
-I build software for software engineers. My breadth of experience and
-passion for developer productivity helps me design and implement systems
-and platforms that improve a software team's responsiveness to market changes.
+When I joined Tesla and understood the problems we needed to solve
+around CI/CD I immediately thought of Mark and the work we did together
+at Dimension Data. Mark did amazing work for us at Tesla building an
+entirely new pipeline in just a few months. He worked with Developers,
+QA and IT OPS to ensure what he was building could be supported and useful.
+It is always a pleasure working with Mark. The team here still misses him!
+
+-- Mike Outland, Sr. DevOps Manager at Tesla
 
 == Highlights
 
@@ -69,7 +74,14 @@ strategic plan.
 
 == Experience
 
-*Senior Staff DevOps Engineer* (Dec 2017 - present) +
+*Co-founder* (Nov 2018 - present) +
+Amplify Inc., Philippines
+
+Amplify Inc (link:https://amplifyinc.ph[amplifyinc.ph]) aims to accelerate the
+Philippines digital transformation
+
+
+*Senior Staff DevOps Engineer* (Dec 2017 - Oct 2018) +
 Tesla, Fremont, CA
 
 Tesla's mission is to accelerate the world's transition to sustainable energy.
