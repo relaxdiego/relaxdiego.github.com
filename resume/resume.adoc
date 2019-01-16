@@ -17,6 +17,17 @@ It is always a pleasure working with Mark. The team here still misses him!
 
 -- Mike Outland, Sr. DevOps Manager at Tesla
 
+
+Mark encouraged everyone in Tesla digital products team to move into
+the new CI/CD pipeline. There is NO manual release in his notebook. He
+created a POC project on CI/CD and demo'd to the entire team to show how
+to move away from manual release. Successfully, he automated whole process
+for referral projects + many more. He implemented the Atm pipeline
+and documented the whole pipeline with every single configuration and
+its explanation with example for all different languages.
+
+-- Vijayalaxmi Tiripudur, Staff Software Engineer at Tesla
+
 == Highlights
 
 - *Designed and implemented a CI/CD platform for Tesla* -
@@ -77,8 +88,8 @@ strategic plan.
 *Co-founder* (Nov 2018 - present) +
 Amplify Inc., Philippines
 
-Amplify Inc (link:https://amplifyinc.ph[amplifyinc.ph]) aims to accelerate the
-Philippines digital transformation
+Amplify Inc (link:https://amplifyinc.ph[amplifyinc.ph]) is an SEC-registered
+corporation that aims to accelerate the Philippines' digital transformation
 
 
 *Senior Staff DevOps Engineer* (Dec 2017 - Oct 2018) +
@@ -278,8 +289,7 @@ University of San Carlos +
 P. del Rosario Street, Cebu City 6000, Philippines
 
 
-
-== LinkedIn Recommendations
+== A Few More LinkedIn Recommendations
 
 > Mark is an exceptional employee from his personal interactions 
 > with his peers, development skills and passion for quality. He 
