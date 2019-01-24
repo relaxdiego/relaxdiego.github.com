@@ -41,5 +41,6 @@ Easy peasy. But wait! There's more! Head on over to the
 [Bash Analytics](https://github.com/relaxdiego/bash-analytics) repository
 to get more examples.
 
+
 NOTE: You can very easilly modify the processor to process other log file formats
 such as those from NGINX, Hadoop, k8s, etc.
