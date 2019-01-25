@@ -6,14 +6,14 @@ categories: DevOps, Docker, Apache, Makefile, Bash
 ---
 
 Pop quiz, hot shot! You need to quickly get an idea of the top 5 clients IPs
-of your website grouped by path and HTTP status code but only between 6PM
+of your website grouped by path and HTTP status code but only between 6PM and
 7PM and only for requests with HTTP status code 40x. Quick! What tools do
 you pick up? Do you use go, python, C? What about the framework? And how do
 you onboard the rest of your team?
 
-Slow down now and take a deep breath. For this case, you don't need
-anything more than Bash and friends. Just run this 60-liner bash script
-to get the data I mentioned in the first paragraph above.
+Slow down, take a deep breath. For this scenario, you don't need anything more
+than Bash and friends. To get an idea of how to do that, try out this 60-liner
+bash script to get the data I mentioned above.
 
 Run [Bash Analytics](https://github.com/relaxdiego/bash-analytics) like so:
 
@@ -42,5 +42,5 @@ Easy peasy. But wait! There's more! Head on over to the
 to get more examples.
 
 
-NOTE: You can very easilly modify the processor to process other log file formats
+NOTE: You can very easilly modify the processor to parse other log file formats
 such as those from NGINX, Hadoop, k8s, etc.
