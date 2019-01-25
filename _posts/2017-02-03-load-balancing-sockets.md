@@ -2,19 +2,28 @@
 layout: post
 title: Load Balancing Sockets
 comments: true
-categories: ruby, python, preforking, load balance, unix, sockets
+categories: ruby, preforking, load balance, unix, sockets
 ---
 
-I've been putting off writing this article for some time now but having found
-a half-hour of free time, I finally decided to just do this. I even
-created a GitHub Issue on this website's repo so that it will bug me
-until I write this!
+If you need to write a service or agent that can cater to multiple
+requests in parallel coming in from a single socket, you want to have
+multiple subprocesses ready to cater to those requests in parallel.
+But the question now is how do you ensure the requests are load balanced
+across those subprocesses? Do you build a "Master" process that takes
+care of load balancing, handing off those requests to the subprocesses
+as needed?
 
-## So What's All This About?
+No. No, you don't have to.
 
-This is just a simple demonstration of how you can take advantage of
-the kernel's ability to load balance socket connections across
-children processes. Here's a simple Ruby script that demonstrates that.
+Just use the kernel's built-in ability to do that for you for free by
+using the pre-forking method.
+
+## An Example
+
+The Ruby code below demonstrates how to take advantage of the kernel's
+pre-forking model. Note that while it's written in Ruby, the same method
+can be used in other languages since Ruby is really just making system
+calls underneath all of that.
 
 {%highlight ruby linenos%}
 #!/usr/bin/env ruby
@@ -86,10 +95,10 @@ Hello from 93310
 ## So What's So Cool About This?
 
 With this knowledge in hand, you'll avoid re-inventing the wheel in case
-you want to create a pre-forking server because while this example is
-written in Ruby, it's really just making system calls to the underlying
-\*NIX kernel and that means you can get socket load balancing for free
-whichever programming language you choose!
+you want to create a node agent or a service where horizontal scaling doesn't
+make sense because while this example is written in Ruby, it's really just
+making system calls to the underlying \*NIX kernel and that means you can
+get socket load balancing for free whichever programming language you choose!
 
 
 ## Acknowledgements
