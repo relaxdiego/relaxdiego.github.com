@@ -88,7 +88,15 @@ strategic plan.
 
 == Experience
 
-*Co-founder* (Nov 2018 - present) +
+*Field Software Engineer (APAC Enterprise)*  (May 2019 - present) +
+Canonical Services Ltd.
+
+Canonical produces Ubuntu, provides commercial services for Ubuntu's users,
+and works with hardware manufacturers, software vendors and cloud partners to
+certify Ubuntu.
+
+
+*President, Co-founder* (Nov 2018 - present) +
 Amplify Inc., Philippines
 
 Amplify Inc (link:https://amplifyinc.ph[amplifyinc.ph]) is an SEC-registered
