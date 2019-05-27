@@ -10,7 +10,7 @@ in Kubernetes. If the image below is hard to read, [here's a direct link](https:
 
 <img src="https://docs.google.com/drawings/d/e/2PACX-1vQGTLNcWY-Tb7v2hOS5OxhMiWe7rUpB09n4Cb9ndigFBQUFjapWjInkMYk29Rp1XVK5E_Zj-Fyj4bg6/pub?w=1310&amp;h=1592">
 
-NOTE: While I've depicated the iptables rules and routes as boxes in these
+NOTE: While I've depicted the iptables rules and routes as boxes in these
 diagrams, note that they're not really implemented as Linux devices. Rather,
 I just wanted to show how the routes are applied to the packets as they
 make there way to and fro the actual devices.
