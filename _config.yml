@@ -1,5 +1,5 @@
 name: relaxdiego
-description: Software Engineer with a Twist of DevOps
+description: Mark Maglana's Technical Blog
 url: https://www.relaxdiego.com
 enforce_ssl: www.relaxdiego.com
 permalink: /:year/:month/:title.html
