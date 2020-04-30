@@ -5,31 +5,30 @@
 mmaglana@gmail.com
 https://relaxdiego.com
 
+I'm a software engineer with a deep focus on mastering the art of software
+solutions delivery. To that end, I have purposely seeked and gained
+hands-on experience in:
+
+- Software Design and Development
+- CI/CD and Software QA
+- Field Delivery
+- Customer Support
+- Project Management
+- Software Product Management
+- IT Business Management
+
+Through this wide set of experiences, I obtained a fuller understanding of
+the business of software which has allowed me to operate more effectively as
+a software engineer within an organization. My education is far from over
+though and every new day always presents me with something exciting to learn.
+
+== Certifications
+
 CNCF Certified Kubernetes Administrator +
 Certificate ID: CKA-1700-0020-0100
 
-When I joined Tesla and understood the problems we needed to solve
-around CI/CD I immediately thought of Mark and the work we did together
-at Dimension Data. Mark did amazing work for us at Tesla building an
-entirely new pipeline in just a few months. He worked with Developers,
-QA and IT OPS to ensure what he was building could be supported and useful.
-It is always a pleasure working with Mark. The team here still misses him!
-
--- Mike Outland, Sr. DevOps Manager at Tesla
-
-
-Mark is a world class software professional and DevOps craftsman. He is
-a rare combination of somebody who can elegantly operate across the spectrum
-ranging from the toughest implementation detail all the way to
-thought-leadership and evangelism. Mark is the kind of professional you can
-entrust with a problem statement in its most abstract form and step back,
-assured that the solution will be built with cutting-edge technology choices
-and delivered on time. It's always a pleasure to work with Mark knowing he
-can be your go-to-person, an advisor and leader in his field, and an evangelist
-aware of where the industry is going.
-
--- Chai Atreya, Director of Engineering at Teradata
-
+AWS Certified DevOps Engineer - Professional +
+Certificate ID: T1M94XR2HNE4Q9G8
 
 == Highlights
 
@@ -100,7 +99,10 @@ certify Ubuntu.
 Amplify Inc., Philippines
 
 Amplify Inc (link:https://amplifyinc.ph[amplifyinc.ph]) is an SEC-registered
-corporation that aims to accelerate the Philippines' digital transformation
+corporation that aims to accelerate the Philippines' digital transformation.
+It specializes in the design and delivery of building auxiliary systems such
+as Fire Detection and Alarm Systems; Local Area Networking; Wireless Design
+and Implemention; as well as Building Management Systems.
 
 
 *Senior Staff DevOps Engineer* (Dec 2017 - Oct 2018) +
@@ -121,6 +123,7 @@ Tesla's mission is to accelerate the world's transition to sustainable energy.
   the Jenkins cluster is managed by Ansible while the pipeline logic is through
   Jenkins' Global Pipeline Libraries. Packer and Vagrant were also used for provisioning
   and configuring a local "dev" copy of the cluster.
+
 
 *DevOps Engineer* (Nov 2016 - Dec 2017) +
 Teradata, Santa Clara, CA
@@ -300,13 +303,26 @@ University of San Carlos +
 P. del Rosario Street, Cebu City 6000, Philippines
 
 
-== A Few More LinkedIn Recommendations
+== A Few LinkedIn Recommendations
 
-> Mark is an exceptional employee from his personal interactions 
-> with his peers, development skills and passion for quality. He 
-> has a wide breadth of exposure to different programming languages, 
-> configuration management and software design and architecture.
-> -- Mike Outland, Senior DevOps Manager, Tesla
+> When I joined Tesla and understood the problems we needed to solve
+> around CI/CD I immediately thought of Mark and the work we did together
+> at Dimension Data. Mark did amazing work for us at Tesla building an
+> entirely new pipeline in just a few months. He worked with Developers,
+> QA and IT OPS to ensure what he was building could be supported and useful.
+> It is always a pleasure working with Mark. The team here still misses him!
+> -- Mike Outland, Sr. DevOps Manager at Tesla
+
+> Mark is a world class software professional and DevOps craftsman. He is
+> a rare combination of somebody who can elegantly operate across the spectrum
+> ranging from the toughest implementation detail all the way to
+> thought-leadership and evangelism. Mark is the kind of professional you can
+> entrust with a problem statement in its most abstract form and step back,
+> assured that the solution will be built with cutting-edge technology choices
+> and delivered on time. It's always a pleasure to work with Mark knowing he
+> can be your go-to-person, an advisor and leader in his field, and an evangelist
+> aware of where the industry is going.
+> -- Chai Atreya, Director of Engineering at Teradata
 
 > Mark is an exceptionally capable software architect and developer. 
 > When a new technology or language needed to be implemented, Mark 
