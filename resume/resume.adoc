@@ -1,5 +1,4 @@
 == Mark Maglana
-=== Software Engineer with a Twist of DevOps
 
 [%hardbreaks]
 mmaglana@gmail.com
