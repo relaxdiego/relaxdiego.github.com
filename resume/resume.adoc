@@ -4,9 +4,10 @@
 mmaglana@gmail.com
 https://relaxdiego.com
 
+
 I'm a software engineer with a deep focus on mastering the art of software
-solutions delivery. To that end, I have purposely seeked and gained
-hands-on experience in:
+solutions development and delivery. To that end, I have purposely seeked
+and gained hands-on experience in:
 
 - Software Design and Development
 - CI/CD and Software QA
