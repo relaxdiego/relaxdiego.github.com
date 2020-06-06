@@ -4,23 +4,29 @@
 mark.maglana@linux.com
 https://relaxdiego.com
 
+I am a Software Engineer focused on mastering the art of software production.
+Throughout my career, I have been cultivating my
+https://en.wikipedia.org/wiki/T-shaped_skills[T-Shaped Skills]
+to become more effective at my profession. This involved hands-on experience in
+the following responsibilities:
 
-I'm a software engineer with a deep focus on mastering the art of software
-solutions development and delivery. To that end, I have purposely seeked
-and gained hands-on experience in:
-
-- Software Design and Development
+- Back-end Design and Development
+- Front-end Design and Development
 - CI/CD and Software QA
 - Field Delivery
 - Customer Support
 - Project Management
+- Community Management
 - Software Product Management
 - IT Business Management
 
-Through this wide set of experiences, I obtained a fuller understanding of
-the business of software which has allowed me to operate more effectively as
-a software engineer within an organization. My education is far from over
-though and every new day always presents me with something exciting to learn.
+To ensure that I keep my focus, I always referred to the question "How
+can this experience make me a more effective member of a software organization?"
+
+I've been having a blast learning from my varied yet closely-related experiences.
+However, I am far from over and I continue to look forward to the future because
+of the most important lesson I have learned which is that there is always
+something new and exciting to learn each day.
 
 == Certifications
 
