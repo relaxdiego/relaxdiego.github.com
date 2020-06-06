@@ -2,7 +2,7 @@
 
 # Run this via `./start`
 
-if hash goreman 2>/dev/null; then
+if hash foreman 2>/dev/null; then
     foreman start
 else
     echo "==============================================="
