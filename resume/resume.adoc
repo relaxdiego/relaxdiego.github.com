@@ -328,7 +328,7 @@ P. del Rosario Street, Cebu City 6000, Philippines
 > and delivered on time. It's always a pleasure to work with Mark knowing he
 > can be your go-to-person, an advisor and leader in his field, and an evangelist
 > aware of where the industry is going.
-> -- Chai Atreya, Director of Engineering at Teradata
+> -- Chai Atreya, Head of Engineering at Teradata
 
 > Mark is an exceptionally capable software architect and developer. 
 > When a new technology or language needed to be implemented, Mark 
@@ -357,7 +357,7 @@ P. del Rosario Street, Cebu City 6000, Philippines
 > none, he combines those chops with a natural ability to lead from
 > the front. He would most certainly be a valuable asset to any team
 > lucky enough to have him.
-> -- Jason Reslock, Lead DevOps Engineer, OM1
+> -- Jason Reslock, Senior DevOps Manager, SalesForce.com
 
 > Possibly the best reason I looked forward to going to work everyday 
 > is because of the opportunity to work closely and be mentored by
@@ -366,7 +366,7 @@ P. del Rosario Street, Cebu City 6000, Philippines
 > He can lead teams, mentor teammates, commit production code within
 > time and budget while giving a helping hand with whatever is the issue
 > of the day.
-> -- Bert Diwa, Sr. QA/Automation Engineer, Verizon
+> -- Bert Diwa, Software Engineer in Test, CrowdStrike
 
 > [Mark] produced solid designs. He was an expert at Python (and 
 > apparently Ruby too). He seemed to know about every Open Source 
