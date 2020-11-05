@@ -99,7 +99,42 @@ Canonical Services Ltd.
 
 Canonical produces Ubuntu, provides commercial services for Ubuntu's users,
 and works with hardware manufacturers, software vendors and cloud partners to
-certify Ubuntu.
+certify Ubuntu. My responsibilities range from developing software for automated
+configuration management to on-site deployment of our products according to
+customer requirements.
+
+.*Achievements*
+
+- Produced Kubernetes Operators for Grafana, Prometheus, and AlertManager
+  using Juju, a Canonical product for automating the provisioning and configuration
+  of servers and containers. The three operators are able to automatically
+  connect to each other via Juju's relations functionality. https://www.youtube.com/watch?v=oqiWEUImCz4[Demo Video]
+
+- Deployed https://maas.io/[MAAS], OpenStack, and https://ubuntu.com/kubernetes[Charmed Kubernetes] in various
+  customer sites.
+
+- Produced an internal guide for validating a customer's existing Kubernetes
+  Cluster that was installed using Kubespray/Kubeadm.
+
+- Produced a beginner's guide for developing a pure-Python-based Kubernetes
+  Operator for those just getting started with Kubernetes Operators. https://www.youtube.com/watch?v=lsuW9XGWosQ[Video]
+
+- Produced demo videos for pre-sales purposes that highlights the features of
+  Kubernetes. https://www.youtube.com/watch?v=OZfuAi112bs[Video].
+
+- Worked on an open-source CI/CD platform based on GitLab during my own free time
+  with the objective of fully automating Field Engineering deployment processes.
+  https://github.com/relaxdiego/cicd[Project in GitHub]
+
+- Produced a guide for colleagues about proper Python dependency management.
+  https://www.youtube.com/watch?v=aWVzR296XcU[Video].
+
+- Produced a video for the benefit of those who are just starting with Juju
+  Charms development. https://www.youtube.com/watch?v=LckY8fdJL40[Video]
+
+- Produced a tool that allows DevOps Engineers to work together on the same
+  remote terminal. Especially useful for situations where a team needs to debug
+  a server collectively. https://github.com/relaxdiego/coterminal[Github Repo]
 
 
 *President, Co-founder* (Nov 2018 - present) +
