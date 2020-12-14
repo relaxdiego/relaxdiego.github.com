@@ -20,18 +20,19 @@ the following responsibilities:
 - Software Product Management
 - IT Business Management
 
-To ensure that I keep my focus, I always referred to the question "How
-can this experience make me a more effective member of a software organization?"
+My guiding principle in my professional journey is summed up by this
+question: "How can I take this experience and make myself better at
+delivering software systems that users will love?"
 
 I've been having a blast learning from my varied yet closely-related experiences.
 However, I am far from over and I continue to look forward to the future because
-of the most important lesson I have learned which is that there is always
-something new and exciting to learn each day.
+no matter what, there's always something new to learn and solve everyday.
 
 == Certifications
 
 CNCF Certified Kubernetes Administrator +
-Certificate ID: CKA-1700-0020-0100
+Certificate ID: CKA-1700-0020-0100 +
+(Expired Sep 2020 - Will renew some other time)
 
 AWS Certified DevOps Engineer - Professional +
 Certificate ID: T1M94XR2HNE4Q9G8
