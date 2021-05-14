@@ -6,10 +6,10 @@ categories: DevOps, Foundations of DevOps, Principles
 ---
 
 *This article attempts to cut through the cruft and re-discover what
-it really means to practice DevOps principles in your organization. It
-does this by reviewing the three principles of DevOps: systems throughput,
+it really means to practice DevOps in your organization. It does this
+by reviewing the three principles of DevOps: systems throughput,
 fast feedback, and continuous learning. It further re-inforces these
-principles with two tried and tested engineering concepts: Theory of
+principles with two tried and tested engineering concepts: The Theory of
 Constraints and Control Theory.*
 
 
@@ -34,8 +34,8 @@ think about it for a second. If you start out with this mindset as the
 primary goal of DevOps, then you run the risk of pursuing various
 automation projects that don't have a common goal. In this case,
 automation for the sake of automation is like a sailboat that’s favored
-by the winds but doesn’t have a rudder to guide it. In this case, you're
-just going nowhere fast.
+by the winds but doesn’t have a rudder to guide it--you're just going
+nowhere fast.
 
 **Second: DevOps is not about bringing Dev and Ops together**. If all
 you're doing is coaxing them to work within the same room (physical or
@@ -357,6 +357,9 @@ control system is fully automated or includes human intervention. You
 must ensure that every component that composes the Controller does not
 panic!
 
+Sidenote: I talk about dynamic control systems in an agile organization
+in [this article](/2015/01/automated-testing-and-organizational-learning).
+
 
 ## Recap
 
@@ -365,18 +368,21 @@ so that we can internalize it and come up with actionable items later.
 
 DevOps is about:
 
-1. Ensuring an optimal throughput of a system
-1. Getting timely and accurate feedback
-1. Learning from the feedback and self-correcting as needed
+1. Achieving optimal (not necessarily maximal) system throughput;
+1. Getting timely and accurate feedback for actions taken;
+1. Learning from the feedback and self-correcting as needed.
 
 DevOps is backed by real engineering concepts:
 
 1. Theory of constraints which guides you in managing your work in
-   process (WIP) inventory to ensure optimal team throughput.
+   process (WIP) inventory to ensure optimal team throughput;
 1. Control Theory which gives you a framework for collecting timely
    and accurate feedback and using that to self correct as needed.
 
-DevOps uses automation and collaboration between Dev and Ops as a means to an end.
+Finally, DevOps can make use of automation and collaboration between
+Dev and Ops but they must be used under the guidance of the principles
+and engineering concepts stated above.
 
 I hope that gave you a good enough understanding to jumpstart your DevOps
-journey. If you do have questions, don't hesitiate to [post it on Github](https://github.com/relaxdiego/relaxdiego.github.com/issues/new).
+journey. If you have any questions, don't hesitiate to
+[post it on Github](https://github.com/relaxdiego/relaxdiego.github.com/issues/new).
