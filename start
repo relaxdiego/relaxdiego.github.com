@@ -6,7 +6,7 @@ if hash foreman 2>/dev/null; then
     foreman start
 else
     echo "==============================================="
-    echo "Please install Goreman before proceeding:"
-    echo "go get github.com/mattn/goreman"
+    echo "Please install Foreman before proceeding:"
+    echo "ddollar.github.com/foreman"
     echo "==============================================="
 fi
