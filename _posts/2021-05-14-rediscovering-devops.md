@@ -370,7 +370,8 @@ DevOps is about:
 
 1. Achieving optimal (not necessarily maximal) system throughput;
 1. Getting timely and accurate feedback for actions taken;
-1. Learning from the feedback and self-correcting as needed.
+1. Building an environment that is conducive to continuous
+   learning and experimentation.
 
 DevOps is backed by real engineering concepts:
 
