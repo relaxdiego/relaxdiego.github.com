@@ -111,7 +111,7 @@ customer requirements.
   of servers and containers. The three operators are able to automatically
   connect to each other via Juju's relations functionality. https://www.youtube.com/watch?v=oqiWEUImCz4[Demo Video]
 
-- Deployed https://maas.io/[MAAS], OpenStack, and https://ubuntu.com/kubernetes[Charmed Kubernetes] in various
+- Delivered https://maas.io/[MAAS], OpenStack, and https://ubuntu.com/kubernetes[Charmed Kubernetes] in various
   customer sites.
 
 - Produced an internal guide for validating a customer's existing Kubernetes
@@ -122,10 +122,6 @@ customer requirements.
 
 - Produced demo videos for pre-sales purposes that highlights the features of
   Kubernetes. https://www.youtube.com/watch?v=OZfuAi112bs[Video].
-
-- Worked on an open-source CI/CD platform based on GitLab during my own free time
-  with the objective of fully automating Field Engineering deployment processes.
-  https://github.com/relaxdiego/cicd[Project in GitHub]
 
 - Produced a guide for colleagues about proper Python dependency management.
   https://www.youtube.com/watch?v=aWVzR296XcU[Video].
@@ -138,14 +134,12 @@ customer requirements.
   a server collectively. https://github.com/relaxdiego/coterminal[Github Repo]
 
 
-*President, Co-founder* (Nov 2018 - present) +
+*President, Co-founder* (Nov 2018 - Dec 2020) +
 Amplify Inc., Philippines
 
-Amplify Inc (link:https://amplifyinc.ph[amplifyinc.ph]) is an SEC-registered
-corporation that aims to accelerate the Philippines' digital transformation.
-It specializes in the design and delivery of building auxiliary systems such
-as Fire Detection and Alarm Systems; Local Area Networking; Wireless Design
-and Implemention; as well as Building Management Systems.
+Amplify Inc specialized in the design and delivery of building auxiliary
+systems such as Fire Detection and Alarm Systems; Local Area Networking;
+Wireless Design and Implemention; as well as Building Management Systems.
 
 
 *Senior Staff DevOps Engineer* (Dec 2017 - Oct 2018) +
