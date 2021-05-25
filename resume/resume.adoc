@@ -4,29 +4,20 @@
 mark.maglana@linux.com
 https://relaxdiego.com
 
-I am a Software Engineer focused on mastering the art of software production.
-Throughout my career, I have been cultivating my
-https://en.wikipedia.org/wiki/T-shaped_skills[T-Shaped Skills]
-to become more effective at my profession. This involved hands-on experience in
-the following responsibilities:
+I love building software and I've dedicated my career to mastering as many
+of the art's numerous aspects. I've done this by taking on the various
+challenges that come my way, learning as much as I can and delivering as best
+as I can. Taking pride in the systems that I build. To this end, I have 
+gained experience in:
 
+- Entrepreneurship
+- Technical Product Management
+- Community Management
+- Field Delivery
+- DevOps
 - Back-end Design and Development
 - Front-end Design and Development
-- CI/CD and Software QA
-- Field Delivery
-- Customer Support
-- Project Management
-- Community Management
-- Software Product Management
-- IT Business Management
 
-My guiding principle in my professional journey is summed up by this
-question: "How can I take this experience and make myself better at
-delivering software systems that users will love?"
-
-I've been having a blast learning from my varied yet closely-related experiences.
-However, I am far from over and I continue to look forward to the future because
-no matter what, there's always something new to learn and solve everyday.
 
 == Certifications
 
@@ -36,6 +27,7 @@ Certificate ID: CKA-1700-0020-0100 +
 
 AWS Certified DevOps Engineer - Professional +
 Certificate ID: T1M94XR2HNE4Q9G8
+
 
 == Highlights
 
@@ -117,7 +109,7 @@ customer requirements.
 - Produced an internal guide for validating a customer's existing Kubernetes
   Cluster that was installed using Kubespray/Kubeadm.
 
-- Produced a beginner's guide for developing a pure-Python-based Kubernetes
+- Produced a beginner's guide for developing a Python-based Kubernetes
   Operator for those just getting started with Kubernetes Operators. https://www.youtube.com/watch?v=lsuW9XGWosQ[Video]
 
 - Produced demo videos for pre-sales purposes that highlights the features of
@@ -137,9 +129,26 @@ customer requirements.
 *President, Co-founder* (Nov 2018 - Dec 2020) +
 Amplify Inc., Philippines
 
-Amplify Inc specialized in the design and delivery of building auxiliary
-systems such as Fire Detection and Alarm Systems; Local Area Networking;
-Wireless Design and Implemention; as well as Building Management Systems.
+Amplify Inc (amplifyinc.ph) was an SEC-registered corporation that aimed to
+accelerate the Philippines' digital transformation. It specialized in the
+design and delivery of building auxiliary systems such as Fire Detection and
+Alarm Systems; Local Area Networking; Wireless Design and implemention; as
+well as Building Management Systems.
+
+.*Achievments*
+
+- Assembled a board of directors to oversee the direction of the company. The
+  board was composed of a former IT manager, an electronics and communications
+  engineer, and a certified public accountant.
+
+- Built the company from the ground up with proper support for sales and engineering.
+  Both departments synced up twice weekly via stand ups and a shared task board.
+  All communications were logged in a sales database that allowed sales and engineering
+  to stay synchronized.
+
+- Achieved a decent rise in revenue in its first year to be nearly self sustaining
+  within a year but was hit hard by the pandemic and lock downs just when it was
+  about to break even.
 
 
 *Senior Staff DevOps Engineer* (Dec 2017 - Oct 2018) +
@@ -153,15 +162,10 @@ Tesla's mission is to accelerate the world's transition to sustainable energy.
   applications. They onboarded their projects via a declarative YAML file that they
   commit with their code. The platform provided services such as (1) container image
   build and publish, (2) Unit, integration, and black box testing, (3) static code
-  analysis, (4) notifications, (5) build health dashboards, (6) auto-DB migration,
-  and (7) auto-deployment to Docker hosts or to Kubernetes. The project has since
-  matured enough to have a community of code and documentation contributors from
-  everywhere in the company.
-
-- Implemented the CI/CD platform with "everything as code" in mind. To that end,
-  the Jenkins cluster is managed by Ansible while the pipeline logic is through
-  Jenkins' Global Pipeline Libraries. Packer and Vagrant were also used for provisioning
-  and configuring a local "dev" copy of the cluster.
+  analysis, (4) chat notifications, (5) build health dashboards, (6) auto-DB migration,
+  and (7) blue-green deployments to Kubernetes. The project has since matured to have
+  a internal community of contributors as well as a collection of over 600 services
+  being managed.
 
 
 *DevOps Engineer* (Nov 2016 - Dec 2017) +
@@ -236,10 +240,10 @@ those of a software engineer/architect.
 *Senior Director Of Engineering* (Jul 2012 - Jan 2014) +
 Morph, Manhattan Beach, CA
 
-Morph was the first PaaS built on top of AWS and later on pivoted to
-providing IaaS appliances that its customers can install inside of 
-their data center to use as a springboard for quickly building their own 
-cloud computing environment. My official title was Senior Director of
+Morph (a sister company of Exist Global) was the first PaaS built on top
+of AWS and later on pivoted to providing IaaS appliances that its customers
+can install inside of  their data center to use as a springboard for quickly
+building their own cloud computing environment. My official title was Senior Director of
 Engineering but my actual roles spanned that of a software engineer/architect.
 
 .*Achievements*
