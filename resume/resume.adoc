@@ -3,6 +3,7 @@
 [%hardbreaks]
 mark.maglana@linux.com
 https://relaxdiego.com
+https://github.com/relaxdiego
 
 I love building software and I've dedicated my career to mastering as many
 of the art's numerous aspects. I've done this by taking on the various
@@ -421,28 +422,6 @@ P. del Rosario Street, Cebu City 6000, Philippines
 > the Australian National University] was the role, design and
 > development of business incubators as a tool for regional development.
 > -- Don Scott-Kemmis, Innovation Policy Consultant
-
-
-== A Few Open Source Projects
-
-- *Open vSwitch Lab* - A Vagrant project which provisions two machines that talk
-over a simulated Internet. The lab is a companion project for the series of
-articles I wrote about http://www.relaxdiego.com/2014/09/ovs-lab.html[VXLAN], 
-http://www.relaxdiego.com/2014/09/ovsdb.html[OVSDB], and 
-http://www.relaxdiego.com/2014/09/hardware_vtep.html[the hardware VTEP schema]. 
-https://github.com/relaxdiego/ovs-lab[Source in Github].
-
-- *Aviator* - A lightweight Ruby client library for cloud REST APIs. I initially
-built this for the OpenStack API. My focus was to build a library that reflected,
-rather than obscured the underlying API. http://aviator.github.io/www/[Homepage].
-
-- *Mana Mana* - A proof-of-concept business natural language testing framework
-that was inspired by Cucumber and the Robot framework. This was borne out of my
-never-ending search for better ways to write maintainable automated tests. 
-https://github.com/ManaManaFramework/manamana[Source in Github].
-
-- *Others* - I also contribute to other open source projects and you will usually
-find it in my https://github.com/relaxdiego[activity feed on Github]
 
 
 == All Resume Formats
