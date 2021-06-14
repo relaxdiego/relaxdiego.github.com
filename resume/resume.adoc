@@ -24,7 +24,7 @@ gained experience in:
 
 CNCF Certified Kubernetes Administrator +
 Certificate ID: CKA-1700-0020-0100 +
-(Expired Sep 2020 - Will renew some other time)
+(Expired Sep 2020 - Currently Renewing)
 
 AWS Certified DevOps Engineer - Professional +
 Certificate ID: T1M94XR2HNE4Q9G8
