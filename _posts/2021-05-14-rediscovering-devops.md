@@ -5,6 +5,10 @@ comments: false
 categories: DevOps, Foundations of DevOps, Principles
 ---
 
+TL;DR: DevOps is just Process Engineering specialized for software
+delivery. The wealth of knowledge built up by Process and Industrial
+Engineering will prove useful in delivering software products.
+
 *This article attempts to cut through the cruft and re-discover what
 it really means to practice DevOps in your organization. It does this
 by reviewing the three principles of DevOps: systems throughput,
