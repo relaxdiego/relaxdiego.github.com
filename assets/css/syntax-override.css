@@ -1,0 +1,29 @@
+figure.highlight pre {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+figure.highlight td.gutter {
+    min-width: 30px;
+    text-align: right;
+}
+
+figure.highlight td.gutter pre.lineno {
+    background-color: rgb(44, 45, 47);
+    color: #999999;
+    padding: 8px;
+    white-space: pre;
+}
+
+figure.highlight td.code pre {
+    border-color: transparent;
+    padding: 8px;
+    white-space: pre;
+}
+
+div.language-plaintext
+    pre.highlight
+    code {
+    color: #cccccc;
+}

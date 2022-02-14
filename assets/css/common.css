@@ -16,12 +16,21 @@ code {
     padding-bottom: 5px;
 }
 
-.highlight td.gutter {
-  width: 30px;
+a {
+    color: #0088cc;
+    text-decoration: underline;
 }
 
 span.post-date {
     color: #666;
+}
+
+div.homeindex a {
+    text-decoration: none;
+}
+
+#homelink {
+    text-decoration: none;
 }
 
 span.monospace {
@@ -69,6 +78,10 @@ strike {
 	margin-left: auto;
 	margin-right: auto;
 	width: 592px;
+}
+
+#post blockquote {
+    border-color: #999999;
 }
 
 .footer {
