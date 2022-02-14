@@ -6,6 +6,7 @@ figure.highlight pre {
 
 figure.highlight td.gutter {
     min-width: 30px;
+    padding: 0;
     text-align: right;
 }
 
@@ -14,6 +15,10 @@ figure.highlight td.gutter pre.lineno {
     color: #999999;
     padding: 8px;
     white-space: pre;
+}
+
+figure.highlight td.code {
+    padding: 0;
 }
 
 figure.highlight td.code pre {
