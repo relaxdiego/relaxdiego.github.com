@@ -8,6 +8,7 @@ def datetime_from_iso8601(iso8601_str):
 assert datetime_from_iso8601("2022-01-01") == datetime(2022, 1, 1)
 assert datetime_from_iso8601("1979-01-01") == datetime(1979, 1, 1)
 
+#
 # AssertionError
 #
 assert datetime_from_iso8601("1979-01-01").tzinfo is not None, "THIS SHOULD FAIL"

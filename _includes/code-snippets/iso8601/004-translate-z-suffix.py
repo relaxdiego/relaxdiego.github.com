@@ -2,7 +2,9 @@ from datetime import datetime
 
 
 def datetime_from_iso8601(iso8601_str):
+    #
     # I mean, it's just one silly character anyway...
+    #
     if iso8601_str[-1].upper() == "Z":
         iso8601_str = f"{iso8601_str[:-1]}+00:00"
 

@@ -22,7 +22,9 @@ assert datetime_from_iso8601("1979-01-01T11:11") == datetime(
 assert datetime_from_iso8601("1979-01-01T00:00:00Z").tzinfo is not None
 assert datetime_from_iso8601("1979-01-01").tzinfo is not None
 
+#
 # Yeah, it works. Not that I need it right now.
+#
 assert datetime_from_iso8601("1979-01-01T11:11+12:00") == datetime(
     1979, 1, 1, 11, 11, tzinfo=timezone(timedelta(hours=12))
 )

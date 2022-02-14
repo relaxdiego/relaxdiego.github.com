@@ -8,7 +8,9 @@ def datetime_from_iso8601(iso8601_str):
     dt = datetime.fromisoformat(iso8601_str)
 
     if dt.tzinfo is None:
-        # There is only Zuul!
+        #
+        # There is only Zulu!
+        #
         dt = dt.replace(tzinfo=timezone.utc)
 
     return dt

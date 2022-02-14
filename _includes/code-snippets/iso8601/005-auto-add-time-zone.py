@@ -7,7 +7,9 @@ def datetime_from_iso8601(iso8601_str):
 
     dt = datetime.fromisoformat(iso8601_str)
 
+    #
     # Let's add that time zone if it's missing
+    #
     if dt.tzinfo is None:
         dt = dt.replace(tzinfo=get_timezone())
 

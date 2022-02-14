@@ -12,8 +12,8 @@ code {
 }
 
 .page-header {
-    margin-bottom: 0;
-    padding-bottom: 0;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
 }
 
 .highlight td.gutter {
