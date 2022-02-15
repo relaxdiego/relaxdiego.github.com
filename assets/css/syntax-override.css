@@ -27,6 +27,11 @@ figure.highlight td.code pre {
     white-space: pre;
 }
 
+# Fixes the dark-on-dark color of the "f" in Python f-strings
+figure.highlight td.code pre span.sa {
+    color: #d0d0d0;
+}
+
 div.language-plaintext
     pre.highlight
     code {
