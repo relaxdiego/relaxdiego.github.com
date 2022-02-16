@@ -149,4 +149,4 @@ from there!
 Enjoy. :-)
 
 Oh and, of course, all code snippets in this blog post are available on
-[Github](https://github.com/relaxdiego/relaxdiego.github.com/tree/master/_includes/code-snippets/iso8601)!
+[Github](https://github.com/relaxdiego/relaxdiego.github.com/tree/master/_includes/code-snippets/autotest-post)!
