@@ -46,3 +46,38 @@ figure.highlight td.code pre span.nn {
 div.language-plaintext pre.highlight code {
     color: #cccccc;
 }
+
+/* Used by 2022-02-16-autotest-code-snippets.md */
+
+.terminal {
+    margin-bottom: 24pt;
+}
+
+.terminal pre {
+    background-color: #404040;
+    color: #d0d0d0;
+    overflow: hidden;
+    white-space: pre;
+}
+
+.terminal span.proc1 {
+    color: cyan;
+}
+
+.terminal span.proc2 {
+    color: lightgreen;
+}
+
+.terminal span.proc3 {
+    color: yellow;
+}
+
+.terminal span.proc3failed {
+    color: red;
+}
+
+.terminal span.proc3passed {
+    color: lightgreen;
+}
+
+/* END Used by 2022-02-16-autotest-code-snippets.md */
