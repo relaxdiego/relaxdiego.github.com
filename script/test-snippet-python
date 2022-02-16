@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+abs_or_rel_path="$1"
+
+# Check if filename ends with *_test.py
+if [ "${abs_or_rel_path##*_}" = "test.py" ]; then
+    # Run it directly
+    testpath="$abs_or_rel_path"
+else
+    # Run the script's companion test file
+    testpath="${abs_or_rel_path%.*}_test.py"
+fi
+
+echo "Tester: ${testpath#$(pwd)/_includes/code-snippets/}"
+echo "pwd: $(pwd)"
+set -x
+python "$testpath"

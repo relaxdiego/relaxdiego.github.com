@@ -11,4 +11,4 @@ assert datetime_from_iso8601("1979-01-01") == datetime(1979, 1, 1)
 #
 # AssertionError
 #
-assert datetime_from_iso8601("1979-01-01").tzinfo is not None, "THIS SHOULD FAIL"
+assert datetime_from_iso8601("1979-01-01").tzinfo is not None

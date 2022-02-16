@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# Requires fswatch https://github.com/emcrisostomo/fswatch
+# `brew install fswatch`
+
+# This loop was inspired by https://superuser.com/a/181543/774060
+exec fswatch \
+    --recursive \
+    --latency 1 \
+    --event-flags \
+    --recursive \
+    ./_includes/code-snippets |
+    while read -r abspath events; do
+        echo "====================================="
+        echo "Events: $events"
+
+        # We don't want the autotester to die when a test fails!
+        script/test-snippet "${abspath}" || true
+    done

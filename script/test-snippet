@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+abs_or_rel_path="$1"
+filename="$(basename "$abs_or_rel_path")"
+extension="${filename##*.}"
+
+relpath="${abs_or_rel_path#$(pwd)}"
+echo "Snippet: $relpath"
+
+passed=1
+if [ "$extension" = "py" ]; then
+    echo "Type: Python"
+    if ! script/test-snippet-python "${abs_or_rel_path}"; then
+        passed=0
+    fi
+else
+    echo "Type: $extension is not supported"
+    not_run=1
+fi
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+if [[ $not_run == 1 ]]; then
+    echo "Test: Not executed"
+elif [[ $passed == 1 ]]; then
+    echo -e "${GREEN}PASSED${NC}"
+else
+    echo -e "${RED}FAILED${NC}"
+fi
