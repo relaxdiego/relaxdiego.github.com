@@ -1,3 +1,9 @@
+figure.highlight {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 24pt;
+}
+
 figure.highlight pre {
     border: 0;
     margin: 0;
@@ -27,13 +33,16 @@ figure.highlight td.code pre {
     white-space: pre;
 }
 
-# Fixes the dark-on-dark color of the "f" in Python f-strings
+/* Fixes the dark-on-dark color of the "f" in Python f-strings */
 figure.highlight td.code pre span.sa {
     color: #d0d0d0;
 }
 
-div.language-plaintext
-    pre.highlight
-    code {
+/* Removes the underlines in imported modules. What's up wit dat??? */
+figure.highlight td.code pre span.nn {
+    text-decoration: none;
+}
+
+div.language-plaintext pre.highlight code {
     color: #cccccc;
 }
