@@ -8,8 +8,10 @@ hr {
 }
 
 code {
-  font-family: monospace;
-  font-size: 12pt;
+  border: 0;
+  color: #AA0000;
+  font-size: 0.8em;
+  font-family: Monaco, Courier New, monospace;
   padding: 0px 4px; /* Override the default padding from Bootstrap */
 }
 

@@ -17,7 +17,6 @@ figure.highlight td.gutter {
 }
 
 figure.highlight td.gutter pre.lineno {
-    background-color: rgb(44, 45, 47);
     color: #999999;
     padding: 8px;
     white-space: pre;
