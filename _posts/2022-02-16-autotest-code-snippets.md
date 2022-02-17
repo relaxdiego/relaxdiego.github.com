@@ -14,7 +14,7 @@ like this:
 
 First I'll run [Foreman](https://ddollar.github.io/foreman/) locally while in my
 blog's dir. Foreman starts up three processes in the background: a
-[Jekyll](https://jekyllrb.com/) server, a resume autorenderer, and
+[Jekyll](https://jekyllrb.com/) server, my résumé autorenderer, and
 a snippets autotester (the topic of this post). Each subprocess'
 stdout and stderr are printed by Foreman, with each line properly prefixed
 such that it says which process printed out which line:
@@ -58,7 +58,8 @@ post, I'd write the following:
 That tells Jekyll to include the contents of `_includes/code-snippets/autotest-post/s01_hello_world.py`
 inside this blog post when it renders it in HTML form. If I save the blog
 post now, the `blog.1` subprocess would fail since the code snippet file
-I want to include doesn't exist yet. So I'm not going to save it yet.
+I want to include doesn't exist yet. So I'm going to hold off on saving
+it for now.
 
 
 ### Step 3: Create the test for the code snippet
@@ -121,12 +122,12 @@ When we save that, we see this output from Foreman:
 Sweeet!
 
 At this point, when I save this blog post's `.md` file, Jekyll will happily
-include the snippet file's contents into the rendered HTML, not knoweing or
-even caring that the file was fully tested by our awesome setup. And that's
+include the snippet file's contents into the rendered HTML, neither knowing nor
+caring that the file was fully tested by this awesome setup. And that's
 totally OK because I want to keeps things decoupled this way.
 
 
-### Step 5 Run all tests as a final sweep
+### Step 5: Run all tests as a final sweep
 
 Just like the usual TDD workflow, I run all the snippet tests as a final
 step before pushing my changes:
