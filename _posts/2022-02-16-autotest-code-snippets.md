@@ -133,9 +133,13 @@ step before pushing my changes:
 
 <div class="terminal">
 <pre>
-for snippet in _includes/code-snippets/iso8601/*.py; do script/test-snippet $snippet; done
+for snippettest in _includes/code-snippets/**/*_test.*; do script/test-snippet "$snippettest"; done
 </pre>
 </div>
+
+Right now `script/test-snippet` only supports Python but nothing's stopping it
+from supporting other languages down the line. It only takes a bit of my time
+and energy.
 
 
 ## Talk is cheap. Show me the code!
