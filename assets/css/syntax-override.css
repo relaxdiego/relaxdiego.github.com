@@ -27,6 +27,7 @@ figure.highlight td.code {
 }
 
 figure.highlight td.code pre {
+    color: #bbbbbb;
     border-color: transparent;
     padding: 8px;
     white-space: pre;
@@ -45,6 +46,9 @@ figure.highlight td.code pre span.nn {
 div.language-plaintext pre.highlight code {
     color: #cccccc;
 }
+
+
+.highlight .pi { color: #bbbbbb } /* YAML colons ':' */
 
 /* Used by 2022-02-16-autotest-code-snippets.md */
 
