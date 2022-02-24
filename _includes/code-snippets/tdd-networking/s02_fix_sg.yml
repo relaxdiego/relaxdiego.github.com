@@ -1,0 +1,103 @@
+---
+Description: Deceptively simple project
+
+Resources:
+  Instance1:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: !Ref Instance1AmiId
+      KeyName: !Ref Instance1KeyName
+      NetworkInterfaces:
+        - AssociatePublicIpAddress: "true"
+          DeviceIndex: "0"
+          GroupSet:
+            - !Ref Instance1SecurityGroup
+          SubnetId: !Ref Instance1SubnetId
+      Tags:
+        - Key: Name
+          Value: !Join [ '-', [ !Ref AWS::StackName, !Ref Stage, 'Instance1' ] ]
+
+  Instance1SecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: !Join [ '-', [ !Ref AWS::StackName, !Ref Stage, 'Instance1-sg' ] ]
+      VpcId: !Ref Instance1VpcId
+      SecurityGroupEgress:
+        - CidrIp: "0.0.0.0/0"
+          FromPort: -1
+          ToPort: -1
+          IpProtocol: -1
+
+  Instance2:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: !Ref Instance2AmiId
+      KeyName: !Ref Instance2KeyName
+      NetworkInterfaces:
+        - AssociatePublicIpAddress: "true"
+          DeviceIndex: "0"
+          GroupSet:
+            - !Ref Instance2SecurityGroup
+          SubnetId: !Ref Instance2SubnetId
+      Tags:
+        - Key: Name
+          Value: !Join [ '-', [ !Ref AWS::StackName, !Ref Stage, 'Instance2' ] ]
+
+  Instance2SecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: !Join [ '-', [ !Ref AWS::StackName, !Ref Stage, 'Instance2-sg' ] ]
+      VpcId: !Ref Instance2VpcId
+      SecurityGroupEgress:
+        - CidrIp: "0.0.0.0/0"
+          FromPort: -1
+          ToPort: -1
+          IpProtocol: -1
+      SecurityGroupIngress:
+      #
+      # Add this missing security group rule
+      #
+      - IpProtocol: tcp
+        FromPort: 8080
+        ToPort: 8080
+        SourceSecurityGroupId: !GetAtt Instance1SecurityGroup.GroupId
+
+  Analyzer:
+    Type: AWS::EC2::NetworkInsightsPath
+    Properties:
+      Source: !Ref Instance1
+      Destination: !Ref Instance2
+      DestinationPort: 8080
+      Protocol: tcp
+      Tags:
+        - Key: Name
+          Value: !Join [ '-', [ !Ref AWS::StackName, !Ref Stage, 'analyzer' ] ]
+
+Parameters:
+  Stage:
+    Description: The stage (dev, staging, production) of the stack
+    Type: String
+  Instance1VpcId:
+    Description: The VPC where Instance1 is to be deployed
+    Type: String
+  Instance1AmiId:
+    Description: The AMI to use for Instance1
+    Type: String
+  Instance1KeyName:
+    Description: The name (not the ID) of the ssh pubkey to inject into Instance1
+    Type: String
+  Instance1SubnetId:
+    Description: The subnet to place Instance1 in
+    Type: String
+  Instance2VpcId:
+    Description: The VPC where Instance2 is to be deployed
+    Type: String
+  Instance2AmiId:
+    Description: The AMI to use for Instance2
+    Type: String
+  Instance2KeyName:
+    Description: The name (not the ID) of the ssh pubkey to inject into Instance2
+    Type: String
+  Instance2SubnetId:
+    Description: The subnet to place Instance2 in
+    Type: String
