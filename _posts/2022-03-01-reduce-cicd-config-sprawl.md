@@ -64,7 +64,7 @@ workflows:
 
 In this config file, you'll notice that, in general, it's just like any other CircleCI config file except that:
 
-Number 1: There is that {{setup: true}} line which is a valid CircleCI option that we'll get to later;
+Number 1: There is that `setup: true` line which is a valid CircleCI option that we'll get to later;
 
 Number 2: It uses an orb named "golden"
 
