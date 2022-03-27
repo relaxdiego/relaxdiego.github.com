@@ -1,7 +1,7 @@
-div.language-plaintext,
-figure.highlight,
-div.terminal {
-    font-family: monospace, monospace;
+div.language-plaintext pre,
+figure.highlight pre,
+div.terminal pre {
+    font-family: Monaco, Menlo, Courier New, monospace;
     font-size: 0.85em;
 }
 
