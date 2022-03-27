@@ -7,6 +7,7 @@ figure.highlight {
 }
 
 figure.highlight {
+    color: #AFAFAF;
     background-color: #404040;
     border-radius: 5px;
     max-width: 750px;
