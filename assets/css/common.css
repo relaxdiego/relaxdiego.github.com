@@ -101,5 +101,7 @@ div.container,
 /* Highlight for in-line code */
 code.language-plaintext {
     background-color: #dddddf;
+    border-radius: 3px;
     color: #ef4565;
+    font-size: 0.85em;
 }

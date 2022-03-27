@@ -1,6 +1,13 @@
-figure.highlight {
+div.language-plaintext,
+figure.highlight,
+div.terminal {
     font-family: monospace, monospace;
-    font-size: 1.1em;
+    font-size: 0.85em;
+}
+
+/* ROUGE CODE BLOCKS */
+
+figure.highlight {
     margin-left: 0;
     margin-right: 0;
     margin-bottom: 24pt;
@@ -56,18 +63,18 @@ figure.highlight code.language-yaml pre span.nn {
 }
 
 
+/* OLD-STYLE CUSTOM CODE BLOCKS */
+
 .terminal {
     background-color: #404040;
     border-radius: 5px;
     color: #d0d0d0;
-    font-family: monospace, monospace;
-    font-size: 1.1em;
     margin-bottom: 24pt;
     overflow: scroll;
 }
 
 .terminal pre {
-    margin: 3px;
+    margin: 10px;
 }
 
 /* Used by 2022-02-16-autotest-code-snippets.md */
@@ -100,7 +107,6 @@ div.language-plaintext {
     color: #d0d0d0;
     background-color: #404040;
     border-radius: 5px;
-    font-size: 1.1em;
     overflow: scroll;
     padding: 0px;
 }
