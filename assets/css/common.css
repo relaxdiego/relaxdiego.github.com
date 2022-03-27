@@ -48,7 +48,7 @@ h3 {
     text-decoration: none;
 }
 
-#article-content,
+#article-content p,
 #footer {
     font-size: 1.07em;
     max-width: 750px;
