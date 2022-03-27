@@ -6,6 +6,9 @@ categories: CI/CD circleci confg orb dynamic config
 social_preview_suffix: -cicd-config-sprawl
 ---
 
+If you’re still experiencing the pain of CircleCI config.yml copypasta
+even after using orbs, here’s a possible next step in your evolution.
+
 <center>
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/4a7IRoDQMWI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </center>
@@ -120,9 +123,9 @@ I hope you found this mini-tutorial useful. If you have any questions or comment
 
 ## References
 
-1. Sample App 1: https://github.com/evil-org/sample-app1
-1. Sample App 2: https://github.com/evil-org/sample-app2
-1. Golden Orb Source: https://github.com/evil-org/golden-orb
-1. Golden Orb Page: https://circleci.com/developer/orbs/orb/evil-org/golden
-1. Transcript: https://relaxdiego.com/2022/03/reduce-cicd-config-sprawl.html
-1. Slides: https://bit.ly/reduce-config-sprawl
+1. Sample App 1: [https://github.com/evil-org/sample-app1](https://github.com/evil-org/sample-app1)
+1. Sample App 2: [https://github.com/evil-org/sample-app2](https://github.com/evil-org/sample-app2)
+1. Golden Orb Source: [https://github.com/evil-org/golden-orb](https://github.com/evil-org/golden-orb)
+1. Golden Orb Page: [https://circleci.com/developer/orbs/orb/evil-org/golden](https://circleci.com/developer/orbs/orb/evil-org/golden)
+1. Transcript: [https://relaxdiego.com/2022/03/reduce-cicd-config-sprawl.html](https://relaxdiego.com/2022/03/reduce-cicd-config-sprawl.html)
+1. Slides: [https://bit.ly/reduce-config-sprawl](https://relaxdiego.com/2022/03/reduce-cicd-config-sprawl.html)

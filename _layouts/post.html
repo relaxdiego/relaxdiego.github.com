@@ -1,24 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script type="text/javascript">
-    var host = "www.relaxdiego.com";
-    if ((host == window.location.host) && (window.location.protocol != "https:"))
-        window.location.protocol = "https";
-    </script>
-    <link rel="canonical" href="{{ site.url  }}{{ page.url  }}"/>
+    <link rel="canonical" href="{{site.url}}{{page.url}}"/>
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="Mark S. Maglana">
 
-    <link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/assets/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="/assets/css/common.css" rel="stylesheet">
     <link href="/assets/css/syntax.css" rel="stylesheet">
     <link href="/assets/css/syntax-override.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Inconsolata:700" rel="stylesheet">
 
     <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
@@ -56,32 +48,27 @@
 
   <body>
     <div class="container">
-      <div class="row">
-        <div id="post" class="span8 offset2">
-          <h1>
-            <a href="/" id="homelink">{{ site.name }}</a> <small>Mark Maglana's Technical Blog</small>
-          </h1>
-          <div class="page-header">
-            <h2>
-              {{ page.title }}
-              <small><br/>{{ page.date | date_to_string }} :
-              {% include read_time.html %} read</small>
-            </h2>
-          </div> <!-- /page-header -->
-          {{content}}
-          <div class="footer">
-            Found a bug in this post? <a href="https://github.com/relaxdiego/relaxdiego.github.com/issues/new">Submit a ticket on GitHub</a>!
-          </div>
-          <div class="well footer resume-pointer">
-            So what's the deal with this relaxdiego dude? <a href="/resume">Here's what he's all about.</a>
-          </div>
-        </div> <!-- /post -->
-      </div> <!-- /row -->
-    </div> <!-- /container -->
-    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
-    
-    <script type="text/javascript">
+      <h1 id="site-name">
+        <a href="/">{{site.name}}</a>
+      </h1>
 
+      <h2 id="article-title">{{page.title}}</h2>
+      <div id="article-metadata">
+        <div id="article-publication-date">Published {{ page.date | date_to_string }}</div>
+        <div id="estimated-reading-time">Estimated {% include read_time.html %} read</div>
+      </div>
+
+      <div id="article-content">
+        {{content}}
+      </div>
+
+      <div id="footer">
+        Found a bug in this post? <a href="https://github.com/relaxdiego/relaxdiego.github.com/issues/new">Submit a ticket on GitHub</a>!
+        Wondering what's the deal with this relaxdiego person? <a href="/resume">Here's what he's all about.</a>
+      </div>
+    </div> <!-- /container -->
+
+    <script type="text/javascript">
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-27191143-1']);
       _gaq.push(['_trackPageview']);
@@ -91,7 +78,6 @@
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
-
     </script>
   </body>
 </html>

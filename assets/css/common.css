@@ -1,6 +1,7 @@
 body {
-  background-color: #eeeeed;
-  color: #5f6c7b;
+    background-color: #eeeeed;
+    color: #5f6c7b;
+    font-family: Georgia, Times New Roman, serif;
 }
 
 a {
@@ -43,90 +44,34 @@ h3 {
     text-decoration: none;
 }
 
-/* hr { */
-/*   border-top-color: #ddd; */
-/*   border-bottom-color: #f5f5f5; */
-/* } */
-/*  */
-/* code { */
-/*   border: 0; */
-/*   color: #AA0000; */
-/*   font-size: 0.8em; */
-/*   font-family: Monaco, Courier New, monospace; */
-/*   padding: 0px 4px; /* Override the default padding from Bootstrap */ */
-/* } */
-/*  */
-/* .page-header { */
-/*     margin-bottom: 5px; */
-/*     padding-bottom: 5px; */
-/* } */
-/*  */
-/* a { */
-/*     color: #0088cc; */
-/*     text-decoration: underline; */
-/* } */
-/*  */
-/* span.post-date { */
-/*     color: #666; */
-/* } */
-/*  */
-/* span.monospace { */
-/*     font-family: 'Inconsolata', monospace; */
-/* } */
-/*  */
-/* strike { */
-/*     text-decoration: line-through; */
-/* } */
-/*  */
-/* #post p, */
-/* #post h3, */
-/* #post li { */
-/*   font-family: "Georgia", "Times New Roman", serif; */
-/* } */
-/*  */
-/* #post p, */
-/* #post ul, */
-/* #post ol { */
-/*   font-size: 13pt; */
-/*   line-height: 22pt; */
-/*   margin-bottom: 16pt; */
-/* } */
-/*  */
-/* #post ul li, */
-/* #post ol li { */
-/*   font-size: 13pt; */
-/*   line-height: 23pt; */
-/* } */
-/*  */
-/* #post h3 { */
-/*   margin-top: 24pt; */
-/*   margin-bottom: 6pt; */
-/* } */
-/*  */
-/* #post h2 a, */
-/* #post h3 a, */
-/* #post h4 a { */
-/*     color: black; */
-/* } */
-/*  */
-/* #post img { */
-/* 	display: block; */
-/* 	margin-bottom: 20px; */
-/* 	margin-left: auto; */
-/* 	margin-right: auto; */
-/* 	width: 592px; */
-/* } */
-/*  */
-/* #post blockquote { */
-/*     border-color: #999999; */
-/* } */
-/*  */
-/* .footer { */
-/*     padding: 10px; */
-/*     text-align: center; */
-/* } */
-/*  */
-/* .resume-pointer, */
-/* .highlighted-footer { */
-/*     background-color: #FFF3AA */
-/* } */
+#article-content,
+#footer {
+    font-size: 1.07em;
+    max-width: 750px;
+}
+
+#article-content p {
+    line-height: 1.45em;
+}
+
+#article-content li {
+    margin-bottom: 0.5em;
+}
+
+#article-content img,
+#article-content p img,
+#article-content iframe {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 88%;
+}
+
+
+#footer {
+    background-color: #ddddd9;
+    border: 1px solid #333333;
+    border-radius: 5px;
+    margin: 10px 0px 5px 0px;
+    padding: 6px;
+}
