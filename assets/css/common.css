@@ -32,10 +32,14 @@ h3 {
     font-size: 1.25em;
 }
 
+#articles {
+    max-width: 750px;
+}
+
 #about-me li,
 #articles li,
 #old-skool li {
-    margin-bottom: 4px;
+    margin-bottom: 0.75em;
 }
 
 #about-me a,
