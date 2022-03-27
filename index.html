@@ -1,117 +1,33 @@
 ---
-layout: null
+layout: index
+title: relaxdiego - Mark Maglana's Technical Blog
 ---
+<h1 id="site-name"><a href="/">{{ site.name }}</a></h1>
+<div id="site-description">{{ site.description }}</div>
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <script type="text/javascript">
-    var host = "www.relaxdiego.com";
-    if ((host == window.location.host) && (window.location.protocol != "https:"))
-        window.location.protocol = "https";
-    </script>
-    <link rel="canonical" href="https://www.relaxdiego.com" />
-    <meta charset="utf-8">
-    <title>relaxdiego</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="Mark S. Maglana">
+<h2>About Me</h2>
+<ul id="about-me">
+  <li><a href="/resume/">Résumé</a></li>
+  <li><a href="https://github.com/relaxdiego">GitHub</a>
+  <li><a href="https://www.linkedin.com/in/markmaglana">LinkedIn</a>
+  <li><a href="https://keybase.io/relaxdiego">Keybase ID (relaxdiego)</a>
+</ul>
 
-    <link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/assets/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
-    <link href="/assets/css/common.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Inconsolata:700" rel="stylesheet">
+<h2>Articles</h2>
+<ul id="articles">
+{% for post in site.posts %}
+<li class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></li>
+{% endfor %}
+</ul>
 
-    <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+<h2>Old Skool</h2>
+<ul id="old-skool">
+  <li><span class="monospace"><a href="/rss.xml">RSS feed</a></span></li>
+</ul>
 
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-
-  <body>
-    <div class="container">
-      <div class="row">
-        <div id="post" class="span8 offset2 homeindex">
-          <h1>
-            <a id="homelink" href="/">{{ site.name }}</a>
-            <small>{{ site.description }}</small>
-          </h1>
-
-          <div class="page-header">
-          </div>
-
-
-          <h2>About Me</h2>
-          <ul>
-            <li><a href="/resume/">Résumé</a></li>
-            <li><a href="https://github.com/relaxdiego">GitHub</a>
-            <li><a href="https://www.linkedin.com/in/markmaglana">LinkedIn</a>
-            <li><a href="https://keybase.io/relaxdiego">Keybase ID (relaxdiego)</a>
-          </ul>
-
-          <!-- <h2>Open Source Projects</h2> -->
-          <!-- <ul> -->
-          <!--   <li><a href="https://github.com/relaxdiego/ovs&#45;lab">Open vSwitch Lab</a> -->
-          <!--   <li><a href="https://aviator.github.io/www/">Aviator</a> -->
-          <!--   <li><a href="https://github.com/ManaManaFramework/manamana">ManaMana Framework</a> -->
-          <!--   <li><a href="https://github.com/backlogs/redmine_backlogs">Redmine Backlogs</a> -->
-          <!--   <li><a href="https://github.com/relaxdiego/NATS">NATS</a> -->
-          <!--   <li><a href="https://github.com/relaxdiego/relaxdiego.github.com">This Website!</a> -->
-          <!-- </ul> -->
-
-          <h2>Posts</h2>
-          <ul>
-          {% for post in site.posts %}
-          <li><span class="post-date monospace">{{ post.date | date: "%Y-%m-%d" }}</span>&nbsp;&nbsp;<a href="{{ post.url }}">{{ post.title }}</a></li>
-          {% endfor %}
-          </ul>
-
-          <h2>Old Skool</h2>
-          <ul>
-            <li><span class="monospace"><a href="/rss.xml">RSS feed</a></span></li>
-          </ul>
-
-          <div class="well footer resume-pointer">
-            Copyright 2017 Mark Maglana
-            <br/>This site is powered by <a href="jekyllrb.com">Jekyll</a>
-            and <a href="https://kubernetes.io/">Kubernetes</a> via the fine
-            folks at <a href="www.github.com">GitHub</a>.
-          </div>
-        </div>
-      </div>
-    </div> <!-- /container -->
-    <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
-
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-27191143-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-
-    </script>
-  </body>
-</html>
+<div id="footer">
+  Copyright 2017 Mark Maglana
+  <br/>This site is powered by <a href="jekyllrb.com">Jekyll</a>
+  and <a href="https://kubernetes.io/">Kubernetes</a> via the fine
+  folks at <a href="www.github.com">GitHub</a>.
+</div>
