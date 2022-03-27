@@ -4,6 +4,13 @@ body {
     font-family: Georgia, Times New Roman, serif;
 }
 
+/* Prevent mobile Safari from auto-adjusting monospace fonts */
+@media screen and (max-device-width: 480px){
+  body{
+    -webkit-text-size-adjust: 100%;
+  }
+}
+
 a {
     color: #2156a5;
 }
@@ -32,7 +39,9 @@ h3 {
     font-size: 1.25em;
 }
 
-#articles {
+#articles,
+#article-content,
+#footer {
     max-width: 750px;
 }
 
@@ -48,10 +57,8 @@ h3 {
     text-decoration: none;
 }
 
-#article-content p,
 #footer {
     font-size: 1.07em;
-    max-width: 750px;
 }
 
 #article-content p {
@@ -78,4 +85,10 @@ h3 {
     border-radius: 5px;
     margin: 10px 0px 5px 0px;
     padding: 6px;
+}
+
+/* Highlight for in-line code */
+code.language-plaintext {
+    background-color: #dddddf;
+    color: #ef4565;
 }

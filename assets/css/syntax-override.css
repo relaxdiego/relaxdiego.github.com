@@ -1,92 +1,109 @@
-/* code.language-plaintext { */
-/*     background-color: #dddddf; */
-/*     color: #ef4565; */
-/* } */
-/*  */
-/* figure.highlight { */
-/*     margin-left: 0; */
-/*     margin-right: 0; */
-/*     margin-bottom: 24pt; */
-/* } */
-/*  */
-/* figure.highlight pre { */
-/*     border: 0; */
-/*     margin: 0; */
-/*     padding: 0; */
-/*     overflow: scroll; */
-/* } */
-/*  */
-/* figure.highlight td.gutter { */
-/*     min-width: 30px; */
-/*     padding: 0; */
-/*     text-align: right; */
-/* } */
-/*  */
-/* figure.highlight td.gutter pre.lineno { */
-/*     color: #999999; */
-/*     padding: 8px; */
-/*     white-space: pre; */
-/* } */
-/*  */
-/* figure.highlight td.code { */
-/*     padding: 0; */
-/* } */
-/*  */
-/* figure.highlight td.code pre { */
-/*     color: #bbbbbb; */
-/*     border-color: transparent; */
-/*     padding: 8px; */
-/*     white-space: pre; */
-/* } */
-/*  */
-/* /* Fixes the dark-on-dark color of the "f" in Python f-strings */ */
-/* figure.highlight td.code pre span.sa { */
-/*     color: #d0d0d0; */
-/* } */
-/*  */
-/* /* Removes the underlines in imported modules. What's up wit dat??? */ */
-/* figure.highlight td.code pre span.nn { */
-/*     text-decoration: none; */
-/* } */
-/*  */
-/* div.language-plaintext pre.highlight code { */
-/*     color: #cccccc; */
-/* } */
-/*  */
-/*  */
-/* .highlight .pi { color: #bbbbbb } /* YAML colons ':' */ */
-/*  */
-/* /* Used by 2022-02-16-autotest-code-snippets.md */ */
-/*  */
-/* .terminal { */
-/*     margin-bottom: 24pt; */
-/* } */
-/*  */
-/* .terminal pre { */
-/*     background-color: #404040; */
-/*     color: #d0d0d0; */
-/*     overflow: hidden; */
-/*     white-space: pre; */
-/* } */
-/*  */
-/* .terminal span.proc1 { */
-/*     color: cyan; */
-/* } */
-/*  */
-/* .terminal span.proc2 { */
-/*     color: lightgreen; */
-/* } */
-/*  */
-/* .terminal span.proc3 { */
-/*     color: yellow; */
-/* } */
-/*  */
-/* .terminal span.proc3failed { */
-/*     color: red; */
-/* } */
-/*  */
-/* .terminal span.proc3passed { */
-/*     color: lightgreen; */
-/* } */
-/*  */
-/* /* END Used by 2022-02-16-autotest-code-snippets.md */ */
+figure.highlight {
+    font-family: monospace, monospace;
+    font-size: 1.1em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 24pt;
+}
+
+figure.highlight {
+    background-color: #404040;
+    border-radius: 5px;
+    max-width: 750px;
+    overflow: scroll;
+}
+
+figure.highlight pre {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+figure.highlight td.gutter {
+    min-width: 20px;
+    text-align: right;
+}
+
+figure.highlight td.code pre {
+    margin: 0 0 0 5px;
+    padding: 0;
+}
+
+/* PYTHON FIXES */
+
+/* Fixes the dark-on-dark color of the "f" in Python f-strings */
+figure.highlight code.language-python pre span.sa {
+    color: #d0d0d0;
+}
+
+/* Removes the underlines in imported modules. What's up wit dat??? */
+figure.highlight code.language-python pre span.nn {
+    text-decoration: none;
+}
+
+
+/* YAML FIXES */
+
+/* Fixes colons */
+figure.highlight code.language-yaml .pi {
+    color: #bbbbbb;
+}
+
+/* Fixes YAML doc separators */
+figure.highlight code.language-yaml pre span.nn {
+    color: #bbbbbb;
+    text-decoration: none;
+}
+
+
+.terminal {
+    background-color: #404040;
+    border-radius: 5px;
+    color: #d0d0d0;
+    font-family: monospace, monospace;
+    font-size: 1.1em;
+    margin-bottom: 24pt;
+    overflow: scroll;
+}
+
+.terminal pre {
+    margin: 3px;
+}
+
+/* Used by 2022-02-16-autotest-code-snippets.md */
+
+.terminal span.proc1 {
+    color: cyan;
+}
+
+.terminal span.proc2 {
+    color: lightgreen;
+}
+
+.terminal span.proc3 {
+    color: yellow;
+}
+
+.terminal span.proc3failed {
+    color: red;
+}
+
+.terminal span.proc3passed {
+    color: lightgreen;
+}
+
+/* END Used by 2022-02-16-autotest-code-snippets.md */
+
+/* FOR MARKDOWN-STYLE CODE BLOCKS */
+
+div.language-plaintext {
+    color: #d0d0d0;
+    background-color: #404040;
+    border-radius: 5px;
+    font-size: 1.1em;
+    overflow: scroll;
+    padding: 0px;
+}
+
+div.language-plaintext pre.highlight {
+    margin: 10px;
+}

@@ -72,13 +72,16 @@ Let's take this step by step:
 * In one shell session, run this server using Ruby (e.g. `ruby server.rb`). 
 * In a separate shell session, run the following:
 
-```
+<div class="terminal">
+<pre>
 for i in {1..10}; do nc localhost 8080; done
-```
+</pre>
+</div>
 
 You should get 10 responses with varying process IDs in the message.
 
-```
+<div class="terminal">
+<pre>
 Hello from 93308
 Hello from 93309
 Hello from 93312
@@ -89,7 +92,8 @@ Hello from 93308
 Hello from 93312
 Hello from 93311
 Hello from 93310
-```
+</pre>
+</div>
 
 
 ## So What's So Cool About This?
