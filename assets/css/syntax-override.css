@@ -1,5 +1,6 @@
-div.language-plaintext pre,
-figure.highlight pre,
+figure.highlight pre code span,
+figure.highlight pre code pre.lineno,
+div.language-plaintext pre.highlight code,
 div.terminal pre {
     font-family: Monaco, Menlo, Courier New, monospace;
     font-size: 0.85em;
