@@ -1,5 +1,6 @@
 ---
 layout: post
+date: 1999-12-31
 title: Article Style Test
 comments: false
 categories: style, test, do not publish
