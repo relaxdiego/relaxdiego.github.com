@@ -5,28 +5,34 @@ comments: true
 categories: software development, continuous testing, automated testing, tdd, bdd, python
 ---
 
-For this post, I talk about mocking objects in Python. As a Rubyist, this one
-was initially confusing especially since I was not yet familiar with Python's
-package import magic.
+Mocking in Python can be initially confusing and [the official docs](https://docs.python.org/3/library/unittest.mock.html),
+while informative, don't make it any less confusing for newcomers. In my case, I came across
+it when I was just transitioning from Ruby which, I believe, contributed to the confusion.
+This article takes a gentler approach to mocking so that you can get productive with it sooner.
 
-## Importing Packages and Objects (A Review)
+## Importing Objects: A Review
 
-_You need to understand this part before you can effectively mock objects in Python._
+The [unittest.mock](https://docs.python.org/3/library/unittest.mock.html) library builds
+on top of how Python implements [the import statement](https://docs.python.org/3/reference/import.html)
+so it's imperative that we have a solid understanding of this process before we can continue.
 
-Say you have a file named `my_package1.py` with the following code:
+Let's say we have a file named `module1.py` with the following code:
 
 {% highlight python linenos %}
+# module1.py
+
 class A(object):
 
     def __init__(self):
       ...
 {% endhighlight %}
 
-
-Now say you want to import that in `my_package2.py` as follows:
+And let's also say we have a file named `module2.py` with the following code:
 
 {% highlight python linenos %}
-from my_package1 import A
+# module2.py
+
+from module1 import A
 
 class B(object):
 
@@ -34,39 +40,49 @@ class B(object):
         ...
 {% endhighlight %}
 
-What that first line in `my_package2.py` effectively does is create a variable
-named `A` under the `my_package2` namespace that points to the actual `A` class
-in memory. So now we have two variables pointing to the same memory address
-and their fully qualified names are `my_package1.A` and `my_package2.A`.
+If you look at `module2.py` line 3, what it's effectively doing is that it's
+creating a new variable named `A` that is local to `module2` and this variable
+points to the actual `A` class in memory as defined by `module1`.
 
-    my_package1.A --|
-                    |---> <Actual A Class>
-    my_package2.A --|
+What this means is that we now have two variables pointing to the same memory
+address. These two variables are named `module1.A` and `module2.A`:
 
-Now let's say in `my_package2`, you use an unqualified `A` like the following:
+```
+               |------------------|
+module1.A ---> |                  |
+               | <Actual A Class> |
+module2.A ---> |                  |
+               |------------------|
+```
+
+Now let's say that, in `module2`, we used an unqualified `A` as in line 9
+of the following:
 
 {% highlight python linenos %}
+# module2.py
+
+from module1 import A
+
 class B(object):
 
     def __init__(self):
+        # Using "A" without specifying from which module
         self.a = A()
 {% endhighlight %}
 
-Behind the scenes, the interpreter will attempt to find an `A` variable in the
-`my_package2` namespace, find it there and use that to get to the class in
-memory. So the code inside `my_package2.py` is effectively using the
-`my_package2.A` variable.
-
-Now we're ready to mock objects.
+Behind the scenes, Python will try to find an `A` variable in the `module2` namespace.
+After finding the variable, it then uses it to get to the actual `A` class in memory.
+Effectively, the `A()` in line 9 above is shorthand for `module2.A()`.
 
 ## Mocking Objects
 
-Once you understand how importing and namespacing in Python works, the rest
-(well, most of it) is straightforward. Let's say you want to test `B` so you
-then write a test for it as follows:
+Building on top of what we learned in the previous section, let's say we want
+to test our class `B` from above. We would then write our test initially as follows:
 
 {% highlight python linenos %}
-from my_package2 import B
+# test_module2.py
+
+from module2 import B
 
 class TestB:
 
@@ -74,52 +90,83 @@ class TestB:
         subject = B()
 {% endhighlight %}
 
-Now let's say we want to focus our test on `B` and just mock out `A`. What we need
-to do is mock out `my_package2.A` since that's what all unqualified `A`s will
-resolve to inside `my_package2`. To mock out that variable, we use the patch
-decorator:
+Now let's say we want to focus our test on the logic of `B` and not care about
+the internals of `A` for now. To do that, we need to mock out the variable
+`module2.A` since that's what all unqualified `A`'s in `module2` will resolve to.
+
+To mock out all unqualified `A`'s in `module2`, we use the patch decorator as
+in line 8 below:
 
 {% highlight python linenos %}
+# test_module2.py
+
 from mock import patch
-from my_package2 import B
+from module2 import B
 
 class TestB:
 
-    @patch('my_package2.A')
+    @patch('module2.A')
     def test_initialization(self, mock_A):
         subject = B()
 {% endhighlight %}
 
-There's a lot happening in the above code so let's break it down:
+There's a lot happening above so let's break it down:
 
-  1. `from mock import patch` makes the `patch` decorator available in this namespace
-  1. In line 6, whe use the `patch` decorator to replace the memory address that `my_package2.A`
-     points to. This new memory address contains an instance of the `Mock` class.
-  1. Another side effect of our `patch` decorator is that our `test_initialization` method
-     will receive an extra parameter which is a reference to the same `Mock` instance created
-     in the previous step. This is why we have an additional parameter `mock_A` in there.
+1. Line 3: `from mock import patch` makes the [patch decorator](https://docs.python.org/3/library/unittest.mock.html#unittest.mock.patch)
+   available to our tests.
+1. Line 8: Using the [patch decorator](https://docs.python.org/3/library/unittest.mock.html#unittest.mock.patch),
+   we create an instance of [Mock](https://docs.python.org/3/library/unittest.mock.html#unittest.mock.Mock)
+   and make the variable `module2.A` point to this instance.
 
-Reusing our diagram from above, the end result is this:
+Reusing our diagram from above, our new reality is as follows:
 
-    my_package1.A ------> <Actual A Class>
+```
+               |------------------|
+module1.A ---> | <Actual A Class> |
+               |------------------|
 
-    my_package2.A --|
-                    |---> <Mock object pretending to be the A class. Impostor!>
-    mock_A ---------|
+               |------------------|
+module2.A ---> |      <Mock>      |
+               |------------------|
+```
 
-Now, within `test_initialization`, you can use the `mock_A` variable to describe
-how the mocked `A` should behave and you can even make assertions on it. For
-example:
+Our use of the `patch` decorator above has another side effect. Namely
+that this decorator provides our test method with a reference to the Mock
+instance it created. We capture this reference using the `mock_A` parameter
+in line 9.
+
+So a more complete representation of our new reality is as follows:
+
+```
+               |------------------|
+module1.A ---> | <Actual A Class> |
+               |------------------|
+
+               |------------------|
+module2.A ---> |                  |
+               |      <Mock>      |
+   mock_A ---> |                  |
+               |------------------|
+```
+
+> Note that since we are patching `module2.A` via the decorator method,
+> this new reality is effective within the context of the `test_initialization()`
+> method only.
+
+With that, we can now use `mock_A` to describe how our mock `A` class should
+behave:
 
 {% highlight python linenos %}
+# test_module2.py
+
 from mock import patch
-from my_package2 import B
+from module2 import B
 
 class TestB:
 
-    @patch('my_package2.A')
+    @patch('module2.A')
     def test_initialization(self, mock_A):
-        # Mock A's do_something method
+        # Mock A's do_something() method
         mock_A.do_something.return_value = True
 
         subject = B()
@@ -128,63 +175,79 @@ class TestB:
         mock_A.do_something.assert_called_once_with('foo')
 {% endhighlight %}
 
-Go read more about Mock in [this extensive online reference](http://www.voidspace.org.uk/python/mock/).
-Then come back for some tips on mocking attributes vs. methods.
+And that's it! You now have the basics of mocking in Python. To dive
+deeper, visit [the official documentation unittest.mock](https://docs.python.org/3/library/unittest.mock.html#module-unittest.mock).
 
 ## Tips on Mocking Attributes and Methods
 
-If you want to mock an attribute or property, and you don't care about how
-many times it was called (usually, you don't), just mock it like so:
+### Stubbing Attributes
+
+If you want to mock an attribute or property and you don't care about how
+many times it was called (usually, you don't), just stub it like so:
 
 {% highlight python linenos %}
-  mock_A.some_attribute = 'somevalue'
+mock_A.some_attribute = 'somevalue'
 {% endhighlight %}
 
-### Mocking the mocked class' instance
+### Mocking Instances
 
-When the subject under test calls mock_A's supposed constructor, it will
-return another Mock object. This new Mock object poses as an instance
-of the mocked A class. If you want to make changes to this mocked instance,
-use `mock_A`'s return value:
+When the subject under test (SUT) attempts to instantiate an object from
+our Mock `A` class above, another Mock object is created and returned. This
+new Mock object pretends to be an instance of `A`. If you want to customize
+how this mock instance of `A` behaves, first get a reference to it via
+the `return_value` attribute:
 
 {% highlight python linenos %}
+# Get a reference to the mock A instance
 mock_instance = mock_A.return_value
+
+# Now customize its behavior
 mock_instance.say_hello.return_value = "hello!"
 
+# Exercise the SUT
 subject = B()
 
-# Make assertions on mock_instance and mock_A here
+# Make assertions against the mock instance
+mock_instance.say_hello.assert_called_once_with('foo')
 {% endhighlight %}
 
-### Returning different values for each call
+### Returning Different Values
 
-But what if you want the mocked method to return "hello" on the first call and
-then "olleh!" in the second call (assuming the code under test calls it twice).
+Now what if you want the mocked method to return "hello" on the first call and
+then "olleh!" in the second call (assuming the SUT calls it twice).
 You can mock it like so:
 
 {% highlight python linenos %}
+# Get a reference to the mock A instance
+mock_instance = mock_A.return_value
+
+# Now customize its behavior
 mock_instance.say_hello.side_effect = ["hello!", "olleh!"]
+
+...
 {% endhighlight %}
 
-Note how we're using `side_effect` here instead of `return_value`. You can also
+Note how we're using `side_effect` in line 5 instead of `return_value`. You can also
 assign a function to `side_effect` but so far I've been able to avoid that
 complication by just using a list of return values.
 
-### Danger: mocking non-existent attributes
+### Avoiding Phantom Mocks
 
 One of the gotchas of mocking is that you might end up with behavior that's
 specified in the mock object, but not really implemented in the real object.
-The result is that you have unit tests that pass but integration tests that
-fail. This is easily fixed but prevention is way better. That's why I make use
-of the `autospec` feature:
+The result is that you have code that passes the tests but fails in production.
+You can prevent this from happening by setting the `autospec` and `spec_set`
+parameters in the `patch` decorator as in line 8 below:
 
 {% highlight python linenos %}
+# test_module2.py
+
 from mock import patch
-from my_package2 import B
+from module2 import B
 
 class TestB:
 
-    @patch('my_package2.A', autospec=True)
+    @patch('module2.A', autospec=True, spec_set=True)
     def test_initialization(self, mock_A):
         # Mock A here
 
@@ -193,14 +256,9 @@ class TestB:
         # Check calls to A here
 {% endhighlight %}
 
-The effect here is that mock_A will have the same signature (methods,
-properties, etc) as the actual A class and you can't mock any attributes
-on mock_A that isn't already defined in the actual class.
-
-### Interrogating the mocked class/object
-
-Remember that you can interrogate the mock objects and make assertions on
-how many times their methods were called and even how they were called. Read
-more about that [here](http://www.voidspace.org.uk/python/mock/mock.html#mock.Mock.assert_called_with).
+By using `autospec` above, we are automatically defining the Mock oject with
+the same specs as the actual `module1.A` class. Likewise, by using `spec_set`
+above, we are "freezing" the specs of the Mock object such that we don't
+accidentally create phantom mock attributes or methods in it.
 
 That's it for now. Live long and prosper in your tests!

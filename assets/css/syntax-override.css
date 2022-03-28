@@ -44,7 +44,8 @@ figure.highlight code.language-python pre span.sa {
 }
 
 /* Removes the underlines in imported modules. What's up wit dat??? */
-figure.highlight code.language-python pre span.nn {
+figure.highlight code.language-python pre span.nn,
+figure.highlight code.language-python pre span.nc {
     text-decoration: none;
 }
 

@@ -81,6 +81,7 @@ div.container,
 #article-content blockquote,
 #article-content figure,
 #article-content ul,
+#article-content div.language-plaintext,
 #article-content ol {
     margin-bottom: 1.5em;
     margin-top: 0.5em;
@@ -146,6 +147,11 @@ code.language-plaintext {
     color: #990000;
     font-family: Monaco, Menlo, Courier New, monospace;
     font-size: 0.85em;
+}
+
+/* Highlight for in-line code that's in a blockquote*/
+blockquote code.language-plaintext {
+    background-color: #C9C9CB;
 }
 
 /* Prevent mobile Safari from auto-adjusting monospace fonts */
