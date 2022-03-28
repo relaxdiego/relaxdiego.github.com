@@ -6,6 +6,21 @@ div.terminal pre {
     font-size: 0.85em;
 }
 
+figure.highlight pre code td.gutter,
+figure.highlight pre code td.code pre,
+div.language-plaintext pre.highlight,
+div.terminal pre {
+    line-height: 1.25em;
+    vertical-align: top;
+}
+
+/* Workaround for mobile Safari line-height bug */
+@media screen and (max-device-width: 480px){
+    figure.highlight pre code td.code pre {
+        line-height: 1.2em;
+    }
+}
+
 /* ROUGE CODE BLOCKS */
 
 figure.highlight {

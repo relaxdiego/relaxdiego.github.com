@@ -5,7 +5,7 @@ comments: false
 categories: jekyll, python, bash
 ---
 
-So I finally got around to auto-testing the code snippets in my blog posts.
+I finally got around to auto-testing the code snippets in my blog posts.
 As of today, the process of writing a blog post with code snippets goes
 like this:
 

@@ -46,13 +46,13 @@ div.container,
 
 #about-me li,
 #articles li,
-#old-skool li {
+#others li {
     margin-bottom: 0.75em;
 }
 
 #about-me a,
 #articles a,
-#old-skool a {
+#others a {
     text-decoration: none;
 }
 
@@ -71,6 +71,7 @@ div.container,
     font-size: 0.85em;
 }
 
+#article-content h1,
 #article-content h2,
 #article-content h3 {
     margin-top: 1em;
