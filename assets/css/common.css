@@ -1,15 +1,8 @@
 body {
-    color: #1D2A39;
+    color: #313E4D;
     background-color: #eeeeed;
-    font-family: Georgia, Times New Roman, serif;
+    font-family: Georgia, serif;
     font-size: 14pt;
-}
-
-/* Prevent mobile Safari from auto-adjusting monospace fonts */
-@media screen and (max-device-width: 480px){
-  body{
-    -webkit-text-size-adjust: 100%;
-  }
 }
 
 a {
@@ -24,7 +17,7 @@ a:hover {
 h1,
 h2,
 h3 {
-    color: #094067;
+    color: #313E4D;
     font-family: Helvetica, Arial, sans-serif;
 }
 
@@ -63,12 +56,48 @@ div.container,
     text-decoration: none;
 }
 
-#article-content p {
-    line-height: 1.45em;
+#article-top {
+    font-size: 16pt;
+}
+
+#article-top a {
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#article-top .description {
+    color: #505D6C;
+    font-size: 0.85em;
+}
+
+#article-content h2,
+#article-content h3 {
+    margin-top: 1em;
+    margin-bottom: 0;
+}
+
+#article-content p,
+#article-content blockquote,
+#article-content figure,
+#article-content ul,
+#article-content ol {
+    margin-bottom: 1.5em;
+    margin-top: 0.5em;
+}
+
+#article-content p,
+#article-content ul,
+#article-content ol {
+    line-height: 1.5em;
 }
 
 #article-content li {
-    margin-bottom: 0.5em;
+    margin-bottom: 0.75em;
+}
+
+#article-content li:last-of-type {
+    margin-bottom: 0;
 }
 
 #article-content img,
@@ -78,6 +107,18 @@ div.container,
     margin-left: auto;
     margin-right: auto;
     max-width: 88%;
+}
+
+#article-content blockquote {
+    margin-left: 0.85em;
+    margin-right: 0.85em;
+}
+
+#article-content blockquote p {
+    background-color: #ddddd9;
+    border-left: 3px solid #647180;
+    margin: 0;
+    padding: 6px;
 }
 
 #article-title {
@@ -102,6 +143,19 @@ div.container,
 code.language-plaintext {
     background-color: #dddddf;
     border-radius: 3px;
-    color: #ef4565;
+    color: #990000;
+    font-family: Monaco, Menlo, Courier New, monospace;
     font-size: 0.85em;
 }
+
+/* Prevent mobile Safari from auto-adjusting monospace fonts */
+@media screen and (max-device-width: 480px){
+    body{
+        -webkit-text-size-adjust: 100%;
+    }
+
+    #article-top .description {
+        font-size: 0.70em;
+    }
+}
+

@@ -48,14 +48,15 @@
 
   <body>
     <div class="container">
-      <h1 id="site-name">
-        <a href="/">{{site.name}}</a>
-      </h1>
+      <div id="article-top">
+        <a href="/" class="link">{{site.name}}</a>
+        <span class="description">({{site.description}})</span>
+      </div>
 
-      <h2 id="article-title">{{page.title}}</h2>
+      <h1 id="article-title">{{page.title}}</h1>
       <div id="article-metadata">
-        <div id="article-publication-date">Published {{ page.date | date_to_string }}</div>
-        <div id="estimated-reading-time">Estimated {% include read_time.html %} read</div>
+        <div id="article-publication-date">{{ page.date | date_to_string }}</div>
+        <div id="estimated-reading-time">Est. {% include read_time.html %} read</div>
       </div>
 
       <div id="article-content">
@@ -63,7 +64,7 @@
       </div>
 
       <div id="footer">
-        Found a bug in this post? <a href="https://github.com/relaxdiego/relaxdiego.github.com/issues/new">Submit a ticket on GitHub</a>!
+        Found a bug in this post? <a href="https://github.com/relaxdiego/relaxdiego.github.com/issues/new">Submit a ticket on GitHub</a>.
         Wondering what's the deal with this relaxdiego person? <a href="/resume">Here's what he's all about.</a>
       </div>
     </div> <!-- /container -->
