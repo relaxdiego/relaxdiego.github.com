@@ -6,15 +6,16 @@ categories: software development, continuous testing, automated testing, tdd, bd
 ---
 
 Mocking in Python can be initially confusing and [the official docs](https://docs.python.org/3/library/unittest.mock.html),
-while informative, don't make it any less confusing for newcomers. In my case, I came across
-it when I was just transitioning from Ruby which, I believe, contributed to the confusion.
-This article takes a gentler approach to mocking so that you can get productive with it sooner.
+while informative, don't make learning it any easier for newcomers. In my case,
+I came across it when I was still transitioning from Ruby which, I believe,
+contributed to the confusion. This article takes a gentler approach to learning
+Python's mocking library to help you get productive sooner.
 
 ## Importing Objects: A Review
 
 The [unittest.mock](https://docs.python.org/3/library/unittest.mock.html) library builds
 on top of how Python implements [the import statement](https://docs.python.org/3/reference/import.html)
-so it's imperative that we have a solid understanding of this process before we can continue.
+so it's imperative that we have a solid understanding of how it works before we can continue.
 
 Let's say we have a file named `module1.py` with the following code:
 
@@ -55,7 +56,7 @@ module2.A ---> |                  |
                |------------------|
 ```
 
-Now let's say that, in `module2`, we used an unqualified `A` as in line 9
+Now let's say that, in `module2`, we used an unqualified `A` as in line 8
 of the following:
 
 {% highlight python linenos %}
@@ -66,13 +67,12 @@ from module1 import A
 class B(object):
 
     def __init__(self):
-        # Using "A" without specifying from which module
         self.a = A()
 {% endhighlight %}
 
 Behind the scenes, Python will try to find an `A` variable in the `module2` namespace.
 After finding the variable, it then uses it to get to the actual `A` class in memory.
-Effectively, the `A()` in line 9 above is shorthand for `module2.A()`.
+Effectively, the `A()` in line 8 above is shorthand for `module2.A()`.
 
 ## Mocking Objects
 
@@ -176,7 +176,7 @@ class TestB:
 {% endhighlight %}
 
 And that's it! You now have the basics of mocking in Python. To dive
-deeper, visit [the official documentation unittest.mock](https://docs.python.org/3/library/unittest.mock.html#module-unittest.mock).
+deeper, visit [the official documentation for unittest.mock](https://docs.python.org/3/library/unittest.mock.html#module-unittest.mock).
 
 ## Tips on Mocking Attributes and Methods
 
