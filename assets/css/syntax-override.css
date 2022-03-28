@@ -14,8 +14,15 @@ div.terminal pre {
     vertical-align: top;
 }
 
-/* Workaround for mobile Safari line-height bug */
-@media screen and (max-device-width: 480px){
+/* Workaround for iPhone line-height bug */
+@media only screen and (max-device-width: 480px) {
+    figure.highlight pre code td.code pre {
+        line-height: 1.2em;
+    }
+}
+
+/* Workaround for iPad line-height bug */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
     figure.highlight pre code td.code pre {
         line-height: 1.2em;
     }
@@ -45,6 +52,10 @@ figure.highlight pre {
 figure.highlight td.gutter {
     min-width: 20px;
     text-align: right;
+}
+
+figure.highlight td.gutter pre {
+    color: #969696;
 }
 
 figure.highlight td.code pre {
