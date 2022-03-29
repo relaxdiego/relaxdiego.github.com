@@ -5,16 +5,21 @@ comments: false
 categories: DevOps, Foundations of DevOps, Principles
 ---
 
-TL;DR: DevOps is just Process Engineering specialized for software
-delivery. The wealth of knowledge built up by Process and Industrial
-Engineering will prove useful in delivering software products.
+## Preamble
 
-*This article attempts to cut through the cruft and re-discover what
+This article attempts to cut through the cruft and re-discover what
 it really means to practice DevOps in your organization. It does this
 by reviewing the three principles of DevOps: systems throughput,
 fast feedback, and continuous learning. It further re-inforces these
 principles with two tried and tested engineering concepts: The Theory of
-Constraints and Control Theory.*
+Constraints and Control Theory.
+
+
+## TL;DR
+
+DevOps is just Process Engineering specialized for software
+delivery. The wealth of knowledge built up by Process and Industrial
+Engineering will prove useful in delivering software products.
 
 
 ## Let's Dismantle Pre-existing Notions
@@ -30,19 +35,21 @@ might prevent them from doing so.
 
 So let's start out by defining what DevOps is NOT.
 
-**FAIR WARNING**: the following text may be controversial but hear me
-out for a bit and I assure you it will be worth your time.
+> WARNING: the following text may be controversial but hear me
+> out for a bit and I assure you it will be worth your time.
 
-**First: DevOps is not about automation**. That may sound crazy but
-think about it for a second. If you start out with this mindset as the
-primary goal of DevOps, then you run the risk of pursuing various
-automation projects that don't have a common goal. In this case,
-automation for the sake of automation is like a sailboat that’s favored
-by the winds but doesn’t have a rudder to guide it--you're just going
-nowhere fast.
+### DevOps is not about automation
 
-**Second: DevOps is not about bringing Dev and Ops together**. If all
-you're doing is coaxing them to work within the same room (physical or
+That may sound crazy but think about it for a second. If you start out
+with this mindset as the primary goal of DevOps, then you run the risk
+of pursuing various automation projects that don't have a common goal.
+In this case, automation for the sake of automation is like a sailboat
+that’s favored by the winds but doesn’t have a rudder to guide it--you're
+just going nowhere fast.
+
+### DevOps is not about bringing Dev and Ops together
+
+If all you're doing is coaxing them to work within the same room (physical or
 virtual) and going "OK, you guys are a team now. Play nice." That's just
 like lighting up a bunch of firecrackers and mixing them together in a
 big tub. It may be exciting to watch but that's likely not going to get
@@ -50,12 +57,17 @@ stuff done. Dev teams and Ops teams are generally passionate about the
 work that they do and there will always be some tension between these
 groups. Left unmanaged, it will just add fuel to a wildfire.
 
-**Third: DevOps is not about increasing team velocity**. If you make
-this your primary objective, you run the risk of eventually confusing
+
+### DevOps is not about increasing team velocity
+
+If you make this your primary objective, you run the risk of eventually confusing
 working long hours and sleepless nights as "doing DevOps." I've seen
 this enough times to know that it's easier to confuse these two than
 people would like to admit and I've also learned that it's quite a
 slippery slope that quickly leads to team demotivation and burnout.
+
+
+### Well, OK maybe DevOps is...
 
 So, have I shaken your pre-existing notions of DevOps yet? I did say
 in the beginning that I will try to destroy any preconceived notions
@@ -87,7 +99,7 @@ our everyday lives whether we realize it or not.
 Alright so let's tackle the first major section!
 
 
-## The 3 Principles of DevOps.
+## The 3 Principles of DevOps
 
 This section derives the principles from the work of Patrick Debois,
 Gene Kim, and Jez Humble. Specifically from their seminal book titled
@@ -270,8 +282,8 @@ variability and improved flow. And by the way, to be able to compare
 apples to apples, we used the same set of jobs AND arranged them the
 way they were arranged in exercise 1.
 
-*Let's bring this back home and see where the ToC and DBR is applied in
-the IT world.*
+
+### Applying ToC and DBR to IT
 
 So this is why, in Kanban, you must limit the number of tasks in a
 given column based on the number of people that can work within that
@@ -289,8 +301,8 @@ of moving long-running tests to a nightly build which breaks the 2nd
 principle of DevOps (fast feedback) because now you have to wait
 until tomorrow to get feedback on the work you did today.
 
-Sidenote: I talked about implementing a LIFO queue in a pipeline in
-[this article](/2018/08/keeping-continuous-integration-continuous).
+> Sidenote: I talked about implementing a LIFO queue in a pipeline in
+> [this article](/2018/08/keeping-continuous-integration-continuous).
 
 Let's take it one step further and bring this lesson to the networking
 domain. This is why managing the buffer size of a router is an important
@@ -313,7 +325,7 @@ theory behind the 3 principles of DevOps.
 Control Theory is best exemplified by this diagram:
 
 ![Dynamic Control System](http://upload.wikimedia.org/wikipedia/commons/2/24/Feedback_loop_with_descriptions.svg)
-<center>Source: http://en.wikipedia.org/wiki/Control_theory</center><br/>
+<p class="figure-label">Image source: <a href="http://en.wikipedia.org/wiki/Control_theory">Wikipedia</a></p>
 
 The relevant parts are:
 
@@ -361,8 +373,8 @@ control system is fully automated or includes human intervention. You
 must ensure that every component that composes the Controller does not
 panic!
 
-Sidenote: I talk about dynamic control systems in an agile organization
-in [this article](/2015/01/automated-testing-and-organizational-learning).
+> Sidenote: I talk about dynamic control systems in an agile organization
+> in [this article](/2015/01/automated-testing-and-organizational-learning).
 
 
 ## Recap
@@ -388,6 +400,5 @@ Finally, DevOps can make use of automation and collaboration between
 Dev and Ops but they must be used under the guidance of the principles
 and engineering concepts stated above.
 
-I hope that gave you a good enough understanding to jumpstart your DevOps
-journey. If you have any questions, don't hesitiate to
-[post it on Github](https://github.com/relaxdiego/relaxdiego.github.com/issues/new).
+I hope that gave you a good enough understanding to jumpstart your career
+in DevOps. Good luck on your journey!
