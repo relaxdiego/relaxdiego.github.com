@@ -261,4 +261,5 @@ the same specs as the actual `module1.A` class. Likewise, by using `spec_set`
 above, we are "freezing" the specs of the Mock object such that we don't
 accidentally create phantom mock attributes or methods in it.
 
-That's it for now. Live long and prosper in your tests!
+That's it for now. If you want to dive deeper into the internals
+of Python's mocking library, head on over to [the official documentation for unittest.mock](https://docs.python.org/3/library/unittest.mock.html#module-unittest.mock).
