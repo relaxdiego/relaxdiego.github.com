@@ -1,6 +1,6 @@
 ---
 layout: post
-title: (VIDEO) Configuring a Raspberry Pi PXE Server
+title: Configuring a Raspberry Pi PXE Server
 comments: false
 categories: DevOps, PXE, pyinfra, Raspberry, Pi
 ---

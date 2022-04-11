@@ -1,6 +1,6 @@
 ---
 layout: post
-title: (VIDEO) PXE Boot Ubuntu Focal (20.04)
+title: PXE Boot Ubuntu Focal (20.04)
 comments: false
 categories: DevOps, PXE, pyinfra, Ubuntu, 20.04, Focal
 ---

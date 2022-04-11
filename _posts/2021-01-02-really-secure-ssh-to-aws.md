@@ -1,6 +1,6 @@
 ---
 layout: post
-title: (VIDEO) Really Secure Your SSH Connection to AWS
+title: Really Secure Your SSH Connection to AWS
 comments: false
 categories: DevOps, SSH, Amazon Web Services, AWS, EC2, Security
 ---

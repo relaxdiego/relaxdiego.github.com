@@ -1,6 +1,6 @@
 ---
 layout: post
-title: (VIDEO) Keeping Continuous Integration Continuous
+title: Keeping Continuous Integration Continuous
 comments: false
 categories: DevOps, CI/CD, Jenkins, LIFO queues
 ---

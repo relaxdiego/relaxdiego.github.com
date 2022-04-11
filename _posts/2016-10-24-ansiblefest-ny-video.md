@@ -1,6 +1,6 @@
 ---
 layout: post
-title: (VIDEO) Fully-tested Ansible Modules from AnsibleFest NY 2016
+title: Fully-tested Ansible Modules from AnsibleFest NY 2016
 comments: true
 categories: ansible, modules, configuration management, software development, automated testing, code coverage, agile, tdd, bdd
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: (VIDEO) Python-based Kubernetes Operator
+title: Python-based Kubernetes Operator
 comments: false
 categories: Kubernetes, k8s, operator, python
 ---

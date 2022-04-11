@@ -1,6 +1,6 @@
 ---
 layout: post
-title: (VIDEO) Make Your Old Printer Airprint Capable
+title: Make Your Old Printer Airprint Capable
 comments: false
 categories: Airprint, Upgrade, Raspberry, Pi, Zero
 ---

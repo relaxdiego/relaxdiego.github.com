@@ -1,6 +1,6 @@
 ---
 layout: post
-title: (VIDEO) September SF k8s Lightning Talk
+title: September SF k8s Lightning Talk
 comments: true
 categories: sfk8s, meetup, lightning talk, kubernetes, ha, baremetal
 ---

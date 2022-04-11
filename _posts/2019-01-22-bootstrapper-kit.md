@@ -1,6 +1,6 @@
 ---
 layout: post
-title: (VIDEO) Easier Ansible Onboarding with Bootstrapper Kit
+title: Easier Ansible Onboarding with Bootstrapper Kit
 comments: false
 categories: DevOps, Docker, Ansible, Onboarding, Makefile, Bash
 ---

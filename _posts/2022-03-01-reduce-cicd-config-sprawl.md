@@ -1,6 +1,6 @@
 ---
 layout: post
-title: (VIDEO) Reduce Your CI/CD Config Sprawl
+title: Reduce Your CI/CD Config Sprawl
 comments: false
 categories: CI/CD circleci confg orb dynamic config
 social_preview_suffix: -cicd-config-sprawl
