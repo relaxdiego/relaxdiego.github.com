@@ -5,9 +5,8 @@ mark.maglana@linux.com
 https://relaxdiego.com
 https://github.com/relaxdiego
 
-I enjoy building software systems and I've spent my career learning as much
-about the art's numeours aspects by taking on assignments and gaining experience
-in:
+I enjoy building software systems and I've spent my career learning and
+gaining experience in the art's numerous aspects including:
 
 - Design and Development
 - DevOps
