@@ -6,7 +6,7 @@ comments: false
 categories: style, test, do not publish
 ---
 
-# Lorem ipsum dolor
+## Lorem ipsum dolor
 
 Sit amet, consectetur adipiscing elit. Vestibulum eget tortor sapien ac tempor
 eleifend, ultrices mauris eget, commodo massa. Nam ullamcorper elementum arcu,
