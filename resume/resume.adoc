@@ -5,19 +5,16 @@ mark.maglana@linux.com
 https://relaxdiego.com
 https://github.com/relaxdiego
 
-I love building software and I've dedicated my career to mastering as many
-of the art's numerous aspects. I've done this by taking on the various
-challenges that come my way, learning as much as I can and delivering as best
-as I can. Taking pride in the systems that I build. To this end, I have 
-gained experience in:
+I enjoy building software systems and I've spent my career learning as much
+about the art's numeours aspects by taking on assignments and gaining experience
+in:
 
-- Entrepreneurship
-- Technical Product Management
-- Community Management
-- Field Delivery
+- Design and Development
 - DevOps
-- Back-end Design and Development
-- Front-end Design and Development
+- Product Management
+- Field Delivery
+- Community Management
+- Entrepreneurship
 
 
 == Certifications
@@ -39,10 +36,10 @@ stakeholders, and implemented it using a combination of open-source and
 built-from-scratch code. It continues to onboard in-house software to
 this day and has become the de-facto CI/CD standard inside the company.
 
-- *Produced a Kubernetes distribution for Teradata* -
-Teradata needed a distribution of Kubernetes that catered to its very
-specific needs. I mentored a team of DevOps engineers to produce this
-internal distribution called KubeKit. I focused on equipping the team with
+- *Produced a Kubernetes toolkit for Teradata* -
+Teradata needed a toolkit for configuring Kubernetes that catered to the
+company's very specific needs. I mentored a team of DevOps engineers to
+produce this toolkit called KubeKit. I focused on equipping the team with
 Scrum/Agile practices as well as a CI/CD platform allowing them to iterate
 quickly and deliver a 1.0 release within 5 months.
 
