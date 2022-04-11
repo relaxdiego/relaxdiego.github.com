@@ -14,10 +14,23 @@ div.terminal pre {
     vertical-align: top;
 }
 
-/* Workaround for iPhone line-height bug */
 @media only screen and (max-device-width: 480px) {
+    /* Prevent mobile Safari from auto-adjusting monospace fonts */
+    body{
+        -webkit-text-size-adjust: 100%;
+    }
+
+    /* Workaround for iPhone line-height bug */
     figure.highlight pre code td.code pre {
         line-height: 1.2em;
+    }
+
+    /* Fit more of the code on an iPhone */
+    figure.highlight pre code span,
+    figure.highlight pre code pre.lineno,
+    div.language-plaintext pre.highlight code,
+    div.terminal pre {
+        font-size: 0.75em;
     }
 }
 

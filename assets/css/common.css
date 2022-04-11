@@ -30,7 +30,8 @@ h3 {
 }
 
 #site-description {
-    font-size: 1.25em;
+    font-family: -apple-system, Helvetica, sans-serif;
+    font-size: 1.15em;
 }
 
 div.container {
@@ -57,18 +58,18 @@ div.container,
 }
 
 #article-top {
+    font-family: -apple-system, Helvetica, sans-serif;
     font-size: 16pt;
 }
 
 #article-top a {
-    font-family: Helvetica, Arial, sans-serif;
     font-weight: bold;
     text-decoration: none;
 }
 
 #article-top .description {
     color: #505D6C;
-    font-size: 0.85em;
+    font-size: 0.70em;
 }
 
 #article-content h1,
@@ -91,7 +92,7 @@ div.container,
 #article-content p,
 #article-content ul,
 #article-content ol {
-    line-height: 1.5em;
+    line-height: 1.70em;
 }
 
 #article-content li {
@@ -135,6 +136,8 @@ div.container,
 
 #article-metadata {
     color: #929FAE;
+    font-family: -apple-system, Helvetica, sans-serif;
+    font-size: 0.9em;
     margin-bottom: 1.5em;
 }
 
@@ -161,14 +164,4 @@ blockquote code.language-plaintext {
     background-color: #C9C9CB;
 }
 
-/* Prevent mobile Safari from auto-adjusting monospace fonts */
-@media screen and (max-device-width: 480px){
-    body{
-        -webkit-text-size-adjust: 100%;
-    }
-
-    #article-top .description {
-        font-size: 0.70em;
-    }
-}
 

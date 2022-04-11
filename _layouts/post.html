@@ -55,8 +55,8 @@
 
       <h1 id="article-title">{{page.title}}</h1>
       <div id="article-metadata">
-        <div id="article-publication-date">{{ page.date | date_to_string }}</div>
-        <div id="estimated-reading-time">Est. {% include read_time.html %} read</div>
+        <div id="article-publication-date">{{ page.date | date: "%b %-d, %Y" }}</div>
+        <div id="estimated-reading-time">{% include read_time.html %}</div>
       </div>
 
       <div id="article-content">
