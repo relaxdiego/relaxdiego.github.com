@@ -5,6 +5,10 @@ comments: false
 categories: DevOps, CI/CD, Jenkins, LIFO queues
 ---
 
+> **OUTDATED ARTICLE**: This article has been superseded by a
+> [newer one](/2022/04/sharing-environments-effectively.html). Please
+> refer to that article instead.
+
 Have you ever had to deal with the situation where your CI lags further
 and further as the day progresses because more builds are getting queued
 up for your long-running tests? Some of you may have tried to solve that
