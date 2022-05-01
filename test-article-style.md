@@ -172,3 +172,9 @@ end
 
 find_missing([2,4,6,10])
 {% endhighlight %}
+
+YAML again. Really long.
+
+{% highlight yaml linenos %}
+{% include code-snippets/tdd-networking/s02_fix_sg.yml %}
+{% endhighlight %}

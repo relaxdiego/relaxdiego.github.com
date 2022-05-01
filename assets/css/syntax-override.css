@@ -1,79 +1,48 @@
-figure.highlight pre code span,
-figure.highlight pre code pre.lineno,
-div.language-plaintext pre.highlight code,
-div.terminal pre {
-    font-family: Monaco, Menlo, Courier New, monospace;
-    font-size: 0.85em;
-}
-
-figure.highlight pre code td.gutter,
-figure.highlight pre code td.code pre,
-div.language-plaintext pre.highlight,
-div.terminal pre {
-    line-height: 1.25em;
-    vertical-align: top;
-}
-
 @media only screen and (max-device-width: 480px) {
     /* Prevent mobile Safari from auto-adjusting monospace fonts */
     body{
-        -webkit-text-size-adjust: 95%;
-    }
-
-    /* Workaround for iPhone line-height bug */
-    figure.highlight pre code td.code pre {
-        line-height: 1.2em;
-    }
-
-    /* Fit more of the code on an iPhone */
-    figure.highlight pre code span,
-    figure.highlight pre code pre.lineno,
-    div.language-plaintext pre.highlight code,
-    div.terminal pre {
-        font-size: 0.75em;
+        -webkit-text-size-adjust: 90%;
     }
 }
 
-/* Workaround for iPad line-height bug */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-    figure.highlight pre code td.code pre {
-        line-height: 1.2em;
-    }
-}
+/* Code blocks created with `highlight` Liquid tag */
 
-/* ROUGE CODE BLOCKS */
-
-figure.highlight {
-    margin-left: 0;
-    margin-right: 0;
-    margin-bottom: 24pt;
+figure.highlight,
+.terminal pre,
+div.language-plaintext pre.highlight {
+    font-size: 85%;
 }
 
 figure.highlight {
-    color: #AFAFAF;
     background-color: #404040;
     border-radius: 5px;
+    color: #AFAFAF;
+    font-family: Monaco, Menlo, Courier New, monospace;
+    margin-bottom: 24pt;
+    margin-left: 0;
+    margin-right: 0;
     max-width: 750px;
     overflow: scroll;
+    overflow-y: hidden;
 }
 
-figure.highlight pre {
-    margin-top: 2px;
-    margin-bottom: 2px;
+figure.highlight > pre {
+    /* Don't set margins below 0 here because it will render */
+    /* highlight blocks without line numbers incorrectly */
+    margin: 10px;
 }
 
-figure.highlight td.gutter {
-    min-width: 20px;
-    text-align: right;
+figure.highlight table.rouge-table {
+    margin: -15px 0 -15px 0;
 }
 
 figure.highlight td.gutter pre {
     color: #969696;
+    text-align: right;
 }
 
-figure.highlight td.code pre {
-    margin: 0 0 0 5px;
-    padding: 0;
+figure.highlight td.code {
+    padding-left: 5px;
 }
 
 /* PYTHON FIXES */
@@ -155,3 +124,5 @@ div.language-plaintext {
 div.language-plaintext pre.highlight {
     margin: 10px;
 }
+
+/* END FOR MARKDOWN-STYLE CODE BLOCKS */
