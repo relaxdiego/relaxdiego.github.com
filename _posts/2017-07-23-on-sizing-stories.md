@@ -185,6 +185,13 @@ Hopefully, that cleared some things for you in terms of story sizing. If not,
 there's a link at the bottom of this page which will allow you to file a bug or
 question against this post.
 
+## Some Tools
+
+I've created a spreadsheet that allows you to plot the progress of a project
+based on the story points that it closes for a given period. I might create a
+separate article about that once time permits. In the meantime
+[see it on Google Sheets](https://docs.google.com/spreadsheets/d/1-9VBTlyJH_QvXdD_cOBTr4pINJy6uL-ZzrmZbH4PX1U/edit?usp=sharing).
+
 ---------
 
 \* - Wow. 8 years. How time flies! I did a quick check of 
