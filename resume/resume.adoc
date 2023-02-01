@@ -87,8 +87,8 @@ strategic plan.
 *Senior DevOps Engineer*  (Aug 2021 - present) +
 The Linux Foundation
 
-The Linux Foundation's mission is to accelerate open technology development
-and commercial adoption.
+The Linux Foundation's mission is to support the world's most important
+shared technology collaborations.
 
 
 *Field Software Engineer (APAC Enterprise)*  (May 2019 - Jul 2021) +
