@@ -13,3 +13,5 @@ Thumbs.db
 .jekyll-cache
 
 *.pyc
+
+.venv
