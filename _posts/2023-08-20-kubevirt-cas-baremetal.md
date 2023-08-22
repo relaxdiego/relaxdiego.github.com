@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Getting KubeVirt and Cluster Autoscaler to Work Together on Baremetal Nodes
+title: KubeVirt on Autoscaling Baremetal Nodes
 comments: false
 categories: kubernetes, kubevirt, cluster autoscaler, bare metal
 ---
@@ -71,20 +71,19 @@ eksctl create cluster \
 {% endhighlight %}
 
 `--dry-run` means the command will not actually create the cluster but will
-instead output a config to stdout which we then write to a file `cluster.yaml`.
+instead output a config to stdout which we then write to `cluster.yaml`.
 
 Open the file and look at what it has produced.
 
 > For more info on the schema used by `cluster.yaml`, see the [Config file
 > schema](https://eksctl.io/usage/schema/) page from eksctl.io
 
-This cluster will start out with a node group used that we will use to host our
-infrastructure services. This is why we are using the cheaper `m5.xlarge`
-rather than a baremetal instance type. However, we also need to ensure that none
-of our VMs will ever be scheduled in these nodes. Thus we need to taint them.
-
-In the generated `cluster.yaml` file, append the following taint to the only
-node group in the `managedNodeGroups` list:
+This cluster will start out with a node group that we will use to host our
+"infra" services. This is why we are using the cheaper `m5.xlarge` rather than
+a baremetal instance type. However, we also need to ensure that none of our VMs
+will ever be scheduled in these nodes. Thus we need to taint them. In the
+generated `cluster.yaml` file, append the following taint to the only node
+group in the `managedNodeGroups` list:
 
 {% highlight yaml linenos %}
 managedNodeGroups:
@@ -116,7 +115,7 @@ Example output:
 2023-08-20 08:14:06 [✔]  EKS cluster "my-cluster" in "us-west-2" is ready
 ```
 
-Once the command is done, you should now be able to query the the kube API. For
+Once the command is done, you should be able to query the the kube API. For
 example:
 
 {% highlight bash %}
@@ -449,8 +448,7 @@ aws iam create-policy \
     --policy-document file://policy.json
 {% endhighlight %}
 
-> IMPORTANT: Take note of the returned policy ARN. You will need that in the next
-> section.
+> IMPORTANT: Take note of the returned policy ARN. You will need that below.
 
 ### Create the IAM role and k8s service account pair
 
@@ -512,7 +510,9 @@ v1.27.4-eks-2d98532
 
 Choose the appropriate version for CAS. You can get the latest Cluster
 Autoscaler versions from its [Github Releases
-Page](https://github.com/kubernetes/autoscaler/releases?q=cluster-autoscaler+1&expanded=true):
+Page](https://github.com/kubernetes/autoscaler/releases?q=cluster-autoscaler+1&expanded=true).
+
+Example:
 
 {% highlight bash %}
 export CLUSTER_AUTOSCALER_VERSION=1.27.3
@@ -559,7 +559,7 @@ ip-XXXX.YYYY.compute.internal was unneeded for 1m3.743475455s
 ```
 
 Once the timeout has been reached (default: 10 minutes), CAS will scale down
-the node group:
+the group:
 
 ```
 Scale-down: removing empty node ip-XXXX.YYYY.compute.internal
