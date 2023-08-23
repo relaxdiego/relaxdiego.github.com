@@ -277,6 +277,11 @@ spec:
 EOF
 {% endhighlight %}
 
+> Notice how we are specifically configuring KubeVirt itself to tolerate the
+> `CriticalAddonsOnly` taint. This is so that the KubeVirt services themselves
+> can be scheduled in the infra nodes instead of the bare metals nodes which we
+> want to scale down to zero when there are no VMs.
+
 Wait until KubeVirt is in a `Deployed` state:
 
 {% highlight bash %}
