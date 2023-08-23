@@ -263,10 +263,7 @@ spec:
   certificateRotateStrategy: {}
   configuration:
     developerConfiguration:
-      featureGates:
-        - ExperimentalVirtiofsSupport
-        - HostDisk
-        - BlockVolume
+      featureGates: []
   customizeComponents: {}
   imagePullPolicy: IfNotPresent
   workloadUpdateStrategy: {}
