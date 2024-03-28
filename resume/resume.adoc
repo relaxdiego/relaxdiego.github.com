@@ -16,16 +16,6 @@ gaining experience in the art's numerous aspects including:
 - Entrepreneurship
 
 
-== Certifications
-
-CNCF Certified Kubernetes Administrator +
-Certificate ID: LF-a5uqzdwppm +
-(First awarded 2017; Renewed 2021)
-
-AWS Certified DevOps Engineer - Professional +
-Certificate ID: T1M94XR2HNE4Q9G8
-
-
 == Highlights
 
 - *Designed and implemented the CI/CD platform for Tesla* -
