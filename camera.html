@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Machine Shop QR Scanner</title>
     
-    <!-- Load dependencies before React code -->
+    <!-- Load dependencies -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jsQR/1.4.0/jsQR.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
@@ -37,13 +37,17 @@
         video::-webkit-media-controls {
             display: none !important;
         }
+        .snapshot-canvas {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     </style>
 </head>
 <body>
     <div id="root"></div>
 
     <script type="text/babel">
-        // Wait for all dependencies to load
         window.addEventListener('load', () => {
             const { useState, useRef, useEffect } = React;
             const { createRoot } = ReactDOM;
@@ -59,12 +63,21 @@
                     employee: null,
                     station: null
                 });
+                const [snapshots, setSnapshots] = useState({
+                    job: null,
+                    employee: null,
+                    station: null
+                });
                 const [lastScanned, setLastScanned] = useState(null);
 
                 async function startCamera() {
                     try {
                         const stream = await navigator.mediaDevices.getUserMedia({
-                            video: { facingMode: { ideal: 'environment' } }
+                            video: { 
+                                facingMode: { ideal: 'environment' },
+                                width: { ideal: 1280 },
+                                height: { ideal: 720 }
+                            }
                         });
                         
                         if (videoRef.current) {
@@ -79,6 +92,16 @@
                         setError('Camera access failed. Please check permissions.');
                         setPermission('denied');
                     }
+                }
+
+                function takeSnapshot() {
+                    const video = videoRef.current;
+                    const canvas = document.createElement('canvas');
+                    canvas.width = video.videoWidth;
+                    canvas.height = video.videoHeight;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(video, 0, 0);
+                    return canvas.toDataURL('image/jpeg', 0.8);
                 }
 
                 function scan() {
@@ -98,15 +121,17 @@
 
                         if (code) {
                             const value = code.data;
-                            if (value.startsWith('JOB-') && !codes.job) {
-                                setCodes(prev => ({ ...prev, job: value }));
-                                setLastScanned({ type: 'job', code: value });
-                            } else if (value.startsWith('EMP-') && !codes.employee) {
-                                setCodes(prev => ({ ...prev, employee: value }));
-                                setLastScanned({ type: 'employee', code: value });
-                            } else if (value.startsWith('STN-') && !codes.station) {
-                                setCodes(prev => ({ ...prev, station: value }));
-                                setLastScanned({ type: 'station', code: value });
+                            let type = null;
+
+                            if (value.startsWith('JOB-') && !codes.job) type = 'job';
+                            else if (value.startsWith('EMP-') && !codes.employee) type = 'employee';
+                            else if (value.startsWith('STN-') && !codes.station) type = 'station';
+
+                            if (type && !codes[type]) {
+                                const snapshot = takeSnapshot();
+                                setCodes(prev => ({ ...prev, [type]: value }));
+                                setSnapshots(prev => ({ ...prev, [type]: snapshot }));
+                                setLastScanned({ type, code: value });
                             }
                         }
                     }
@@ -116,6 +141,7 @@
 
                 function reset() {
                     setCodes({ job: null, employee: null, station: null });
+                    setSnapshots({ job: null, employee: null, station: null });
                     setLastScanned(null);
                 }
 
@@ -154,6 +180,7 @@
                                     </div>
                                 )}
 
+                                {/* Live Camera Feed */}
                                 {permission === 'granted' && (
                                     <div className="relative bg-black aspect-video rounded overflow-hidden">
                                         <video
@@ -174,26 +201,46 @@
                                     </div>
                                 )}
 
+                                {/* Last Scanned Code */}
                                 {lastScanned && (
                                     <div className="bg-gray-100 p-3 rounded">
                                         Last scanned: {lastScanned.code} ({lastScanned.type})
                                     </div>
                                 )}
 
+                                {/* Scanned Codes with Snapshots */}
                                 <div className="grid grid-cols-3 gap-2">
                                     {Object.entries(codes).map(([type, code]) => (
                                         <div
                                             key={type}
-                                            className={`p-2 rounded text-center ${
-                                                code ? 'bg-green-100 text-green-800' : 'bg-gray-100'
+                                            className={`relative rounded overflow-hidden ${
+                                                code ? 'bg-green-100' : 'bg-gray-100'
                                             }`}
                                         >
-                                            <div className="text-xs uppercase">{type}</div>
-                                            <div className="truncate">{code || 'Waiting...'}</div>
+                                            {snapshots[type] ? (
+                                                <div className="aspect-video">
+                                                    <img 
+                                                        src={snapshots[type]} 
+                                                        alt={`${type} snapshot`}
+                                                        className="w-full h-full object-cover"
+                                                    />
+                                                </div>
+                                            ) : (
+                                                <div className="p-2 text-center">
+                                                    <div className="text-xs uppercase">{type}</div>
+                                                    <div className="truncate">Waiting...</div>
+                                                </div>
+                                            )}
+                                            {code && (
+                                                <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-1">
+                                                    <div className="text-xs truncate">{code}</div>
+                                                </div>
+                                            )}
                                         </div>
                                     ))}
                                 </div>
 
+                                {/* Action Buttons */}
                                 <div className="flex gap-2">
                                     <button
                                         onClick={confirm}
