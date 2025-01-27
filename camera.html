@@ -3,139 +3,391 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Camera Capture</title>
+    <title>Machine Shop QR Scanner</title>
+    
+    <!-- React and ReactDOM -->
+    <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+    <script crossorigin src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+    
+    <!-- Babel for JSX -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
+    
+    <!-- jsQR for QR code scanning -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsQR/1.4.0/jsQR.min.js"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/umd/lucide.min.js"></script>
+    
     <!-- Tailwind CSS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
     <style>
-        /* Additional styles for iOS */
-        video {
+        /* Prevent page bounce and overscroll on iOS */
+        html, body {
+            position: fixed;
             width: 100%;
             height: 100%;
-            object-fit: cover;
-        }
-        .camera-container {
-            position: relative;
-            width: 100%;
-            max-width: 600px;
-            aspect-ratio: 3/4;
-            margin: 0 auto;
             overflow: hidden;
-            background-color: #000;
+            overscroll-behavior: none;
+            background-color: #f3f4f6;
         }
-        .btn {
-            @apply px-4 py-2 rounded-lg font-medium text-white;
-            background-color: #2563eb;
-        }
-        .btn:disabled {
-            @apply opacity-50 cursor-not-allowed;
+        
+        /* Hide iOS camera switch button */
+        video::-webkit-media-controls {
+            display: none !important;
         }
     </style>
 </head>
-<body class="bg-gray-100 min-h-screen">
-    <div class="container mx-auto px-4 py-8">
-        <div class="max-w-2xl mx-auto space-y-4">
-            <div id="errorMessage" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded"></div>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useRef, useEffect } = React;
+        const { createRoot } = ReactDOM;
+        const { Camera, CameraOff } = lucide;
+
+        // Card components
+        const Card = ({ children, className = '' }) => (
+            <div className={`bg-white rounded-lg shadow ${className}`}>
+                {children}
+            </div>
+        );
+
+        const CardHeader = ({ children }) => (
+            <div className="px-6 py-4 border-b border-gray-200">
+                {children}
+            </div>
+        );
+
+        const CardTitle = ({ children }) => (
+            <h2 className="text-xl font-semibold text-gray-900">
+                {children}
+            </h2>
+        );
+
+        const CardContent = ({ children, className = '' }) => (
+            <div className={`px-6 py-4 ${className}`}>
+                {children}
+            </div>
+        );
+
+        // Alert components
+        const Alert = ({ children, className = '' }) => (
+            <div className={`p-4 rounded-lg ${className}`}>
+                {children}
+            </div>
+        );
+
+        const AlertDescription = ({ children }) => (
+            <div className="text-sm">
+                {children}
+            </div>
+        );
+
+        // Main Scanner Component
+        const LiveQRScanner = () => {
+            const videoRef = useRef(null);
+            const canvasRef = useRef(null);
+            const requestRef = useRef(null);
+            const [stream, setStream] = useState(null);
+            const [scanning, setScanning] = useState(false);
+            const [permissionStatus, setPermissionStatus] = useState('prompt');
             
-            <div class="camera-container rounded-lg">
-                <video id="video" playsinline autoplay class="rounded-lg"></video>
-            </div>
+            const [scannedCodes, setScannedCodes] = useState({
+                job: null,
+                employee: null,
+                station: null
+            });
+            
+            const [lastScanned, setLastScanned] = useState(null);
+            const [status, setStatus] = useState('ready');
+            const [error, setError] = useState('');
 
-            <div class="captured-image hidden">
-                <img id="capturedImage" class="w-full rounded-lg" alt="Captured photo">
-            </div>
-
-            <div class="flex justify-center space-x-4">
-                <button id="startButton" class="btn">
-                    Start Camera
-                </button>
-                <button id="captureButton" class="btn hidden">
-                    Take Photo
-                </button>
-                <button id="retakeButton" class="btn hidden">
-                    Retake
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        const video = document.getElementById('video');
-        const startButton = document.getElementById('startButton');
-        const captureButton = document.getElementById('captureButton');
-        const retakeButton = document.getElementById('retakeButton');
-        const errorMessage = document.getElementById('errorMessage');
-        const capturedImage = document.getElementById('capturedImage');
-        const cameraContainer = document.querySelector('.camera-container');
-        const capturedImageContainer = document.querySelector('.captured-image');
-
-        let stream = null;
-
-        async function startCamera() {
-            try {
-                stream = await navigator.mediaDevices.getUserMedia({
-                    video: {
-                        facingMode: 'environment',
-                        width: { ideal: 1920 },
-                        height: { ideal: 1080 }
+            const requestCameraPermission = async () => {
+                try {
+                    const result = await navigator.permissions.query({ name: 'camera' });
+                    setPermissionStatus(result.state);
+                    
+                    if (result.state === 'granted') {
+                        startCamera();
                     }
-                });
+                    
+                    result.addEventListener('change', (e) => {
+                        setPermissionStatus(e.target.state);
+                        if (e.target.state === 'granted') {
+                            startCamera();
+                        } else if (e.target.state === 'denied') {
+                            stopCamera();
+                        }
+                    });
+                } catch (err) {
+                    // Fallback for browsers that don't support permission query
+                    startCamera();
+                }
+            };
+
+            const startCamera = async () => {
+                try {
+                    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+                        throw new Error('Camera API not supported');
+                    }
+
+                    let stream;
+                    try {
+                        stream = await navigator.mediaDevices.getUserMedia({
+                            video: { facingMode: { exact: 'environment' } }
+                        });
+                    } catch (e) {
+                        try {
+                            stream = await navigator.mediaDevices.getUserMedia({
+                                video: { facingMode: 'environment' }
+                            });
+                        } catch (e2) {
+                            stream = await navigator.mediaDevices.getUserMedia({
+                                video: true
+                            });
+                        }
+                    }
+
+                    if (!videoRef.current) return;
+                    
+                    videoRef.current.srcObject = stream;
+                    setStream(stream);
+                    setScanning(true);
+                    setPermissionStatus('granted');
+                    
+                    videoRef.current.onloadedmetadata = async () => {
+                        try {
+                            await videoRef.current.play();
+                            scanQRCode();
+                        } catch (playError) {
+                            setError('Failed to start video stream: ' + playError.message);
+                        }
+                    };
+                } catch (err) {
+                    console.error('Camera start error:', err);
+                    setError(
+                        err.name === 'NotAllowedError' || err.name === 'PermissionDeniedError'
+                            ? 'Camera access denied. Please check permissions.'
+                            : `Camera error: ${err.message || 'Failed to start camera'}`
+                    );
+                    setPermissionStatus('denied');
+                }
+            };
+
+            const stopCamera = () => {
+                if (stream) {
+                    stream.getTracks().forEach(track => track.stop());
+                    setStream(null);
+                }
+                if (requestRef.current) {
+                    cancelAnimationFrame(requestRef.current);
+                }
+                setScanning(false);
+            };
+
+            const scanQRCode = () => {
+                if (!videoRef.current || !canvasRef.current || typeof jsQR === 'undefined') {
+                    requestRef.current = requestAnimationFrame(scanQRCode);
+                    return;
+                }
+
+                const canvas = canvasRef.current;
+                const video = videoRef.current;
+                const ctx = canvas.getContext('2d', { willReadFrequency: true });
+
+                canvas.width = video.videoWidth;
+                canvas.height = video.videoHeight;
+
+                if (video.readyState === video.HAVE_ENOUGH_DATA && scanning) {
+                    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+                    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                    
+                    const code = jsQR(imageData.data, imageData.width, imageData.height, {
+                        inversionAttempts: "dontInvert",
+                    });
+                    
+                    if (code) {
+                        handleCodeDetection(code.data);
+                    }
+                }
                 
-                video.srcObject = stream;
-                startButton.classList.add('hidden');
-                captureButton.classList.remove('hidden');
-                errorMessage.classList.add('hidden');
-                cameraContainer.classList.remove('hidden');
-                capturedImageContainer.classList.add('hidden');
-            } catch (err) {
-                showError('Camera access denied or not available');
-                console.error('Camera error:', err);
-            }
-        }
+                requestRef.current = requestAnimationFrame(scanQRCode);
+            };
 
-        function stopCamera() {
-            if (stream) {
-                stream.getTracks().forEach(track => track.stop());
-                video.srcObject = null;
-                stream = null;
-            }
-        }
+            const handleCodeDetection = (code) => {
+                if (status === 'confirmed') return;
 
-        function capturePhoto() {
-            const canvas = document.createElement('canvas');
-            canvas.width = video.videoWidth;
-            canvas.height = video.videoHeight;
-            
-            const context = canvas.getContext('2d');
-            context.drawImage(video, 0, 0, canvas.width, canvas.height);
-            
-            const imageDataUrl = canvas.toDataURL('image/jpeg');
-            capturedImage.src = imageDataUrl;
-            
-            stopCamera();
-            cameraContainer.classList.add('hidden');
-            capturedImageContainer.classList.remove('hidden');
-            captureButton.classList.add('hidden');
-            retakeButton.classList.remove('hidden');
-        }
+                let type = null;
+                if (code.startsWith('JOB-')) type = 'job';
+                else if (code.startsWith('EMP-')) type = 'employee';
+                else if (code.startsWith('STN-')) type = 'station';
 
-        function retake() {
-            capturedImageContainer.classList.add('hidden');
-            retakeButton.classList.add('hidden');
-            startCamera();
-        }
+                if (type && !scannedCodes[type]) {
+                    setScannedCodes(prev => ({
+                        ...prev,
+                        [type]: code
+                    }));
+                    setLastScanned({ type, code });
+                    setError('');
+                }
+            };
 
-        function showError(message) {
-            errorMessage.textContent = message;
-            errorMessage.classList.remove('hidden');
-        }
+            const handleConfirm = () => {
+                if (Object.values(scannedCodes).every(code => code)) {
+                    setStatus('confirmed');
+                    stopCamera();
+                    setTimeout(() => {
+                        setStatus('ready');
+                        setScannedCodes({ job: null, employee: null, station: null });
+                        setLastScanned(null);
+                        startCamera();
+                    }, 2000);
+                }
+            };
 
-        // Event listeners
-        startButton.addEventListener('click', startCamera);
-        captureButton.addEventListener('click', capturePhoto);
-        retakeButton.addEventListener('click', retake);
+            const handleReset = () => {
+                setScannedCodes({ job: null, employee: null, station: null });
+                setLastScanned(null);
+                setStatus('ready');
+                setError('');
+            };
 
-        // Clean up on page unload
-        window.addEventListener('beforeunload', stopCamera);
+            useEffect(() => {
+                const handleKeyPress = (e) => {
+                    if (e.key === 'Enter') {
+                        handleConfirm();
+                    } else if (e.key === 'Escape') {
+                        handleReset();
+                    }
+                };
+
+                window.addEventListener('keydown', handleKeyPress);
+                return () => {
+                    window.removeEventListener('keydown', handleKeyPress);
+                    stopCamera();
+                };
+            }, [scannedCodes, status]);
+
+            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+            return (
+                <div className="w-full max-w-md mx-auto space-y-4 p-4">
+                    <Card>
+                        <CardHeader>
+                            <CardTitle>Machine Shop QR Scanner</CardTitle>
+                            {isIOS && (
+                                <p className="text-sm text-gray-500">
+                                    For best results on iOS, use Safari browser
+                                </p>
+                            )}
+                        </CardHeader>
+                        <CardContent className="space-y-4">
+                            {permissionStatus === 'prompt' && (
+                                <div className="text-center p-4">
+                                    <button
+                                        onClick={requestCameraPermission}
+                                        className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                                    >
+                                        <Camera className="w-5 h-5" />
+                                        Allow Camera Access
+                                    </button>
+                                </div>
+                            )}
+
+                            {permissionStatus === 'denied' && (
+                                <Alert className="bg-red-100 text-red-800">
+                                    <div className="flex items-center gap-2">
+                                        <CameraOff className="w-5 h-5" />
+                                        <AlertDescription>
+                                            Camera access denied. Please enable camera access in your browser settings and reload the page.
+                                        </AlertDescription>
+                                    </div>
+                                </Alert>
+                            )}
+
+                            {permissionStatus === 'granted' && (
+                                <div className="relative bg-black h-64 rounded-lg overflow-hidden">
+                                    <video 
+                                        ref={videoRef}
+                                        className="absolute inset-0 w-full h-full object-cover"
+                                        playsInline
+                                        muted
+                                    />
+                                    <canvas 
+                                        ref={canvasRef} 
+                                        className="hidden"
+                                    />
+                                    {scanning && (
+                                        <div className="absolute top-2 right-2">
+                                            <div className="animate-pulse w-3 h-3 bg-red-500 rounded-full" />
+                                        </div>
+                                    )}
+                                </div>
+                            )}
+
+                            {lastScanned && (
+                                <Alert>
+                                    <AlertDescription>
+                                        Last scanned: {lastScanned.code} ({lastScanned.type})
+                                    </AlertDescription>
+                                </Alert>
+                            )}
+
+                            {error && (
+                                <Alert className="bg-red-100 text-red-800">
+                                    <AlertDescription>{error}</AlertDescription>
+                                </Alert>
+                            )}
+
+                            <div className="grid grid-cols-3 gap-2">
+                                {Object.entries(scannedCodes).map(([type, code]) => (
+                                    <div 
+                                        key={type}
+                                        className={`p-2 rounded text-center
+                                            ${code ? 'bg-green-100 text-green-800' : 'bg-gray-100'}`}
+                                    >
+                                        <div className="text-xs uppercase">{type}</div>
+                                        <div className="truncate">{code || 'Waiting...'}</div>
+                                    </div>
+                                ))}
+                            </div>
+
+                            <div className="flex gap-2">
+                                <button
+                                    onClick={handleConfirm}
+                                    disabled={!Object.values(scannedCodes).every(code => code) || permissionStatus !== 'granted'}
+                                    className={`flex-1 p-2 rounded font-medium
+                                        ${Object.values(scannedCodes).every(code => code) && permissionStatus === 'granted'
+                                            ? 'bg-blue-600 text-white hover:bg-blue-700'
+                                            : 'bg-gray-200 text-gray-500'}`}
+                                >
+                                    Confirm
+                                </button>
+                                <button
+                                    onClick={handleReset}
+                                    className="flex-1 p-2 rounded bg-gray-200 hover:bg-gray-300 font-medium"
+                                >
+                                    Reset
+                                </button>
+                            </div>
+
+                            {status === 'confirmed' && (
+                                <Alert>
+                                    <AlertDescription>
+                                        Task started! Job: {scannedCodes.job}, Employee: {scannedCodes.employee}, Station: {scannedCodes.station}
+                                    </AlertDescription>
+                                </Alert>
+                            )}
+                        </CardContent>
+                    </Card>
+                </div>
+            );
+        };
+
+        // Mount the app
+        const root = createRoot(document.getElementById('root'));
+        root.render(<LiveQRScanner />);
     </script>
 </body>
 </html>
