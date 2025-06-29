@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Install CA Certificate</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .download-section {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
+        }
+
+        .download-btn::before {
+            content: "📥 ";
+            margin-right: 8px;
+        }
+
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .warning h3 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+
+        .warning p {
+            color: #856404;
+        }
+
+        .os-section {
+            margin-bottom: 40px;
+        }
+
+        .os-header {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px 8px 0 0;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .os-content {
+            border: 2px solid #3498db;
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            padding: 0;
+        }
+
+        .browser-section {
+            padding: 25px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .browser-section:last-child {
+            border-bottom: none;
+        }
+
+        .browser-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .browser-icon {
+            width: 32px;
+            height: 32px;
+            margin-right: 12px;
+            border-radius: 6px;
+        }
+
+        .browser-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .steps {
+            list-style: none;
+            counter-reset: step-counter;
+        }
+
+        .steps li {
+            counter-increment: step-counter;
+            margin-bottom: 12px;
+            padding-left: 40px;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .steps li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #3498db;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .code {
+            background: #f1f3f4;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        .note {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .note strong {
+            color: #1976d2;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .download-section {
+                padding: 20px;
+            }
+        }
+
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="download-section">
+                <p style="margin-bottom: 20px; color: #666;">Click the button below to download our CA certificate:</p>
+                <a href="/tls/cacert.pem" class="download-btn" download="cacert.pem">Download CA Certificate</a>
+            </div>
+
+            <div class="os-section">
+                <div class="os-header">🪟 Windows</div>
+                <div class="os-content">
+                    <div class="browser-section">
+                        <div class="browser-header">
+                            <div class="browser-icon" style="background: #0078d4;">🌐</div>
+                            <div class="browser-name">Chrome / Edge / Brave</div>
+                        </div>
+                        <ol class="steps">
+                            <li>Download and double-click the <span class="code">cacert.pem</span> file</li>
+                            <li>Click <span class="code">Install Certificate...</span></li>
+                            <li>Select <span class="code">Local Machine</span> and click <span class="code">Next</span></li>
+                            <li>Select <span class="code">Place all certificates in the following store</span></li>
+                            <li>Click <span class="code">Browse</span> and select <span class="code">Trusted Root Certification Authorities</span></li>
+                            <li>Click <span class="code">Next</span> then <span class="code">Finish</span></li>
+                            <li>Restart your browser</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="browser-section">
+                        <div class="browser-header">
+                            <div class="browser-icon" style="background: #ff7139;">🦊</div>
+                            <div class="browser-name">Firefox</div>
+                        </div>
+                        <ol class="steps">
+                            <li>Open Firefox and go to <span class="code">Settings</span> (or type <span class="code">about:preferences</span>)</li>
+                            <li>Search for "certificates" and click <span class="code">View Certificates</span></li>
+                            <li>Go to the <span class="code">Authorities</span> tab</li>
+                            <li>Click <span class="code">Import...</span></li>
+                            <li>Select the downloaded <span class="code">cacert.pem</span> file</li>
+                            <li>Check <span class="code">Trust this CA to identify websites</span></li>
+                            <li>Click <span class="code">OK</span></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="os-section">
+                <div class="os-header">🍎 macOS</div>
+                <div class="os-content">
+                    <div class="browser-section">
+                        <div class="browser-header">
+                            <div class="browser-icon" style="background: #007acc;">🔑</div>
+                            <div class="browser-name">System-wide (Safari, Chrome, Edge, Brave)</div>
+                        </div>
+                        <ol class="steps">
+                            <li>Download the <span class="code">cacert.pem</span> file</li>
+                            <li>Double-click the file to open <span class="code">Keychain Access</span></li>
+                            <li>Select <span class="code">System</span> keychain if prompted</li>
+                            <li>Enter your admin password when prompted</li>
+                            <li>Find the certificate in Keychain Access and double-click it</li>
+                            <li>Expand <span class="code">Trust</span> section</li>
+                            <li>Set <span class="code">When using this certificate</span> to <span class="code">Always Trust</span></li>
+                            <li>Close the window and enter your password to save changes</li>
+                        </ol>
+                    </div>
+
+                    <div class="browser-section">
+                        <div class="browser-header">
+                            <div class="browser-icon" style="background: #ff7139;">🦊</div>
+                            <div class="browser-name">Firefox</div>
+                        </div>
+                        <ol class="steps">
+                            <li>Open Firefox and go to <span class="code">Preferences</span></li>
+                            <li>Search for "certificates" and click <span class="code">View Certificates</span></li>
+                            <li>Go to the <span class="code">Authorities</span> tab</li>
+                            <li>Click <span class="code">Import...</span></li>
+                            <li>Select the downloaded <span class="code">cacert.pem</span> file</li>
+                            <li>Check <span class="code">Trust this CA to identify websites</span></li>
+                            <li>Click <span class="code">OK</span></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="os-section">
+                <div class="os-header">🐧 Linux</div>
+                <div class="os-content">
+                    <div class="browser-section">
+                        <div class="browser-header">
+                            <div class="browser-icon" style="background: #333;">💻</div>
+                            <div class="browser-name">System-wide (Chrome, Edge, Brave)</div>
+                        </div>
+                        <ol class="steps">
+                            <li>Download the certificate: <span class="code">wget /tls/cacert.pem</span></li>
+                            <li>Copy to system certificates: <span class="code">sudo cp cacert.pem /usr/local/share/ca-certificates/cacert.crt</span></li>
+                            <li>Update certificates: <span class="code">sudo update-ca-certificates</span></li>
+                            <li>Restart your browser</li>
+                        </ol>
+                        <div class="note">
+                            <strong>Note:</strong> Commands may vary by distribution. For RHEL/CentOS, use <span class="code">/etc/pki/ca-trust/source/anchors/</span> and <span class="code">update-ca-trust</span>.
+                        </div>
+                    </div>
+
+                    <div class="browser-section">
+                        <div class="browser-header">
+                            <div class="browser-icon" style="background: #ff7139;">🦊</div>
+                            <div class="browser-name">Firefox</div>
+                        </div>
+                        <ol class="steps">
+                            <li>Open Firefox and go to <span class="code">Preferences</span></li>
+                            <li>Search for "certificates" and click <span class="code">View Certificates</span></li>
+                            <li>Go to the <span class="code">Authorities</span> tab</li>
+                            <li>Click <span class="code">Import...</span></li>
+                            <li>Select the downloaded <span class="code">cacert.pem</span> file</li>
+                            <li>Check <span class="code">Trust this CA to identify websites</span></li>
+                            <li>Click <span class="code">OK</span></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="os-section">
+                <div class="os-header">📱 iOS</div>
+                <div class="os-content">
+                    <div class="browser-section">
+                        <div class="browser-header">
+                            <div class="browser-icon" style="background: #007acc;">📲</div>
+                            <div class="browser-name">Safari (System-wide)</div>
+                        </div>
+                        <ol class="steps">
+                            <li>Download the certificate using Safari</li>
+                            <li>When prompted, tap <span class="code">Allow</span> to download the profile</li>
+                            <li>Go to <span class="code">Settings</span> > <span class="code">General</span> > <span class="code">VPN & Device Management</span></li>
+                            <li>Under <span class="code">Downloaded Profile</span>, tap the certificate</li>
+                            <li>Tap <span class="code">Install</span> and enter your passcode</li>
+                            <li>Tap <span class="code">Install</span> again to confirm</li>
+                            <li>Go to <span class="code">Settings</span> > <span class="code">General</span> > <span class="code">About</span> > <span class="code">Certificate Trust Settings</span></li>
+                            <li>Enable full trust for the certificate</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="os-section">
+                <div class="os-header">🤖 Android</div>
+                <div class="os-content">
+                    <div class="browser-section">
+                        <div class="browser-header">
+                            <div class="browser-icon" style="background: #34a853;">📱</div>
+                            <div class="browser-name">System-wide (Chrome, Edge, Brave, etc.)</div>
+                        </div>
+                        <ol class="steps">
+                            <li>Download the <span class="code">cacert.pem</span> file</li>
+                            <li>Go to <span class="code">Settings</span> > <span class="code">Security</span> (or <span class="code">Biometrics and security</span>)</li>
+                            <li>Tap <span class="code">Other security settings</span> > <span class="code">Install from device storage</span></li>
+                            <li>Navigate to and select the downloaded certificate file</li>
+                            <li>Enter a name for the certificate</li>
+                            <li>Select <span class="code">VPN and apps</span> or <span class="code">WiFi</span> usage</li>
+                            <li>Tap <span class="code">OK</span></li>
+                        </ol>
+                        <div class="note">
+                            <strong>Note:</strong> Menu names vary by Android version and manufacturer. Look for "Certificate" or "Credential" settings.
+                        </div>
+                    </div>
+
+                    <div class="browser-section">
+                        <div class="browser-header">
+                            <div class="browser-icon" style="background: #ff7139;">🦊</div>
+                            <div class="browser-name">Firefox</div>
+                        </div>
+                        <ol class="steps">
+                            <li>Open Firefox and go to <span class="code">Settings</span></li>
+                            <li>Scroll down and tap <span class="code">Secret Settings</span> (if available)</li>
+                            <li>Tap <span class="code">Import certificate</span></li>
+                            <li>Select the downloaded certificate file</li>
+                            <li>Choose trust settings and confirm</li>
+                        </ol>
+                        <div class="note">
+                            <strong>Alternative:</strong> Firefox may use system certificates on newer versions.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="note" style="margin-top: 40px;">
+                <strong>Verification:</strong> After installation, visit your internal services. The browser security warnings should no longer appear, and you should see a secure connection indicator (🔒) in the address bar.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add some interactivity for better UX
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Add download tracking (optional)
+            const downloadBtn = document.querySelector('.download-btn');
+            if (downloadBtn) {
+                downloadBtn.addEventListener('click', function() {
+                    // You can add analytics tracking here if needed
+                    console.log('CA certificate downloaded');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
