@@ -450,10 +450,6 @@
                   >
                 </li>
                 <li>
-                  Verify the certificate is in PEM format (already has .crt
-                  extension)
-                </li>
-                <li>
                   Create CA directory (optional):
                   <span class="code"
                     >sudo mkdir -p
@@ -495,12 +491,6 @@
                 </li>
                 <li>Restart your browser</li>
               </ol>
-              <div class="note">
-                <strong>Note:</strong> Certificate must be in PEM format (starts
-                with -----BEGIN CERTIFICATE-----). For Debian/Ubuntu, the file
-                must have a .crt extension when placed in
-                /usr/local/share/ca-certificates/.
-              </div>
             </div>
 
             <div class="browser-section">
@@ -588,24 +578,6 @@
                 trusted in Certificate Trust Settings. Without this step, the
                 certificate will not be trusted for SSL/TLS connections.
               </div>
-              <h4 style="margin: 15px 0 10px 0; font-size: 1.1rem">
-                iOS 13+ Security Requirements
-              </h4>
-              <div class="note">
-                <strong>Your certificate must meet these requirements:</strong>
-                <ul style="margin: 10px 0; padding-left: 20px">
-                  <li>RSA key size: minimum 2048 bits</li>
-                  <li>Hash algorithm: SHA-2 (not SHA-1)</li>
-                  <li>
-                    Validity period: 825 days or fewer for server certificates
-                  </li>
-                  <li>Subject Alternative Name (SAN) field must be present</li>
-                  <li>Extended Key Usage (EKU) with id-kp-serverAuth OID</li>
-                  <li>
-                    X.509 v3 with CA:TRUE constraint for root certificates
-                  </li>
-                </ul>
-              </div>
             </div>
           </div>
         </div>
@@ -642,45 +614,6 @@
               <div class="note">
                 <strong>Note:</strong> Menu names vary by Android version and
                 manufacturer. Look for "Certificate" or "Credential" settings.
-              </div>
-              <h4 style="margin: 15px 0 10px 0; font-size: 1.1rem">
-                Certificate Requirements
-              </h4>
-              <div class="note">
-                <strong>Your certificate must meet these requirements:</strong>
-                <ul style="margin: 10px 0; padding-left: 20px">
-                  <li>PEM or DER format with .crt file extension</li>
-                  <li>X.509 v3 version</li>
-                  <li>X509v3 Basic Constraints: CA:TRUE extension</li>
-                  <li>
-                    Proper certificate chain (avoid self-signed server
-                    certificates)
-                  </li>
-                </ul>
-              </div>
-              <h4 style="margin: 15px 0 10px 0; font-size: 1.1rem">
-                Common Issues
-              </h4>
-              <div class="note">
-                <strong>Android is strict about certificate validation:</strong>
-                <ul style="margin: 10px 0; padding-left: 20px">
-                  <li>
-                    <strong>Unknown CA:</strong> Certificate authority not in
-                    public trust lists
-                  </li>
-                  <li>
-                    <strong>Self-signed server certificates:</strong> Not
-                    recommended - use CA-issued certificates instead
-                  </li>
-                  <li>
-                    <strong>Missing intermediate certificates:</strong> Server
-                    must provide complete certificate chain
-                  </li>
-                  <li>
-                    <strong>Certificate format issues:</strong> Must be proper
-                    PEM/DER with correct extensions
-                  </li>
-                </ul>
               </div>
             </div>
 
