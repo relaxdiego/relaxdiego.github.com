@@ -225,11 +225,21 @@
   <body>
     <div class="container">
       <div class="content">
+        <div class="warning">
+          <h3>⚠️ Security Warning</h3>
+          <p>
+            Only install CA certificates from trusted sources. Installing a
+            malicious root CA certificate can compromise your security by
+            allowing attackers to intercept your encrypted communications.
+            Verify the certificate's authenticity before installation.
+          </p>
+        </div>
+
         <div class="download-section">
           <p style="margin-bottom: 20px; color: #666">
             Click the button below to download the Relaxdiego CA certificate.
           </p>
-          <a href="./cacert.pem" class="download-btn" download="cacert.pem"
+          <a href="./cacert.crt" class="download-btn" download="cacert.crt"
             >Download CA Certificate</a
           >
           <p style="margin-top: 20px; color: #666">
@@ -246,31 +256,50 @@
                 <div class="browser-name">Chrome / Edge / Brave</div>
               </div>
               <ol class="steps">
+                <li>Download the <span class="code">cacert.crt</span> file</li>
                 <li>
-                  Download and double-click the
-                  <span class="code">cacert.pem</span> file
+                  Press <span class="code">Win + R</span>, type
+                  <span class="code">mmc</span>, and press Enter
                 </li>
-                <li>Click <span class="code">Install Certificate...</span></li>
                 <li>
-                  Select <span class="code">Local Machine</span> and click
+                  Go to <span class="code">File</span> >
+                  <span class="code">Add/Remove Snap-in</span>
+                </li>
+                <li>
+                  Select <span class="code">Certificates</span> and click
+                  <span class="code">Add</span>
+                </li>
+                <li>
+                  Choose <span class="code">Computer account</span> and click
                   <span class="code">Next</span>
                 </li>
                 <li>
-                  Select
-                  <span class="code"
-                    >Place all certificates in the following store</span
-                  >
+                  Select <span class="code">Local computer</span> and click
+                  <span class="code">Finish</span>
+                </li>
+                <li>Click <span class="code">OK</span> to close the dialog</li>
+                <li>
+                  Expand <span class="code">Certificates (Local Computer)</span>
                 </li>
                 <li>
-                  Click <span class="code">Browse</span> and select
+                  Right-click
+                  <span class="code"
+                    >Trusted Root Certification Authorities</span
+                  >, hover over <span class="code">All Tasks</span>, and select
+                  <span class="code">Import</span>
+                </li>
+                <li>
+                  Follow the Certificate Import Wizard, browse to and select the
+                  <span class="code">cacert.crt</span> file
+                </li>
+                <li>
+                  Choose
                   <span class="code"
                     >Trusted Root Certification Authorities</span
                   >
+                  as the certificate store
                 </li>
-                <li>
-                  Click <span class="code">Next</span> then
-                  <span class="code">Finish</span>
-                </li>
+                <li>Complete the import process</li>
                 <li>Restart your browser</li>
               </ol>
             </div>
@@ -279,6 +308,9 @@
               <div class="browser-header">
                 <div class="browser-icon" style="background: #ff7139">🦊</div>
                 <div class="browser-name">Firefox</div>
+              </div>
+              <div class="note">
+                <strong>Note:</strong> Firefox maintains its own certificate store and must be configured separately from the Windows system store.
               </div>
               <ol class="steps">
                 <li>
@@ -293,7 +325,7 @@
                 <li>Click <span class="code">Import...</span></li>
                 <li>
                   Select the downloaded
-                  <span class="code">cacert.pem</span> file
+                  <span class="code">cacert.crt</span> file
                 </li>
                 <li>
                   Check
@@ -315,8 +347,11 @@
                   System-wide (Safari, Chrome, Edge, Brave)
                 </div>
               </div>
+              <h4 style="margin: 15px 0 10px 0; font-size: 1.1rem">
+                GUI Method
+              </h4>
               <ol class="steps">
-                <li>Download the <span class="code">cacert.pem</span> file</li>
+                <li>Download the <span class="code">cacert.crt</span> file</li>
                 <li>
                   Double-click the file to open
                   <span class="code">Keychain Access</span>
@@ -337,12 +372,34 @@
                   Close the window and enter your password to save changes
                 </li>
               </ol>
+              <h4 style="margin: 15px 0 10px 0; font-size: 1.1rem">
+                Command Line Method
+              </h4>
+              <ol class="steps">
+                <li>Open Terminal</li>
+                <li>
+                  Run:
+                  <span class="code"
+                    >sudo security add-trusted-cert -d -r trustRoot -k
+                    /Library/Keychains/System.keychain cacert.crt</span
+                  >
+                </li>
+                <li>Enter your admin password when prompted</li>
+              </ol>
+              <div class="note">
+                <strong>Note:</strong> On newer macOS versions, you may need to
+                use <span class="code">trustAsRoot</span> instead of
+                <span class="code">trustRoot</span>.
+              </div>
             </div>
 
             <div class="browser-section">
               <div class="browser-header">
                 <div class="browser-icon" style="background: #ff7139">🦊</div>
                 <div class="browser-name">Firefox</div>
+              </div>
+              <div class="note">
+                <strong>Note:</strong> Firefox maintains its own certificate store and must be configured separately from the macOS system store.
               </div>
               <ol class="steps">
                 <li>
@@ -356,7 +413,7 @@
                 <li>Click <span class="code">Import...</span></li>
                 <li>
                   Select the downloaded
-                  <span class="code">cacert.pem</span> file
+                  <span class="code">cacert.crt</span> file
                 </li>
                 <li>
                   Check
@@ -378,16 +435,31 @@
                   System-wide (Chrome, Edge, Brave)
                 </div>
               </div>
+              <h4 style="margin: 15px 0 10px 0; font-size: 1.1rem">
+                Debian/Ubuntu
+              </h4>
               <ol class="steps">
                 <li>
                   Download the certificate:
-                  <span class="code">wget /tls/cacert.pem</span>
+                  <span class="code"
+                    >wget https://your-domain.com/cacert.crt</span
+                  >
+                </li>
+                <li>
+                  Verify the certificate is in PEM format (already has .crt extension)
+                </li>
+                <li>
+                  Create CA directory (optional):
+                  <span class="code"
+                    >sudo mkdir -p
+                    /usr/local/share/ca-certificates/my-custom-ca</span
+                  >
                 </li>
                 <li>
                   Copy to system certificates:
                   <span class="code"
-                    >sudo cp cacert.pem
-                    /usr/local/share/ca-certificates/cacert.crt</span
+                    >sudo cp cacert.crt
+                    /usr/local/share/ca-certificates/my-custom-ca/</span
                   >
                 </li>
                 <li>
@@ -396,11 +468,33 @@
                 </li>
                 <li>Restart your browser</li>
               </ol>
+              <h4 style="margin: 15px 0 10px 0; font-size: 1.1rem">
+                RHEL/CentOS
+              </h4>
+              <ol class="steps">
+                <li>
+                  Download the certificate:
+                  <span class="code"
+                    >wget https://your-domain.com/cacert.crt</span
+                  >
+                </li>
+                <li>
+                  Copy to trust anchors:
+                  <span class="code"
+                    >sudo cp cacert.crt /etc/pki/ca-trust/source/anchors/</span
+                  >
+                </li>
+                <li>
+                  Update trust store:
+                  <span class="code">sudo update-ca-trust</span>
+                </li>
+                <li>Restart your browser</li>
+              </ol>
               <div class="note">
-                <strong>Note:</strong> Commands may vary by distribution. For
-                RHEL/CentOS, use
-                <span class="code">/etc/pki/ca-trust/source/anchors/</span> and
-                <span class="code">update-ca-trust</span>.
+                <strong>Note:</strong> Certificate must be in PEM format (starts
+                with -----BEGIN CERTIFICATE-----). For Debian/Ubuntu, the file
+                must have a .crt extension when placed in
+                /usr/local/share/ca-certificates/.
               </div>
             </div>
 
@@ -408,6 +502,9 @@
               <div class="browser-header">
                 <div class="browser-icon" style="background: #ff7139">🦊</div>
                 <div class="browser-name">Firefox</div>
+              </div>
+              <div class="note">
+                <strong>Note:</strong> Firefox maintains its own certificate store and must be configured separately from the Linux system store.
               </div>
               <ol class="steps">
                 <li>
@@ -421,7 +518,7 @@
                 <li>Click <span class="code">Import...</span></li>
                 <li>
                   Select the downloaded
-                  <span class="code">cacert.pem</span> file
+                  <span class="code">cacert.crt</span> file
                 </li>
                 <li>
                   Check
@@ -442,7 +539,10 @@
                 <div class="browser-name">Safari (System-wide)</div>
               </div>
               <ol class="steps">
-                <li>Download the certificate using Safari</li>
+                <li>
+                  Download the certificate using Safari (ensure file has .crt
+                  extension)
+                </li>
                 <li>
                   When prompted, tap <span class="code">Allow</span> to download
                   the profile
@@ -461,13 +561,44 @@
                 </li>
                 <li>Tap <span class="code">Install</span> again to confirm</li>
                 <li>
-                  Go to <span class="code">Settings</span> >
+                  <strong>CRITICAL:</strong> Go to
+                  <span class="code">Settings</span> >
                   <span class="code">General</span> >
                   <span class="code">About</span> >
                   <span class="code">Certificate Trust Settings</span>
                 </li>
-                <li>Enable full trust for the certificate</li>
+                <li>
+                  Under "Enable full trust for root certificates," toggle ON
+                  your certificate
+                </li>
+                <li>
+                  Tap <span class="code">Continue</span> to confirm the security
+                  warning
+                </li>
               </ol>
+              <div class="note">
+                <strong>Important:</strong> The certificate must be manually
+                trusted in Certificate Trust Settings. Without this step, the
+                certificate will not be trusted for SSL/TLS connections.
+              </div>
+              <h4 style="margin: 15px 0 10px 0; font-size: 1.1rem">
+                iOS 13+ Security Requirements
+              </h4>
+              <div class="note">
+                <strong>Your certificate must meet these requirements:</strong>
+                <ul style="margin: 10px 0; padding-left: 20px">
+                  <li>RSA key size: minimum 2048 bits</li>
+                  <li>Hash algorithm: SHA-2 (not SHA-1)</li>
+                  <li>
+                    Validity period: 825 days or fewer for server certificates
+                  </li>
+                  <li>Subject Alternative Name (SAN) field must be present</li>
+                  <li>Extended Key Usage (EKU) with id-kp-serverAuth OID</li>
+                  <li>
+                    X.509 v3 with CA:TRUE constraint for root certificates
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -483,7 +614,9 @@
                 </div>
               </div>
               <ol class="steps">
-                <li>Download the <span class="code">cacert.pem</span> file</li>
+                <li>
+                  Download the <span class="code">cacert.crt</span> file
+                </li>
                 <li>
                   Go to <span class="code">Settings</span> >
                   <span class="code">Security</span> (or
@@ -504,6 +637,45 @@
               <div class="note">
                 <strong>Note:</strong> Menu names vary by Android version and
                 manufacturer. Look for "Certificate" or "Credential" settings.
+              </div>
+              <h4 style="margin: 15px 0 10px 0; font-size: 1.1rem">
+                Certificate Requirements
+              </h4>
+              <div class="note">
+                <strong>Your certificate must meet these requirements:</strong>
+                <ul style="margin: 10px 0; padding-left: 20px">
+                  <li>PEM or DER format with .crt file extension</li>
+                  <li>X.509 v3 version</li>
+                  <li>X509v3 Basic Constraints: CA:TRUE extension</li>
+                  <li>
+                    Proper certificate chain (avoid self-signed server
+                    certificates)
+                  </li>
+                </ul>
+              </div>
+              <h4 style="margin: 15px 0 10px 0; font-size: 1.1rem">
+                Common Issues
+              </h4>
+              <div class="note">
+                <strong>Android is strict about certificate validation:</strong>
+                <ul style="margin: 10px 0; padding-left: 20px">
+                  <li>
+                    <strong>Unknown CA:</strong> Certificate authority not in
+                    public trust lists
+                  </li>
+                  <li>
+                    <strong>Self-signed server certificates:</strong> Not
+                    recommended - use CA-issued certificates instead
+                  </li>
+                  <li>
+                    <strong>Missing intermediate certificates:</strong> Server
+                    must provide complete certificate chain
+                  </li>
+                  <li>
+                    <strong>Certificate format issues:</strong> Must be proper
+                    PEM/DER with correct extensions
+                  </li>
+                </ul>
               </div>
             </div>
 
