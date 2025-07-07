@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Install CA Certificate</title>
+    <title>Install Relaxdiego CA Certificate</title>
     <style>
       * {
         margin: 0;
@@ -224,6 +224,13 @@
   </head>
   <body>
     <div class="container">
+      <div class="header">
+        <h1>Relaxdiego CA Certificate</h1>
+        <p>
+          Install the Relaxdiego Certificate Authority to access internal
+          services
+        </p>
+      </div>
       <div class="content">
         <div class="warning">
           <h3>⚠️ Security Warning</h3>
@@ -237,13 +244,18 @@
 
         <div class="download-section">
           <p style="margin-bottom: 20px; color: #666">
-            Click the button below to download the Relaxdiego CA certificate.
+            Click the button below to download the Relaxdiego CA certificate for
+            relaxdiego.com services.
           </p>
-          <a href="./cacert.crt" class="download-btn" download="cacert.crt"
-            >Download CA Certificate</a
+          <a
+            href="./relaxdiego-ca.crt"
+            class="download-btn"
+            download="relaxdiego-ca.crt"
+            >Download the Relaxdiego CA Certificate</a
           >
           <p style="margin-top: 20px; color: #666">
-            ...then follow the instructions for your device/OS/browser below.
+            This certificate enables secure connections to Relaxdiego's internal
+            services and development environments.
           </p>
         </div>
 
@@ -256,7 +268,9 @@
                 <div class="browser-name">Chrome / Edge / Brave</div>
               </div>
               <ol class="steps">
-                <li>Download the <span class="code">cacert.crt</span> file</li>
+                <li>
+                  Download the <span class="code">relaxdiego-ca.crt</span> file
+                </li>
                 <li>
                   Press <span class="code">Win + R</span>, type
                   <span class="code">mmc</span>, and press Enter
@@ -290,7 +304,7 @@
                 </li>
                 <li>
                   Follow the Certificate Import Wizard, browse to and select the
-                  <span class="code">cacert.crt</span> file
+                  <span class="code">relaxdiego-ca.crt</span> file
                 </li>
                 <li>
                   Choose
@@ -327,7 +341,7 @@
                 <li>Click <span class="code">Import...</span></li>
                 <li>
                   Select the downloaded
-                  <span class="code">cacert.crt</span> file
+                  <span class="code">relaxdiego-ca.crt</span> file
                 </li>
                 <li>
                   Check
@@ -353,7 +367,9 @@
                 GUI Method
               </h4>
               <ol class="steps">
-                <li>Download the <span class="code">cacert.crt</span> file</li>
+                <li>
+                  Download the <span class="code">relaxdiego-ca.crt</span> file
+                </li>
                 <li>
                   Double-click the file to open
                   <span class="code">Keychain Access</span>
@@ -363,7 +379,8 @@
                 </li>
                 <li>Enter your admin password when prompted</li>
                 <li>
-                  Find the certificate in Keychain Access and double-click it
+                  In Keychain Access, search for <span class="code">relaxdiego.com</span> 
+                  or look for the certificate with the name "relaxdiego.com" and double-click it
                 </li>
                 <li>Expand <span class="code">Trust</span> section</li>
                 <li>
@@ -383,7 +400,7 @@
                   Run:
                   <span class="code"
                     >sudo security add-trusted-cert -d -r trustRoot -k
-                    /Library/Keychains/System.keychain cacert.crt</span
+                    /Library/Keychains/System.keychain relaxdiego-ca.crt</span
                   >
                 </li>
                 <li>Enter your admin password when prompted</li>
@@ -417,7 +434,7 @@
                 <li>Click <span class="code">Import...</span></li>
                 <li>
                   Select the downloaded
-                  <span class="code">cacert.crt</span> file
+                  <span class="code">relaxdiego-ca.crt</span> file
                 </li>
                 <li>
                   Check
@@ -446,21 +463,22 @@
                 <li>
                   Download the certificate:
                   <span class="code"
-                    >wget https://relaxdiego.com/ca-cert/cacert.crt</span
+                    >wget https://relaxdiego.com/ca-cert/cacert.crt -O
+                    relaxdiego-ca.crt</span
                   >
                 </li>
                 <li>
                   Create CA directory (optional):
                   <span class="code"
                     >sudo mkdir -p
-                    /usr/local/share/ca-certificates/my-custom-ca</span
+                    /usr/local/share/ca-certificates/relaxdiego</span
                   >
                 </li>
                 <li>
                   Copy to system certificates:
                   <span class="code"
-                    >sudo cp cacert.crt
-                    /usr/local/share/ca-certificates/my-custom-ca/</span
+                    >sudo cp relaxdiego-ca.crt
+                    /usr/local/share/ca-certificates/relaxdiego/</span
                   >
                 </li>
                 <li>
@@ -476,13 +494,15 @@
                 <li>
                   Download the certificate:
                   <span class="code"
-                    >wget https://relaxdiego.com/ca-cert/cacert.crt</span
+                    >wget https://relaxdiego.com/ca-cert/cacert.crt -O
+                    relaxdiego-ca.crt</span
                   >
                 </li>
                 <li>
                   Copy to trust anchors:
                   <span class="code"
-                    >sudo cp cacert.crt /etc/pki/ca-trust/source/anchors/</span
+                    >sudo cp relaxdiego-ca.crt
+                    /etc/pki/ca-trust/source/anchors/</span
                   >
                 </li>
                 <li>
@@ -515,7 +535,7 @@
                 <li>Click <span class="code">Import...</span></li>
                 <li>
                   Select the downloaded
-                  <span class="code">cacert.crt</span> file
+                  <span class="code">relaxdiego-ca.crt</span> file
                 </li>
                 <li>
                   Check
@@ -551,7 +571,7 @@
                 </li>
                 <li>
                   Under <span class="code">Downloaded Profile</span>, tap the
-                  certificate
+                  "relaxdiego.com" certificate profile
                 </li>
                 <li>
                   Tap <span class="code">Install</span> and enter your passcode
@@ -565,8 +585,8 @@
                   <span class="code">Certificate Trust Settings</span>
                 </li>
                 <li>
-                  Under "Enable full trust for root certificates," toggle ON
-                  your certificate
+                  Under "Enable full trust for root certificates," find and toggle ON
+                  the "relaxdiego.com" certificate
                 </li>
                 <li>
                   Tap <span class="code">Continue</span> to confirm the security
@@ -576,7 +596,8 @@
               <div class="note">
                 <strong>Important:</strong> The certificate must be manually
                 trusted in Certificate Trust Settings. Without this step, the
-                certificate will not be trusted for SSL/TLS connections.
+                certificate will not be trusted for SSL/TLS connections to
+                Relaxdiego services.
               </div>
             </div>
           </div>
@@ -593,7 +614,9 @@
                 </div>
               </div>
               <ol class="steps">
-                <li>Download the <span class="code">cacert.crt</span> file</li>
+                <li>
+                  Download the <span class="code">relaxdiego-ca.crt</span> file
+                </li>
                 <li>
                   Go to <span class="code">Settings</span> >
                   <span class="code">Security</span> (or
@@ -604,7 +627,7 @@
                   <span class="code">Install from device storage</span>
                 </li>
                 <li>Navigate to and select the downloaded certificate file</li>
-                <li>Enter a name for the certificate</li>
+                <li>Enter a name for the certificate (e.g., "Relaxdiego CA")</li>
                 <li>
                   Select <span class="code">VPN and apps</span> or
                   <span class="code">WiFi</span> usage
