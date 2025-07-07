@@ -435,107 +435,6 @@
         </div>
 
         <div class="os-section">
-          <div class="os-header">🐧 Linux</div>
-          <div class="os-content">
-            <div class="browser-section">
-              <div class="browser-header">
-                <div class="browser-icon" style="background: #333">💻</div>
-                <div class="browser-name">
-                  System-wide (Chrome, Edge, Brave)
-                </div>
-              </div>
-              <h4 style="margin: 15px 0 10px 0; font-size: 1.1rem">
-                Debian/Ubuntu
-              </h4>
-              <ol class="steps">
-                <li>
-                  Download the certificate:
-                  <span class="code"
-                    >wget https://relaxdiego.com/ca-cert/cacert.crt -O
-                    relaxdiego-ca.crt</span
-                  >
-                </li>
-                <li>
-                  Create CA directory (optional):
-                  <span class="code"
-                    >sudo mkdir -p
-                    /usr/local/share/ca-certificates/relaxdiego</span
-                  >
-                </li>
-                <li>
-                  Copy to system certificates:
-                  <span class="code"
-                    >sudo cp relaxdiego-ca.crt
-                    /usr/local/share/ca-certificates/relaxdiego/</span
-                  >
-                </li>
-                <li>
-                  Update certificates:
-                  <span class="code">sudo update-ca-certificates</span>
-                </li>
-                <li>Restart your browser</li>
-              </ol>
-              <h4 style="margin: 15px 0 10px 0; font-size: 1.1rem">
-                RHEL/CentOS
-              </h4>
-              <ol class="steps">
-                <li>
-                  Download the certificate:
-                  <span class="code"
-                    >wget https://relaxdiego.com/ca-cert/cacert.crt -O
-                    relaxdiego-ca.crt</span
-                  >
-                </li>
-                <li>
-                  Copy to trust anchors:
-                  <span class="code"
-                    >sudo cp relaxdiego-ca.crt
-                    /etc/pki/ca-trust/source/anchors/</span
-                  >
-                </li>
-                <li>
-                  Update trust store:
-                  <span class="code">sudo update-ca-trust</span>
-                </li>
-                <li>Restart your browser</li>
-              </ol>
-            </div>
-
-            <div class="browser-section">
-              <div class="browser-header">
-                <div class="browser-icon" style="background: #ff7139">🦊</div>
-                <div class="browser-name">Firefox</div>
-              </div>
-              <div class="note">
-                <strong>Note:</strong> Firefox maintains its own certificate
-                store and must be configured separately from the Linux system
-                store.
-              </div>
-              <ol class="steps">
-                <li>
-                  Open Firefox and go to <span class="code">Preferences</span>
-                </li>
-                <li>
-                  Search for "certificates" and click
-                  <span class="code">View Certificates</span>
-                </li>
-                <li>Go to the <span class="code">Authorities</span> tab</li>
-                <li>Click <span class="code">Import...</span></li>
-                <li>
-                  Select the downloaded
-                  <span class="code">relaxdiego-ca.crt</span> file
-                </li>
-                <li>
-                  Check
-                  <span class="code">Trust this CA to identify websites</span>
-                </li>
-                <li>Click <span class="code">OK</span></li>
-              </ol>
-            </div>
-          </div>
-        </div>
-
-        <div class="os-section">
           <div class="os-header">📱 iOS</div>
           <div class="os-content">
             <div class="browser-section">
@@ -545,8 +444,7 @@
               </div>
               <ol class="steps">
                 <li>
-                  Download the certificate using Safari (ensure file has .crt
-                  extension)
+                  Download the <span class="code">relaxdiego-ca.crt</span> file
                 </li>
                 <li>
                   When prompted, tap <span class="code">Allow</span> to download
@@ -651,6 +549,106 @@
                 <strong>Alternative:</strong> Firefox may use system
                 certificates on newer versions.
               </div>
+            </div>
+          </div>
+        </div>
+        <div class="os-section">
+          <div class="os-header">🐧 Linux</div>
+          <div class="os-content">
+            <div class="browser-section">
+              <div class="browser-header">
+                <div class="browser-icon" style="background: #333">💻</div>
+                <div class="browser-name">
+                  System-wide (Chrome, Edge, Brave)
+                </div>
+              </div>
+              <h4 style="margin: 15px 0 10px 0; font-size: 1.1rem">
+                Debian/Ubuntu
+              </h4>
+              <ol class="steps">
+                <li>
+                  Download the certificate:
+                  <span class="code"
+                    >wget https://relaxdiego.com/ca-cert/cacert.crt -O
+                    relaxdiego-ca.crt</span
+                  >
+                </li>
+                <li>
+                  Create CA directory (optional):
+                  <span class="code"
+                    >sudo mkdir -p
+                    /usr/local/share/ca-certificates/relaxdiego</span
+                  >
+                </li>
+                <li>
+                  Copy to system certificates:
+                  <span class="code"
+                    >sudo cp relaxdiego-ca.crt
+                    /usr/local/share/ca-certificates/relaxdiego/</span
+                  >
+                </li>
+                <li>
+                  Update certificates:
+                  <span class="code">sudo update-ca-certificates</span>
+                </li>
+                <li>Restart your browser</li>
+              </ol>
+              <h4 style="margin: 15px 0 10px 0; font-size: 1.1rem">
+                RHEL/CentOS
+              </h4>
+              <ol class="steps">
+                <li>
+                  Download the certificate:
+                  <span class="code"
+                    >wget https://relaxdiego.com/ca-cert/cacert.crt -O
+                    relaxdiego-ca.crt</span
+                  >
+                </li>
+                <li>
+                  Copy to trust anchors:
+                  <span class="code"
+                    >sudo cp relaxdiego-ca.crt
+                    /etc/pki/ca-trust/source/anchors/</span
+                  >
+                </li>
+                <li>
+                  Update trust store:
+                  <span class="code">sudo update-ca-trust</span>
+                </li>
+                <li>Restart your browser</li>
+              </ol>
+            </div>
+
+            <div class="browser-section">
+              <div class="browser-header">
+                <div class="browser-icon" style="background: #ff7139">🦊</div>
+                <div class="browser-name">Firefox</div>
+              </div>
+              <div class="note">
+                <strong>Note:</strong> Firefox maintains its own certificate
+                store and must be configured separately from the Linux system
+                store.
+              </div>
+              <ol class="steps">
+                <li>
+                  Open Firefox and go to <span class="code">Preferences</span>
+                </li>
+                <li>
+                  Search for "certificates" and click
+                  <span class="code">View Certificates</span>
+                </li>
+                <li>Go to the <span class="code">Authorities</span> tab</li>
+                <li>Click <span class="code">Import...</span></li>
+                <li>
+                  Select the downloaded
+                  <span class="code">relaxdiego-ca.crt</span> file
+                </li>
+                <li>
+                  Check
+                  <span class="code">Trust this CA to identify websites</span>
+                </li>
+                <li>Click <span class="code">OK</span></li>
+              </ol>
             </div>
           </div>
         </div>
