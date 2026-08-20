@@ -1,0 +1,62 @@
+# Build the site and publish it to GitHub Pages.
+#
+# This repo used to be built by GitHub's own built-in Jekyll step, which needed
+# no workflow file. Hugo is not built in, so the build lives here instead. For
+# this to run at all, the repository's Pages source must be set to
+# "GitHub Actions" under Settings -> Pages.
+
+name: Build and deploy
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # devbox + devbox.lock give CI the same Hugo, AsciiDoctor, and make, from
+      # the same nixpkgs commit, as a person gets by cd-ing into this directory.
+      - name: Install devbox
+        uses: jetify-com/devbox-install-action@v0.14.0
+        with:
+          enable-cache: "true"
+          devbox-version: "0.16.0"
+
+      # devbox.json and HUGO_VERSION name the same version in two places, and
+      # this is the only thing keeping them honest. HUGO_VERSION is what a
+      # person reads years from now when devbox is gone, so it must never drift
+      # from what the site is actually built with.
+      - name: Check the pinned Hugo version
+        run: devbox run -- make check
+
+      # `make build` renders the resume from AsciiDoc into static/ first, then
+      # runs Hugo over everything. Neither resume output is committed.
+      - name: Build the site
+        run: devbox run -- make build
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
