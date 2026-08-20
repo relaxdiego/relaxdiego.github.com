@@ -1,35 +1,49 @@
-ROOTDIR=$(dir $(realpath $(firstword $(MAKEFILE_LIST))))
+# Every command this blog needs. Run `make` on its own to see the list.
+#
+# The tools come from devbox. With direnv they are already on your PATH when
+# you cd into this directory; without it, prefix any target with `devbox run`,
+# as in `devbox run -- make build`.
 
-.PHONY: debug resume
-.DEFAULT: resume
+.DEFAULT_GOAL := help
+.PHONY: help dev build resume clean check
 
-resume_series := resume
-resume_src    := $(resume_series)/*.adoc
-resume_out    := $(addprefix $(resume_series),.pdf /index.html)
+## Show this list
+help:
+	@grep -B1 -E '^[a-z-]+:' $(MAKEFILE_LIST) \
+	  | grep -A1 '^##' \
+	  | awk '/^##/ { d = substr($$0, 4) } /^[a-z-]+:/ { printf "  \033[1m%-8s\033[0m %s\n", substr($$1, 1, length($$1)-1), d }'
 
-resumex_series := resumex
-resumex_src    := $(resumex_series)/*.adoc
-resumex_out    := $(addprefix $(resumex_series),.pdf /index.html)
+## Serve the site locally and rebuild the resume as you edit it
+dev:
+	process-compose up
 
-resume: $(resume_out) $(resumex_out)
+## Build the whole site into public/
+build: resume
+	hugo --gc --minify
 
-debug:
-	@echo "======================="
-	@echo $(resume_src)
-	@echo $(resume_out)
-	@echo "======================="
-	@echo $(resumex_src)
-	@echo $(resumex_out)
-	@echo "======================="
+## Render the resume to HTML and PDF
+resume: static/resume/index.html static/resume.pdf
 
-resume.pdf: $(resume_src)
-	@script/resume-pdf resume
+# Both outputs are generated, so both are gitignored and both are rebuilt in
+# CI. `-a webfonts!` drops the Google Fonts <link>, leaving a page that is
+# complete on its own — the same reason the site's CSS is written inline.
+static/resume/index.html: resume/index.adoc resume/resume.adoc
+	@mkdir -p $(@D)
+	asciidoctor --base-dir . -a webfonts! -o $@ $<
 
-resume/index.html: $(resume_src)
-	@script/resume-html resume
+static/resume.pdf: resume/index.adoc resume/resume.adoc
+	@mkdir -p $(@D)
+	asciidoctor-pdf --base-dir . -o $@ $<
 
-resumex.pdf: $(resumex_src)
-	@script/resume-pdf resumex
+## Delete everything that is generated
+clean:
+	rm -rf public resources static/resume static/resume.pdf .hugo_build.lock
 
-resumex/index.html: $(resumex_src)
-	@script/resume-html resumex
+## Fail if the pinned Hugo version and the installed one disagree
+check:
+	@want=$$(tr -d '[:space:]' < HUGO_VERSION); \
+	got=$$(hugo version); \
+	case "$$got" in \
+	  *"v$$want+extended"*) echo "ok: Hugo $$want" ;; \
+	  *) echo "HUGO_VERSION says $$want but hugo reports: $$got" >&2; exit 1 ;; \
+	esac

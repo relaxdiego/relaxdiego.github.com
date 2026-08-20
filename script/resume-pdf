@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-resume_series=$1
-cd $(dirname "${BASH_SOURCE[0]}")/..
-asciidoctor-pdf --base-dir ./ --destination-dir ./ --out-file $resume_series.pdf $resume_series/index.adoc
-echo "   rendered ./$resume_series.pdf"

@@ -1,17 +1,26 @@
-_site/*
-_theme_packages/*
+# Hugo build output. All of it is regenerated from content/, layouts/, and
+# static/ by running `make build`.
+/public/
+/resources/
+.hugo_build.lock
 
-Thumbs.db
-.DS_Store
+# The resume is rendered from resume/*.adoc by `make resume`, and again by CI
+# on every deploy. Only the AsciiDoc source is worth committing.
+/static/resume/
+/static/resume.pdf
 
-!.gitkeep
+# devbox and direnv. devbox.json and devbox.lock ARE committed; the rest is
+# local machine state. .envrc is shared, .envrc.local is yours alone.
+.devbox/
+.envrc.*
+!.envrc
 
-.rbenv-version
-.rvmrc
+# process-compose leaves these behind while `make dev` is running.
+.pc_*
 
-*.pdfmarks
-.jekyll-cache
-
+# Python bytecode, from running the tests that sit beside the code snippets.
+__pycache__/
 *.pyc
 
-.venv
+.DS_Store
+Thumbs.db

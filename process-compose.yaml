@@ -1,0 +1,18 @@
+# `make dev`. Two things run side by side: the site, and the resume.
+version: "0.5"
+
+processes:
+  site:
+    # --bind 0.0.0.0 so the site can also be opened from a phone on the same
+    # network. --navigateToChanged jumps the browser to the page you just saved.
+    command: hugo server --bind 0.0.0.0 --buildDrafts --navigateToChanged
+    availability:
+      restart: on_failure
+
+  resume:
+    # Hugo watches content/ and layouts/ by itself, but knows nothing about
+    # AsciiDoc. This rebuilds the resume into static/ whenever a source changes,
+    # and Hugo picks the new file up from there.
+    command: watchexec --watch resume --exts adoc --on-busy-update restart -- make resume
+    availability:
+      restart: on_failure
