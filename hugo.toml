@@ -1,0 +1,44 @@
+baseURL = "https://relaxdiego.com/"
+title = "relaxdiego"
+locale = "en-us"
+
+# Nothing to generate but the homepage, the posts, and the feed. No section
+# index, no per-category or per-tag listing. The front matter still records
+# each post's categories; nothing builds a page out of them.
+disableKinds = ["section", "taxonomy", "term"]
+
+# Two 2011 posts have a capital letter in their published URL. Hugo would
+# quietly lower-case them; Jekyll did not, and the live URLs have the capital.
+disablePathToLower = true
+
+# The URLs this site has published since 2011 look like /2012/02/some-post.html
+# and must not change: every inbound link, search result, and Wayback Machine
+# snapshot depends on them. Each post carries an explicit `slug:` so the URL is
+# written down in the post rather than derived from its title.
+[permalinks]
+  posts = "/:year/:month/:slug"
+
+[uglyURLs]
+  posts = true
+
+[params]
+  description = "Mark Maglana's Technical Blog"
+
+# The feed has always lived at /rss.xml, not at Hugo's default /index.xml.
+[outputFormats.RSS]
+  baseName = "rss"
+
+[markup.goldmark.renderer]
+  # Sixteen of the older posts are hand-written HTML, and many of the Markdown
+  # ones embed HTML. Both were fine under Jekyll and must keep working.
+  unsafe = true
+
+[markup.highlight]
+  # Emit CSS classes rather than inline styles, so the few syntax colours live
+  # in the one stylesheet each page already carries.
+  noClasses = false
+
+[security]
+  # Hugo 0.163 refuses to read .html content files unless told otherwise.
+  # These are this blog's own posts, hand-written years ago.
+  allowContent = ['^text/html$', '^text/markdown$']

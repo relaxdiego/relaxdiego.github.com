@@ -1,0 +1,29 @@
+{{ define "main" }}
+<header class="masthead">
+  <h1><a href="{{ site.Home.RelPermalink }}">{{ site.Title }}</a></h1>
+  <p class="tagline">{{ site.Params.description }}</p>
+</header>
+
+<h2>About Me</h2>
+<ul class="links">
+  <li><a href="/resume/">Résumé</a></li>
+  <li><a href="https://www.instagram.com/goshwhatanerd/">Instagram</a></li>
+  <li><a href="https://github.com/relaxdiego">GitHub</a></li>
+  <li><a href="https://www.linkedin.com/in/markmaglana">LinkedIn</a></li>
+  <li><a href="https://keybase.io/relaxdiego">Keybase ID (relaxdiego)</a></li>
+</ul>
+
+<h2>Articles</h2>
+<ul class="links">
+{{ range (where site.RegularPages "Section" "posts").ByDate.Reverse }}
+  <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+{{ end }}
+</ul>
+
+<h2>Others</h2>
+<ul class="links">
+  <li><a href="{{ "rss.xml" | relURL }}">RSS feed</a></li>
+</ul>
+
+{{ partial "colophon.html" . }}
+{{ end }}

@@ -1,0 +1,10 @@
+{{- /* Render a file from snippets/ as a code block. The file is real,
+       runnable code with its own test beside it, so the post and the thing
+       it describes can never drift apart. */ -}}
+{{- $path := printf "snippets/%s" (.Get "file") -}}
+{{- with (readFile $path) -}}
+  {{- $opts := printf "linenos=%s" (default "false" ($.Get "linenos")) -}}
+  {{- highlight (strings.TrimSuffix "\n" .) ($.Get "lang") $opts -}}
+{{- else -}}
+  {{- errorf "snippet %q not found (called from %s)" $path $.Position -}}
+{{- end -}}
