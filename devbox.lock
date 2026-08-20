@@ -1,0 +1,299 @@
+{
+  "lockfile_version": "1",
+  "packages": {
+    "asciidoctor-with-extensions@2.0.23": {
+      "last_modified": "2025-11-23T21:50:36Z",
+      "resolved": "github:NixOS/nixpkgs/ee09932cedcef15aaf476f9343d1dea2cb77e261#asciidoctor-with-extensions",
+      "source": "devbox-search",
+      "version": "2.0.23",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/65ah2d3pi9dapd443hwypv892qj8cpal-asciidoctor-2.0.23",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/65ah2d3pi9dapd443hwypv892qj8cpal-asciidoctor-2.0.23"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/a81q3f9pla8nrlkabbp2899nliamrz73-asciidoctor-2.0.23",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/a81q3f9pla8nrlkabbp2899nliamrz73-asciidoctor-2.0.23"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/nngn648kpbvmab6r4xv7j3fx5bxqvkw0-asciidoctor-2.0.23",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/nngn648kpbvmab6r4xv7j3fx5bxqvkw0-asciidoctor-2.0.23"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/n9ibzvw7kxiw1snqwbms3bh8rh262kvb-asciidoctor-2.0.23",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/n9ibzvw7kxiw1snqwbms3bh8rh262kvb-asciidoctor-2.0.23"
+        }
+      }
+    },
+    "github:NixOS/nixpkgs/nixpkgs-unstable": {
+      "last_modified": "2026-08-19T20:44:59Z",
+      "resolved": "github:NixOS/nixpkgs/07e1d92cdc0ed416cfa11ff3ca40d17e61cfba7a?lastModified=1787172299"
+    },
+    "gnumake@4.4.1": {
+      "last_modified": "2026-08-16T22:25:34Z",
+      "resolved": "github:NixOS/nixpkgs/21e032ff95225fb81164a2b2b696c5f6841fcb62#gnumake",
+      "source": "devbox-search",
+      "version": "4.4.1",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/531m4zdgqpmqnfqi19y3lj4rnkr98yy0-gnumake-4.4.1",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/r6wz2258c6piw14z0r5krg3b93n6378p-gnumake-4.4.1-man",
+              "default": true
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/d4qx2dc81bhp654kpk26j48mrmyzfnzm-gnumake-4.4.1-doc"
+            },
+            {
+              "name": "info",
+              "path": "/nix/store/s50dnjd81395y7lvsl4zdxm5q4q4mkb1-gnumake-4.4.1-info"
+            }
+          ],
+          "store_path": "/nix/store/531m4zdgqpmqnfqi19y3lj4rnkr98yy0-gnumake-4.4.1"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/1dzsx5xcm25931cbdzs8cbjlzpc85mbp-gnumake-4.4.1",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/28x5qj84g0ybg3hq21shg7grc51c1a7b-gnumake-4.4.1-man",
+              "default": true
+            },
+            {
+              "name": "info",
+              "path": "/nix/store/f0ybqwyla1ngadcl8mvpgjyaaxk5baky-gnumake-4.4.1-info"
+            },
+            {
+              "name": "debug",
+              "path": "/nix/store/jj9z626h6gs0yz415yfka1gjyhancq0z-gnumake-4.4.1-debug"
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/c7kfpr73r9acz3apnb2lacbs28i7cjli-gnumake-4.4.1-doc"
+            }
+          ],
+          "store_path": "/nix/store/1dzsx5xcm25931cbdzs8cbjlzpc85mbp-gnumake-4.4.1"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/0bg5b97b9hbhz8907bfcrch1i116xppa-gnumake-4.4.1",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/wb4yn3d7vmi1hr4f8pz38rjvcl7f70ma-gnumake-4.4.1-man",
+              "default": true
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/3b9cjf16jx4ncpp3b4k6m8q01nxsrw1n-gnumake-4.4.1-doc"
+            },
+            {
+              "name": "info",
+              "path": "/nix/store/rriz5p4q8a6sca7sw3p3js1m5dl09ia8-gnumake-4.4.1-info"
+            }
+          ],
+          "store_path": "/nix/store/0bg5b97b9hbhz8907bfcrch1i116xppa-gnumake-4.4.1"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/zg22421nym5dxikl92978lqj6xf4jkax-gnumake-4.4.1",
+              "default": true
+            },
+            {
+              "name": "man",
+              "path": "/nix/store/j3mkxawmvh2c8swqy0x5bvzh8jpjvbs7-gnumake-4.4.1-man",
+              "default": true
+            },
+            {
+              "name": "info",
+              "path": "/nix/store/an4gd4m49w4mcby5i003xkxc4fqvbnsw-gnumake-4.4.1-info"
+            },
+            {
+              "name": "debug",
+              "path": "/nix/store/qjh1wf4n55a7sqfn6bx1faf4h8347s43-gnumake-4.4.1-debug"
+            },
+            {
+              "name": "doc",
+              "path": "/nix/store/g33wdgbyibi3ahd3gfx4js43xp2mq8z3-gnumake-4.4.1-doc"
+            }
+          ],
+          "store_path": "/nix/store/zg22421nym5dxikl92978lqj6xf4jkax-gnumake-4.4.1"
+        }
+      }
+    },
+    "hugo@0.163.3": {
+      "last_modified": "2026-07-08T21:13:06Z",
+      "resolved": "github:NixOS/nixpkgs/389ed85304b281ca7f306cf8a1eb4378651ca44e#hugo",
+      "source": "devbox-search",
+      "version": "0.163.3",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/w6qvnplf03i5ksw8nbl0kw3mxnrj84xy-hugo-0.163.3",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/w6qvnplf03i5ksw8nbl0kw3mxnrj84xy-hugo-0.163.3"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/z2z04lwmzqhmrb68plx67dzzzwxgsgvv-hugo-0.163.3",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/z2z04lwmzqhmrb68plx67dzzzwxgsgvv-hugo-0.163.3"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/igajbmlfdn32sxqrlld8bm1gz40667gm-hugo-0.163.3",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/igajbmlfdn32sxqrlld8bm1gz40667gm-hugo-0.163.3"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/6090ssfh6ckzr909kppfqv2fza8cgv24-hugo-0.163.3",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/6090ssfh6ckzr909kppfqv2fza8cgv24-hugo-0.163.3"
+        }
+      }
+    },
+    "process-compose@1.120.0": {
+      "last_modified": "2026-08-12T11:28:58Z",
+      "resolved": "github:NixOS/nixpkgs/044bfe75bfe4c7bbe043dc17b5e42ea823b84a09#process-compose",
+      "source": "devbox-search",
+      "version": "1.120.0",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/jibqgzh2jp960xi50n2wrjf51c7lapcw-process-compose-1.120.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/jibqgzh2jp960xi50n2wrjf51c7lapcw-process-compose-1.120.0"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/29a19qalvhkl3q4s8wqw8az93sfxkifa-process-compose-1.120.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/29a19qalvhkl3q4s8wqw8az93sfxkifa-process-compose-1.120.0"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/7v1vz15kaiga97651npsl2xvljd6g272-process-compose-1.120.0",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/7v1vz15kaiga97651npsl2xvljd6g272-process-compose-1.120.0"
+        }
+      }
+    },
+    "watchexec@2.3.2": {
+      "last_modified": "2026-03-21T07:29:51Z",
+      "resolved": "github:NixOS/nixpkgs/09061f748ee21f68a089cd5d91ec1859cd93d0be#watchexec",
+      "source": "devbox-search",
+      "version": "2.3.2",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/8by7n5gg94dc34hgnhz8rc11mrk6k1la-watchexec-2.3.2",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/8by7n5gg94dc34hgnhz8rc11mrk6k1la-watchexec-2.3.2"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/95n815ab58xs07vvywp07yrghvh046qk-watchexec-2.3.2",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/95n815ab58xs07vvywp07yrghvh046qk-watchexec-2.3.2"
+        },
+        "x86_64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/7sb6fbl15xyyv8r3z3idgqlnhcgqkv2m-watchexec-2.3.2",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/7sb6fbl15xyyv8r3z3idgqlnhcgqkv2m-watchexec-2.3.2"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/hp6rarchx58b998kybcs6ki8gb86i5lk-watchexec-2.3.2",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/hp6rarchx58b998kybcs6ki8gb86i5lk-watchexec-2.3.2"
+        }
+      }
+    }
+  }
+}
