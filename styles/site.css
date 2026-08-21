@@ -85,10 +85,14 @@ code, pre, .terminal {
 code { background: #e0e0e2; border-radius: 3px; padding: 0.1em 0.3em; }
 
 /* Code blocks: one dark panel, scrolling sideways rather than wrapping, so
-   that indentation stays true. */
+   that indentation stays true.
+
+   The colours are kanagawa-dragon, the same theme the author's editor and
+   terminal use. Values come from the running Neovim colorscheme, not from a
+   port of it, so code here looks like code there. */
 .highlight, .terminal {
-  background: #2d2d2d;
-  color: #d0d0d0;
+  background: #1d1c19;
+  color: #c5c9c5;
   border-radius: 4px;
   margin: 1.5rem 0;
   overflow-x: auto;
@@ -123,23 +127,36 @@ img, iframe {
 .highlight table { border: 0; width: 100%; }
 .highlight table td { border: 0; padding: 0; vertical-align: top; }
 .highlight .lntd:first-child { width: 1%; }
-.highlight .lnt, .highlight .ln { color: #7a7a7a; user-select: none; }
+/* kanagawa-dragon's own LineNr is #393836, which sits at 1.45:1 against the
+   panel - fine in an editor, unreadable on a page. These use the comment
+   grey instead, which is the same kind of quiet and actually legible. */
+.highlight .lnt, .highlight .ln { color: #737c73; user-select: none; }
 
-/* Syntax colours. Deliberately few: enough to tell code apart from prose and
-   comments apart from code, and nothing more. */
-.highlight .c, .highlight .c1, .highlight .cm, .highlight .cs, .highlight .cp { color: #8f9d6a; font-style: italic; }
-.highlight .k, .highlight .kn, .highlight .kd, .highlight .kc, .highlight .kr, .highlight .kt, .highlight .ow { color: #8ab8e6; }
-.highlight .s, .highlight .s1, .highlight .s2, .highlight .sb, .highlight .sd, .highlight .se, .highlight .sh, .highlight .si, .highlight .sx, .highlight .sr, .highlight .ss, .highlight .sa { color: #e6a882; }
-.highlight .m, .highlight .mi, .highlight .mf, .highlight .mh, .highlight .mo, .highlight .mb, .highlight .il { color: #e6a882; }
-.highlight .nf, .highlight .nb, .highlight .nc, .highlight .nn, .highlight .na, .highlight .nt { color: #d4c896; }
+/* Syntax colours, mapped from kanagawa-dragon's Neovim highlight groups onto
+   Chroma's token classes. Still deliberately few: each line below is one
+   group from the editor, not a per-token invention.
+
+   Comments are the theme's own #737c73, which measures 3.94:1 against the
+   panel - just under the 4.5:1 bar for text this size. Kept faithful because
+   a comment is meant to recede; lighten it if that ever reads as too dim. */
+.highlight .c, .highlight .c1, .highlight .cm, .highlight .cs, .highlight .cp { color: #737c73; font-style: italic; }
+.highlight .k, .highlight .kn, .highlight .kd, .highlight .kc, .highlight .kr { color: #8992a7; }
+.highlight .kt, .highlight .nc, .highlight .nn { color: #8ea4a2; }
+.highlight .o, .highlight .ow { color: #c4746e; }
+.highlight .s, .highlight .s1, .highlight .s2, .highlight .sb, .highlight .sd, .highlight .se, .highlight .sh, .highlight .si, .highlight .sx, .highlight .sr, .highlight .ss, .highlight .sa { color: #8a9a7b; }
+.highlight .m, .highlight .mi, .highlight .mf, .highlight .mh, .highlight .mo, .highlight .mb, .highlight .il { color: #a292a3; }
+.highlight .nf, .highlight .nb { color: #8ba4b0; }
+.highlight .na, .highlight .nv, .highlight .vi, .highlight .vg { color: #c4b28a; }
+.highlight .nt { color: #8992a7; }
+.highlight .p { color: #9e9b93; }
 .highlight .err { color: inherit; background: none; }
 
 /* Used by the two posts that show terminal output with coloured processes. */
-.terminal .proc1 { color: #67d8ef; }
-.terminal .proc2 { color: #a6e22e; }
-.terminal .proc3 { color: #e6db74; }
-.terminal .proc3failed { color: #ff6b6b; }
-.terminal .proc3passed { color: #a6e22e; }
+.terminal .proc1 { color: #8ea4a2; }
+.terminal .proc2 { color: #8a9a7b; }
+.terminal .proc3 { color: #c4b28a; }
+.terminal .proc3failed { color: #c4746e; }
+.terminal .proc3passed { color: #87a987; }
 
 
 /* ---------------------------------------------------------------------------
