@@ -5,7 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ if .IsHome }}{{ site.Title }} - {{ site.Params.description }}{{ else }}{{ .Title }}{{ end }}</title>
 <link rel="canonical" href="{{ .Permalink }}">
-{{- $desc := cond .IsHome site.Params.description (.Description | default site.Params.description) }}
+{{- /* What search results and link previews quote for this page.
+
+       A post that sets `description:` in its front matter gets that. A post
+       that does not gets its own opening lines, trimmed to a length search
+       engines will actually show, which is far better than what used to
+       happen here: every post described itself with the site's one-line
+       tagline, so seventy-five different articles all read the same. Only
+       the homepage and the 404 page, which have no prose of their own, fall
+       through to the tagline. */ -}}
+{{- $desc := site.Params.description -}}
+{{- if not .IsHome -}}
+  {{- $desc = .Description | default (.Summary | plainify | htmlUnescape | chomp | truncate 160) | default site.Params.description -}}
+{{- end }}
 <meta name="description" content="{{ $desc }}">
 <meta name="author" content="Mark S. Maglana">
 
