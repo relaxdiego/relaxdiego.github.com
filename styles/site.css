@@ -8,7 +8,22 @@
    stacks and not just `serif`.
 
    Latin subsets only, 400/400-italic/700 for the text face and 400/400-italic
-   for the mono. Nothing on the site sets bold italic. */
+   for the mono. Nothing on the site sets bold italic.
+
+   Where these files came from, so they can be regenerated or widened later:
+   they are Google Fonts' own latin woff2 subsets, downloaded byte-for-byte,
+   not subsetted here. Ask the CSS API for the faces you want and take the
+   URLs under the block the CSS labels as the latin subset, sending a browser
+   User-Agent or you get ttf instead of woff2:
+
+     https://fonts.googleapis.com/css2?family=Charis+SIL:ital,wght@0,400;0,700;1,400
+     https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;1,400
+
+   Shipped here: Charis SIL v2, JetBrains Mono v24. Both are licensed under
+   the SIL Open Font License 1.1, whose terms require the licence to travel
+   with the files; it sits beside them as OFL-Charis-SIL.txt and
+   OFL-JetBrains-Mono.txt. Charis SIL reserves the names "Charis" and "SIL",
+   so a modified copy must be renamed. */
 @font-face {
   font-family: "Charis SIL";
   font-style: normal;
