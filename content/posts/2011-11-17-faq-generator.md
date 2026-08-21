@@ -1,0 +1,18 @@
+---
+title: "FAQ generator"
+date: 2011-11-17T09:30:00Z
+slug: faq-generator
+categories: ["programming"]
+---
+
+Here's a quick and dirty ruby script I made to extract issues from a project
+in Redmine and output it to an HTML file. I originally wrote this to compile
+issues in a project named 'FAQs' where we internally discuss FAQs and their
+answers before publishing to the wild. Check it out at
+[Github](https://github.com/relaxdiego/FAQs).
+
+After looking at that code, you might ask why I used pandoc instead of plain
+old erb or some other Ruby-based templating gem. The reason is that I
+originally started out by outputting a PDF file but then requirements changed
+and I had to come up with something very quickly. Needless to say, my fingers
+are itching to clean up this code. Soon...
