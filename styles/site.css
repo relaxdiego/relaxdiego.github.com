@@ -62,18 +62,33 @@
 
 /* The palette, stated once.
 
-   Light is the default and is written out in full below. Dark does not
-   restate a single rule - it only gives the same variables different values,
-   so a colour can never be changed in one mode and forgotten in the other.
+   Every colour below is one light/dark pair written with light-dark(), and
+   which half applies is decided by `color-scheme` on :root. The dark scheme
+   therefore restates no rule and no selector - only the second half of each
+   pair - so a colour cannot be changed in one scheme and forgotten in the
+   other.
 
-   Dark is taken from kanagawa-dragon, the same theme the code colours already
-   come from, so the page and the code on it belong to one set of colours. The
-   page sits at the theme's own editor background, which leaves the code panel
-   a shade lighter than the page rather than a shade darker. That is on
-   purpose: a block of code should still read as a panel laid on the page.
+   :root says `light dark`, which means "this page reads either way, follow
+   the reader's system". That is the default and, for most readers, the only
+   behaviour they will ever see. A reader who presses the theme button gets
+   data-theme on the same element, and the two rules below this block pin
+   color-scheme to what they picked instead. Nothing else in the stylesheet
+   knows or cares which of the two is in force.
 
-   The panel itself is the same in both modes, which is why the whole syntax
-   section further down needs no dark variant at all.
+   The plain value on the line above each pair is the fallback for a browser
+   too old for light-dark(). Such a browser ignores the second line, keeps
+   the first, and simply stays light - which is what this site looked like
+   before any of this existed.
+
+   Dark is taken from kanagawa-dragon, the same theme the code colours
+   already come from, so the page and the code on it belong to one set of
+   colours. The page sits at the theme's own editor background, which leaves
+   the code panel a shade lighter than the page rather than a shade darker.
+   That is on purpose: a block of code should still read as a panel laid on
+   the page.
+
+   The panel itself is the same either way, which is why it needs no pair at
+   all, and why the whole syntax section further down needs no dark variant.
 
    Every dark value is at least as legible as the light one it replaces:
    text 10.8:1 against the page, links 7.5:1, the two greys 6.2:1. The rules
@@ -89,56 +104,61 @@
    colours; it does not need to own the page's furniture too.
 
    The inline-code background sits a little stronger against the page than
-   its light counterpart does (1.2:1 against 1.1:1). The same small difference
-   in lightness is simply harder to see at the dark end, so matching the
-   number exactly made the chip disappear. */
+   its light counterpart does (1.2:1 against 1.1:1). The same small
+   difference in lightness is simply harder to see at the dark end, so
+   matching the number exactly made the chip disappear. */
 :root {
-  --bg:         #eeeeed;
-  --fg:         #313e4d;
-  --link:       #2156a5;
-  --muted:      #5a6674;  /* the tagline, and the resume's attributions */
-  --meta:       #6b7684;  /* a post's date and reading time */
-  --rule:       #c6c6c2;  /* table cells, and the resume's heading rules */
-  --quote-bg:   #e3e3e0;
-  --quote-rule: #647180;
-  --code-bg:    #e0e0e2;  /* inline code only; blocks use the panel below */
+  color-scheme: light dark;
 
-  /* The code panel. The same in both modes - see the note above. */
+  --bg:         #eeeeed;
+  --bg:         light-dark(#eeeeed, #181616);
+  --fg:         #313e4d;
+  --fg:         light-dark(#313e4d, #c5c9c5);
+  --link:       #2156a5;
+  --link:       light-dark(#2156a5, #8ea8d8);
+
+  /* the tagline, and the resume's attributions */
+  --muted:      #5a6674;
+  --muted:      light-dark(#5a6674, #939a93);
+
+  /* a post's date and reading time */
+  --meta:       #6b7684;
+  --meta:       light-dark(#6b7684, #9099a0);
+
+  /* table cells, and the resume's heading rules */
+  --rule:       #c6c6c2;
+  --rule:       light-dark(#c6c6c2, #3a3737);
+
+  --quote-bg:   #e3e3e0;
+  --quote-bg:   light-dark(#e3e3e0, #201e1e);
+  --quote-rule: #647180;
+  --quote-rule: light-dark(#647180, #737c73);
+
+  /* inline code only; blocks use the panel below */
+  --code-bg:    #e0e0e2;
+  --code-bg:    light-dark(#e0e0e2, #2b2828);
+
+  /* The code panel. The same either way - see the note above. */
   --panel-bg:   #1d1c19;
   --panel-fg:   #c5c9c5;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg:         #181616;
-    --fg:         #c5c9c5;
-    --link:       #8ea8d8;
-    --muted:      #939a93;
-    --meta:       #9099a0;
-    --rule:       #3a3737;
-    --quote-bg:   #201e1e;
-    --quote-rule: #737c73;
-    --code-bg:    #2b2828;
-  }
-}
+/* What the button sets. The script that writes data-theme onto <html> runs
+   in the <head>, before anything is painted, so a reader who chose dark
+   never sees a frame of light first. */
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"]  { color-scheme: dark; }
 
 /* On paper there is no dark mode. A browser does not print background
    colours by default, so a page that had gone dark would print its light
-   text onto white and come out nearly blank. Putting the light values back
-   here costs nine lines and removes the whole problem. This block sits after
-   the dark one so that it wins when both apply. */
+   text onto white and come out nearly blank. Forcing the light half back is
+   now one declaration instead of a second copy of the palette.
+
+   Media queries carry no specificity of their own, so this has to match the
+   data-theme rules above to beat them, and sits after them to win. */
 @media print {
-  :root {
-    --bg:         #ffffff;
-    --fg:         #313e4d;
-    --link:       #2156a5;
-    --muted:      #5a6674;
-    --meta:       #6b7684;
-    --rule:       #c6c6c2;
-    --quote-bg:   #e3e3e0;
-    --quote-rule: #647180;
-    --code-bg:    #e0e0e2;
-  }
+  :root,
+  :root[data-theme] { color-scheme: light; }
 }
 
 /* iOS Safari inflates the text of any block it thinks is too wide for the
@@ -196,6 +216,46 @@ h3 { font-size: 1.1rem; }
 }
 
 .nav a { font-weight: bold; text-decoration: none; }
+
+/* The theme button, top right of every page the blog builds.
+
+   It stays hidden unless the script ran and the browser understands
+   light-dark(); without either of those, pressing it could not change
+   anything, and a control that does nothing is worse than no control.
+
+   Its label is written by CSS rather than by the script, so it is already
+   right in the first painted frame and never has to be corrected afterwards.
+   It names the scheme it will switch TO, which is what readers expect of a
+   button like this. */
+.theme-toggle {
+  display: none;
+  float: right;
+  margin-left: 1rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 0.85rem;
+  color: var(--meta);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+:root[data-js] .theme-toggle { display: block; }
+
+@supports not (color: light-dark(#000, #fff)) {
+  :root[data-js] .theme-toggle { display: none; }
+}
+
+.theme-toggle::after { content: "Dark"; }
+
+/* Following the system, and the system says dark. The :not() is what keeps a
+   reader who explicitly chose light from being told they can switch to it. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-toggle::after { content: "Light"; }
+}
+
+:root[data-theme="dark"] .theme-toggle::after { content: "Light"; }
 
 /* Bare link lists: the article index, and the two short lists beside it. */
 .links { list-style: none; margin: 0; padding: 0; }

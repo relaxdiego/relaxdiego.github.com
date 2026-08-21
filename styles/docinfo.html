@@ -1,0 +1,54 @@
+<!-- The theme switch.
+
+     This one file is included two different ways on purpose. Hugo reads it
+     into the <head> of every page it builds, and AsciiDoctor picks it up as
+     a docinfo file when it renders the resume - which is what forces the
+     name. Keeping a single copy means the storage key and the data-theme
+     contract cannot drift apart between the blog and the resume.
+
+     It runs in the <head>, before the page is painted, so a reader who
+     chose a scheme never sees a frame of the other one.
+
+     The resume carries no button, having no template to put one in. It
+     still honours a choice made anywhere else on the site, because
+     localStorage belongs to the whole origin rather than to one page. -->
+<script>
+(function () {
+  var root = document.documentElement;
+
+  // Private browsing, and a browser set to block site data, make these
+  // throw rather than quietly return nothing. Hence the guards: a reader
+  // who cannot store a choice should still get a working page.
+  function stored() {
+    try { return localStorage.getItem("theme"); } catch (e) { return null; }
+  }
+  function remember(value) {
+    try { localStorage.setItem("theme", value); } catch (e) {}
+  }
+
+  // No stored choice means no data-theme, which leaves the stylesheet
+  // following the reader's system. That is the default.
+  function apply(value) {
+    if (value === "light" || value === "dark") {
+      root.setAttribute("data-theme", value);
+    } else {
+      root.removeAttribute("data-theme");
+    }
+  }
+
+  root.setAttribute("data-js", "");
+  apply(stored());
+
+  // This runs before the body is parsed, so the button does not exist yet
+  // and cannot be given a listener. Catching the click on its way up the
+  // document works no matter when the button appears.
+  document.addEventListener("click", function (event) {
+    var target = event.target;
+    if (!target.closest || !target.closest(".theme-toggle")) return;
+    var system = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    var next = (stored() || system) === "dark" ? "light" : "dark";
+    apply(next);
+    remember(next);
+  });
+})();
+</script>

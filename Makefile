@@ -27,9 +27,14 @@ resume: static/resume/index.html static/resume.pdf
 # Both outputs are generated, so both are gitignored and both are rebuilt in
 # CI. The HTML is rendered with the site's own stylesheet, embedded rather than
 # linked, so the resume looks like the blog and still stands on its own.
-static/resume/index.html: resume/index.adoc resume/resume.adoc styles/site.css
+# docinfo=shared is what pulls in styles/docinfo.html, the theme script the
+# blog's own pages share. The resume shows no theme button - there is no
+# template here to put one in - but it follows a choice made on any other
+# page of the site.
+static/resume/index.html: resume/index.adoc resume/resume.adoc styles/site.css styles/docinfo.html
 	@mkdir -p $(@D)
-	asciidoctor --base-dir . -a stylesdir=styles -a stylesheet=site.css -o $@ $<
+	asciidoctor --base-dir . -a stylesdir=styles -a stylesheet=site.css \
+	  -a docinfo=shared -a docinfodir=styles -o $@ $<
 
 static/resume.pdf: resume/index.adoc resume/resume.adoc
 	@mkdir -p $(@D)

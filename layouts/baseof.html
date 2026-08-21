@@ -3,6 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+{{- /* The theme switch, first thing in the head so that nothing is painted
+       before a stored choice is applied. The file is shared verbatim with
+       the resume, which AsciiDoctor renders outside Hugo; the docinfo name
+       is AsciiDoctor's requirement, and the file says so at the top. */}}
+{{ readFile "styles/docinfo.html" | safeHTML }}
 <title>{{ if .IsHome }}{{ site.Title }} - {{ site.Params.description }}{{ else }}{{ .Title }}{{ end }}</title>
 <link rel="canonical" href="{{ .Permalink }}">
 {{- /* What search results and link previews quote for this page.
@@ -47,6 +53,8 @@
 </head>
 <body>
 <div class="page">
+<button class="theme-toggle" type="button"
+        aria-label="Switch between light and dark"></button>
 {{ block "main" . }}{{ end }}
 </div>
 </body>
