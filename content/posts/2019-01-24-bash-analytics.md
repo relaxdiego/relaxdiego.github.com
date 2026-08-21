@@ -26,6 +26,7 @@ script/ba \
 ```
 
 <br/>
+
 From that command you can get something like:
 
 ```plaintext
@@ -37,6 +38,7 @@ From that command you can get something like:
 ```
 
 <br/>
+
 Easy peasy. But wait! There's more! Head on over to the 
 [Bash Analytics](https://github.com/relaxdiego/bash-analytics) repository
 to get more examples.
