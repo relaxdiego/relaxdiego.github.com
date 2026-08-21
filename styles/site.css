@@ -8,8 +8,12 @@ body {
   line-height: 1.7;
 }
 
+/* 34rem of Georgia at 18px is about 65 characters a line. Comfortable reading
+   is 60-75; the old 42rem ran to roughly 85, which is where the eye starts
+   losing its place on the way back to the left margin. Code and pictures are
+   not prose and step back out of this column - see --wide below. */
 .page {
-  max-width: 42rem;
+  max-width: 34rem;
   margin: 0 auto;
   padding: 2rem 1rem 3rem;
 }
@@ -57,7 +61,7 @@ h3 { font-size: 1.1rem; }
   margin-top: 0.25rem;
 }
 
-img, iframe { display: block; max-width: 100%; margin: 1.5rem auto; }
+img, iframe { display: block; margin: 1.5rem 0; }
 
 /* A caption under a figure. Used by a handful of posts. */
 .figure-label { font-size: 0.8rem; text-align: center; margin-top: -1rem; }
@@ -90,6 +94,28 @@ code { background: #e0e0e2; border-radius: 3px; padding: 0.1em 0.3em; }
   overflow-x: auto;
 }
 
+/* Pictures step back out of the prose column.
+
+   A diagram or a screenshot wants more room than a sentence does, so it is
+   given the wider width and then re-centred on the column: margin-left puts
+   its left edge at the column's midpoint, and translateX pulls it back by
+   half its own width. It ends up centred whatever its width turns out to be,
+   so this needs no media queries and no knowledge of how wide the column is.
+
+   44rem clears the widest thing any post embeds, a 770px video. The 100vw
+   clamp keeps all of it inside the viewport on a phone, where the column is
+   already narrower than 34rem and nothing needs to step out.
+
+   Code blocks deliberately do NOT do this. A block of code that starts left
+   of the paragraph above it pulls the eye sideways on every fence, and the
+   line you are reading matters more than the few characters that would
+   otherwise fit. Long lines scroll instead. */
+img, iframe {
+  margin-left: 50%;
+  transform: translateX(-50%);
+  max-width: min(44rem, calc(100vw - 2rem));
+}
+
 .highlight pre, .terminal pre { margin: 0; padding: 0.8rem; line-height: 1.5; }
 .highlight code, .terminal code { background: none; padding: 0; }
 
@@ -115,14 +141,6 @@ code { background: #e0e0e2; border-radius: 3px; padding: 0.1em 0.3em; }
 .terminal .proc3failed { color: #ff6b6b; }
 .terminal .proc3passed { color: #a6e22e; }
 
-.post-footer, .colophon {
-  font-family: -apple-system, Helvetica, Arial, sans-serif;
-  font-size: 0.85rem;
-  color: #5a6674;
-  margin-top: 4rem;
-  border-top: 1px solid #c6c6c2;
-  padding-top: 1rem;
-}
 
 /* ---------------------------------------------------------------------------
    The resume.
@@ -134,7 +152,7 @@ code { background: #e0e0e2; border-radius: 3px; padding: 0.1em 0.3em; }
    --------------------------------------------------------------------------- */
 
 body.article #content {
-  max-width: 42rem;
+  max-width: 34rem;
   margin: 0 auto;
   padding: 2rem 1rem 3rem;
 }
