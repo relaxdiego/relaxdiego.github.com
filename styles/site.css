@@ -188,7 +188,27 @@ img, iframe {
 }
 
 .highlight pre, .terminal pre { margin: 0; padding: 0.8rem; line-height: 1.5; }
-.highlight code, .terminal code { background: none; padding: 0; }
+.highlight code, .terminal code, article > pre code { background: none; padding: 0; }
+
+/* The older posts write their code as an indented block rather than a fenced
+   one. Goldmark renders that as a bare <pre><code> with no .highlight wrapper
+   and no language to colour, so those blocks were picking up none of the
+   panel above: no dark background, no padding, and no sideways scroll, which
+   let a long line push the whole page wider than the phone.
+
+   A bare block is always a direct child of the article, and a highlighted
+   block's own <pre> never is - it sits inside the .highlight div, or inside a
+   table cell when the block asks for line numbers. So the child combinator
+   reaches exactly the unwrapped ones. */
+article > pre {
+  background: #1d1c19;
+  color: #c5c9c5;
+  border-radius: 4px;
+  margin: 1.5rem 0;
+  padding: 0.8rem;
+  line-height: 1.5;
+  overflow-x: auto;
+}
 
 /* Line numbers, when a block asks for them, sit in the first table column. */
 .highlight table { border: 0; width: 100%; }
