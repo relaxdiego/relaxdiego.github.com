@@ -219,11 +219,12 @@ h3 { font-size: 1.1rem; }
 
 /* The theme switch, top right of every page the blog builds.
 
-   A word and a sliding switch. The word names what the switch controls and
-   never changes; where the knob sits says whether that thing is on. That is
-   the ordinary way a switch works, and it is why the label no longer names
-   the scheme you would get by pressing it - a knob that shows the current
-   state and a word that names the opposite one contradict each other.
+   A sliding switch and nothing else. Where the knob sits is the whole
+   message: left and grey for off, right and in the link colour for on. What
+   it switches is dark mode, which the button says in its aria-label and its
+   title rather than on the page - so a screen reader is told, and a pointer
+   hovering over it is told, without a word being set in the corner of every
+   page.
 
    The whole control is drawn with a border and a background on two boxes.
    Nothing here is an image, so it costs no request and inherits the page's
@@ -236,7 +237,6 @@ h3 { font-size: 1.1rem; }
   display: none;
   float: right;
   align-items: center;
-  gap: 0.4rem;
   margin-left: 1rem;
   /* The switch is only pressed, never dragged - the knob slides because it
      looks better, not because anyone has to push it. Pressing anywhere on
