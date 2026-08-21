@@ -17,7 +17,7 @@ bash script to get the data I mentioned above.
 
 Run [Bash Analytics](https://github.com/relaxdiego/bash-analytics) like so:
 
-```
+```bash
 script/ba \
     --logfile samples/access_log \
     --group src,path,code \
@@ -28,7 +28,7 @@ script/ba \
 <br/>
 From that command you can get something like:
 
-```
+```plaintext
 1 64.242.88.10 /twiki/bin/edit/TWiki/TWikiVariables?t=1078684115 401
 1 64.242.88.10 /twiki/bin/edit/Sandbox/TestTopic5?topicparent=Sandbox.WebHome 401
 1 64.242.88.10 /twiki/bin/edit/Main/Virtual_mailbox_lock?topicparent=Main.ConfigurationVariables 401

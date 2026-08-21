@@ -69,7 +69,7 @@ can address this problem. By locating each microservice's directoryalongside
 each other in the same repo, you get the benefits of code reusability without
 the arduous 7 steps.
 
-```
+```plaintext
 .
 ├── Makefile
 ├── common

@@ -48,7 +48,7 @@ points to the actual `A` class in memory as defined by `module1`.
 What this means is that we now have two variables pointing to the same memory
 address. These two variables are named `module1.A` and `module2.A`:
 
-```
+```plaintext
                |------------------|
 module1.A ---> |                  |
                | <Actual A Class> |
@@ -120,7 +120,7 @@ There's a lot happening above so let's break it down:
 
 Reusing our diagram from above, our new reality is as follows:
 
-```
+```plaintext
                |------------------|
 module1.A ---> | <Actual A Class> |
                |------------------|
@@ -137,7 +137,7 @@ in line 9.
 
 So a more complete representation of our new reality is as follows:
 
-```
+```plaintext
                |------------------|
 module1.A ---> | <Actual A Class> |
                |------------------|

@@ -104,7 +104,7 @@ eksctl create cluster --config-file cluster.yaml
 
 Example output:
 
-```
+```plaintext
 2023-08-20 07:59:14 [ℹ]  eksctl version ...
 2023-08-20 07:59:14 [ℹ]  using region us-west-2 ...
 2023-08-20 07:59:14 [ℹ]  subnets for us-west-2a ...
@@ -124,7 +124,7 @@ kubectl get nodes
 
 Example output:
 
-```
+```plaintext
 NAME                      STATUS   ROLES    AGE     VERSION
 ip-XXX.compute.internal   Ready    <none>   32m     v1.27.4-eks-2d98532
 ip-YYY.compute.internal   Ready    <none>   32m     v1.27.4-eks-2d98532
@@ -291,7 +291,7 @@ kubectl get -n kubevirt -o=jsonpath="{.status.phase}" \
 
 Example output:
 
-```
+```plaintext
 Deployed
 ```
 
@@ -303,7 +303,7 @@ kubectl get pods -n kubevirt
 
 Example output:
 
-```
+```plaintext
 NAME                                 READY   STATUS    RESTARTS       AGE
 pod/virt-api-674467958c-5chhj        1/1     Running   0              98d
 pod/virt-api-674467958c-wzcmk        1/1     Running   0              5d
@@ -381,7 +381,7 @@ kubectl get vm
 
 Example output:
 
-```
+```plaintext
 NAME        AGE     STATUS               READY
 testvm      30s     Running              True
 ```
@@ -486,7 +486,7 @@ kubectl get sa cluster-autoscaler -n kube-system -ojson | \
 
 Example output:
 
-```
+```plaintext
 arn:aws:iam::365499461711:role/eksctl-my-cluster-addon-iamserviceaccount-...
 ```
 
@@ -506,7 +506,7 @@ kubectl version -ojson | jq -r .serverVersion.gitVersion
 
 Example output:
 
-```
+```plaintext
 v1.27.4-eks-2d98532
 ```
 
@@ -537,7 +537,7 @@ kubectl get deploy,pod -l app=cluster-autoscaler -n kube-system
 
 Example output:
 
-```
+```plaintext
 NAME                                 READY   UP-TO-DATE   AVAILABLE   AGE
 deployment.apps/cluster-autoscaler   1/1     1            1           4m1s
 
@@ -554,7 +554,7 @@ kubectl -n kube-system logs -f deployment.apps/cluster-autoscaler
 Below are example log entries from Cluster Autoscaler terminating an unneeded
 node:
 
-```
+```plaintext
 node ip-XXXX.YYYY.compute.internal may be removed
 ...
 ip-XXXX.YYYY.compute.internal was unneeded for 1m3.743475455s
@@ -563,7 +563,7 @@ ip-XXXX.YYYY.compute.internal was unneeded for 1m3.743475455s
 Once the timeout has been reached (default: 10 minutes), CAS will scale down
 the group:
 
-```
+```plaintext
 Scale-down: removing empty node ip-XXXX.YYYY.compute.internal
 Event(v1.ObjectReference{Kind:"ConfigMap", Namespace:"kube-system", ...
 Successfully added ToBeDeletedTaint on node ip-XXXX.YYYY.compute.internal
@@ -579,7 +579,7 @@ DeleteInstances was called: ...
 When you try to get the list of nodes, you should see the bare metal nodes
 tainted such that they are no longer schedulable:
 
-```
+```plaintext
 NAME       STATUS                     ROLES    AGE    VERSION
 ip-XXXX    Ready,SchedulingDisabled   <none>   70m    v1.27.3-eks-a5565ad
 ip-XXXX    Ready,SchedulingDisabled   <none>   70m    v1.27.3-eks-a5565ad
@@ -592,7 +592,7 @@ In a few more minutes, the nodes will be deleted.
 
 To try the scale up, just deploy a VM.
 
-```
+```plaintext
 Expanding Node Group eks-ng-eacf8ebb ...
 Best option to resize: eks-ng-eacf8ebb
 Estimated 1 nodes needed in eks-ng-eacf8ebb
