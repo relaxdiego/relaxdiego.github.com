@@ -22,7 +22,7 @@ about 7 years ago and what I'm about to share below is largely based off of that
 No, not browser cookies. I'm talking about the delicious (yet just as evil) type:
 
 ![Nom nom nom nom](/assets/images/cookie.png)
-<center>Source: https://commons.wikimedia.org/wiki/File:Pepperidge-Farm-Nantucket-Cookie.jpg</center>
+<center>Source: <a href="https://commons.wikimedia.org/wiki/File:Pepperidge-Farm-Nantucket-Cookie.jpg">Wikimedia Commons</a></center>
 
 ### Scenario 1: A Perfect Stack of Cookies!
 
@@ -54,9 +54,8 @@ bigger!) that we simply can't ignore that fact. How can we estimate in this case
 
 <center>Can we call a friend?</center>
 ![Cooooookie](/assets/images/cookie-monster.jpg)
-<center>Source: Michael Verhoef https://www.flickr.com/photos/nettsu/4167860394</center>
+<center>Source: <a href="https://www.flickr.com/photos/nettsu/4167860394">Michael Verhoef</a></center>
 
-<center>&nbsp;</center>
 
 We don't need to call Cookie Monster. All we need to do is size each
 cookie in this second stack relative to the "standard" cookie size that we'll derive

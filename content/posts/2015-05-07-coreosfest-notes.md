@@ -8,7 +8,7 @@ categories: ["CoreOS", "containers", "k8s", "kubernetes"]
 I went to the first CoreOS Fest this week and the following photo, of which I
 am clearly the main subject, proves it!
 
-<center>Source: <a href="https://twitter.com/bradfitz/status/595726778422931456">https://twitter.com/bradfitz/status/595726778422931456</a></center>
+<center>Source: <a href="https://twitter.com/bradfitz/status/595726778422931456">@bradfitz on Twitter</a></center>
 <img src="/assets/images/coreosfest2015.jpg" width="700" height="179"/>
 
 Now that that's out of the way, here are my notes from that event.
@@ -180,7 +180,7 @@ to finally realize world domination.
 
 BOOM.
 
-<center>Source: <a href="http://cdn.head-fi.org/2/24/244b3c76_unlimited-power_opt.jpeg">http://cdn.head-fi.org/2/24/244b3c76_unlimited-power_opt.jpeg</a></center>
+<center>Source: <a href="http://cdn.head-fi.org/2/24/244b3c76_unlimited-power_opt.jpeg">head-fi.org</a></center>
 <img src="/assets/images/244b3c76_unlimited-power_opt.jpeg" width="578" height="240"/>
 
 You might be thinking "Really?? That's how you create a container?? Run from a base
