@@ -76,7 +76,7 @@ strategic plan.
 
 == Experience
 
-*Senior DevOps Engineer*  (Aug 2021 - present) +
+*Senior Systems and Software Engineer*  (Aug 2021 - present) +
 The Linux Foundation
 
 The Linux Foundation's mission is to support the world's most important
