@@ -25,11 +25,11 @@ build: resume
 resume: static/resume/index.html static/resume.pdf
 
 # Both outputs are generated, so both are gitignored and both are rebuilt in
-# CI. `-a webfonts!` drops the Google Fonts <link>, leaving a page that is
-# complete on its own — the same reason the site's CSS is written inline.
-static/resume/index.html: resume/index.adoc resume/resume.adoc
+# CI. The HTML is rendered with the site's own stylesheet, embedded rather than
+# linked, so the resume looks like the blog and still stands on its own.
+static/resume/index.html: resume/index.adoc resume/resume.adoc styles/site.css
 	@mkdir -p $(@D)
-	asciidoctor --base-dir . -a webfonts! -o $@ $<
+	asciidoctor --base-dir . -a stylesdir=styles -a stylesheet=site.css -o $@ $<
 
 static/resume.pdf: resume/index.adoc resume/resume.adoc
 	@mkdir -p $(@D)

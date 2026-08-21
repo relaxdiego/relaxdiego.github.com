@@ -1,0 +1,173 @@
+html { font-size: 18px; }
+
+body {
+  margin: 0;
+  background: #eeeeed;
+  color: #313e4d;
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.7;
+}
+
+.page {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+}
+
+a { color: #2156a5; }
+
+h1, h2, h3, h4 {
+  font-family: -apple-system, Helvetica, Arial, sans-serif;
+  line-height: 1.3;
+  margin: 2rem 0 0.5rem;
+}
+
+h1 { font-size: 1.7rem; }
+h2 { font-size: 1.3rem; }
+h3 { font-size: 1.1rem; }
+
+/* The site name and one-line description, on the homepage and at the top of
+   every post. */
+.masthead h1 { margin-top: 0; }
+.masthead h1 a { text-decoration: none; }
+
+.tagline {
+  font-family: -apple-system, Helvetica, Arial, sans-serif;
+  font-size: 0.9rem;
+  color: #5a6674;
+}
+
+.nav {
+  font-family: -apple-system, Helvetica, Arial, sans-serif;
+  margin-bottom: 2rem;
+}
+
+.nav a { font-weight: bold; text-decoration: none; }
+
+/* Bare link lists: the article index, and the two short lists beside it. */
+.links { list-style: none; margin: 0; padding: 0; }
+.links li { margin-bottom: 0.75em; }
+.links a { text-decoration: none; }
+.links a:hover { text-decoration: underline; }
+
+.meta {
+  font-family: -apple-system, Helvetica, Arial, sans-serif;
+  font-size: 0.85rem;
+  color: #6b7684;
+  margin-top: 0.25rem;
+}
+
+img, iframe { display: block; max-width: 100%; margin: 1.5rem auto; }
+
+/* A caption under a figure. Used by a handful of posts. */
+.figure-label { font-size: 0.8rem; text-align: center; margin-top: -1rem; }
+
+blockquote {
+  margin: 1.5rem 0;
+  padding: 0.1rem 1rem;
+  border-left: 3px solid #647180;
+  background: #e3e3e0;
+}
+
+table { border-collapse: collapse; }
+th, td { border: 1px solid #c6c6c2; padding: 0.3rem 0.6rem; text-align: left; }
+
+code, pre, .terminal {
+  font-family: ui-monospace, Menlo, Consolas, "DejaVu Sans Mono", monospace;
+  font-size: 0.8rem;
+}
+
+/* Inline code. */
+code { background: #e0e0e2; border-radius: 3px; padding: 0.1em 0.3em; }
+
+/* Code blocks: one dark panel, scrolling sideways rather than wrapping, so
+   that indentation stays true. */
+.highlight, .terminal {
+  background: #2d2d2d;
+  color: #d0d0d0;
+  border-radius: 4px;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+
+.highlight pre, .terminal pre { margin: 0; padding: 0.8rem; line-height: 1.5; }
+.highlight code, .terminal code { background: none; padding: 0; }
+
+/* Line numbers, when a block asks for them, sit in the first table column. */
+.highlight table { border: 0; width: 100%; }
+.highlight table td { border: 0; padding: 0; vertical-align: top; }
+.highlight .lntd:first-child { width: 1%; }
+.highlight .lnt, .highlight .ln { color: #7a7a7a; user-select: none; }
+
+/* Syntax colours. Deliberately few: enough to tell code apart from prose and
+   comments apart from code, and nothing more. */
+.highlight .c, .highlight .c1, .highlight .cm, .highlight .cs, .highlight .cp { color: #8f9d6a; font-style: italic; }
+.highlight .k, .highlight .kn, .highlight .kd, .highlight .kc, .highlight .kr, .highlight .kt, .highlight .ow { color: #8ab8e6; }
+.highlight .s, .highlight .s1, .highlight .s2, .highlight .sb, .highlight .sd, .highlight .se, .highlight .sh, .highlight .si, .highlight .sx, .highlight .sr, .highlight .ss, .highlight .sa { color: #e6a882; }
+.highlight .m, .highlight .mi, .highlight .mf, .highlight .mh, .highlight .mo, .highlight .mb, .highlight .il { color: #e6a882; }
+.highlight .nf, .highlight .nb, .highlight .nc, .highlight .nn, .highlight .na, .highlight .nt { color: #d4c896; }
+.highlight .err { color: inherit; background: none; }
+
+/* Used by the two posts that show terminal output with coloured processes. */
+.terminal .proc1 { color: #67d8ef; }
+.terminal .proc2 { color: #a6e22e; }
+.terminal .proc3 { color: #e6db74; }
+.terminal .proc3failed { color: #ff6b6b; }
+.terminal .proc3passed { color: #a6e22e; }
+
+.post-footer, .colophon {
+  font-family: -apple-system, Helvetica, Arial, sans-serif;
+  font-size: 0.85rem;
+  color: #5a6674;
+  margin-top: 4rem;
+  border-top: 1px solid #c6c6c2;
+  padding-top: 1rem;
+}
+
+/* ---------------------------------------------------------------------------
+   The resume.
+
+   AsciiDoctor renders resume/*.adoc into its own standalone page, outside
+   Hugo. It is handed this same stylesheet so the resume and the blog cannot
+   drift apart. Everything below is scoped to body.article, which is the class
+   AsciiDoctor puts on its output and nothing else here has.
+   --------------------------------------------------------------------------- */
+
+body.article #content {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+}
+
+/* The first section carries the name and contact details, so it reads as the
+   page's title. The rest are ordinary headings with a rule under them. */
+body.article h2 {
+  font-size: 1.3rem;
+  margin-top: 2.5rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid #c6c6c2;
+}
+
+body.article .sect1:first-child h2 {
+  font-size: 1.7rem;
+  margin-top: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+/* AsciiDoctor wraps every list item's text in its own <p>. Left alone, each
+   bullet would carry a full paragraph's margin above and below it. */
+body.article li > p { margin: 0.4rem 0; }
+body.article ul { padding-left: 1.2rem; }
+body.article li { margin-bottom: 0.7rem; }
+body.article .paragraph p { margin: 0.8rem 0; }
+
+/* The LinkedIn recommendations, quoted with the recommender named beneath. */
+body.article .quoteblock blockquote { margin: 1.5rem 0 0; }
+body.article .attribution {
+  font-family: -apple-system, Helvetica, Arial, sans-serif;
+  font-size: 0.85rem;
+  color: #5a6674;
+  margin: 0.4rem 0 1.5rem 1rem;
+}
+body.article .attribution cite { display: block; font-style: normal; }

@@ -15,6 +15,11 @@ disablePathToLower = true
 # and must not change: every inbound link, search result, and Wayback Machine
 # snapshot depends on them. Each post carries an explicit `slug:` so the URL is
 # written down in the post rather than derived from its title.
+# The stylesheet lives in styles/, not in Hugo's default assets/ directory:
+# static/assets/ already publishes the images at /assets/, and two different
+# things called "assets" in one repo is one too many.
+assetDir = "styles"
+
 [permalinks]
   posts = "/:year/:month/:slug"
 
