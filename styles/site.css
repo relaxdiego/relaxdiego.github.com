@@ -217,6 +217,17 @@ h3 { font-size: 1.1rem; }
 
 .nav a { font-weight: bold; text-decoration: none; }
 
+/* On a narrow screen the parenthetical does not fit beside the site name,
+   and an inline span breaks wherever the line runs out - leaving the last
+   word and the closing bracket stranded on a line of their own. As an
+   inline-block it is one indivisible thing: it sits beside the name when
+   there is room and drops whole onto the next line when there is not.
+
+   This is why it is not a media query. There is no particular width at which
+   the phrase stops fitting; it depends on the text, the font, and whatever
+   size the reader has chosen. Letting the box decide handles all of that. */
+.nav .tagline { display: inline-block; }
+
 /* The theme switch, top right of every page the blog builds.
 
    A sliding switch and nothing else. Where the knob sits is the whole
