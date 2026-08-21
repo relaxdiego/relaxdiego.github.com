@@ -60,6 +60,87 @@
   src: url(/assets/fonts/jetbrains-mono-400-italic.woff2) format("woff2");
 }
 
+/* The palette, stated once.
+
+   Light is the default and is written out in full below. Dark does not
+   restate a single rule - it only gives the same variables different values,
+   so a colour can never be changed in one mode and forgotten in the other.
+
+   Dark is taken from kanagawa-dragon, the same theme the code colours already
+   come from, so the page and the code on it belong to one set of colours. The
+   page sits at the theme's own editor background, which leaves the code panel
+   a shade lighter than the page rather than a shade darker. That is on
+   purpose: a block of code should still read as a panel laid on the page.
+
+   The panel itself is the same in both modes, which is why the whole syntax
+   section further down needs no dark variant at all.
+
+   Every dark value is at least as legible as the light one it replaces:
+   text 10.8:1 against the page, links 7.5:1, the two greys 6.2:1. The rules
+   and the quote background are deliberately faint, matching the ratio the
+   light palette already uses - they separate things without drawing the eye.
+
+   Two dark values are not simply the light ones turned down, and both were
+   picked by looking at a rendered page rather than at a number:
+
+   The link blue keeps the light theme's hue rather than taking kanagawa's
+   own, which is so desaturated that on a dark page a link stopped looking
+   like a link and read as plain grey text. The theme still owns the code
+   colours; it does not need to own the page's furniture too.
+
+   The inline-code background sits a little stronger against the page than
+   its light counterpart does (1.2:1 against 1.1:1). The same small difference
+   in lightness is simply harder to see at the dark end, so matching the
+   number exactly made the chip disappear. */
+:root {
+  --bg:         #eeeeed;
+  --fg:         #313e4d;
+  --link:       #2156a5;
+  --muted:      #5a6674;  /* the tagline, and the resume's attributions */
+  --meta:       #6b7684;  /* a post's date and reading time */
+  --rule:       #c6c6c2;  /* table cells, and the resume's heading rules */
+  --quote-bg:   #e3e3e0;
+  --quote-rule: #647180;
+  --code-bg:    #e0e0e2;  /* inline code only; blocks use the panel below */
+
+  /* The code panel. The same in both modes - see the note above. */
+  --panel-bg:   #1d1c19;
+  --panel-fg:   #c5c9c5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:         #181616;
+    --fg:         #c5c9c5;
+    --link:       #8ea8d8;
+    --muted:      #939a93;
+    --meta:       #9099a0;
+    --rule:       #3a3737;
+    --quote-bg:   #201e1e;
+    --quote-rule: #737c73;
+    --code-bg:    #2b2828;
+  }
+}
+
+/* On paper there is no dark mode. A browser does not print background
+   colours by default, so a page that had gone dark would print its light
+   text onto white and come out nearly blank. Putting the light values back
+   here costs nine lines and removes the whole problem. This block sits after
+   the dark one so that it wins when both apply. */
+@media print {
+  :root {
+    --bg:         #ffffff;
+    --fg:         #313e4d;
+    --link:       #2156a5;
+    --muted:      #5a6674;
+    --meta:       #6b7684;
+    --rule:       #c6c6c2;
+    --quote-bg:   #e3e3e0;
+    --quote-rule: #647180;
+    --code-bg:    #e0e0e2;
+  }
+}
+
 /* iOS Safari inflates the text of any block it thinks is too wide for the
    screen. A code block is exactly that: long lines that scroll sideways
    instead of wrapping, so the phone decides the block is wide and boosts its
@@ -73,8 +154,8 @@ html {
 
 body {
   margin: 0;
-  background: #eeeeed;
-  color: #313e4d;
+  background: var(--bg);
+  color: var(--fg);
   font-family: "Charis SIL", Georgia, "Times New Roman", serif;
   line-height: 1.7;
 }
@@ -89,7 +170,7 @@ body {
   padding: 2rem 1rem 3rem;
 }
 
-a { color: #2156a5; }
+a { color: var(--link); }
 
 h1, h2, h3, h4 {
   line-height: 1.3;
@@ -107,7 +188,7 @@ h3 { font-size: 1.1rem; }
 
 .tagline {
   font-size: 0.9rem;
-  color: #5a6674;
+  color: var(--muted);
 }
 
 .nav {
@@ -124,7 +205,7 @@ h3 { font-size: 1.1rem; }
 
 .meta {
   font-size: 0.85rem;
-  color: #6b7684;
+  color: var(--meta);
   margin-top: 0.25rem;
 }
 
@@ -136,12 +217,12 @@ img, iframe { display: block; margin: 1.5rem 0; }
 blockquote {
   margin: 1.5rem 0;
   padding: 0.1rem 1rem;
-  border-left: 3px solid #647180;
-  background: #e3e3e0;
+  border-left: 3px solid var(--quote-rule);
+  background: var(--quote-bg);
 }
 
 table { border-collapse: collapse; }
-th, td { border: 1px solid #c6c6c2; padding: 0.3rem 0.6rem; text-align: left; }
+th, td { border: 1px solid var(--rule); padding: 0.3rem 0.6rem; text-align: left; }
 
 code, pre, .terminal {
   font-family: "JetBrains Mono", ui-monospace, Menlo, Consolas, "DejaVu Sans Mono", monospace;
@@ -149,7 +230,7 @@ code, pre, .terminal {
 }
 
 /* Inline code. */
-code { background: #e0e0e2; border-radius: 3px; padding: 0.1em 0.3em; }
+code { background: var(--code-bg); border-radius: 3px; padding: 0.1em 0.3em; }
 
 /* Code blocks: one dark panel, scrolling sideways rather than wrapping, so
    that indentation stays true.
@@ -158,8 +239,8 @@ code { background: #e0e0e2; border-radius: 3px; padding: 0.1em 0.3em; }
    terminal use. Values come from the running Neovim colorscheme, not from a
    port of it, so code here looks like code there. */
 .highlight, .terminal {
-  background: #1d1c19;
-  color: #c5c9c5;
+  background: var(--panel-bg);
+  color: var(--panel-fg);
   border-radius: 4px;
   margin: 1.5rem 0;
   overflow-x: auto;
@@ -201,8 +282,8 @@ img, iframe {
    table cell when the block asks for line numbers. So the child combinator
    reaches exactly the unwrapped ones. */
 article > pre {
-  background: #1d1c19;
-  color: #c5c9c5;
+  background: var(--panel-bg);
+  color: var(--panel-fg);
   border-radius: 4px;
   margin: 1.5rem 0;
   padding: 0.8rem;
@@ -267,7 +348,7 @@ body.article h2 {
   font-size: 1.3rem;
   margin-top: 2.5rem;
   padding-bottom: 0.3rem;
-  border-bottom: 1px solid #c6c6c2;
+  border-bottom: 1px solid var(--rule);
 }
 
 body.article .sect1:first-child h2 {
@@ -288,7 +369,7 @@ body.article .paragraph p { margin: 0.8rem 0; }
 body.article .quoteblock blockquote { margin: 1.5rem 0 0; }
 body.article .attribution {
   font-size: 0.85rem;
-  color: #5a6674;
+  color: var(--muted);
   margin: 0.4rem 0 1.5rem 1rem;
 }
 body.article .attribution cite { display: block; font-style: normal; }
