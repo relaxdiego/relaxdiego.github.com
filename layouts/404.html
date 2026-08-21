@@ -1,0 +1,20 @@
+{{ define "main" }}
+<nav class="nav">
+  <a href="{{ site.Home.RelPermalink }}">{{ site.Title }}</a>
+  <span class="tagline">({{ site.Params.description }})</span>
+</nav>
+
+<article>
+  <h1>Nothing here</h1>
+  <p class="meta">HTTP 404</p>
+
+  <p>Every system has a constraint. Right now, for you, it is this URL.</p>
+
+  <p>Either the address is wrong, or the page used to exist and has since
+  been taken down &mdash; a few of them leaned entirely on a video that is
+  no longer public, which left nothing worth reading behind.</p>
+
+  <p><a href="{{ site.Home.RelPermalink }}">Everything that does still exist
+  is listed on the front page.</a></p>
+</article>
+{{ end }}
