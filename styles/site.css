@@ -60,7 +60,16 @@
   src: url(/assets/fonts/jetbrains-mono-400-italic.woff2) format("woff2");
 }
 
-html { font-size: 18px; }
+/* iOS Safari inflates the text of any block it thinks is too wide for the
+   screen. A code block is exactly that: long lines that scroll sideways
+   instead of wrapping, so the phone decides the block is wide and boosts its
+   font past the prose around it. Pinning the adjustment to 100% turns that
+   guess off and leaves the sizes below in charge. */
+html {
+  font-size: 18px;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
 
 body {
   margin: 0;
