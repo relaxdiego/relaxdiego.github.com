@@ -40,7 +40,7 @@ disablePathToLower = true
   posts = true
 
 [params]
-  description = "Mark Maglana's Technical Blog"
+  description = "Mark Maglana's technical blog"
 
 # The feed has always lived at /rss.xml, not at Hugo's default /index.xml.
 [outputFormats.RSS]
