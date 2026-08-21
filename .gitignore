@@ -24,3 +24,6 @@ __pycache__/
 
 .DS_Store
 Thumbs.db
+
+# Session handoff notes for AI agents. Local scratch, never published.
+/handoffs/
