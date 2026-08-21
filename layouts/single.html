@@ -6,10 +6,7 @@
 
 <article>
   <h1>{{ .Title }}</h1>
-  <p class="meta">
-    {{ .Date.Format "Jan 2, 2006" }} &nbsp;·&nbsp;
-    Est. read: {{ .ReadingTime }} minute{{ if ne .ReadingTime 1 }}s{{ end }}
-  </p>
+  <p class="meta">{{ .Date.Format "Jan 2, 2006" }}</p>
   {{ .Content }}
 </article>
 
