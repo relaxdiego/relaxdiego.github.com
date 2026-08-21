@@ -2,6 +2,7 @@
 title: "System Design - Web App on AWS"
 date: 2021-07-11
 slug: system-design-webapp-on-aws
+draft: true
 categories: ["Kubernetes", "Web", "AWS", "Elastic Kubernetes Services", "EKS"]
 ---
 
@@ -11,9 +12,5 @@ Elastic Kubernetes Service.*
 
 ## Part 1
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/8-M2rK4NRyI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
 ## Part 2
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/RuCOqveUM9k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

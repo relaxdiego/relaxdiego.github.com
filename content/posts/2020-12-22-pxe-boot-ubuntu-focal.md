@@ -11,6 +11,3 @@ Ubuntu before MAAS is up and running.
 DISCLAIMER: This is a personal project. All opinions shared in this
 video are my own and do not represent Canonical’s view.
 
-<center>
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/-wF3zPSiHOk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</center>

@@ -25,10 +25,6 @@ Ansible is great but bootstrapping a project has got to be easier than this.
 Here's a proof-of-concept project that attempts to address the above inconveniences
 with as little manual dependency installations as possible (Just Docker, Make, and Bash!)
 
-<center>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/PweKPLDweO4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</center>
-
 The repositories mentioned in the video are:
 
 * [Bootstrapper Kit (Playbooks on steroids)](https://github.com/relaxdiego/bootstrapper-kit)

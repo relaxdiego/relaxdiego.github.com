@@ -10,9 +10,6 @@ If you’re still experiencing the pain of CircleCI config.yml copypasta
 even after using orbs, here’s a possible next step in your evolution.
 
 <center>
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/4a7IRoDQMWI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</center>
-<center>
 NOTE: To comment on the video, please <a href="https://youtu.be/4a7IRoDQMWI">watch it on Youtube</a>
 </center>
 
