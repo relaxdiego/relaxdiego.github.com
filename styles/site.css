@@ -178,6 +178,14 @@ body {
   color: var(--fg);
   font-family: "Charis SIL", Georgia, "Times New Roman", serif;
   line-height: 1.7;
+
+  /* A URL or a long file path has nowhere to break, so on a narrow screen it
+     used to push the whole page wider than the phone and leave every line of
+     prose scrolling sideways. Breaking such a word is the lesser evil; this
+     only breaks a word that could not fit on a line by itself, so ordinary
+     prose is untouched. Code blocks are unaffected - their white-space rule
+     stops them wrapping, and they scroll on purpose. */
+  overflow-wrap: break-word;
 }
 
 /* 34rem of Charis SIL at 18px is about 70 characters a line. Comfortable reading
@@ -329,8 +337,22 @@ h3 { font-size: 1.1rem; }
 
 img, iframe { display: block; margin: 1.5rem 0; }
 
-/* A caption under a figure. Used by a handful of posts. */
-.figure-label { font-size: 0.8rem; text-align: center; margin-top: -1rem; }
+/* Captions, in the two spellings this site has accumulated: .figure-label on
+   one post, and a bare <center> on fifteen older ones, which is how those
+   posts wrote a caption at the time. Both sit under a picture and name where
+   it came from, so both should read as a caption - smaller and quieter than
+   the prose - rather than as another paragraph of it.
+
+   Some of those <center> elements hold a video instead of words. Nothing here
+   hurts them: there is no text for a font size to apply to, and the tuck
+   below reaches only a caption that directly follows a picture. */
+.figure-label,
+center { font-size: 0.8rem; color: var(--meta); text-align: center; }
+
+/* Pull the caption up against the picture it belongs to, which sits in a
+   paragraph of its own. */
+.figure-label,
+p:has(> img) + center { margin-top: -1rem; }
 
 blockquote {
   margin: 1.5rem 0;
