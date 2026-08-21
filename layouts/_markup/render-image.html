@@ -1,0 +1,32 @@
+{{- /* Every Markdown image on the site.
+
+       The point of this hook is the width and height attributes. Without
+       them the browser does not know how tall a picture will be until it has
+       downloaded it, so the text under it jumps down the moment it arrives.
+       With them the space is reserved from the first paint and nothing moves.
+       The numbers are the file's own pixel size, read at build time, so they
+       cannot go stale the way hand-written ones do.
+
+       CSS still decides how big the picture is drawn - see the img rule in
+       site.css. These attributes only give the browser the shape.
+
+       The images are published from static/, and mounted a second time into
+       assets/ (see hugo.toml) purely so this lookup can happen. An image the
+       lookup cannot find - anything not under /assets/images/, such as a
+       remote one - still renders, just without the dimensions. */ -}}
+
+{{- $src := .Destination -}}
+{{- $alt := .Text | plainify -}}
+{{- $dims := "" -}}
+{{- if hasPrefix $src "/assets/images/" -}}
+  {{- with resources.Get (printf "images/%s" (strings.TrimPrefix "/assets/images/" $src)) -}}
+    {{- /* An SVG is an image resource but has no pixel size to ask for, and
+           calling .Width on one is an error, not an empty value. */ -}}
+    {{- if ne .MediaType.SubType "svg" -}}
+      {{- $dims = printf ` width="%d" height="%d"` .Width .Height -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+<img src="{{ $src | safeURL }}" alt="{{ $alt }}"
+  {{- with .Title }} title="{{ . }}"{{ end }}
+  {{- $dims | safeHTMLAttr }} loading="lazy" decoding="async">

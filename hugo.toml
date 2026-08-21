@@ -15,10 +15,23 @@ disablePathToLower = true
 # and must not change: every inbound link, search result, and Wayback Machine
 # snapshot depends on them. Each post carries an explicit `slug:` so the URL is
 # written down in the post rather than derived from its title.
+# What Hugo may read as a resource. Two mounts, for two different reasons.
+#
 # The stylesheet lives in styles/, not in Hugo's default assets/ directory:
 # static/assets/ already publishes the images at /assets/, and two different
 # things called "assets" in one repo is one too many.
-assetDir = "styles"
+#
+# The images are mounted a second time, read-only, so the image render hook
+# can ask each file how big it actually is and write that into the <img> tag.
+# They are still PUBLISHED by static/, at exactly the URLs they always had;
+# this mount only lets templates look at them.
+[[module.mounts]]
+  source = "styles"
+  target = "assets"
+
+[[module.mounts]]
+  source = "static/assets/images"
+  target = "assets/images"
 
 [permalinks]
   posts = "/:year/:month/:slug"
