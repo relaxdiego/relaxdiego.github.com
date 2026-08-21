@@ -359,7 +359,7 @@ files. If you have any questions, please leave a comment below.
 I wouldn't have been able to create this article without the help of the following
 people so a big THANK YOU to them!
 
-* [Aimon Bustardo](www.linkedin.com/in/abustardo) for double-checking and fixing my many mistakes!
+* [Aimon Bustardo](https://www.linkedin.com/in/abustardo) for double-checking and fixing my many mistakes!
 * [Gurucharan Shetty](https://github.com/shettyg) for helping me understand ovs-vtep
 * [David Mahler](https://www.youtube.com/channel/UCEoaojfEY_6L5TWWjIn9t9Q) for his very helpful videos
 * [The Open vSwitch Community](http://openvswitch.org/)

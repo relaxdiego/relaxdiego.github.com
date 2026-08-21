@@ -302,7 +302,7 @@ principle of DevOps (fast feedback) because now you have to wait
 until tomorrow to get feedback on the work you did today.
 
 > Sidenote: I talked about implementing a LIFO queue in a pipeline in
-> [this article](/2018/08/keeping-continuous-integration-continuous).
+> [this article](/2018/08/keeping-continuous-integration-continuous.html).
 
 Let's take it one step further and bring this lesson to the networking
 domain. This is why managing the buffer size of a router is an important
@@ -374,7 +374,7 @@ must ensure that every component that composes the Controller does not
 panic!
 
 > Sidenote: I talk about dynamic control systems in an agile organization
-> in [this article](/2015/01/automated-testing-and-organizational-learning).
+> in [this article](/2015/01/automated-testing-and-organizational-learning.html).
 
 
 ## Recap
