@@ -5,6 +5,7 @@
     "asciidoctor-with-extensions@2.0.23",
     "process-compose@1.120.0",
     "watchexec@2.3.2",
-    "gnumake@4.4.1"
+    "gnumake@4.4.1",
+    "python@3.13.15"
   ]
 }

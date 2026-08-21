@@ -247,6 +247,53 @@
         }
       }
     },
+    "python@3.13.15": {
+      "last_modified": "2026-08-12T11:28:58Z",
+      "plugin_version": "0.0.4",
+      "resolved": "github:NixOS/nixpkgs/044bfe75bfe4c7bbe043dc17b5e42ea823b84a09#python313",
+      "source": "devbox-search",
+      "version": "3.13.15",
+      "systems": {
+        "aarch64-darwin": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/8gg2n5r87vsyy8d78n3s90a9r929c14v-python3-3.13.15",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/8gg2n5r87vsyy8d78n3s90a9r929c14v-python3-3.13.15"
+        },
+        "aarch64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/zbmvgni6v5zb58mad6j14zga05wx5k57-python3-3.13.15",
+              "default": true
+            },
+            {
+              "name": "debug",
+              "path": "/nix/store/1xj7y74r9yim4mh1a27psgl7c8zym9ld-python3-3.13.15-debug"
+            }
+          ],
+          "store_path": "/nix/store/zbmvgni6v5zb58mad6j14zga05wx5k57-python3-3.13.15"
+        },
+        "x86_64-linux": {
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/f5bawl7z7w0qzimg659zg5qn7awmzww5-python3-3.13.15",
+              "default": true
+            },
+            {
+              "name": "debug",
+              "path": "/nix/store/biis6xqr937r0sk9gzs9i8rvfk2zx05z-python3-3.13.15-debug"
+            }
+          ],
+          "store_path": "/nix/store/f5bawl7z7w0qzimg659zg5qn7awmzww5-python3-3.13.15"
+        }
+      }
+    },
     "watchexec@2.3.2": {
       "last_modified": "2026-03-21T07:29:51Z",
       "resolved": "github:NixOS/nixpkgs/09061f748ee21f68a089cd5d91ec1859cd93d0be#watchexec",
