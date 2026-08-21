@@ -7,7 +7,7 @@ categories: ["presentations"]
 
 Today I will pick a slide that I like and suggest improvements to it.
 
-[![](http://2.bp.blogspot.com/-qUwb9Ey84fU/Ts62mvg4HzI/AAAAAAAAE2g/AvVyWGfPlA0/s320/wordpressdrupaljoomla.png)](http://2.bp.blogspot.com/-qUwb9Ey84fU/Ts62mvg4HzI/AAAAAAAAE2g/AvVyWGfPlA0/s1600/wordpressdrupaljoomla.png)
+[![](/assets/images/blogger/s320-wordpressdrupaljoomla.png)](/assets/images/blogger/s1600-wordpressdrupaljoomla.png)
 
 I like the whimsical chart even though it's not technically accurate because
 it sends the message across very clearly. Just one thing I'd change there is

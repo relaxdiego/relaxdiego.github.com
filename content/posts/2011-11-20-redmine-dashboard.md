@@ -14,7 +14,7 @@ wrapped around the collection concept but once I understood that, everything
 else made a lot of sense. Here's a screenshot of how it looks like once you
 get it working:
 
-[![](http://2.bp.blogspot.com/-5mW3KUVw2KM/Ttb0VRo5PQI/AAAAAAAAE24/5v4mTYwdZME/s320/Screen+Shot+2011-12-01+at+11.21.40+AM.png)](http://2.bp.blogspot.com/-5mW3KUVw2KM/Ttb0VRo5PQI/AAAAAAAAE24/5v4mTYwdZME/s1600/Screen+Shot+2011-12-01+at+11.21.40+AM.png)
+[![](/assets/images/blogger/s320-screen-shot-2011-12-01-at-11.21.40-am.png)](/assets/images/blogger/s1600-screen-shot-2011-12-01-at-11.21.40-am.png)
 
 You can grab the code [here](https://github.com/relaxdiego/redmine_dashboard).
 Please note that it's purely in conceptual stage right now and I really only

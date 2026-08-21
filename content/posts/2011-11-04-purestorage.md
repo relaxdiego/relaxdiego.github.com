@@ -10,11 +10,11 @@ This slide had a number of unnecessary elements making it feel cluttered. Since 
 
 Original Slide
 
-![Original Slide](http://1.bp.blogspot.com/--GfeHLlK7kk/Ts2zsfnePLI/AAAAAAAAE0g/aMiOUw0f77w/s1600/purestorage1-before.png)
+![Original Slide](/assets/images/blogger/s1600-purestorage1-before.png)
 
 
 My Rendition
 
-![My Rendition](http://1.bp.blogspot.com/-ihvlHdxSrWY/Ts2zvqCpaaI/AAAAAAAAE0o/bPBqePl07vk/s1600/purestorage1-after1.png)
+![My Rendition](/assets/images/blogger/s1600-purestorage1-after1.png)
 
 Original slides are [here](http://www.slideshare.net/purestorage/on-beyond-disk-breaking-the-flash-cost-barrier).

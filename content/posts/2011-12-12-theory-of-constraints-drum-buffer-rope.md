@@ -46,7 +46,7 @@ completed within four simulation days. That is, each job order, if properly
 serviced, should have a flow time of only four (4) days. After the simulation,
 the data was plotted and was found to resemble the following:
 
-[![](http://2.bp.blogspot.com/-0tuIOy8yjHE/TuW5_gu-BTI/AAAAAAAAE4c/7wf2q3wnKvk/s320/Screen+Shot+2011-12-12+at+4.22.28+PM.png)](http://2.bp.blogspot.com/-0tuIOy8yjHE/TuW5_gu-BTI/AAAAAAAAE4c/7wf2q3wnKvk/s1600/Screen+Shot+2011-12-12+at+4.22.28+PM.png)
+[![](/assets/images/blogger/s320-screen-shot-2011-12-12-at-4.22.28-pm.png)](/assets/images/blogger/s1600-screen-shot-2011-12-12-at-4.22.28-pm.png)
 
 The graph demonstrates that as more job orders are released into the shop
 floor, the more the workflow is congested contributing to the wild
@@ -81,7 +81,7 @@ provide a direct comparison of results between DBR, and the method used in
 scenario \#1. After the simulation, the graph plotted resembled the
 following:
 
-[![](http://3.bp.blogspot.com/-W1fuK-fegDQ/TuW5-sSugOI/AAAAAAAAE4U/WvZjgz-OBW0/s320/Screen+Shot+2011-12-12+at+4.22.54+PM.png)](http://3.bp.blogspot.com/-W1fuK-fegDQ/TuW5-sSugOI/AAAAAAAAE4U/WvZjgz-OBW0/s1600/Screen+Shot+2011-12-12+at+4.22.54+PM.png)
+[![](/assets/images/blogger/s320-screen-shot-2011-12-12-at-4.22.54-pm.png)](/assets/images/blogger/s1600-screen-shot-2011-12-12-at-4.22.54-pm.png)
 
 The simulation clearly shows that DBR is a superior method to reduce job order
 idle time and narrow down the variability of completion times. Utilizing this

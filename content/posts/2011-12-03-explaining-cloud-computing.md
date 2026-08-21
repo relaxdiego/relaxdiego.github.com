@@ -12,13 +12,13 @@ the simplest terms especially for non-technical people and I do this by saying
 that cloud computing simply changes how we acquire computers or software. The
 following two slides are usually part of my arsenal:
 
-[![](http://4.bp.blogspot.com/-YxMebcnVOak/Ttm7c4Z3cCI/AAAAAAAAE3s/EIMt9Py0zCg/s320/cloud.001.png)](http://4.bp.blogspot.com/-YxMebcnVOak/Ttm7c4Z3cCI/AAAAAAAAE3s/EIMt9Py0zCg/s1600/cloud.001.png)
+[![](/assets/images/blogger/s320-cloud.001.png)](/assets/images/blogger/s1600-cloud.001.png)
 
 I start with the above slide by talking about how, in the past, it would take
 weeks or months to acquire computers or software and, at the end of that
 acquisition stage, you still had to deal with installation and configuration.
 
-[![](http://4.bp.blogspot.com/-dazThwy7u38/Ttm7ghRGqtI/AAAAAAAAE30/5ayyFnweO5o/s320/cloud.002.png)](http://4.bp.blogspot.com/-dazThwy7u38/Ttm7ghRGqtI/AAAAAAAAE30/5ayyFnweO5o/s1600/cloud.002.png)
+[![](/assets/images/blogger/s320-cloud.002.png)](/assets/images/blogger/s1600-cloud.002.png)
 
 The first slide then dissolves into this next slide. Sometimes I add animation
 to the arrow by making it shorter and shorter until only the dot is left. As

@@ -324,8 +324,8 @@ theory behind the 3 principles of DevOps.
 
 Control Theory is best exemplified by this diagram:
 
-![Dynamic Control System](http://upload.wikimedia.org/wikipedia/commons/2/24/Feedback_loop_with_descriptions.svg)
-<p class="figure-label">Image source: <a href="http://en.wikipedia.org/wiki/Control_theory">Wikipedia</a></p>
+![Dynamic Control System](/assets/images/feedback_loop_with_descriptions.svg)
+<p class="figure-label">Image source: <a href="http://en.wikipedia.org/wiki/Control_theory">Wikipedia</a>. Diagram by <a href="https://commons.wikimedia.org/wiki/File:Feedback_loop_with_descriptions.svg">Orzetto</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>, via Wikimedia Commons.</p>
 
 The relevant parts are:
 

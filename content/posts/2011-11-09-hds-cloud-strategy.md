@@ -12,11 +12,11 @@ match what's in the legend.
 
 Original Slide
 
-[![](http://4.bp.blogspot.com/-TnAOLlwcS-w/Ts6zJSzlGmI/AAAAAAAAE2Q/HEW4_A3Vtng/s320/storage_vision_2011.png)](http://4.bp.blogspot.com/-TnAOLlwcS-w/Ts6zJSzlGmI/AAAAAAAAE2Q/HEW4_A3Vtng/s1600/storage_vision_2011.png)
+[![](/assets/images/blogger/s320-storage_vision_2011.png)](/assets/images/blogger/s1600-storage_vision_2011.png)
 
 My Rendition
 
-[![](http://1.bp.blogspot.com/-a1ApVE3Zwas/Ts6zG_s-7gI/AAAAAAAAE2I/sWSFe87Ql4Q/s320/storage_vision_2011.001.png)](http://1.bp.blogspot.com/-a1ApVE3Zwas/Ts6zG_s-7gI/AAAAAAAAE2I/sWSFe87Ql4Q/s1600/storage_vision_2011.001.png)
+[![](/assets/images/blogger/s320-storage_vision_2011.001.png)](/assets/images/blogger/s1600-storage_vision_2011.001.png)
 
 Original slides are
 [here](http://www.slideshare.net/hdscorp/td2011-s-vpresentation).

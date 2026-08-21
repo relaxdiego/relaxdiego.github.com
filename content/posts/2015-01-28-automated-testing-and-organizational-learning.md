@@ -23,16 +23,16 @@ you tell the system the desired output and it will perform a series of internal
 operations to make that happen. Modern dynamic systems, however, have a crucial
 component that makes it more effective: the feedback loop.
 
-<img src="http://upload.wikimedia.org/wikipedia/commons/2/24/Feedback_loop_with_descriptions.svg"/>
-<center>Source: http://en.wikipedia.org/wiki/Control_theory</center><br/>
+<img src="/assets/images/feedback_loop_with_descriptions.svg"/>
+<center>Source: <a href="http://en.wikipedia.org/wiki/Control_theory">Control theory</a>. Diagram by <a href="https://commons.wikimedia.org/wiki/File:Feedback_loop_with_descriptions.svg">Orzetto</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>, via Wikimedia Commons.</center><br/>
 
 The feedback loop captures information about the external environment and feeds
 that back to the system which uses that information to regulate itself. To put
 this in more concrete terms, let's look at a heating system's feedback mechanism:
 the thermostat.
 
-<img src="http://upload.wikimedia.org/wikipedia/commons/5/53/WPThermostat_new.jpg"/>
-<center>Source: http://en.wikipedia.org/wiki/Thermostat</center><br/>
+<img src="/assets/images/wpthermostat_new.jpg"/>
+<center>Source: <a href="http://en.wikipedia.org/wiki/Thermostat">Thermostat</a>. Photo by <a href="https://commons.wikimedia.org/wiki/File:WPThermostat_new.jpg">Leonard G., derivative work by Raeky</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>, via Wikimedia Commons.</center><br/>
 
 To raise the room temperature, you'd slide (1) to the right. This makes (2) turn
 clockwise which, in turn, moves (4) to the right. Notice that (4) is connected to
@@ -60,8 +60,8 @@ information than a thermostat would (user feedback, bugs, etc.)
 
 A typical waterfall process is commonly understood as having the following phases:
 
-<img src="http://upload.wikimedia.org/wikipedia/commons/e/e2/Waterfall_model.svg"/>
-<center>Source: http://en.wikipedia.org/wiki/Waterfall_model</center><br/>
+<img src="/assets/images/waterfall_model.svg"/>
+<center>Source: <a href="http://en.wikipedia.org/wiki/Waterfall_model">Waterfall model</a>. Diagram by <a href="https://commons.wikimedia.org/wiki/File:Waterfall_model.svg">Peter Kemp / Paul Smith</a>, <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>, via Wikimedia Commons.</center><br/>
 
 What is clearly absent from the waterfall model is the critical feedback loop
 that would have allowed it to respond to new knowledge learned along the way.

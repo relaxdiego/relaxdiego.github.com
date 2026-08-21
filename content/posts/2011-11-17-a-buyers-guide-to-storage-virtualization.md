@@ -12,11 +12,11 @@ loud!
 
 Original Slide
 
-[![](http://1.bp.blogspot.com/-XPCwWmbClhA/Ts6y-u4IILI/AAAAAAAAE1g/W0_4aM9S8k0/s320/buyers_guide.png)](http://1.bp.blogspot.com/-XPCwWmbClhA/Ts6y-u4IILI/AAAAAAAAE1g/W0_4aM9S8k0/s1600/buyers_guide.png)
+[![](/assets/images/blogger/s320-buyers_guide.png)](/assets/images/blogger/s1600-buyers_guide.png)
 
 My Rendition
 
-[![](http://1.bp.blogspot.com/-u5dK-5SanYg/Ts6y8RrmDpI/AAAAAAAAE1Y/67kuJa5USuw/s320/buyers_guide.001.png)](http://1.bp.blogspot.com/-u5dK-5SanYg/Ts6y8RrmDpI/AAAAAAAAE1Y/67kuJa5USuw/s1600/buyers_guide.001.png)
+[![](/assets/images/blogger/s320-buyers_guide.001.png)](/assets/images/blogger/s1600-buyers_guide.001.png)
 
 Don't hide behind bulletpoints. Make the audience focus on you and what you
 have to say. Practice your speech and clean it up so that you only have to say
