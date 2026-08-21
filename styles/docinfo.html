@@ -39,16 +39,40 @@
   root.setAttribute("data-js", "");
   apply(stored());
 
+  // What the page is actually showing right now, whether that came from a
+  // stored choice or from the system.
+  function showing() {
+    return stored() ||
+      (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  }
+
+  // The switch is drawn by CSS, which knows the state on its own. This is
+  // only so that a screen reader is told the same thing the drawing shows.
+  function sync() {
+    var button = document.querySelector(".theme-toggle");
+    if (button) {
+      button.setAttribute("aria-checked", showing() === "dark" ? "true" : "false");
+    }
+  }
+
+  // The button does not exist yet; this script runs in the head.
+  document.addEventListener("DOMContentLoaded", sync);
+
+  // If the reader has chosen nothing, the page follows the system and can
+  // change underneath us when the system does.
+  var system = matchMedia("(prefers-color-scheme: dark)");
+  if (system.addEventListener) system.addEventListener("change", sync);
+
   // This runs before the body is parsed, so the button does not exist yet
   // and cannot be given a listener. Catching the click on its way up the
   // document works no matter when the button appears.
   document.addEventListener("click", function (event) {
     var target = event.target;
     if (!target.closest || !target.closest(".theme-toggle")) return;
-    var system = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-    var next = (stored() || system) === "dark" ? "light" : "dark";
+    var next = showing() === "dark" ? "light" : "dark";
     apply(next);
     remember(next);
+    sync();
   });
 })();
 </script>

@@ -217,45 +217,92 @@ h3 { font-size: 1.1rem; }
 
 .nav a { font-weight: bold; text-decoration: none; }
 
-/* The theme button, top right of every page the blog builds.
+/* The theme switch, top right of every page the blog builds.
+
+   A word and a sliding switch. The word names what the switch controls and
+   never changes; where the knob sits says whether that thing is on. That is
+   the ordinary way a switch works, and it is why the label no longer names
+   the scheme you would get by pressing it - a knob that shows the current
+   state and a word that names the opposite one contradict each other.
+
+   The whole control is drawn with a border and a background on two boxes.
+   Nothing here is an image, so it costs no request and inherits the page's
+   colours in both schemes rather than needing a second copy for dark.
 
    It stays hidden unless the script ran and the browser understands
    light-dark(); without either of those, pressing it could not change
-   anything, and a control that does nothing is worse than no control.
-
-   Its label is written by CSS rather than by the script, so it is already
-   right in the first painted frame and never has to be corrected afterwards.
-   It names the scheme it will switch TO, which is what readers expect of a
-   button like this. */
+   anything, and a control that does nothing is worse than no control. */
 .theme-toggle {
   display: none;
   float: right;
+  align-items: center;
+  gap: 0.4rem;
   margin-left: 1rem;
-  padding: 0;
+  /* The switch is only pressed, never dragged - the knob slides because it
+     looks better, not because anyone has to push it. Pressing anywhere on
+     the word or the track counts. The vertical padding is what makes the
+     whole thing a comfortable target for a fingertip, about 30px tall,
+     without making the drawing any bigger. */
+  padding: 0.35rem 0;
   border: 0;
   background: none;
   font: inherit;
   font-size: 0.85rem;
   color: var(--meta);
-  text-decoration: underline;
   cursor: pointer;
 }
 
-:root[data-js] .theme-toggle { display: block; }
+:root[data-js] .theme-toggle { display: flex; }
 
 @supports not (color: light-dark(#000, #fff)) {
   :root[data-js] .theme-toggle { display: none; }
 }
 
-.theme-toggle::after { content: "Dark"; }
-
-/* Following the system, and the system says dark. The :not() is what keeps a
-   reader who explicitly chose light from being told they can switch to it. */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .theme-toggle::after { content: "Light"; }
+.theme-track {
+  position: relative;
+  display: block;
+  width: 1.9rem;
+  height: 0.95rem;
+  border: 1px solid var(--rule);
+  border-radius: 0.95rem;
 }
 
-:root[data-theme="dark"] .theme-toggle::after { content: "Light"; }
+.theme-track::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0.15rem;
+  width: 0.6rem;
+  height: 0.6rem;
+  margin-top: -0.3rem;
+  border-radius: 50%;
+  background: var(--meta);
+  transition: left 0.15s ease, background-color 0.15s ease;
+}
+
+/* On: the knob slides to the far end and takes the link colour, which is the
+   one colour on the page that already means "this does something".
+
+   The two conditions are the same pair the palette itself turns on - the
+   system says dark and nobody overrode it, or the reader chose dark outright
+   - because the switch has to agree with what it is switching. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .theme-track::after {
+    left: calc(100% - 0.75rem);
+    background: var(--link);
+  }
+}
+
+:root[data-theme="dark"] .theme-track::after {
+  left: calc(100% - 0.75rem);
+  background: var(--link);
+}
+
+/* A knob that jumps is still readable; one that slides is nicer. Readers who
+   have asked for less movement get the jump. */
+@media (prefers-reduced-motion: reduce) {
+  .theme-track::after { transition: none; }
+}
 
 /* Bare link lists: the article index, and the two short lists beside it. */
 .links { list-style: none; margin: 0; padding: 0; }
