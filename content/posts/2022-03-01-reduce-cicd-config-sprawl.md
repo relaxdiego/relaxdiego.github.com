@@ -9,10 +9,6 @@ social_preview_suffix: -cicd-config-sprawl
 If you’re still experiencing the pain of CircleCI config.yml copypasta
 even after using orbs, here’s a possible next step in your evolution.
 
-<center>
-NOTE: To comment on the video, please <a href="https://youtu.be/4a7IRoDQMWI">watch it on Youtube</a>
-</center>
-
 ## Transcript
 
 In CircleCI, your workflow configuration is stored alongside your code in

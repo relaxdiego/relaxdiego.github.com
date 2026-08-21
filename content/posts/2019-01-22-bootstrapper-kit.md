@@ -3,6 +3,7 @@ title: "Easier Ansible Onboarding with Bootstrapper Kit"
 date: 2019-01-22
 slug: bootstrapper-kit
 categories: ["DevOps", "Docker", "Ansible", "Onboarding", "Makefile", "Bash"]
+draft: true
 ---
 
 So you've been given a greenfield project, on a totally fresh infrastructure.
