@@ -386,6 +386,17 @@ img, iframe {
   max-width: min(44rem, calc(100vw - 2rem));
 }
 
+/* Every picture carries width and height attributes so the browser can
+   reserve its space before the file arrives. Those same attributes also fix
+   the rendered height, so as soon as the max-width above narrows a picture -
+   which is what happens on any phone - the height has to be told to follow,
+   or the picture is squeezed sideways and left at its full height.
+
+   iframes are deliberately not included. An iframe has no intrinsic size to
+   fall back on, so height:auto would collapse an embedded video to the
+   default 150px. */
+img { height: auto; }
+
 .highlight pre, .terminal pre { margin: 0; padding: 0.8rem; line-height: 1.5; }
 .highlight code, .terminal code, article > pre code { background: none; padding: 0; }
 
